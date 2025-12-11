@@ -57,8 +57,8 @@ const Footer = () => {
                   "About Us",
                   "Services",
                   "Contact Us",
-                  "Apply Jobs",
-                  "E-Book",
+                  "Media",
+                  "Books",
                   "Blogs",
                 ].map((item) => (
                   <li key={item}>
@@ -82,13 +82,13 @@ const Footer = () => {
                 <div className="flex items-start gap-3">
                   <FaMapMarkerAlt className="mt-1 text-white shrink-0" />
                   <p>
-                    IRIS Tech Park
+                   Office Suite 8 & 9, 3rd Floor,
                     <br />
-                    Inhwa Business Center,
-                    <br />
-                    Sohna Road Sector-48,
-                    <br />
-                    Gurugram - 122018 Haryana, India
+                   Ninex City Mart, Sohna Road, Near Radisson Hotel,
+                   
+                   Sector 49,<br />  Gurugram - 122018 Haryana, India
+                    
+                    
                   </p>
                 </div>
 
@@ -148,7 +148,7 @@ const Footer = () => {
           <div className="container mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
             <p className="mb-4 md:mb-0 text-center md:text-left">
               Copyright © 2018 Bhaswar Paul | Powered by{" "}
-              <span className="text-[#cba36f]">MaitKon</span>
+              <span className="text-[#cba36f]">IREED</span>
             </p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-white transition-colors">

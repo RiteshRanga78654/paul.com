@@ -38,7 +38,7 @@ import Footer from '../layout/Footer';
 
 // --- THEME CONSTANTS ---
 const THEME = {
-  bg: "bg-[#1e1e1e]",
+  bg: "bg-white",
   card: "bg-[#4c4949]",
   gold: "text-[#b79662]",
   goldBg: "bg-[#b79662]",
@@ -102,9 +102,9 @@ export default function LandingPage() {
      
 
       {/* 2. CHECKERBOARD SERVICES (Training & Hiring) */}
-      <section className="w-full">
+      <section className="w-full my-20">
         {/* Row 1 */}
-        <div className="flex flex-col md:flex-row h-auto md:h-[500px]">
+        <div className="flex flex-col md:flex-row h-auto md:h-[500px] ">
           {/* Image Block */}
           <div className="w-full md:w-1/2 bg-[#262626] relative flex items-center justify-center p-8 overflow-hidden group">
              <img src={services[0].image} className="max-w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" alt="Training" />
@@ -135,7 +135,7 @@ export default function LandingPage() {
       </section>
 
   
-   <section className="w-full">
+   <section className="w-full mb-20">
         {/* Row 1 */}
         <div className="flex flex-col md:flex-row h-auto md:h-[500px]">
           {/* Image Block */}
