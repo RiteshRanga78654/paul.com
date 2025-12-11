@@ -1,7 +1,7 @@
 "use client"; // Required for interactivity
 
 import React, { useState } from 'react';
-// import Footer from '../layout/Footer';
+import Footer from '../layout/Footer';
 import Header from '../layout/Header';
 
 // --- Sample Data ---
@@ -243,7 +243,7 @@ const MediaSection = () => {
           ...
         </section> */}
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

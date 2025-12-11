@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "../layout/Header"; // Adjust path if needed
-// import Footer from "../layout/Footer"; // Adjust path if needed
+import Footer from "../layout/Footer"; // Adjust path if needed
 
 const EVENTS_API_URL = "https://uat-service.ireedindia.com/v1/events?published=true&page=1&limit=10";
 
@@ -274,7 +274,7 @@ export default function EventsPage() {
         </div>
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
 
       {/* CSS Styles for Grid & Hover Effects */}
       <style jsx>{`

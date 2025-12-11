@@ -34,7 +34,7 @@ import {
 } from 'lucide-react';
 import Head from 'next/head';
 import Header from '../layout/Header';
-// import Footer from '../footer';
+import Footer from '../layout/Footer';
 
 // --- THEME CONSTANTS ---
 const THEME = {
@@ -170,7 +170,7 @@ export default function LandingPage() {
 
 
     </main>
-    {/* <Footer /> */}
+    <Footer />
     </>
   );
 }

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation"; // Correct hook for App Router
 // import Header from "../../layout/Header"; 
 
-// import Footer from "../../layout/Footer"; 
+import Footer from "../../layout/Footer"; 
  
 const EVENTS_API_URL = "https://uat-service.ireedindia.com/v1/events";
 
@@ -297,7 +297,7 @@ export default function EventDetailPage() {
         </div>
       )}
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

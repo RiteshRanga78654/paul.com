@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import Header from '../layout/Header';
-// import Footer from '../layout/Footer';
+import Footer from '../layout/Footer';
 import TestimonialSlider from '../components/TestimonialSlider';
 
 // Mock Data: Added more items to demonstrate Load More functionality
@@ -133,7 +133,7 @@ const VideoTestimonials = () => {
       </div>
     </section>
     <TestimonialSlider />
-    {/* <Footer /> */}
+    <Footer />
     </>
   );
 };

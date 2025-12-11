@@ -7,7 +7,7 @@ import {
   FaChalkboardTeacher,
   FaTags,
 } from "react-icons/fa";
-// import Footer from "../layout/Footer";
+import Footer from "../layout/Footer";
 import Header from "../layout/Header";
 
 // Replace these with your actual image paths
@@ -245,7 +245,7 @@ const DesignComponent = () => {
         </div>
       </section>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
     </>
 
