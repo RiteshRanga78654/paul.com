@@ -15,7 +15,7 @@ import { useEffect, useRef, useState } from "react";
 import TestimonialSlider from "./components/TestimonialSlider";
 import BookStore from "./components/BookStore";
 import Header from "./layout/Header";
-// import Footer from "./layout/Footer";
+import Footer from "./layout/Footer";
 import SelectedWork from "./components/SelectedWork";
 
 // --- Updated Service Card for Dark Theme ---
@@ -526,7 +526,7 @@ export default function HeroSection() {
 
       <TestimonialSlider />
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
