@@ -1,7 +1,7 @@
 "use client"; // Required for interactivity
 
 import React, { useState } from 'react';
-// import Footer from '../layout/Footer';
+import Footer from '../layout/Footer';
 import Header from '../layout/Header';
 import BookStore from '../components/BookStore';
 import BusinessChallenges from '../components/Faq';
@@ -141,7 +141,7 @@ const MediaSection = () => {
         <BookStore /> 
        
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
