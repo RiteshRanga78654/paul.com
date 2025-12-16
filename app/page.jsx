@@ -247,7 +247,7 @@ export default function HeroSection() {
   return (
     <>
       <div
-        className="min-h-screen relative overflow-hidden bg-cover bg-center bg-no-repeat"
+        className="min-h-[90vh] relative overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop')",
@@ -265,7 +265,7 @@ export default function HeroSection() {
         <div className="container mx-auto px-4 py-2 lg:py-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center lg:justify-evenly justify-between gap-8 lg:gap-5 lg:-mb-70 lg:-mt-2">
             <div className="w-full lg:w-[600px] flex justify-center lg:justify-center order-1 lg:order-1">
-              <div className="relative w-64 sm:w-80 lg:w-[600px] xl:w-[500px] h-screen">
+              <div className="qwe relative w-64 sm:w-80 lg:w-[600px] xl:w-[500px]">
                 <div className="absolute inset-0 rounded-full blur-3xl"></div>
                 <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
                   <img
@@ -276,11 +276,19 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
+            <style jsx>{`
+              /* ... your existing styles ... */
+
+              @media (max-width: 768px) {
+                .qwe {
+                }
+              }
+            `}</style>
 
             <div className="w-full lg:w-1/2 text-center lg:text-center order-2 lg:order-2 space-y-6">
               <div>
                 {/* Changed title to Gold Theme */}
-                <h2 className="text-[#b79662] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold lg:-ml-12">
+                <h2 className="text-[#b79662] text-3xl sm:text-5xl md:text-4xl lg:text-6xl font-bold lg:-ml-12">
                   Bhaswar Paul
                 </h2>
               </div>
@@ -305,8 +313,76 @@ export default function HeroSection() {
 
               <div className="pt-4">
                 {/* Changed Button to Gold Theme */}
-                <button className="bg-[#b79662] hover:bg-[#967d51] text-white font-bold text-base sm:text-lg px-8 py-3 sm:px-10 sm:py-4 rounded transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Learn to Disrupt
+                <button
+                  style={{
+                    padding: "14px 40px",
+                    backgroundColor: "#b79662", // Default Gold Background
+                    borderRadius: "8px",
+                    color: "#fff", // Default White Text
+                    fontSize: "1.1rem",
+                    fontWeight: "700",
+                    cursor: "pointer",
+                    display: "flex",
+                    textAlign: "center",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "10px",
+                    position: "relative",
+                    overflow: "hidden",
+                    zIndex: 1,
+                    border: "2px solid #b79662", // Border keeps the button size stable
+                    margin: "0 auto",
+                    letterSpacing: "1px",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    const fill = e.currentTarget.querySelector(".hover-fill");
+                    const text = e.currentTarget.querySelector(".btn-text");
+
+                    // Slide in the white background
+                    if (fill) fill.style.width = "100%";
+
+                    // Change text color to Gold
+                    if (text) text.style.color = "#b79662";
+                  }}
+                  onMouseLeave={(e) => {
+                    const fill = e.currentTarget.querySelector(".hover-fill");
+                    const text = e.currentTarget.querySelector(".btn-text");
+
+                    // Slide out the white background
+                    if (fill) fill.style.width = "0%";
+
+                    // Reset text color to White
+                    if (text) text.style.color = "#fff";
+                  }}
+                >
+                  {/* Hover Fill Layer: White */}
+                  <div
+                    className="hover-fill"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "0%",
+                      height: "100%",
+                      background: "#ffffff", // White background on hover
+                      transition: "width 0.4s ease",
+                      zIndex: -1,
+                    }}
+                  />
+
+                  {/* Text Span with Transition */}
+                  <span
+                    className="btn-text"
+                    style={{
+                      position: "relative",
+                      zIndex: 1,
+                      color: "#fff", // Initial color
+                      transition: "color 0.3s ease",
+                    }}
+                  >
+                    Learn to Disrupt
+                  </span>
                 </button>
               </div>
 
@@ -350,20 +426,20 @@ export default function HeroSection() {
         </div>
       </div>
 
-<Header />
+      <Header />
 
       {/* About Section */}
-      <div className="min-h-screen flex items-center justify-center p-4 sm:p-8 bg-white">
+      <div className=" min-h-[85vh] flex items-center justify-center p-1 my-10 sm:p-8 bg-white">
         {/* Container changed to #4c4949 */}
         <div className="max-w-7xl w-full bg-[#4c4949] rounded-xl overflow-hidden transition-all duration-300 shadow-2xl border border-gray-700">
           <div className="flex flex-col md:flex-row">
             <div className="p-6 sm:p-12 flex flex-col justify-center w-full md:flex-1">
-              <p className="text-xl font-medium text-gray-300 leading-snug mb-2">
+              <p className="text-lg font-medium text-gray-300 leading-snug mb-2">
                 {content.title}
               </p>
 
               {/* Name changed to Gold */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#b79662] leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-4xl font-extrabold text-[#b79662] leading-tight mb-6">
                 {content.name}
               </h1>
 
@@ -371,13 +447,75 @@ export default function HeroSection() {
                 {content.description}
               </p>
 
-              <button
-                className="w-full sm:w-48 bg-[#b79662] text-white font-semibold py-3 px-6 rounded-lg 
-                          shadow-md hover:bg-[#967d51] transition-colors duration-300 transform 
-                          hover:scale-[1.02] active:scale-95 focus:outline-none focus:ring-4 focus:ring-yellow-700"
-              >
-                {content.buttonText}
-              </button>
+                <button
+          style={{
+            padding: "14px 40px",
+            backgroundColor: "#b79662", // Default Gold Background
+            borderRadius: "8px",
+            color: "#fff", // Default White Text
+            fontSize: "1.1rem",
+            fontWeight: "700",
+            cursor: "pointer",
+            display: "flex",
+
+            gap: "10px",
+            position: "relative",
+            overflow: "hidden",
+            zIndex: 1,
+            border: "2px solid #b79662", // Border keeps the button size stable
+
+            letterSpacing: "1px",
+            transition: "all 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide in the white background
+            if (fill) fill.style.width = "100%";
+
+            // Change text color to Gold
+            if (text) text.style.color = "#b79662";
+          }}
+          onMouseLeave={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide out the white background
+            if (fill) fill.style.width = "0%";
+
+            // Reset text color to White
+            if (text) text.style.color = "#fff";
+          }}
+        >
+          {/* Hover Fill Layer: White */}
+          <div
+            className="hover-fill"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "0%",
+              height: "100%",
+              background: "#ffffff", // White background on hover
+              transition: "width 0.4s ease",
+              zIndex: -1,
+            }}
+          />
+
+          {/* Text Span with Transition */}
+          <span
+            className="btn-text"
+            style={{
+              position: "relative",
+              zIndex: 1,
+              color: "#fff", // Initial color
+              transition: "color 0.3s ease",
+            }}
+          >
+            {content.buttonText}
+          </span>
+        </button>
             </div>
 
             <div className="relative overflow-hidden md:h-full min-h-[600px] w-full md:flex-1">
@@ -399,13 +537,12 @@ export default function HeroSection() {
 
       {/* Services Grid Section */}
       {/* Background changed from blue to dark charcoal to contrast with #4c4949 cards */}
-      <section className="bg-white py-6 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-[#b79662] text-[45px] mt-[-75px] font-extrabold mb-4 text-center">
-          Our Services
+      <section className="bg-white py-1 px-4 sm:px-6 lg:px-8 mt-[40px] lg:mt-[-28px] ">
+        <h2 className="text-3xl text-center md:text-4xl font-bold text-[#b79662]">
+          Our <span className="text-[#b79662]">Services</span>
         </h2>
-        <p className="text-center mb-10 text-[#333333] text-4xl sm:text-2xl">
-          Experience fulfillment and joy in your career.
-        </p>
+
+        <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
         <div className="max-w-7xl mx-auto">
           {/* The Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -439,29 +576,28 @@ export default function HeroSection() {
       <div className="bg-white">
         <section
           ref={containerRef}
-          className="min-h-screen flex items-center py-20"
+          className="min-h-[88vh] flex items-center py-10"
         >
-          <div className="w-full">
-            <div className="max-w-[1342px] mx-auto px-8 mb-12">
-              <h1 className="text-6xl md:text-7xl font-bold text-[#b79662] relative inline-block">
+          <div className="w-full mt-10">
+            <div className="max-w-[1342px] mx-auto px-8 mb-12 text-center">
+              <h1 className="text-3xl md:text-4xl font-bold text-[#b79662] relative inline-block">
                 OUR SERVICES
                 <span className="absolute top-0 -right-6 flex gap-1">
-                  <span className="w-3 h-3 bg-[#b79662]"></span>
-                  <span className="w-3 h-3 bg-[#b79662]"></span>
+                  <span className="w-1 h-1 bg-[#b79662]"></span>
+                  <span className="w-1 h-1 bg-[#b79662]"></span>
                 </span>
               </h1>
-              <p className="text-[#333333] mt-4 text-lg">
+              <p className="text-[#333333] mt-4 text-sm">
                 Scroll horizontally to browse through our services →
               </p>
             </div>
 
             <div
               ref={scrollerRef}
-              className="overflow-x-auto overflow-y-hidden scrollbar-hide px-8"
+              className="pqy overflow-x-auto overflow-y-hidden scrollbar-hide px-8 ml-[90px]"
               style={{
                 scrollBehavior: "auto",
                 WebkitOverflowScrolling: "touch",
-                marginLeft: "90px",
               }}
             >
               <div className="flex gap-6 pb-4" style={{ width: "max-content" }}>
@@ -478,6 +614,15 @@ export default function HeroSection() {
             </div>
           </div>
         </section>
+        <style jsx>{`
+          /* ... your existing styles ... */
+
+          @media (max-width: 768px) {
+            .pqy {
+              margin-left: 0;
+            }
+          }
+        `}</style>
 
         <style jsx>{`
           .scrollbar-hide::-webkit-scrollbar {
@@ -490,24 +635,22 @@ export default function HeroSection() {
         `}</style>
       </div>
 
-
-
-
       {/* Video Section */}
       <section className="w-full py-6 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Text Header Section */}
           <div className="text-center mb-10 space-y-2">
-            <h2 className="text-gray-400 font-bold text-sm sm:text-lg md:text-xl mb-4 uppercase tracking-wide">
+            <h2 className="text-gray-400 text-sm sm:text-md md:text-md mb-2  tracking-wide">
               Adopt These 5 Strategies, You Will Never Face Loss In Business
             </h2>
-            <h1 className="text-[#b79662] font-extrabold text-3xl sm:text-4xl md:text-5xl uppercase tracking-tight">
-              BHASWAR PAUL
-            </h1>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#b79662]">
+              Bhaswar <span className="text-[#b79662]">Paul</span>
+            </h2>
+            <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 rounded-full"></div>
           </div>
 
           {/* Video Player Container */}
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-[#4c4949] bg-black">
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl">
             <iframe
               className="absolute top-0 left-0 w-full h-full"
               src="https://www.youtube.com/embed/NYbFAiZgvAM"
@@ -518,9 +661,9 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-<br />
-<br />
-      <SelectedWork  />
+      <br />
+      <br />
+      <SelectedWork />
 
       <BookStore />
 

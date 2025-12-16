@@ -18,10 +18,10 @@ const videoTestimonials = [
 ];
 
       const ValueCard = ({ icon, title, desc }) => (
-  <div className="bg-[#4c4949] p-8 rounded-lg text-white text-center hover:-translate-y-2 transition-transform duration-300 border border-gray-600 hover:border-[#b79662] shadow-lg group">
+  <div className="bg-[#4c4949] p-8 mx-6 lg:mx-0 rounded-lg text-white text-center  hover:-translate-y-2 transition-transform duration-300 border border-gray-600 hover:border-[#b79662] shadow-lg group">
     <div className="flex justify-center mb-4 transform group-hover:scale-110 transition-transform">{icon}</div>
     <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#b79662] transition-colors">{title}</h3>
-    <p className="text-gray-400 text-sm">{desc}</p>
+    <p className="text-gray-400 group-hover:text-white text-sm ">{desc}</p>
   </div>
 );
 // --- Sub-Components ---
@@ -29,7 +29,7 @@ const videoTestimonials = [
 
 
 const TestimonialHero = () => (
-  <section className="flex flex-col lg:flex-row w-full min-h-[600px] max-w-7xl mx-auto mt-20 mb-10 shadow-2xl rounded-lg overflow-hidden">
+  <section className="flex flex-col lg:flex-row w-full min-h-[600px] max-w-7xl mx-auto mt-10 lg:mt-20 mb-10 shadow-2xl rounded-lg overflow-hidden">
     {/* Left Text Side: Background #4c4949 */}
     <div className="w-full lg:w-1/2 bg-[#4c4949] p-10 md:p-16  flex flex-col justify-center relative overflow-hidden">
       
@@ -46,15 +46,81 @@ const TestimonialHero = () => (
         <p className="text-gray-200 text-lg mb-10 leading-relaxed max-w-xl font-light">
           My weekdays start early — usually with a cup of tea and some reading," Mansharamani said. "I find that this quiet time in the morning helps set a productive tone for the day. The calmness of the early hours allows me to focus without distractions, whether it's diving into a good book or reflecting on my goals for the day. It’s become an essential part of my routine that fuels my energy and creativity throughout the busy workday.
         </p>
-        <button className="bg-[#b79662] hover:bg-[#967d51] text-white font-bold py-4 px-10 rounded shadow-md hover:shadow-lg transition-all duration-300 w-fit text-lg uppercase tracking-wide">
-          Read Article
+        <button
+          style={{
+            padding: "14px 40px",
+            backgroundColor: "#b79662", // Default Gold Background
+            borderRadius: "8px",
+            color: "#fff", // Default White Text
+            fontSize: "1.1rem",
+            fontWeight: "700",
+            cursor: "pointer",
+            display: "flex",
+
+            gap: "10px",
+            position: "relative",
+            overflow: "hidden",
+            zIndex: 1,
+            border: "2px solid #b79662", // Border keeps the button size stable
+
+            letterSpacing: "1px",
+            transition: "all 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide in the white background
+            if (fill) fill.style.width = "100%";
+
+            // Change text color to Gold
+            if (text) text.style.color = "#b79662";
+          }}
+          onMouseLeave={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide out the white background
+            if (fill) fill.style.width = "0%";
+
+            // Reset text color to White
+            if (text) text.style.color = "#fff";
+          }}
+        >
+          {/* Hover Fill Layer: White */}
+          <div
+            className="hover-fill"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "0%",
+              height: "100%",
+              background: "#ffffff", // White background on hover
+              transition: "width 0.4s ease",
+              zIndex: -1,
+            }}
+          />
+
+          {/* Text Span with Transition */}
+          <span
+            className="btn-text"
+            style={{
+              position: "relative",
+              zIndex: 1,
+              color: "#fff", // Initial color
+              transition: "color 0.3s ease",
+            }}
+          >
+            Read Article
+          </span>
         </button>
       </div>
     </div>
 
     {/* Right Image Side with Theme Overlay */}
     {/* Added 'group' class here so children can react to hover */}
-    <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-auto bg-[#1e1e1e] group">
+    <div className="twx w-full lg:w-1/2 relative min-h-[400px] lg:min-h-auto bg-[#1e1e1e] group">
       <img 
         src="/assets/TEDx TAPMI/IMG_6622.jpg" // Replace with actual image
         alt="Suresh Mansharamani" 
@@ -69,6 +135,16 @@ const TestimonialHero = () => (
       {/* Texture */}
       <div className="absolute inset-0 opacity-20 z-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
     </div>
+     <style jsx>{`
+  /* ... your existing styles ... */
+
+  @media (max-width: 768px) {
+    .twx {
+      height: 235px;
+      object-fit: cover;
+    }
+  }
+`}</style>
   </section>
 );
 

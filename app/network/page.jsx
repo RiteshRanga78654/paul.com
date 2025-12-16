@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import {
@@ -46,9 +47,76 @@ const DesignComponent = () => {
             or collaborative opportunities, our network offers a dynamic
             platform to foster meaningful relationships.
           </p>
-          <button className="bg-[#b79662] hover:bg-[#967d51] text-white font-bold py-3 px-8 rounded transition duration-300 w-fit uppercase tracking-wide">
-            Join our community now
-          </button>
+
+        <button
+          style={{
+            padding: "14px 40px",
+            backgroundColor: "#b79662", // Default Gold Background
+            borderRadius: "8px",
+            color: "#fff", // Default White Text
+            fontSize: "1.1rem",
+            fontWeight: "700",
+            cursor: "pointer",
+            
+
+            gap: "10px",
+            position: "relative",
+            overflow: "hidden",
+            zIndex: 1,
+            border: "2px solid #b79662", // Border keeps the button size stable
+
+            letterSpacing: "1px",
+            transition: "all 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide in the white background
+            if (fill) fill.style.width = "100%";
+
+            // Change text color to Gold
+            if (text) text.style.color = "#b79662";
+          }}
+          onMouseLeave={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide out the white background
+            if (fill) fill.style.width = "0%";
+
+            // Reset text color to White
+            if (text) text.style.color = "#fff";
+          }}
+        >
+          {/* Hover Fill Layer: White */}
+          <div
+            className="hover-fill"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "0%",
+              height: "100%",
+              background: "#ffffff", // White background on hover
+              transition: "width 0.4s ease",
+              zIndex: -1,
+            }}
+          />
+
+          {/* Text Span with Transition */}
+          <span
+            className="btn-text"
+            style={{
+              position: "relative",
+              zIndex: 1,
+              color: "#fff", // Initial color
+              transition: "color 0.3s ease",
+            }}
+          >
+            Join Our Communities
+          </span>
+        </button>
         </div>
         <div className="w-full lg:w-1/2 relative min-h-[500px] bg-[#1e1e1e]">
           <Image
@@ -170,7 +238,7 @@ const DesignComponent = () => {
 
         {/* Right: Content */}
         <div className="w-full lg:w-1/2 p-10 lg:p-20 bg-[#1e1e1e] flex flex-col justify-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-12  ">
             Membership <span className="text-[#b79662]">Benefits</span>
           </h2>
 

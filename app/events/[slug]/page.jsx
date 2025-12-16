@@ -2,15 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation"; // Correct hook for App Router
+import { useParams } from "next/navigation";
+import Footer from "../../layout/Footer"; 
 // import Header from "../../layout/Header"; 
 
-import Footer from "../../layout/Footer"; 
- 
 const EVENTS_API_URL = "https://uat-service.ireedindia.com/v1/events";
 
 export default function EventDetailPage() {
-  // 1. Get the slug from the URL
   const params = useParams();
   const slug = params?.slug;
 
@@ -21,14 +19,13 @@ export default function EventDetailPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // 2. Fetch Data using useEffect (Replaces getServerSideProps)
+  // Fetch Data
   useEffect(() => {
     if (!slug) return;
 
     const fetchEvent = async () => {
       try {
         setLoading(true);
-        // API Call
         const res = await fetch(`${EVENTS_API_URL}?slug=${slug}`);
         
         if (!res.ok) {
@@ -39,7 +36,6 @@ export default function EventDetailPage() {
 
         const data = await res.json();
         
-        // Handle different API response structures
         let foundEvent = null;
         if (Array.isArray(data)) {
           foundEvent = data.find((e) => e.slug === slug) || data[0];
@@ -62,13 +58,100 @@ export default function EventDetailPage() {
     fetchEvent();
   }, [slug]);
 
-  // --- Handlers ---
+  // Handlers
   const handleOpen = (i) => { setCurrentIndex(i); setLightboxOpen(true); };
   const handleClose = () => setLightboxOpen(false);
-  const handleNext = () => setCurrentIndex((p) => (p + 1) % photos.length);
-  const handlePrev = () => setCurrentIndex((p) => (p - 1 + photos.length) % photos.length);
+  const handleNext = (e) => { e.stopPropagation(); setCurrentIndex((p) => (p + 1) % photos.length); };
+  const handlePrev = (e) => { e.stopPropagation(); setCurrentIndex((p) => (p - 1 + photos.length) % photos.length); };
 
-  // --- Loading State ---
+  // --- Styles Injection for Responsiveness ---
+  const styles = `
+    .event-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .banner-wrapper {
+      position: relative;
+      height: 450px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      border: 1px solid #4c4949;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .banner-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #b79662;
+      margin: 0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+    .content-layout {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .left-column {
+      flex: 1 1 60%;
+      min-width: 300px;
+    }
+    .right-column {
+      flex: 0 0 350px;
+      min-width: 300px;
+      max-width: 100%;
+    }
+    .event-card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border: 1px solid #606060;
+    }
+    .event-description img {
+      max-width: 100%;
+      height: auto;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+    
+    /* Mobile Media Queries */
+    @media (max-width: 768px) {
+      .event-container {
+        padding: 20px 15px;
+      }
+      .banner-wrapper {
+        height: 250px; /* Smaller banner on mobile */
+        margin-bottom: 25px;
+      }
+      .banner-title {
+        font-size: 1.5rem; /* Smaller text on mobile */
+      }
+      .content-layout {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 20px;
+      }
+      .left-column, .right-column {
+        flex: 1 1 100%;
+        width: 100%;
+        min-width: 0;
+      }
+      .right-column {
+        order: 2; /* Ensure sidebar is at bottom on mobile if desired */
+      }
+      .event-card {
+        padding: 20px; /* Less padding on mobile cards */
+      }
+      .sticky-sidebar {
+        position: static !important; /* Disable sticky on mobile */
+      }
+    }
+  `;
+
   if (loading) {
     return (
       <div style={{ backgroundColor: "#1e1e1e", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -77,11 +160,10 @@ export default function EventDetailPage() {
     );
   }
 
-  // --- 404 / Not Found State ---
   if (!event) {
     return (
       <div style={{ backgroundColor: "#1e1e1e", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: "white" }}>
-        <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>Event not found</h2>
+        <h2 style={{ fontSize: "2rem", marginBottom: "20px", textAlign: "center" }}>Event not found</h2>
         <Link href="/events" style={{ textDecoration: "none" }}>
           <button style={{ padding: "10px 24px", backgroundColor: "#b79662", color: "white", border: "none", borderRadius: "6px", cursor: "pointer", fontWeight: "bold" }}>
             Back to Events
@@ -91,7 +173,7 @@ export default function EventDetailPage() {
     );
   }
 
-  // --- Data Preparation ---
+  // Data Preparation
   const rawBanner = event.banner || event.Banner || "";
   const bannerUrl = rawBanner.startsWith("http")
     ? rawBanner
@@ -109,28 +191,20 @@ export default function EventDetailPage() {
 
   return (
     <div style={{ backgroundColor: "#ffffff", minHeight: "100vh", color: "#e5e7eb", fontFamily: "sans-serif" }}>
+      <style>{styles}</style>
       {/* <Header /> */}
 
       {/* Main Container */}
-      <div style={{ maxWidth: "1240px", margin: "0 auto", padding: "40px 20px" }}>
+      <div className="event-container">
         
         {/* Banner Section */}
-        <div style={{ 
-          position: "relative", 
-          height: "450px", 
-          borderRadius: "16px", 
-          overflow: "hidden", 
-          marginBottom: "40px",
-          border: "1px solid #4c4949",
-          boxShadow: "0 20px 40px rgba(0,0,0,0.4)"
-        }}>
+        <div className="banner-wrapper">
           <img 
             src={bannerUrl} 
             alt={event.title} 
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
             onError={(e) => e.target.src = "https://via.placeholder.com/1200x450?text=Event+Banner"}
           />
-          {/* Gradient Overlay for Text Readability */}
           <div style={{ 
             position: "absolute", 
             bottom: 0, 
@@ -141,24 +215,25 @@ export default function EventDetailPage() {
             display: "flex",
             alignItems: "flex-end"
           }}>
-            <h1 style={{ fontSize: "2.5rem", fontWeight: "800", color: "#b79662", margin: 0, textShadow: "0 2px 4px rgba(0,0,0,0.8)" }}>
+            <h1 className="banner-title">
               {event.title}
             </h1>
           </div>
         </div>
 
         {/* Content Layout */}
-        <div style={{ display: "flex", gap: "40px", flexWrap: "wrap" }}>
+        <div className="content-layout">
           
           {/* LEFT COLUMN */}
-          <div style={{ flex: "1 1 65%", minWidth: "300px" }}>
+          <div className="left-column">
             
             {/* About Card */}
-            <div style={cardStyle}>
+            <div className="event-card">
               <h2 style={sectionTitleStyle}>About the Event</h2>
               <div 
+                className="event-description"
                 dangerouslySetInnerHTML={{ __html: event.description || event.content || "No description available." }} 
-                style={{ lineHeight: "1.8", color: "#d1d5db", fontSize: "16px" }}
+                style={{ lineHeight: "1.8", color: "#6b7280", fontSize: "16px" }}
               />
               {event.date && (
                 <div style={{ marginTop: "20px", color: "#b79662", fontWeight: "bold", fontSize: "1.1rem" }}>
@@ -169,9 +244,9 @@ export default function EventDetailPage() {
 
             {/* Gallery Card */}
             {photos.length > 0 && (
-              <div style={cardStyle}>
+              <div className="event-card">
                 <h2 style={sectionTitleStyle}>Event Gallery</h2>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: "16px" }}>
+                <div className="gallery-grid">
                   {photos.map((src, idx) => (
                     <div 
                       key={idx} 
@@ -200,9 +275,9 @@ export default function EventDetailPage() {
             )}
 
             {/* Location / Map Card */}
-            <div style={cardStyle}>
+            <div className="event-card">
               <h2 style={sectionTitleStyle}>Location</h2>
-              {event.venue && <p style={{ marginBottom: "15px", color: "#fff", fontSize: "1.1rem" }}> {event.venue}</p>}
+              {event.venue && <p style={{ marginBottom: "15px", color: "#333", fontSize: "1.1rem" }}> {event.venue}</p>}
               
               <div style={{ width: "100%", height: "350px", borderRadius: "8px", overflow: "hidden", border: "1px solid #606060", background: "#2d2d2d" }}>
                 {mapEmbed ? (
@@ -218,8 +293,8 @@ export default function EventDetailPage() {
           </div>
 
           {/* RIGHT COLUMN (Sidebar) */}
-          <div style={{ flex: "0 0 350px", minWidth: "300px" }}>
-            <div style={{ ...cardStyle, position: "sticky", top: "100px" }}>
+          <div className="right-column">
+            <div className="event-card sticky-sidebar" style={{ position: "sticky", top: "20px" }}>
               <h3 style={{ ...sectionTitleStyle, textAlign: "center", marginBottom: "25px" }}>Event Glimpses</h3>
               
               {youtubeEntries.length > 0 ? (
@@ -251,24 +326,58 @@ export default function EventDetailPage() {
               )}
 
               <Link href="/events" style={{ textDecoration: "none" }}>
-                <button style={{ 
-                  width: "100%", 
-                  padding: "14px", 
-                  background: "#b79662", 
-                  color: "#fff", 
-                  border: "none", 
-                  borderRadius: "8px", 
-                  fontWeight: "bold", 
-                  marginTop: "10px", 
-                  cursor: "pointer",
-                  textTransform: "uppercase",
-                  letterSpacing: "1px",
-                  transition: "background 0.3s"
-                }}
-                onMouseOver={(e) => e.target.style.background = "#967d51"}
-                onMouseOut={(e) => e.target.style.background = "#b79662"}
+                <button
+                  
+                  style={{
+                    padding: "14px 40px",
+                    backgroundColor: "#b79662", // Default Gold
+                    borderRadius: "8px",
+                    color: "#fff",
+                    fontSize: "1.1rem",
+                    fontWeight: "700", // Bolder text
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    position: "relative",
+                    overflow: "hidden",
+                    zIndex: 1,
+                    border: "none",
+                    margin: "0 auto",
+                  
+                    letterSpacing: "1px",
+                    boxShadow: "0 4px 14px 0 rgba(183,150,98,0.39)", // Gold shadow
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    const fill = e.currentTarget.querySelector(".hover-fill");
+                    if (fill) fill.style.width = "100%";
+                  }}
+                  onMouseLeave={(e) => {
+                    const fill = e.currentTarget.querySelector(".hover-fill");
+                    if (fill) fill.style.width = "0%";
+                  }}
                 >
-                  View All Events
+                  {/* Hover Fill Effect: Darker Gold */}
+                  <div
+                    className="hover-fill"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "0%",
+                      height: "100%",
+                      background: "#4c4949", // Darker Gold on Hover
+                      transition: "width 0.4s ease",
+                      zIndex: -1,
+                    }}
+                  />
+                  <span
+                    style={{ position: "relative", zIndex: 1, color: "#fff" }}
+                  >
+                    View All Events
+                  </span>
                 </button>
               </Link>
             </div>
@@ -281,17 +390,21 @@ export default function EventDetailPage() {
       {lightboxOpen && (
         <div style={{ 
           position: "fixed", inset: 0, background: "rgba(0,0,0,0.95)", zIndex: 9999, 
-          display: "flex", alignItems: "center", justifyContent: "center" 
-        }}>
-          <button onClick={handleClose} style={{ position: "absolute", top: "30px", right: "30px", color: "#fff", fontSize: "40px", background: "none", border: "none", cursor: "pointer" }}>✕</button>
+          display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"
+        }} onClick={handleClose}>
           
-          <button onClick={handlePrev} style={{ position: "absolute", left: "20px", color: "#b79662", fontSize: "60px", background: "none", border: "none", cursor: "pointer" }}>‹</button>
+          {/* Close Button */}
+          <button onClick={handleClose} style={{ position: "absolute", top: "20px", right: "20px", color: "#fff", fontSize: "30px", background: "rgba(0,0,0,0.3)", width: "40px", height: "40px", borderRadius: "50%", border: "none", cursor: "pointer", zIndex: 10 }}>✕</button>
           
-          <img src={photos[currentIndex]} style={{ maxWidth: "90%", maxHeight: "85vh", borderRadius: "8px", border: "2px solid #b79662", boxShadow: "0 0 50px rgba(183, 150, 98, 0.2)" }} />
+          <div style={{ position: "relative", width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }} onClick={(e) => e.stopPropagation()}>
+            <button onClick={handlePrev} style={{ position: "absolute", left: "10px", color: "#b79662", fontSize: "40px", background: "rgba(255,255,255,0.1)", width: "50px", height: "50px", borderRadius: "50%", border: "none", cursor: "pointer", zIndex: 5, display: "flex", alignItems: "center", justifyContent: "center" }}>‹</button>
+            
+            <img src={photos[currentIndex]} style={{ maxWidth: "95%", maxHeight: "80vh", borderRadius: "8px", border: "2px solid #b79662", boxShadow: "0 0 50px rgba(183, 150, 98, 0.2)" }} />
+            
+            <button onClick={handleNext} style={{ position: "absolute", right: "10px", color: "#b79662", fontSize: "40px", background: "rgba(255,255,255,0.1)", width: "50px", height: "50px", borderRadius: "50%", border: "none", cursor: "pointer", zIndex: 5, display: "flex", alignItems: "center", justifyContent: "center" }}>›</button>
+          </div>
           
-          <button onClick={handleNext} style={{ position: "absolute", right: "20px", color: "#b79662", fontSize: "60px", background: "none", border: "none", cursor: "pointer" }}>›</button>
-          
-          <div style={{ position: "absolute", bottom: "20px", color: "#fff", fontSize: "16px", background: "rgba(0,0,0,0.5)", padding: "5px 10px", borderRadius: "4px" }}>
+          <div style={{ marginTop: "20px", color: "#fff", fontSize: "16px", background: "rgba(0,0,0,0.5)", padding: "5px 15px", borderRadius: "20px" }}>
             {currentIndex + 1} / {photos.length}
           </div>
         </div>
@@ -302,16 +415,7 @@ export default function EventDetailPage() {
   );
 }
 
-// --- Styles ---
-const cardStyle = {
-  backgroundColor: "#ffffff",
-  borderRadius: "16px",
-  padding: "30px",
-  marginBottom: "30px",
-  boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
-  border: "1px solid #606060"
-};
-
+// --- Common Static Styles ---
 const sectionTitleStyle = {
   fontSize: "24px",
   fontWeight: "bold",

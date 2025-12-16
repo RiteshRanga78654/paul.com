@@ -64,10 +64,75 @@ const BookCard = ({ book }) => {
           <div>
             {/* Button: Gold Background */}
             <a href={book.link} target="_blank" rel="noopener noreferrer" >
-            <button className="bg-[#b79662] hover:bg-[#967d51] text-white font-bold py-3 px-6 rounded shadow-md transform hover:-translate-y-1 transition-all duration-200 inline-flex items-center gap-2 group text-sm sm:text-base">
-              {book.buttonText}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+               <button
+          style={{
+            padding: "14px 20px",
+            backgroundColor: "#b79662", // Default Gold Background
+            borderRadius: "8px",
+            color: "#fff", // Default White Text
+            fontSize: "1.1rem",
+            fontWeight: "700",
+            cursor: "pointer",
+            display: "flex",
+
+            gap: "10px",
+            position: "relative",
+            overflow: "hidden",
+            zIndex: 1,
+            border: "2px solid #b79662", // Border keeps the button size stable
+
+            letterSpacing: "1px",
+            transition: "all 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide in the white background
+            if (fill) fill.style.width = "100%";
+
+            // Change text color to Gold
+            if (text) text.style.color = "#b79662";
+          }}
+          onMouseLeave={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide out the white background
+            if (fill) fill.style.width = "0%";
+
+            // Reset text color to White
+            if (text) text.style.color = "#fff";
+          }}
+        >
+          {/* Hover Fill Layer: White */}
+          <div
+            className="hover-fill"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "0%",
+              height: "100%",
+              background: "#ffffff", // White background on hover
+              transition: "width 0.4s ease",
+              zIndex: -1,
+            }}
+          />
+
+          {/* Text Span with Transition */}
+          <span
+            className="btn-text"
+            style={{
+              position: "relative",
+              zIndex: 1,
+              color: "#fff", // Initial color
+              transition: "color 0.3s ease",
+            }}
+          >
+           {book.buttonText}
+          </span>
+        </button>
             </a>
           </div>
         </div>
@@ -106,7 +171,7 @@ const BookStore = () => {
         
         {/* BookStore Section */}
         <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#b79662] mb-4">
+          <h2 className="text-3xl sm:text-4xl  font-bold text-[#b79662] mb-4">
             Bestselling Books Collection
           </h2>
           {/* Divider: Gold Theme */}

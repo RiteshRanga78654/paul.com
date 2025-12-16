@@ -130,7 +130,7 @@ const SelectedWork = () => {
     <section className="bg-white  " >
       <div className="container mx-auto  mb-12 text-center">
         {/* Title Text White */}
-        <h2 className="text-5xl md:text-7xl lg:text-5xl font-bold text-[#b79662] mb-6 tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] mb-6 tracking-tight">
           Selected Work
         </h2>
         {/* Underline Bar changed to Gold #b79662 */}
@@ -139,8 +139,8 @@ const SelectedWork = () => {
 
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto pb-12 px-6 md:px-12 scrollbar-hide snap-x snap-mandatory"
-        style={{ msOverflowStyle: 'none', scrollbarWidth: 'none', marginLeft:"120px" }}
+        className="faq flex overflow-x-auto pb-12 px-6 md:px-12 scrollbar-hide snap-x snap-mandatory ml-[120px] "
+        style={{ msOverflowStyle: 'none', scrollbarWidth: 'none', scrollBehavior: 'smooth' }}
       >
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
@@ -153,6 +153,12 @@ const SelectedWork = () => {
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }
+            @media (max-width: 768px) {
+            .faq {
+              margin-left: 10px;
+            }
+          }
+      }
       `}</style>
     </section>
   );

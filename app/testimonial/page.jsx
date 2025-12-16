@@ -30,7 +30,7 @@ const VideoTestimonials = () => {
   };
 
   const TestimonialHero = () => (
-  <section className="flex flex-col lg:flex-row w-full min-h-[600px] max-w-7xl mx-auto mt-20 mb-10 shadow-2xl rounded-lg overflow-hidden">
+  <section className="flex flex-col lg:flex-row w-full min-h-[600px] max-w-7xl mx-auto mt-10 lg:mt-20 mb-10 rounded-lg overflow-hidden">
     {/* Left Text Side: Background #4c4949 */}
     <div className="w-full lg:w-1/2 bg-[#4c4949] p-10 md:p-16  flex flex-col justify-center relative overflow-hidden">
       
@@ -47,8 +47,74 @@ const VideoTestimonials = () => {
         <p className="text-gray-200 text-lg mb-10 leading-relaxed max-w-xl font-light">
           A vibrant network of entrepreneurs, business owners, and professionals united by a shared passion for growth and success. Whether you're seeking valuable connections, strategic partnerships, or collaborative opportunities, our network offers a dynamic platform to propel your business forward.
         </p>
-        <button className="bg-[#b79662] hover:bg-[#967d51] text-white font-bold py-4 px-10 rounded shadow-md hover:shadow-lg transition-all duration-300 w-fit text-lg uppercase tracking-wide">
-          Join our community now
+       <button
+          style={{
+            padding: "14px 40px",
+            backgroundColor: "#b79662", // Default Gold Background
+            borderRadius: "8px",
+            color: "#fff", // Default White Text
+            fontSize: "1.1rem",
+            fontWeight: "700",
+            cursor: "pointer",
+            display: "flex",
+
+            gap: "10px",
+            position: "relative",
+            overflow: "hidden",
+            zIndex: 1,
+            border: "2px solid #b79662", // Border keeps the button size stable
+
+            letterSpacing: "1px",
+            transition: "all 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide in the white background
+            if (fill) fill.style.width = "100%";
+
+            // Change text color to Gold
+            if (text) text.style.color = "#b79662";
+          }}
+          onMouseLeave={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide out the white background
+            if (fill) fill.style.width = "0%";
+
+            // Reset text color to White
+            if (text) text.style.color = "#fff";
+          }}
+        >
+          {/* Hover Fill Layer: White */}
+          <div
+            className="hover-fill"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "0%",
+              height: "100%",
+              background: "#ffffff", // White background on hover
+              transition: "width 0.4s ease",
+              zIndex: -1,
+            }}
+          />
+
+          {/* Text Span with Transition */}
+          <span
+            className="btn-text"
+            style={{
+              position: "relative",
+              zIndex: 1,
+              color: "#fff", // Initial color
+              transition: "color 0.3s ease",
+            }}
+          >
+            Join Our Communities
+          </span>
         </button>
       </div>
     </div>
@@ -78,15 +144,14 @@ const VideoTestimonials = () => {
     <Header />
     <TestimonialHero />
     {/* Video Testimonials Section */}
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#b79662] mb-4">
-            Our Clients <span className="text-[#b79662]">Testimonial</span>
-          </h2>
-          <div className="w-24 h-1 bg-[#b79662] mx-auto rounded"></div>
+         
+          <h2 className="text-3xl md:text-4xl font-bold text-[#b79662]">  <span className="text-[#b79662]">Testimonial</span></h2>
+              <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 rounded-full"></div>
         </div>
 
         {/* 3 Column Grid */}
@@ -122,11 +187,58 @@ const VideoTestimonials = () => {
         {visibleCount < testimonials.length && (
           <div className="flex justify-center">
             <button
-              onClick={handleLoadMore}
-              className="px-8 py-3 bg-[#b79662] hover:bg-[#967d51] text-white font-bold rounded shadow-lg transform transition-all duration-300 hover:scale-105 active:scale-95 uppercase tracking-wider"
-            >
-              Load More
-            </button>
+                  onClick={handleLoadMore}
+                  style={{
+                    padding: "14px 40px",
+                    backgroundColor: "#b79662", // Default Gold
+                    borderRadius: "8px",
+                    color: "#fff",
+                    fontSize: "1.1rem",
+                    fontWeight: "700", // Bolder text
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    position: "relative",
+                    overflow: "hidden",
+                    zIndex: 1,
+                    border: "none",
+                    margin: "0 auto",
+                    textTransform: "uppercase", // Premium look
+                    letterSpacing: "1px",
+                    boxShadow: "0 4px 14px 0 rgba(183,150,98,0.39)", // Gold shadow
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    const fill = e.currentTarget.querySelector(".hover-fill");
+                    if (fill) fill.style.width = "100%";
+                  }}
+                  onMouseLeave={(e) => {
+                    const fill = e.currentTarget.querySelector(".hover-fill");
+                    if (fill) fill.style.width = "0%";
+                  }}
+                >
+                  {/* Hover Fill Effect: Darker Gold */}
+                  <div
+                    className="hover-fill"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "0%",
+                      height: "100%",
+                      background: "#4c4949", // Darker Gold on Hover
+                      transition: "width 0.4s ease",
+                      zIndex: -1,
+                    }}
+                  />
+                  <span
+                    style={{ position: "relative", zIndex: 1, color: "#fff" }}
+                  >
+                    Load More
+                  </span>
+                </button>
           </div>
         )}
 

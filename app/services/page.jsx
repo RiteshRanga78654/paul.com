@@ -135,7 +135,7 @@ export default function LandingPage() {
       </section>
 
   
-   <section className="w-full mb-20">
+   <section className="w-full mb-20 ffft">
         {/* Row 1 */}
         <div className="flex flex-col md:flex-row h-auto md:h-[500px]">
           {/* Image Block */}

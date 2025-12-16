@@ -80,9 +80,78 @@ const Header = () => {
 
           {/* 3. CTA BUTTON */}
           <div className="hidden xl:flex items-center">
-            <button className="bg-[#b79662] hover:bg-[#967d51] text-white px-8 py-2.5 rounded shadow-[0_4px_14px_0_rgba(183,150,98,0.39)] hover:shadow-[0_6px_20px_rgba(183,150,98,0.23)] hover:-translate-y-0.5 transition-all duration-300 font-medium tracking-wide text-sm uppercase">
+            {/* <button className="bg-[#b79662] hover:bg-[#967d51] text-white px-8 py-2.5 rounded shadow-[0_4px_14px_0_rgba(183,150,98,0.39)] hover:shadow-[0_6px_20px_rgba(183,150,98,0.23)] hover:-translate-y-0.5 transition-all duration-300 font-medium tracking-wide text-sm uppercase">
               Let's Talk
-            </button>
+            </button> */}
+               <button
+          style={{
+            padding: "8px 20px",
+            backgroundColor: "#b79662", // Default Gold Background
+            borderRadius: "8px",
+            color: "#fff", // Default White Text
+            fontSize: "16px",
+            fontWeight: "700",
+            cursor: "pointer",
+            display: "flex",
+
+            gap: "10px",
+            position: "relative",
+            overflow: "hidden",
+            zIndex: 1,
+            border: "2px solid #b79662", // Border keeps the button size stable
+
+            letterSpacing: "1px",
+            transition: "all 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide in the white background
+            if (fill) fill.style.width = "100%";
+
+            // Change text color to Gold
+            if (text) text.style.color = "#b79662";
+          }}
+          onMouseLeave={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide out the white background
+            if (fill) fill.style.width = "0%";
+
+            // Reset text color to White
+            if (text) text.style.color = "#fff";
+          }}
+        >
+          {/* Hover Fill Layer: White */}
+          <div
+            className="hover-fill"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "0%",
+              height: "100%",
+              background: "#ffffff", // White background on hover
+              transition: "width 0.4s ease",
+              zIndex: -1,
+            }}
+          />
+
+          {/* Text Span with Transition */}
+          <span
+            className="btn-text"
+            style={{
+              position: "relative",
+              zIndex: 1,
+              color: "#fff", // Initial color
+              transition: "color 0.3s ease",
+            }}
+          >
+            let's Talk
+          </span>
+        </button>
           </div>
 
           {/* MOBILE MENU BUTTON */}

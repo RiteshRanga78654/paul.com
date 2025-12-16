@@ -106,17 +106,30 @@ const TestimonialSlider = () => {
 
   return (
     // Background changed to Dark Charcoal #1e1e1e
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-12 w-full overflow-hidden">
+    <section className="bg-white py-8 px-4 sm:px-6 lg:px-12 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 border-b border-gray-700 pb-8">
-          <div className="space-y-2">
-             <h2 className="text-4xl md:text-6xl font-bold text-[#1e1e1e] leading-tight">
-               Our Clients <span className="text-[#b79662]">{'Testimonials'}</span> 
+        <div className="abc flex flex-col md:flex-row justify-between items-end mb-12 gap-6 border-b border-gray-700 pb-8">
+          <div className="space-y-2 xyz">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1e1e1e] leading-tight">
+               <span className="text-[#b79662]">{'Testimonials'}</span> 
              </h2>
-             <p className="text-gray-400 text-lg">See what our partners have to say</p>
+             <p className="text-gray-400 text-sm">See what our partners have to say</p>
+             {/* <h2 className="text-4xl md:text-6xl font-bold text-[#1e1e1e] leading-tight">
+               <span className="text-[#b79662]">{'Testimonials'}</span> 
+             </h2>
+             <p className="text-gray-400 text-lg">See what our partners have to say</p> */}
           </div>
+         <style jsx>{`
+  /* ... your existing styles ... */
+
+  @media (max-width: 768px) {
+    .abc {
+      align-items: center;
+    }
+  }
+`}</style>
 
           <div className="flex gap-4">
             {/* Buttons updated to Gold Border/Text */}
