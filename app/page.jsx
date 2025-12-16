@@ -429,25 +429,25 @@ export default function HeroSection() {
       <Header />
 
       {/* About Section */}
-      <div className=" min-h-[85vh] flex items-center justify-center p-1 my-10 sm:p-8 bg-white">
-        {/* Container changed to #4c4949 */}
-        <div className="max-w-7xl w-full bg-[#4c4949] rounded-xl overflow-hidden transition-all duration-300 shadow-2xl border border-gray-700">
-          <div className="flex flex-col md:flex-row">
-            <div className="p-6 sm:p-12 flex flex-col justify-center w-full md:flex-1">
-              <p className="text-lg font-medium text-gray-300 leading-snug mb-2">
-                {content.title}
-              </p>
+ <div className="min-h-[85vh] flex items-center justify-center p-1 my-10 sm:p-8 bg-white">
+  {/* Container changed to #4c4949 */}
+  <div className="max-w-7xl w-full bg-[#4c4949] rounded-xl overflow-hidden transition-all duration-300 shadow-2xl border border-gray-700">
+    <div className="flex flex-col md:flex-row">
+      <div className="p-6 sm:p-12 flex flex-col justify-center w-full md:flex-1">
+        <p className="text-lg font-medium text-gray-300 leading-snug mb-2">
+          {content.title}
+        </p>
 
-              {/* Name changed to Gold */}
-              <h1 className="text-4xl sm:text-5xl lg:text-4xl font-extrabold text-[#b79662] leading-tight mb-6">
-                {content.name}
-              </h1>
+        {/* Name changed to Gold */}
+        <h1 className="text-4xl sm:text-5xl lg:text-4xl font-extrabold text-[#b79662] leading-tight mb-6">
+          {content.name}
+        </h1>
 
-              <p className="text-base text-gray-200 leading-relaxed mb-8">
-                {content.description}
-              </p>
+        <p className="text-lg text-gray-200 leading-relaxed mb-8">
+          {content.description}
+        </p>
 
-                <button
+        <button
           style={{
             padding: "14px 40px",
             backgroundColor: "#b79662", // Default Gold Background
@@ -457,15 +457,16 @@ export default function HeroSection() {
             fontWeight: "700",
             cursor: "pointer",
             display: "flex",
-
+            alignItems: "center", // Ensures text/icon vertical center
+            justifyContent: "center", // Ensures text/icon horizontal center
             gap: "10px",
             position: "relative",
             overflow: "hidden",
             zIndex: 1,
-            border: "2px solid #b79662", // Border keeps the button size stable
-
+            border: "2px solid #b79662",
             letterSpacing: "1px",
             transition: "all 0.3s ease",
+            width: "fit-content", // <--- THIS FIXES THE FULL WIDTH ISSUE
           }}
           onMouseEnter={(e) => {
             const fill = e.currentTarget.querySelector(".hover-fill");
@@ -516,24 +517,24 @@ export default function HeroSection() {
             {content.buttonText}
           </span>
         </button>
-            </div>
-
-            <div className="relative overflow-hidden md:h-full min-h-[600px] w-full md:flex-1">
-              <img
-                src={content.imageUrl}
-                alt={content.imageAlt}
-                className="absolute inset-0 w-full h-full object-cover rounded-none md:rounded-r-xl"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://placehold.co/800x600/4c4949/b79662?text=Image+Not+Available";
-                }}
-              />
-              <div className="absolute inset-0 opacity-10"></div>
-            </div>
-          </div>
-        </div>
       </div>
+
+      <div className="relative overflow-hidden md:h-full min-h-[600px] w-full md:flex-1">
+        <img
+          src={content.imageUrl}
+          alt={content.imageAlt}
+          className="absolute inset-0 w-full h-full object-cover rounded-none md:rounded-r-xl"
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src =
+              "https://placehold.co/800x600/4c4949/b79662?text=Image+Not+Available";
+          }}
+        />
+        <div className="absolute inset-0 opacity-10"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
       {/* Services Grid Section */}
       {/* Background changed from blue to dark charcoal to contrast with #4c4949 cards */}

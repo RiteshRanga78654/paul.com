@@ -29,107 +29,95 @@ const DesignComponent = () => {
     <Header />
     <div className="font-sans bg-[#1e1e1e] text-white">
       {/* 1. Testimonials Intro Section */}
-      <section className="relative flex flex-col lg:flex-row border-b border-gray-800">
-        <div className="w-full lg:w-1/2 p-10 lg:p-24 flex flex-col justify-center z-10 bg-[#4c4949]">
-          <h4 className="text-[#b79662] font-bold text-sm uppercase tracking-wider mb-4">
-            TESTIMONIALS
-          </h4>
-          <h1 className="text-4xl font-extrabold text-white mb-6">
-            Here's What Our <br />
-            <span className="text-[#b79662]">Customers Have To Say</span>
-          </h1>
-          <p className="text-gray-200 text-lg mb-8 font-light leading-relaxed">
-            A vibrant network of entrepreneurs,{" "}
-            <span className="font-bold text-white">business owners</span>, and
-            professionals united by a shared passion for{" "}
-            <span className="font-bold text-white">growth</span> and success.
-            Whether you're seeking valuable connections, strategic partnerships,
-            or collaborative opportunities, our network offers a dynamic
-            platform to foster meaningful relationships.
-          </p>
+     <section className="relative flex flex-col lg:flex-row border-b border-gray-800">
+  <div className="w-full lg:w-1/2 p-10 lg:p-24 flex flex-col justify-center z-10 bg-[#4c4949]">
+    <h4 className="text-[#b79662] font-bold text-sm uppercase tracking-wider mb-4">
+     Networks
+    </h4>
+    <h1 className="text-4xl font-extrabold text-white mb-6">
+      Here's What Our <br />
+      <span className="text-[#b79662]">Customers Have To Say</span>
+    </h1>
+    <p className="text-gray-200 text-lg mb-8 font-light leading-relaxed">
+      A vibrant network of entrepreneurs,{" "}
+      <span className="font-bold text-white">business owners</span>, and
+      professionals united by a shared passion for{" "}
+      <span className="font-bold text-white">growth</span> and success.
+      Whether you're seeking valuable connections, strategic partnerships,
+      or collaborative opportunities, our network offers a dynamic
+      platform to foster meaningful relationships.
+    </p>
 
-        <button
-          style={{
-            padding: "14px 40px",
-            backgroundColor: "#b79662", // Default Gold Background
-            borderRadius: "8px",
-            color: "#fff", // Default White Text
-            fontSize: "1.1rem",
-            fontWeight: "700",
-            cursor: "pointer",
-            
-
-            gap: "10px",
-            position: "relative",
-            overflow: "hidden",
-            zIndex: 1,
-            border: "2px solid #b79662", // Border keeps the button size stable
-
-            letterSpacing: "1px",
-            transition: "all 0.3s ease",
-          }}
-          onMouseEnter={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
-
-            // Slide in the white background
-            if (fill) fill.style.width = "100%";
-
-            // Change text color to Gold
-            if (text) text.style.color = "#b79662";
-          }}
-          onMouseLeave={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
-
-            // Slide out the white background
-            if (fill) fill.style.width = "0%";
-
-            // Reset text color to White
-            if (text) text.style.color = "#fff";
-          }}
-        >
-          {/* Hover Fill Layer: White */}
-          <div
-            className="hover-fill"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "0%",
-              height: "100%",
-              background: "#ffffff", // White background on hover
-              transition: "width 0.4s ease",
-              zIndex: -1,
-            }}
-          />
-
-          {/* Text Span with Transition */}
-          <span
-            className="btn-text"
-            style={{
-              position: "relative",
-              zIndex: 1,
-              color: "#fff", // Initial color
-              transition: "color 0.3s ease",
-            }}
-          >
-            Join Our Communities
-          </span>
-        </button>
-        </div>
-        <div className="w-full lg:w-1/2 relative min-h-[500px] bg-[#1e1e1e]">
-          <Image
-            src={manInSuit}
-            alt="Man in Suit"
-            layout="fill"
-            objectFit="cover"
-            // className="z-0 grayscale opacity-80"
-          />
-          <div className="absolute inset-0 bg-[#b79662]/40 mix-blend-multiply z-10"></div>
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30 z-20"></div>
-        </div>
-      </section>
+    <button
+      style={{
+        padding: "14px 40px",
+        backgroundColor: "#b79662",
+        borderRadius: "8px",
+        color: "#fff",
+        fontSize: "1.1rem",
+        fontWeight: "700",
+        cursor: "pointer",
+        width: "fit-content", // <--- ADDED THIS LINE TO FIX WIDTH
+        gap: "10px",
+        position: "relative",
+        overflow: "hidden",
+        zIndex: 1,
+        border: "2px solid #b79662",
+        letterSpacing: "1px",
+        transition: "all 0.3s ease",
+      }}
+      onMouseEnter={(e) => {
+        const fill = e.currentTarget.querySelector(".hover-fill");
+        const text = e.currentTarget.querySelector(".btn-text");
+        if (fill) fill.style.width = "100%";
+        if (text) text.style.color = "#b79662";
+      }}
+      onMouseLeave={(e) => {
+        const fill = e.currentTarget.querySelector(".hover-fill");
+        const text = e.currentTarget.querySelector(".btn-text");
+        if (fill) fill.style.width = "0%";
+        if (text) text.style.color = "#fff";
+      }}
+    >
+      <div
+        className="hover-fill"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "0%",
+          height: "100%",
+          background: "#ffffff",
+          transition: "width 0.4s ease",
+          zIndex: -1,
+        }}
+      />
+      <span
+        className="btn-text"
+        style={{
+          position: "relative",
+          zIndex: 1,
+          color: "#fff",
+          transition: "color 0.3s ease",
+        }}
+      >
+        Join Our Communities
+      </span>
+    </button>
+  </div>
+  
+  {/* Right Image Part */}
+  <div className="w-full lg:w-1/2 relative min-h-[500px] bg-[#1e1e1e]">
+    <Image
+      src={manInSuit}
+      alt="Man in Suit"
+      layout="fill"
+      objectFit="cover"
+    />
+    <div className="absolute inset-0 bg-[#b79662]/40 mix-blend-multiply z-10"></div>
+    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30 z-20"></div>
+  </div>
+</section>
 
       {/* Why Join Our Community Section */}
       <section className="py-20 px-4 lg:px-24 bg-[#1e1e1e] text-white">
