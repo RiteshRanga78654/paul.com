@@ -196,7 +196,7 @@ const TestimonialSlider = () => {
                       </p>
                       <div>
                         {/* Name: Gold */}
-                        <h4 className="text-[#b79662] font-bold text-lg uppercase tracking-wide">
+                        <h4 className="text-[#b79662] font-bold text-lg tracking-wide">
                           {item.name}
                         </h4>
                         <p className="text-gray-400 text-sm font-medium">
