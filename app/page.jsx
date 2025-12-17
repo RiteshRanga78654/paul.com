@@ -429,141 +429,141 @@ export default function HeroSection() {
       <Header />
 
       {/* About Section */}
- <div className="min-h-[85vh] flex items-center justify-center p-1 my-10 sm:p-8 bg-white">
-  {/* Container changed to #4c4949 */}
-  <div className="max-w-7xl w-full bg-[#4c4949] rounded-xl overflow-hidden transition-all duration-300 shadow-2xl border border-gray-700">
-    <div className="flex flex-col md:flex-row">
-      <div className="p-6 sm:p-12 flex flex-col justify-center w-full md:flex-1">
-        <p className="text-lg font-medium text-gray-300 leading-snug mb-2">
-          {content.title}
-        </p>
+      <div className="min-h-[85vh] flex items-center justify-center p-1 my-10 sm:p-8 bg-white">
+        {/* Container changed to #4c4949 */}
+        <div className="max-w-7xl w-full bg-[#4c4949] rounded-xl overflow-hidden transition-all duration-300 shadow-2xl border border-gray-700">
+          <div className="flex flex-col md:flex-row">
+            <div className="p-6 sm:p-12 flex flex-col justify-center w-full md:flex-1">
+              <p className="text-lg font-medium text-gray-300 leading-snug mb-2">
+                {content.title}
+              </p>
 
-        {/* Name changed to Gold */}
-        <h1 className="text-4xl sm:text-5xl lg:text-4xl font-extrabold text-[#b79662] leading-tight mb-6">
-          {content.name}
-        </h1>
+              {/* Name changed to Gold */}
+              <h1 className="text-4xl sm:text-5xl lg:text-4xl font-bold text-[#b79662] leading-tight mb-6">
+                {content.name}
+              </h1>
 
-        <p className="text-lg text-gray-200 leading-relaxed mb-8">
-          {content.description}
-        </p>
+              <p className="text-lg text-gray-200 leading-relaxed mb-8">
+                {content.description}
+              </p>
 
-        <button
-          style={{
-            padding: "14px 40px",
-            backgroundColor: "#b79662", // Default Gold Background
-            borderRadius: "8px",
-            color: "#fff", // Default White Text
-            fontSize: "1.1rem",
-            fontWeight: "700",
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center", // Ensures text/icon vertical center
-            justifyContent: "center", // Ensures text/icon horizontal center
-            gap: "10px",
-            position: "relative",
-            overflow: "hidden",
-            zIndex: 1,
-            border: "2px solid #b79662",
-            letterSpacing: "1px",
-            transition: "all 0.3s ease",
-            width: "fit-content", // <--- THIS FIXES THE FULL WIDTH ISSUE
-          }}
-          onMouseEnter={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
+              <button
+                style={{
+                  padding: "14px 40px",
+                  backgroundColor: "#b79662", // Default Gold Background
+                  borderRadius: "8px",
+                  color: "#fff", // Default White Text
+                  fontSize: "1.1rem",
+                  fontWeight: "700",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center", // Ensures text/icon vertical center
+                  justifyContent: "center", // Ensures text/icon horizontal center
+                  gap: "10px",
+                  position: "relative",
+                  overflow: "hidden",
+                  zIndex: 1,
+                  border: "2px solid #b79662",
+                  letterSpacing: "1px",
+                  transition: "all 0.3s ease",
+                  width: "fit-content", // <--- THIS FIXES THE FULL WIDTH ISSUE
+                }}
+                onMouseEnter={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
 
-            // Slide in the white background
-            if (fill) fill.style.width = "100%";
+                  // Slide in the white background
+                  if (fill) fill.style.width = "100%";
 
-            // Change text color to Gold
-            if (text) text.style.color = "#b79662";
-          }}
-          onMouseLeave={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
+                  // Change text color to Gold
+                  if (text) text.style.color = "#b79662";
+                }}
+                onMouseLeave={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
 
-            // Slide out the white background
-            if (fill) fill.style.width = "0%";
+                  // Slide out the white background
+                  if (fill) fill.style.width = "0%";
 
-            // Reset text color to White
-            if (text) text.style.color = "#fff";
-          }}
-        >
-          {/* Hover Fill Layer: White */}
-          <div
-            className="hover-fill"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "0%",
-              height: "100%",
-              background: "#ffffff", // White background on hover
-              transition: "width 0.4s ease",
-              zIndex: -1,
-            }}
-          />
+                  // Reset text color to White
+                  if (text) text.style.color = "#fff";
+                }}
+              >
+                {/* Hover Fill Layer: White */}
+                <div
+                  className="hover-fill"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "0%",
+                    height: "100%",
+                    background: "#ffffff", // White background on hover
+                    transition: "width 0.4s ease",
+                    zIndex: -1,
+                  }}
+                />
 
-          {/* Text Span with Transition */}
-          <span
-            className="btn-text"
-            style={{
-              position: "relative",
-              zIndex: 1,
-              color: "#fff", // Initial color
-              transition: "color 0.3s ease",
-            }}
-          >
-            {content.buttonText}
-          </span>
-        </button>
+                {/* Text Span with Transition */}
+                <span
+                  className="btn-text"
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                    color: "#fff", // Initial color
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  {content.buttonText}
+                </span>
+              </button>
+            </div>
+
+            <div className="relative overflow-hidden md:h-full min-h-[600px] w-full md:flex-1">
+              <img
+                src={content.imageUrl}
+                alt={content.imageAlt}
+                className="absolute inset-0 w-full h-full object-cover rounded-none md:rounded-r-xl"
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src =
+                    "https://placehold.co/800x600/4c4949/b79662?text=Image+Not+Available";
+                }}
+              />
+              <div className="absolute inset-0 opacity-10"></div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="relative overflow-hidden md:h-full min-h-[600px] w-full md:flex-1">
-        <img
-          src={content.imageUrl}
-          alt={content.imageAlt}
-          className="absolute inset-0 w-full h-full object-cover rounded-none md:rounded-r-xl"
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src =
-              "https://placehold.co/800x600/4c4949/b79662?text=Image+Not+Available";
-          }}
-        />
-        <div className="absolute inset-0 opacity-10"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
       {/* Services Grid Section */}
       {/* Background changed from blue to dark charcoal to contrast with #4c4949 cards */}
-      <section className="bg-white py-1 px-4 sm:px-6 lg:px-8 mt-[40px] lg:mt-[-28px] ">
+      <section className="bg-white py-1 px-4 sm:px-6 lg:px-8 mt-[40px] lg:mt-[-28px]">
         <h2 className="text-3xl text-center md:text-4xl font-bold text-[#b79662]">
           Our <span className="text-[#b79662]">Services</span>
         </h2>
 
         <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
         <div className="max-w-7xl mx-auto">
-          {/* The Grid Layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {servicesData.map((service, index) => (
               <div
                 key={index}
-                // Card background changed to #4c4949
-                className="bg-[#4c4949] rounded-lg p-8 flex flex-col items-center text-center shadow-md hover:shadow-xl hover:shadow-[#b79662]/10 transition-all duration-300 border border-gray-700"
+                className="group bg-[#4c4949] rounded-lg p-8 flex flex-col items-center text-center shadow-md hover:shadow-xl hover:shadow-[#b79662]/20 transition-all duration-300 border border-gray-700 hover:scale-105 cursor-pointer"
               >
                 {/* Icon Container */}
-                <div className="mb-6 p-3 bg-[#3d3a3a] rounded-full border border-gray-600">
+                <div className="mb-6 p-3 bg-[#3d3a3a] rounded-full border border-gray-600 transition-all duration-300 group-hover:-translate-y-[10px] group-hover:border-[#b79662]">
                   {service.icon}
                 </div>
 
-                {/* Title in Gold */}
-                <h3 className="text-lg font-bold text-[#b79662] mb-4 leading-snug">
+                {/* Title - Updated here */}
+                {/* Added 'group-hover:text-[#b79662]' to change color on parent hover */}
+                {/* Added 'transition-colors duration-300' so the color changes smoothly */}
+                <h3 className="text-lg font-bold text-[#ffffff] mb-4 leading-snug transition-colors duration-300 group-hover:text-[#b79662]">
                   {service.title}
                 </h3>
 
-                {/* Description in White/Gray for readability on dark bg */}
+                {/* Description */}
                 <p className="text-sm text-gray-200 leading-relaxed">
                   {service.description}
                 </p>
@@ -582,13 +582,13 @@ export default function HeroSection() {
           <div className="w-full mt-10">
             <div className="max-w-[1342px] mx-auto px-8 mb-12 text-center">
               <h1 className="text-3xl md:text-4xl font-bold text-[#b79662] relative inline-block">
-                OUR SERVICES
-                <span className="absolute top-0 -right-6 flex gap-1">
+                Our Services
+                {/* <span className="absolute top-0 -right-6 flex gap-1">
                   <span className="w-1 h-1 bg-[#b79662]"></span>
                   <span className="w-1 h-1 bg-[#b79662]"></span>
-                </span>
+                </span> Decorative dots  */}
               </h1>
-              <p className="text-[#333333] mt-4 text-sm">
+              <p className="text-gray-400 mt-4 text-sm">
                 Scroll horizontally to browse through our services →
               </p>
             </div>

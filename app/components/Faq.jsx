@@ -57,7 +57,7 @@ const BusinessChallenges = () => {
             
             {/* Header */}
             <div className="mb-8">
-              <span className="text-[#b79662] font-bold text-sm uppercase tracking-widest block mb-2">
+              <span className="text-[#b79662] font-bold text-sm  tracking-widest block mb-2">
                 Identifying
               </span>
               <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight">

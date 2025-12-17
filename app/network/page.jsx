@@ -31,10 +31,10 @@ const DesignComponent = () => {
       {/* 1. Testimonials Intro Section */}
      <section className="relative flex flex-col lg:flex-row border-b border-gray-800">
   <div className="w-full lg:w-1/2 p-10 lg:p-24 flex flex-col justify-center z-10 bg-[#4c4949]">
-    <h4 className="text-[#b79662] font-bold text-sm uppercase tracking-wider mb-4">
+    <h4 className="text-[#b79662] font-bold text-sm tracking-wider mb-4">
      Networks
     </h4>
-    <h1 className="text-4xl font-extrabold text-white mb-6">
+    <h1 className="text-4xl font-bold text-white mb-6">
       Here's What Our <br />
       <span className="text-[#b79662]">Customers Have To Say</span>
     </h1>
@@ -237,7 +237,7 @@ const DesignComponent = () => {
                 <FaNetworkWired className="text-4xl text-[#b79662]" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white uppercase mb-2">
+                <h3 className="text-lg font-bold text-white mb-2">
                   Networking Events
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
@@ -254,7 +254,7 @@ const DesignComponent = () => {
                 <FaUserFriends className="text-4xl text-[#b79662]" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white uppercase mb-2">
+                <h3 className="text-lg font-bold text-white mb-2">
                   Business Referrals
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
@@ -270,7 +270,7 @@ const DesignComponent = () => {
                 <FaChalkboardTeacher className="text-4xl text-[#b79662]" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white uppercase mb-2">
+                <h3 className="text-lg font-bold text-white  mb-2">
                   Educational Resources
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
@@ -287,7 +287,7 @@ const DesignComponent = () => {
                 <FaTags className="text-4xl text-[#b79662]" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white uppercase mb-2">
+                <h3 className="text-lg font-bold text-white  mb-2">
                   Member Discounts
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">

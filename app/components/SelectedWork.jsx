@@ -130,7 +130,7 @@ const SelectedWork = () => {
     <section className="bg-white  " >
       <div className="container mx-auto  mb-12 text-center">
         {/* Title Text White */}
-        <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] mb-6 tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] mb-4 tracking-tight">
           Selected Work
         </h2>
         {/* Underline Bar changed to Gold #b79662 */}

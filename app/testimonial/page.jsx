@@ -35,10 +35,10 @@ const VideoTestimonials = () => {
     <div className="w-full lg:w-1/2 bg-[#4c4949] p-10 md:p-16  flex flex-col justify-center relative overflow-hidden">
       
       <div className="relative z-10">
-        <span className="block text-[#b79662] font-bold tracking-widest uppercase mb-4 text-sm">
+        <span className="block text-[#b79662] font-bold tracking-widest mb-4 text-sm">
           Testimonials
         </span>
-        <h2 className="text-3xl lg:text-4xl font-extrabold mb-8 leading-none text-white">
+        <h2 className="text-3xl lg:text-4xl font-bold mb-8 leading-none text-white">
           Here's What Our <br />
           <span className="text-[#b79662]">
             Customers Have To Say
