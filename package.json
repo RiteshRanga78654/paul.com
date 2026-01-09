@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
+    "antd": "^6.1.1",
+    "axios": "^1.13.2",
     "framer-motion": "^12.23.25",
+    "jodit-react": "^5.2.38",
     "lucide-react": "^0.555.0",
     "next": "^16.0.8",
     "react": "19.2.0",

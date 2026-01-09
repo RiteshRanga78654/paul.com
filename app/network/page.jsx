@@ -309,3 +309,134 @@ const DesignComponent = () => {
 };
 
 export default DesignComponent;
+
+
+
+
+ <section className="flex flex-col lg:flex-row w-full min-h-[600px] max-w-7xl mx-auto mt-10 lg:mt-20  mb-10 shadow-2xl rounded-lg overflow-hidden">
+    {/* Left Text Side: Background #4c4949 */}
+    <div className="w-full lg:w-1/2 bg-[#4c4949] p-10 md:p-16  flex flex-col justify-center relative overflow-hidden">
+      <div className="relative z-10">
+        <span className="block text-[#b79662] font-bold tracking-widest mb-4 text-sm">
+         Media
+        </span>
+        <h2 className="text-3xl lg:text-4xl font-bold mb-8 leading-none text-white">
+          After hours with Tajurba <br />
+          <span className="text-[#b79662]">Baswar Paul in Media Coverage</span>
+        </h2>
+        <p className="text-gray-200 text-lg mb-10 leading-relaxed max-w-xl font-light">
+          My weekdays start early — usually with a cup of tea and some reading,"
+          Paul said. "I find that this quiet time in the morning helps
+          set a productive tone for the day. The calmness of the early hours
+          allows me to focus without distractions, whether it's diving into a
+          good book or reflecting on my goals for the day. It’s become an
+          essential part of my routine that fuels my energy and creativity
+          throughout the busy workday.
+        </p>
+        <button
+          style={{
+            padding: "14px 40px",
+            backgroundColor: "#b79662", // Default Gold Background
+            borderRadius: "8px",
+            color: "#fff", // Default White Text
+            fontSize: "1.1rem",
+            fontWeight: "700",
+            cursor: "pointer",
+            display: "flex",
+
+            gap: "10px",
+            position: "relative",
+            overflow: "hidden",
+            zIndex: 1,
+            border: "2px solid #b79662", // Border keeps the button size stable
+
+            letterSpacing: "1px",
+            transition: "all 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide in the white background
+            if (fill) fill.style.width = "100%";
+
+            // Change text color to Gold
+            if (text) text.style.color = "#b79662";
+          }}
+          onMouseLeave={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide out the white background
+            if (fill) fill.style.width = "0%";
+
+            // Reset text color to White
+            if (text) text.style.color = "#fff";
+          }}
+        >
+          {/* Hover Fill Layer: White */}
+          <div
+            className="hover-fill"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "0%",
+              height: "100%",
+              background: "#ffffff", // White background on hover
+              transition: "width 0.4s ease",
+              zIndex: -1,
+            }}
+          />
+
+          {/* Text Span with Transition */}
+          <span
+            className="btn-text"
+            style={{
+              position: "relative",
+              zIndex: 1,
+              color: "#fff", // Initial color
+              transition: "color 0.3s ease",
+            }}
+          >
+            Read More
+          </span>
+        </button>
+      </div>
+    </div>
+
+    {/* Right Image Side with Theme Overlay */}
+    {/* Added 'group' class here so children can react to hover */}
+    <div className="twx w-full lg:w-1/2 relative min-h-[400px] lg:min-h-auto bg-[#1e1e1e] group">
+      <img
+        src="/assets/TEDx TAPMI/IMG_6622.jpg" // Replace with actual image
+        alt="Suresh Mansharamani"
+        // The existing classes here will now work because of the parent 'group' class
+        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+      />
+
+      {/* Overlay: Gold tint with multiply blend mode */}
+      {/* Added group-hover:opacity-0 and transition so the tint fades out on hover, revealing true colors */}
+      <div className="absolute inset-0 bg-[#b79662]/60 mix-blend-multiply z-10 group-hover:opacity-0 transition-all duration-500"></div>
+
+      {/* Texture */}
+      <div
+        className="absolute inset-0 opacity-20 z-20 pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+          backgroundSize: "20px 20px",
+        }}
+      ></div>
+    </div>
+    <style jsx>{`
+      /* ... your existing styles ... */
+
+      @media (max-width: 768px) {
+        .twx {
+          height: 235px;
+          object-fit: cover;
+        }
+      }
+    `}</style>
+  </section>
