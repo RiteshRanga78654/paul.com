@@ -85,11 +85,14 @@ const SingleBlogPage = () => {
         </button>
 
         <h1 
-            className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight mb-3 w-full truncate"
+            className="text-3xl md:text-4xl font-bold text-[#b79662] mb-4 tracking-tight"
             title={blog.title}
         >
           {blog.title}
         </h1>
+          {/* <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] mb-4 tracking-tight">
+            Bestselling Books Collection
+          </h2> */}
 
         <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-8 border-b border-gray-100 pb-4">
              <div className="flex items-center gap-2">
@@ -100,6 +103,7 @@ const SingleBlogPage = () => {
              <div className="flex items-center gap-2">
                 <span className="font-semibold text-gray-700">Posted On:</span>
                 <span>{new Date(blog.date || blog.createdAt).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                
              </div>
         </div>
 
@@ -183,9 +187,79 @@ const SingleBlogPage = () => {
                             </div>
                             <h4 className="text-white font-bold text-base mb-1">{blog.userPostDataInfo?.[0]?.name || "Suresh Mansharamani"}</h4>
                             <p className="text-[#b79662] text-[10px] uppercase font-bold tracking-widest mb-4">Business Coach</p>
-                            <button className="w-full py-2.5 bg-[#b79662] text-white font-bold text-xs rounded hover:bg-white hover:text-black transition-colors uppercase tracking-wide">
+                            {/* <button className="w-full py-2.5 bg-[#b79662] text-white font-bold text-xs rounded hover:bg-white hover:text-black transition-colors uppercase tracking-wide">
                                 Join Community
-                            </button>
+                            </button> */}
+                            <button
+            style={{
+            padding: "14px 20px",
+            backgroundColor: "#b79662", // Default Gold Background
+            borderRadius: "8px",
+            color: "#fff", // Default White Text
+            fontSize: "1.1rem",
+            fontWeight: "700",
+            cursor: "pointer",
+            display: "block",
+            margin:"auto",
+            width:"100%",
+            gap: "10px",
+            position: "relative",
+            overflow: "hidden",
+            zIndex: 1,
+            border: "2px solid #b79662", // Border keeps the button size stable
+
+            letterSpacing: "1px",
+            transition: "all 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide in the white background
+            if (fill) fill.style.width = "100%";
+
+            // Change text color to Gold
+            if (text) text.style.color = "#b79662";
+          }}
+          onMouseLeave={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide out the white background
+            if (fill) fill.style.width = "0%";
+
+            // Reset text color to White
+            if (text) text.style.color = "#fff";
+          }}
+        >
+          {/* Hover Fill Layer: White */}
+          <div
+            className="hover-fill"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "0%",
+              height: "100%",
+              background: "#ffffff", // White background on hover
+              transition: "width 0.4s ease",
+              zIndex: -1,
+            }}
+          />
+
+          {/* Text Span with Transition */}
+          <span
+            className="btn-text"
+            style={{
+              position: "relative",
+              zIndex: 1,
+              color: "#fff", // Initial color
+              transition: "color 0.3s ease",
+            }}
+          >
+          Join Community
+          </span>
+        </button>
                         </div>
                     </div>
 

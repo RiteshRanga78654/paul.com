@@ -124,7 +124,7 @@ const VideoTestimonials = () => {
     <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-auto bg-[#1e1e1e] group">
       <img 
         src="/assets/TEDx TAPMI/IMG_6622.jpg" // Replace with actual image
-        alt="Suresh Mansharamani" 
+        alt="bhaswar paul" 
         // The existing classes here will now work because of the parent 'group' class
         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
       />
@@ -185,60 +185,78 @@ const VideoTestimonials = () => {
 
         {/* Load More Button */}
         {visibleCount < testimonials.length && (
-          <div className="flex justify-center">
+          <div className="flex justify-center"> 
             <button
-                  onClick={handleLoadMore}
-                  style={{
-                    padding: "14px 40px",
-                    backgroundColor: "#b79662", // Default Gold
-                    borderRadius: "8px",
-                    color: "#fff",
-                    fontSize: "1.1rem",
-                    fontWeight: "700", // Bolder text
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: "10px",
-                    position: "relative",
-                    overflow: "hidden",
-                    zIndex: 1,
-                    border: "none",
-                    margin: "0 auto",
-                    textTransform: "uppercase", // Premium look
-                    letterSpacing: "1px",
-                    boxShadow: "0 4px 14px 0 rgba(183,150,98,0.39)", // Gold shadow
-                    transition: "all 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    const fill = e.currentTarget.querySelector(".hover-fill");
-                    if (fill) fill.style.width = "100%";
-                  }}
-                  onMouseLeave={(e) => {
-                    const fill = e.currentTarget.querySelector(".hover-fill");
-                    if (fill) fill.style.width = "0%";
-                  }}
-                >
-                  {/* Hover Fill Effect: Darker Gold */}
-                  <div
-                    className="hover-fill"
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "0%",
-                      height: "100%",
-                      background: "#4c4949", // Darker Gold on Hover
-                      transition: "width 0.4s ease",
-                      zIndex: -1,
-                    }}
-                  />
-                  <span
-                    style={{ position: "relative", zIndex: 1, color: "#fff" }}
-                  >
-                    Load More
-                  </span>
-                </button>
+            onClick={handleLoadMore}
+            style={{
+            padding: "14px 20px",
+            backgroundColor: "#b79662", // Default Gold Background
+            borderRadius: "8px",
+            color: "#fff", // Default White Text
+            fontSize: "1.1rem",
+            fontWeight: "700",
+            cursor: "pointer",
+            display: "flex",
+
+            gap: "10px",
+            position: "relative",
+            overflow: "hidden",
+            zIndex: 1,
+            border: "2px solid #b79662", // Border keeps the button size stable
+
+            letterSpacing: "1px",
+            transition: "all 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide in the white background
+            if (fill) fill.style.width = "100%";
+
+            // Change text color to Gold
+            if (text) text.style.color = "#b79662";
+          }}
+          onMouseLeave={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide out the white background
+            if (fill) fill.style.width = "0%";
+
+            // Reset text color to White
+            if (text) text.style.color = "#fff";
+          }}
+        >
+          {/* Hover Fill Layer: White */}
+          <div
+            className="hover-fill"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "0%",
+              height: "100%",
+              background: "#ffffff", // White background on hover
+              transition: "width 0.4s ease",
+              zIndex: -1,
+              
+            }}
+          />
+
+          {/* Text Span with Transition */}
+          <span
+            className="btn-text"
+            style={{
+              position: "relative",
+              zIndex: 1,
+              color: "#fff", // Initial color
+              transition: "color 0.3s ease",
+            }}
+          >
+           Load More
+          </span>
+        </button>
           </div>
         )}
 

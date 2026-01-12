@@ -17,6 +17,7 @@ import BookStore from "./components/BookStore";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import SelectedWork from "./components/SelectedWork";
+import OurServices from "./components/OurServices";
 
 // --- Updated Service Card for Dark Theme ---
 const ServiceCard = ({ icon, title, description, isActive }) => {
@@ -131,68 +132,6 @@ export default function HeroSection() {
     };
   }, []);
 
-  const services = [
-    {
-      title: "App development",
-      description:
-        "As a proficient App Development Company, we are known for providing high-quality experience with our built apps on different portable devices. We understand the true potential of an app and its benefits to flourish your business.",
-    },
-    {
-      title: "Web Development",
-      description:
-        "Design your first impression exaltedly! What if you get a beautifully designed website that attracts clients in the first blink? Why go anywhere when Marlox is here? We are an excellent Web development company.",
-    },
-    {
-      title: "Android App Development",
-      description:
-        "Experience the true potential of an Android app with our Android app development services, where our professionals tailor the app as per your needs, delivering outstanding results.",
-    },
-    {
-      title: "iOS App Development",
-      description:
-        "At Marlox Software, we understand every business has unique mobile application needs. Our team of experienced developers works closely with you to develop high-quality iOS apps.",
-    },
-    {
-      title: "UI/UX Design",
-      description:
-        "Create stunning user experiences with our expert UI/UX design services. We focus on user-centered design principles to deliver interfaces that are both beautiful and functional.",
-    },
-    {
-      title: "E-commerce Solutions",
-      description:
-        "Build powerful online stores with our e-commerce development services. We create scalable platforms that drive sales and enhance customer experiences.",
-    },
-    {
-      title: "Cloud Solutions",
-      description:
-        "Leverage the power of cloud computing with our comprehensive cloud solutions. We help businesses migrate, deploy, and manage applications in the cloud.",
-    },
-    {
-      title: "Digital Marketing",
-      description:
-        "Grow your online presence with our digital marketing strategies. We offer SEO, social media marketing, and content marketing services to boost your visibility.",
-    },
-    {
-      title: "Custom Software",
-      description:
-        "Get tailored software solutions that meet your specific business needs. Our custom development services ensure you get exactly what you need.",
-    },
-    {
-      title: "Quality Assurance",
-      description:
-        "Ensure your software is bug-free and performs optimally with our quality assurance and testing services. We conduct thorough testing at every stage.",
-    },
-    {
-      title: "Maintenance & Support",
-      description:
-        "Keep your applications running smoothly with our maintenance and support services. We provide ongoing updates, bug fixes, and technical support.",
-    },
-    {
-      title: "Consulting Services",
-      description:
-        "Get expert advice on your technology strategy with our consulting services. We help you make informed decisions about your digital transformation.",
-    },
-  ];
 
   const content = {
     title:
@@ -538,7 +477,8 @@ export default function HeroSection() {
 
       {/* Services Grid Section */}
       {/* Background changed from blue to dark charcoal to contrast with #4c4949 cards */}
-      <section className="bg-white py-1 px-4 sm:px-6 lg:px-8 mt-[40px] lg:mt-[-28px]">
+      
+      <section className="bg-white py-1 px-4 sm:px-6 lg:px-8 mt-[40px] mb-[40px] lg:mt-[-28px]">
         <h2 className="text-3xl text-center md:text-4xl font-bold text-[#b79662]">
           Our <span className="text-[#b79662]">Services</span>
         </h2>
@@ -574,74 +514,14 @@ export default function HeroSection() {
       </section>
 
       {/* Horizontal Scroll Section */}
-      <div className="bg-white">
-        <section
-          ref={containerRef}
-          className="min-h-[88vh] flex items-center py-10"
-        >
-          <div className="w-full mt-10">
-            <div className="max-w-[1342px] mx-auto px-8 mb-12 text-center">
-              <h1 className="text-3xl md:text-4xl font-bold text-[#b79662] relative inline-block">
-                Our Services
-                {/* <span className="absolute top-0 -right-6 flex gap-1">
-                  <span className="w-1 h-1 bg-[#b79662]"></span>
-                  <span className="w-1 h-1 bg-[#b79662]"></span>
-                </span> Decorative dots  */}
-              </h1>
-              <p className="text-gray-400 mt-4 text-sm">
-                Scroll horizontally to browse through our services →
-              </p>
-            </div>
-
-            <div
-              ref={scrollerRef}
-              className="pqy overflow-x-auto overflow-y-hidden scrollbar-hide px-8 ml-[90px]"
-              style={{
-                scrollBehavior: "auto",
-                WebkitOverflowScrolling: "touch",
-              }}
-            >
-              <div className="flex gap-6 pb-4" style={{ width: "max-content" }}>
-                {services.map((service, index) => (
-                  <ServiceCard
-                    key={index}
-                    icon={<StarIcon />}
-                    title={service.title}
-                    description={service.description}
-                    isActive={index === 0}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-        <style jsx>{`
-          /* ... your existing styles ... */
-
-          @media (max-width: 768px) {
-            .pqy {
-              margin-left: 0;
-            }
-          }
-        `}</style>
-
-        <style jsx>{`
-          .scrollbar-hide::-webkit-scrollbar {
-            display: none;
-          }
-          .scrollbar-hide {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-        `}</style>
-      </div>
+     <OurServices/>
 
       {/* Video Section */}
-      <section className="w-full py-6 px-4 bg-white">
+      <section className="w-full pb-6 px-5 bg-white">
         <div className="max-w-6xl mx-auto">
           {/* Text Header Section */}
           <div className="text-center mb-10 space-y-2">
-            <h2 className="text-gray-400 text-sm sm:text-md md:text-md mb-2  tracking-wide">
+            <h2 className="text-gray-400 text-sm sm:text-md md:text-md mb-2 mt-4 tracking-wide">
               Adopt These 5 Strategies, You Will Never Face Loss In Business
             </h2>
             <h2 className="text-3xl md:text-4xl font-bold text-[#b79662]">
@@ -662,8 +542,6 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-      <br />
-      <br />
       <SelectedWork />
 
       <BookStore />

@@ -430,7 +430,9 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation"; 
+import { useParams ,useRouter } from "next/navigation";
+import { ArrowLeft } from 'lucide-react'; 
+import { Col } from "antd";
 // import Header from "../../layout/Header"; 
 // import Footer from "../../layout/Footer"; 
 
@@ -463,6 +465,7 @@ const formatEventDate = (dateStr) => {
 
 export default function EventDetailPage() {
   const params = useParams();
+   const router = useRouter();
   const slug = params?.slug;
 
   const [event, setEvent] = useState(null);
@@ -559,9 +562,13 @@ export default function EventDetailPage() {
     // Changed backgroundColor to #ffffff (White) and text to dark gray
     <div style={{ backgroundColor: "#ffffff", minHeight: "100vh", color: "#374151", fontFamily: "sans-serif" }}>
       {/* <Header /> */}
+      
 
       {/* Main Container */}
       <div style={{ maxWidth: "1240px", margin: "0 auto", padding: "40px 20px" }}>
+         <button onClick={() => router.back()} className="group flex items-center gap-2 cursor-pointer text-xs text-gray-500 hover:text-[#b79662] transition-colors mb-6 uppercase tracking-widest font-bold">
+          <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" /> Back
+        </button>
         
         {/* Banner Section */}
         <div style={{ 
@@ -705,7 +712,7 @@ export default function EventDetailPage() {
               )}
 
               <Link href="/events" style={{ textDecoration: "none" }}>
-                <button style={{ 
+                {/* <button style={{ 
                   width: "100%", 
                   padding: "14px", 
                   background: "#b79662", 
@@ -723,7 +730,78 @@ export default function EventDetailPage() {
                 onMouseOut={(e) => e.target.style.background = "#b79662"}
                 >
                   View All Events
-                </button>
+                </button> */}
+                <button
+            style={{
+            padding: "14px 20px",
+            backgroundColor: "#b79662", // Default Gold Background
+            borderRadius: "8px",
+            color: "#fff", // Default White Text
+            fontSize: "1.1rem",
+            fontWeight: "700",
+            cursor: "pointer",
+            display: "block",
+            margin:"auto",
+
+            gap: "10px",
+            position: "relative",
+            overflow: "hidden",
+            zIndex: 1,
+            border: "2px solid #b79662", // Border keeps the button size stable
+
+            letterSpacing: "1px",
+            transition: "all 0.3s ease",
+          }}
+          onMouseEnter={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide in the white background
+            if (fill) fill.style.width = "100%";
+
+            // Change text color to Gold
+            if (text) text.style.color = "#b79662";
+          }}
+          onMouseLeave={(e) => {
+            const fill = e.currentTarget.querySelector(".hover-fill");
+            const text = e.currentTarget.querySelector(".btn-text");
+
+            // Slide out the white background
+            if (fill) fill.style.width = "0%";
+
+            // Reset text color to White
+            if (text) text.style.color = "#fff";
+          }}
+        >
+          {/* Hover Fill Layer: White */}
+          <div
+            className="hover-fill"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "0%",
+              height: "100%",
+              background: "#ffffff", // White background on hover
+              transition: "width 0.4s ease",
+              zIndex: -1,
+              
+            }}
+          />
+
+          {/* Text Span with Transition */}
+          <span
+            className="btn-text"
+            style={{
+              position: "relative",
+              zIndex: 1,
+              color: "#fff", // Initial color
+              transition: "color 0.3s ease",
+            }}
+          >
+           View All Events
+          </span>
+        </button>
               </Link>
             </div>
           </div>

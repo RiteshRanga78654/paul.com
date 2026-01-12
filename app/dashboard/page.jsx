@@ -13,7 +13,7 @@ import AddBlogPost from './blog';
 import ArticleManager from './article';
 import ArticlePage from './event';
 
-
+// --- Helper: Auth Check ---
 // We keep this helper, but we only call it inside useEffect to avoid SSR errors
 const checkLoginStatus = () => {
   if (typeof window === "undefined") return false;

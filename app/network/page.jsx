@@ -107,16 +107,19 @@ const DesignComponent = () => {
   </div>
   
   {/* Right Image Part */}
-  <div className="w-full lg:w-1/2 relative min-h-[500px] bg-[#1e1e1e]">
+  <div className="w-full lg:w-1/2 relative min-h-[500px] bg-[#1e1e1e]  ">
     <Image
       src={manInSuit}
       alt="Man in Suit"
       layout="fill"
       objectFit="cover"
+      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
     />
-    <div className="absolute inset-0 bg-[#b79662]/40 mix-blend-multiply z-10"></div>
-    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30 z-20"></div>
+    <div className="absolute inset-0 bg-[#b79662]/40 mix-blend-multiply z-10 group-hover:opacity-0 transition-all duration-500" ></div>
+    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30 z-20" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
   </div>
+
+  
 </section>
 
       {/* Why Join Our Community Section */}

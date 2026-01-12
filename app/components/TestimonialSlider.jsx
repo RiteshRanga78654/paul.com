@@ -110,7 +110,7 @@ const TestimonialSlider = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
-        <div className="abc flex flex-col md:flex-row justify-between items-end mb-12 gap-6 border-b border-gray-700 pb-8">
+        <div className="abc flex flex-col md:flex-row justify-between items-end mb-12 gap-6 border-b border-gray-700 p-8">
           <div className="space-y-2 xyz">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1e1e1e] leading-tight">
                <span className="text-[#b79662]">{'Testimonials'}</span> 

@@ -65,7 +65,7 @@ const BookCard = ({ book }) => {
             {/* Button: Gold Background */}
             <a href={book.link} target="_blank" rel="noopener noreferrer" >
                <button
-          style={{
+            style={{
             padding: "14px 20px",
             backgroundColor: "#b79662", // Default Gold Background
             borderRadius: "8px",
@@ -166,14 +166,15 @@ const BookCard = ({ book }) => {
 const BookStore = () => {
   return (
     // Main Section Background: Dark Charcoal to contrast with #4c4949 cards
-    <div className="min-h-screen bg-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8 font-sans">
+    <div className="min-h-screen bg-white py-2 sm:py-12 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto">
         
         {/* BookStore Section */}
         <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl  font-bold text-[#b79662] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] mb-4 tracking-tight">
             Bestselling Books Collection
           </h2>
+          
           {/* Divider: Gold Theme */}
           <div className="w-24 h-1 bg-[#b79662] mx-auto rounded"></div>
         </div>
