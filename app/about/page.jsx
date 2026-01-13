@@ -150,7 +150,7 @@ const TestimonialHero = () => (
     <div className="twx w-full lg:w-1/2 relative min-h-[400px] lg:min-h-auto bg-[#1e1e1e] group">
       <img
         src="/assets/TEDx TAPMI/IMG_6622.jpg" // Replace with actual image
-        alt="Suresh Mansharamani"
+        alt="Bhaswar"
         // The existing classes here will now work because of the parent 'group' class
         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
       />

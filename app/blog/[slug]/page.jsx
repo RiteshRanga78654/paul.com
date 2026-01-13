@@ -85,7 +85,7 @@ const SingleBlogPage = () => {
         </button>
 
         <h1 
-            className="text-3xl md:text-4xl font-bold text-[#b79662] mb-4 tracking-tight"
+            className="text-3xl md:text-5xl font-bold text-[#b79662] mb-4 tracking-tight" style={{lineHeight:"1.18"}}
             title={blog.title}
         >
           {blog.title}

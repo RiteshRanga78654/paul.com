@@ -478,7 +478,7 @@ export default function HeroSection() {
       {/* Services Grid Section */}
       {/* Background changed from blue to dark charcoal to contrast with #4c4949 cards */}
       
-      <section className="bg-white py-1 px-4 sm:px-6 lg:px-8 mt-[40px] mb-[40px] lg:mt-[-28px]">
+      <section className="bg-white py-1 px-4 sm:px-6 lg:px-8 mt-[40px] mb-[30px] lg:mt-[-28px]">
         <h2 className="text-3xl text-center md:text-4xl font-bold text-[#b79662]">
           Our <span className="text-[#b79662]">Services</span>
         </h2>
