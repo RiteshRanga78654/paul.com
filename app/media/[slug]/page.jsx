@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -11,9 +10,10 @@ import {
   Linkedin,
   Twitter,
   Facebook,
-  Link as LinkIcon,Tag
+  Instagram,
+  Link as LinkIcon,
+  Tag,
 } from "lucide-react";
-
 
 const ArticleDetail = () => {
   const { slug } = useParams();
@@ -34,46 +34,46 @@ const ArticleDetail = () => {
   }, []);
 
   useEffect(() => {
-  //   fetch(
-  //     "https://uat-service.ireedindia.com/v1/articles?website=bhaswarpaul&pageNumber=0&size=1000"
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       if (data?.blogs) {
-  //         const found = data.blogs.find((item) => item.slug === slug);
-  //         setArticle(found);
-  //       }
-  //       setLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.error("Error:", err);
-  //       setLoading(false);
-  //     });
-  // }, [slug]);
+    //   fetch(
+    //     "https://uat-service.ireedindia.com/v1/articles?website=bhaswarpaul&pageNumber=0&size=1000"
+    //   )
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       if (data?.blogs) {
+    //         const found = data.blogs.find((item) => item.slug === slug);
+    //         setArticle(found);
+    //       }
+    //       setLoading(false);
+    //     })
+    //     .catch((err) => {
+    //       console.error("Error:", err);
+    //       setLoading(false);
+    //     });
+    // }, [slug]);
 
-  fetch(
-    "https://uat-service.ireedindia.com/v1/articles?website=bhaswarpaul&pageNumber=0&size=1000"
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      if (data?.blogs) {
-        // 1. Decode the slug from the URL to handle %20 and special chars
-        const decodedSlug = decodeURIComponent(slug);
+    fetch(
+      "https://uat-service.ireedindia.com/v1/articles?website=bhaswarpaul&pageNumber=0&size=1000"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.blogs) {
+          // 1. Decode the slug from the URL to handle %20 and special chars
+          const decodedSlug = decodeURIComponent(slug);
 
-        // 2. Find the article (using lowercase comparison to be safe)
-        const found = data.blogs.find(
-          (item) => item.slug?.trim() === decodedSlug.trim()
-        );
+          // 2. Find the article (using lowercase comparison to be safe)
+          const found = data.blogs.find(
+            (item) => item.slug?.trim() === decodedSlug.trim()
+          );
 
-        setArticle(found);
-      }
-      setLoading(false);
-    })
-    .catch((err) => {
-      console.error("Error fetching article:", err);
-      setLoading(false);
-    });
-}, [slug]); // This ensures it re-runs if you navigate from one event to another
+          setArticle(found);
+        }
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching article:", err);
+        setLoading(false);
+      });
+  }, [slug]); // This ensures it re-runs if you navigate from one event to another
 
   if (loading)
     return (
@@ -103,8 +103,8 @@ const ArticleDetail = () => {
         {/* --- ARTICLE HEADER --- */}
         <header className="pt-14 pb-12 px-4 max-w-7xl mx-auto text-left">
           <button
-            onClick={() => router.push('/media')} 
-// Or whichever path your list page is on, e.g., '/events'
+            onClick={() => router.push("/media")}
+            // Or whichever path your list page is on, e.g., '/events'
             className="group flex items-center gap-2 cursor-pointer text-xs text-gray-500 hover:text-[#b79662] transition-colors mb-6 uppercase tracking-widest font-bold"
           >
             <ArrowLeft
@@ -113,7 +113,10 @@ const ArticleDetail = () => {
             />{" "}
             Back
           </button>
-          <h1 className="text-3xl md:text-5xl font-bold text-[#b79662] mb-4 " style={{lineHeight:"1.18"}}>
+          <h1
+            className="text-3xl md:text-5xl font-bold text-[#b79662] mb-4 "
+            style={{ lineHeight: "1.18" }}
+          >
             {article.title}
           </h1>
 
@@ -158,7 +161,8 @@ const ArticleDetail = () => {
               <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
                 Share Article
               </h4>
-              <div className="flex gap-2">
+              {/* <div className="flex gap-2">
+                
                 <button className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#0077b5] hover:text-white transition">
                   <Linkedin size={18} />
                 </button>
@@ -171,6 +175,46 @@ const ArticleDetail = () => {
                 <button className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-gray-800 hover:text-white transition">
                   <Share2 size={18}/>
                 </button>
+              </div> */}
+              <div className="flex gap-2">
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/in/bhaswarpaul?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#0077b5] hover:text-white transition"
+                >
+                  <Linkedin size={18} />
+                </a>
+
+                {/* Twitter */}
+                <a
+                  href="https://twitter.com/paulbhaswar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#1DA1F2] hover:text-white transition"
+                >
+                  <Twitter size={18} />
+                </a>
+
+                {/* Facebook */}
+                <a
+                  href="https://www.facebook.com/paulbhaswar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#4267B2] hover:text-white transition"
+                >
+                  <Facebook size={18} />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/bhaswar.paul?igsh=YzNqNW53ajVhazZ5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[red] hover:text-white transition"
+                >
+                  <Instagram size={18} />
+                </a>
               </div>
             </div>
 
@@ -189,83 +233,84 @@ const ArticleDetail = () => {
               {/* <button className="w-full py-2.5 bg-[#b79662] text-white rounded text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
                 Join Community
               </button> */}
-                <button
-            style={{
-            padding: "14px 20px",
-            backgroundColor: "#b79662", // Default Gold Background
-            borderRadius: "8px",
-            color: "#fff", // Default White Text
-            fontSize: "1.1rem",
-            fontWeight: "700",
-            cursor: "pointer",
-            display: "block",
-            margin:"auto",
-            width:"100%",
-            gap: "10px",
-            position: "relative",
-            overflow: "hidden",
-            zIndex: 1,
-            border: "2px solid #b79662", // Border keeps the button size stable
+              <button
+                style={{
+                  padding: "14px 20px",
+                  backgroundColor: "#b79662", // Default Gold Background
+                  borderRadius: "8px",
+                  color: "#fff", // Default White Text
+                  fontSize: "1.1rem",
+                  fontWeight: "700",
+                  cursor: "pointer",
+                  display: "block",
+                  margin: "auto",
+                  width: "100%",
+                  gap: "10px",
+                  position: "relative",
+                  overflow: "hidden",
+                  zIndex: 1,
+                  border: "2px solid #b79662", // Border keeps the button size stable
 
-            letterSpacing: "1px",
-            transition: "all 0.3s ease",
-          }}
-          onMouseEnter={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
+                  letterSpacing: "1px",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
 
-            // Slide in the white background
-            if (fill) fill.style.width = "100%";
+                  // Slide in the white background
+                  if (fill) fill.style.width = "100%";
 
-            // Change text color to Gold
-            if (text) text.style.color = "#b79662";
-          }}
-          onMouseLeave={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
+                  // Change text color to Gold
+                  if (text) text.style.color = "#b79662";
+                }}
+                onMouseLeave={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
 
-            // Slide out the white background
-            if (fill) fill.style.width = "0%";
+                  // Slide out the white background
+                  if (fill) fill.style.width = "0%";
 
-            // Reset text color to White
-            if (text) text.style.color = "#fff";
-          }}
-        >
-          {/* Hover Fill Layer: White */}
-          <div
-            className="hover-fill"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "0%",
-              height: "100%",
-              background: "#ffffff", // White background on hover
-              transition: "width 0.4s ease",
-              zIndex: -1,
-            }}
-          />
+                  // Reset text color to White
+                  if (text) text.style.color = "#fff";
+                }}
+              >
+                {/* Hover Fill Layer: White */}
+                <div
+                  className="hover-fill"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "0%",
+                    height: "100%",
+                    background: "#ffffff", // White background on hover
+                    transition: "width 0.4s ease",
+                    zIndex: -1,
+                  }}
+                />
 
-          {/* Text Span with Transition */}
-          <span
-            className="btn-text"
-            style={{
-              position: "relative",
-              zIndex: 1,
-              color: "#fff", // Initial color
-              transition: "color 0.3s ease",
-            }}
-          >
-          Join Community
-          </span>
-        </button>
+                {/* Text Span with Transition */}
+                <span
+                  className="btn-text"
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                    color: "#fff", // Initial color
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  Join Community
+                </span>
+              </button>
             </div>
 
             {/* Topics Section */}
             <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
               <div className="flex items-center gap-2 mb-4 text-gray-400">
                 <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
-                  <Tag size={12}/>Topics
+                  <Tag size={12} />
+                  Topics
                 </h4>
               </div>
               <div className="flex flex-wrap gap-2">
