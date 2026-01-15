@@ -6,7 +6,8 @@ import { useParams, useRouter } from 'next/navigation';
 
 import { 
   Loader2, ArrowLeft, Calendar, User, Tag, Share2, 
-  ChevronDown, Linkedin, Twitter, Facebook
+  ChevronDown, Linkedin, Twitter, Facebook,
+  Instagram
 } from 'lucide-react';
 import Header from '@/app/layout/Header';
 
@@ -80,7 +81,7 @@ const SingleBlogPage = () => {
       {/* ================= HEADER CONTAINER ================= */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         
-        <button onClick={() => router.back()} className="group flex items-center gap-2 text-xs text-gray-500 hover:text-[#b79662] transition-colors mb-6 uppercase tracking-widest font-bold">
+        <button onClick={() => router.back()} className="group flex items-center gap-2 cursor-pointer text-xs text-gray-500 hover:text-[#b79662] transition-colors mb-6 uppercase tracking-widest font-bold">
           <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" /> Back
         </button>
 
@@ -172,11 +173,46 @@ const SingleBlogPage = () => {
                     <div className="bg-white p-5 rounded-lg border border-gray-200">
                         <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Share Article</h4>
                         <div className="flex gap-2">
-                            <button className="flex-1 py-2 rounded bg-gray-50 text-gray-600 flex justify-center hover:bg-[#0077b5] hover:text-white transition"><Linkedin size={18}/></button>
-                            <button className="flex-1 py-2 rounded bg-gray-50 text-gray-600 flex justify-center hover:bg-[#1DA1F2] hover:text-white transition"><Twitter size={18}/></button>
-                            <button className="flex-1 py-2 rounded bg-gray-50 text-gray-600 flex justify-center hover:bg-[#4267B2] hover:text-white transition"><Facebook size={18}/></button>
-                            <button className="flex-1 py-2 rounded bg-gray-50 text-gray-600 flex justify-center hover:bg-gray-800 hover:text-white transition"><Share2 size={18}/></button>
-                        </div>
+                          {/* LinkedIn */}
+                          <a 
+                            href="https://www.linkedin.com/in/bhaswarpaul?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#0077b5] hover:text-white transition"
+                          >
+                            <Linkedin size={18} />
+                          </a>
+                        
+                          {/* Twitter */}
+                          <a 
+                            href="https://twitter.com/paulbhaswar" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#1DA1F2] hover:text-white transition"
+                          >
+                            <Twitter size={18} />
+                          </a>
+                        
+                          {/* Facebook */}
+                          <a 
+                            href="https://www.facebook.com/paulbhaswar/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#4267B2] hover:text-white transition"
+                          >
+                            <Facebook size={18} />
+                          </a>
+
+                          <a 
+                            href="https://www.instagram.com/bhaswar.paul?igsh=YzNqNW53ajVhazZ5" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[red] hover:text-white transition"
+                          >
+                            <Instagram size={18} />
+                          </a>
+                        
+                          </div> 
                     </div>
 
                     {/* Author / Promo Card */}

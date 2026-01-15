@@ -191,7 +191,7 @@ const TestimonialSlider = () => {
 
                     {/* Content Area */}
                     <div className="flex-1 z-10">
-                      <p className="text-gray-200 text-sm md:text-base leading-relaxed mb-6 italic">
+                      <p className="text-gray-200 text-sm md:text-base leading-relaxed mb-6 ">
                         "{item.text}"
                       </p>
                       <div>

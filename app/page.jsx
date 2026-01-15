@@ -370,7 +370,7 @@ export default function HeroSection() {
       {/* About Section */}
       <div className="min-h-[85vh] flex items-center justify-center p-1 my-10 sm:p-8 bg-white">
         {/* Container changed to #4c4949 */}
-        <div className="max-w-7xl w-full bg-[#4c4949] rounded-xl overflow-hidden transition-all duration-300 shadow-2xl border border-gray-700">
+        <div className="mobile max-w-7xl w-auto bg-[#4c4949] rounded-xl overflow-hidden transition-all duration-300 shadow-2xl border border-gray-700">
           <div className="flex flex-col md:flex-row">
             <div className="p-6 sm:p-12 flex flex-col justify-center w-full md:flex-1">
               <p className="text-lg font-medium text-gray-300 leading-snug mb-2">
@@ -472,6 +472,30 @@ export default function HeroSection() {
               <div className="absolute inset-0 opacity-10"></div>
             </div>
           </div>
+            <style jsx>{`
+      @media (max-width: 1024px) {
+        .mobile {
+          margin: 35px 35px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile {
+          margin: 15px 15px;
+        }
+        /* Restored your height fix for image */
+        .twx {
+          height: 235px;
+          object-fit: cover;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .mobile {
+          margin: 15px 15px;
+        }
+      }
+    `}</style>
         </div>
       </div>
 

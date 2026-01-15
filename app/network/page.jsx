@@ -325,7 +325,7 @@ export default DesignComponent;
         </span>
         <h2 className="text-3xl lg:text-4xl font-bold mb-8 leading-none text-white">
           After hours with Tajurba <br />
-          <span className="text-[#b79662]">Baswar Paul in Media Coverage</span>
+          <span className="text-[#b79662]">Bhaswar Paul in Media Coverage</span>
         </h2>
         <p className="text-gray-200 text-lg mb-10 leading-relaxed max-w-xl font-light">
           My weekdays start early — usually with a cup of tea and some reading,"

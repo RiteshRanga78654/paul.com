@@ -82,13 +82,10 @@ const Footer = () => {
                 <div className="flex items-start gap-3">
                   <FaMapMarkerAlt className="mt-1 text-white shrink-0" />
                   <p>
-                   Office Suite 8 & 9, 3rd Floor,
+                    Office Suite 8 & 9, 3rd Floor,
                     <br />
-                   Ninex City Mart, Sohna Road, Near Radisson Hotel,
-                   
-                   Sector 49,<br />  Gurugram - 122018 Haryana, India
-                    
-                    
+                    Ninex City Mart, Sohna Road, Near Radisson Hotel, Sector 49,
+                    <br /> Gurugram - 122018 Haryana, India
                   </p>
                 </div>
 
@@ -128,81 +125,108 @@ const Footer = () => {
                 Follow Me
               </h3>
 
-                <button
-          style={{
-            padding: "6px 10px",
-            backgroundColor: "#b79662", // Default Gold Background
-            borderRadius: "8px",
-            color: "#fff", // Default White Text
-            fontSize: "12px",
-            fontWeight: "700",
-            cursor: "pointer",
-            display: "flex",
-marginBottom: "15px",
-            gap: "10px",
-            position: "relative",
-            overflow: "hidden",
-            zIndex: 1,
-            border: "2px solid #b79662", // Border keeps the button size stable
+              <button
+                style={{
+                  padding: "6px 10px",
+                  backgroundColor: "#b79662", // Default Gold Background
+                  borderRadius: "8px",
+                  color: "#fff", // Default White Text
+                  fontSize: "12px",
+                  fontWeight: "700",
+                  cursor: "pointer",
+                  display: "flex",
+                  marginBottom: "15px",
+                  gap: "10px",
+                  position: "relative",
+                  overflow: "hidden",
+                  zIndex: 1,
+                  border: "2px solid #b79662", // Border keeps the button size stable
 
-            letterSpacing: "1px",
-            transition: "all 0.3s ease",
-          }}
-          onMouseEnter={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
+                  letterSpacing: "1px",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
 
-            // Slide in the white background
-            if (fill) fill.style.width = "100%";
+                  // Slide in the white background
+                  if (fill) fill.style.width = "100%";
 
-            // Change text color to Gold
-            if (text) text.style.color = "#b79662";
-          }}
-          onMouseLeave={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
+                  // Change text color to Gold
+                  if (text) text.style.color = "#b79662";
+                }}
+                onMouseLeave={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
 
-            // Slide out the white background
-            if (fill) fill.style.width = "0%";
+                  // Slide out the white background
+                  if (fill) fill.style.width = "0%";
 
-            // Reset text color to White
-            if (text) text.style.color = "#fff";
-          }}
-        >
-          {/* Hover Fill Layer: White */}
-          <div
-            className="hover-fill"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "0%",
-              height: "100%",
-              background: "#ffffff", // White background on hover
-              transition: "width 0.4s ease",
-              zIndex: -1,
-            }}
-          />
+                  // Reset text color to White
+                  if (text) text.style.color = "#fff";
+                }}
+              >
+                {/* Hover Fill Layer: White */}
+                <div
+                  className="hover-fill"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "0%",
+                    height: "100%",
+                    background: "#ffffff", // White background on hover
+                    transition: "width 0.4s ease",
+                    zIndex: -1,
+                  }}
+                />
 
-          {/* Text Span with Transition */}
-          <span
-            className="btn-text"
-            style={{
-              position: "relative",
-              zIndex: 1,
-              color: "#fff", // Initial color
-              transition: "color 0.3s ease",
-            }}
-          >
-            Join Our Newsletters
-          </span>
-        </button>
-              <div className="flex flex-wrap gap-2">
+                {/* Text Span with Transition */}
+                <span
+                  className="btn-text"
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                    color: "#fff", // Initial color
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  Join Our Newsletters
+                </span>
+              </button>
+              {/* <div className="flex flex-wrap gap-2">
                 <SocialIcon Icon={FaFacebookF} color="bg-[#3b5998]" />
                 <SocialIcon Icon={FaTwitter} color="bg-[#1da1f2]" />
                 <SocialIcon Icon={FaLinkedinIn} color="bg-[#0077b5]" />
                 <SocialIcon Icon={FaYoutube} color="bg-[#cd201f]" />
                 <SocialIcon Icon={FaInstagram} color="bg-[#444444]" />
+              </div> */}
+              <div className="flex flex-wrap gap-2 mt-6 relative z-30">
+                <SocialIcon
+                  Icon={FaFacebookF}
+                  color="bg-[#3b5998]"
+                  href="https://www.facebook.com/paulbhaswar/"
+                />
+                <SocialIcon
+                  Icon={FaTwitter}
+                  color="bg-[#1da1f2]"
+                  href="https://twitter.com/paulbhaswar"
+                />
+                <SocialIcon
+                  Icon={FaLinkedinIn}
+                  color="bg-[#0077b5]"
+                  href="https://www.linkedin.com/in/bhaswarpaul?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                />
+                <SocialIcon
+                  Icon={FaYoutube}
+                  color="bg-[#cd201f]"
+                  href="https://www.youtube.com/channel/UCFtJsRpIY-YJE0GObkTV2wQ"
+                />
+                <SocialIcon
+                  Icon={FaInstagram}
+                  color="bg-[#444444]"
+                  href="https://www.instagram.com/bhaswar.paul?igsh=YzNqNW53ajVhazZ5"
+                />
               </div>
             </div>
           </div>
@@ -236,12 +260,25 @@ marginBottom: "15px",
 };
 
 // Helper Component for Social Icons
-const SocialIcon = ({ Icon, color }) => (
+// const SocialIcon = ({ Icon, color }) => (
+//   <a
+//     href="#"
+//     className={`${color} w-10 h-10 flex items-center justify-center text-white rounded-sm hover:opacity-80 transition-opacity`}
+//   >
+//     <Icon size={18} />
+//   </a>
+// );
+const SocialIcon = ({ Icon, color, href }) => (
   <a
-    href="#"
-    className={`${color} w-10 h-10 flex items-center justify-center text-white rounded-sm hover:opacity-80 transition-opacity`}
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    // We keep YOUR exact classes: w-8 h-8, rounded-full, etc.
+    // We only add 'relative z-50' to make it clickable.
+    className={`w-8 h-8 ${color} rounded flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 cursor-pointer relative z-50`}
+    onClick={(e) => e.stopPropagation()} 
   >
-    <Icon size={18} />
+    <Icon size={14} />
   </a>
 );
 

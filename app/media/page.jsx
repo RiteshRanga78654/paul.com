@@ -64,7 +64,7 @@ const NewsCard = ({ article }) => {
 
 // --- Hero Component ---
 const TestimonialHero = () => (
-  <section className="mx-auto mt-10 mb-10 flex max-w-7xl flex-col overflow-hidden rounded-lg shadow-2xl lg:mt-20 lg:flex-row">
+  <section className="mobile mx-auto mt-10 mb-10 flex max-w-7xl flex-col overflow-hidden rounded-lg shadow-2xl lg:mt-20 lg:flex-row">
     <div className="flex w-full flex-col justify-center bg-[#4c4949] p-10 md:p-16 lg:w-1/2">
       <span className="mb-4 block text-sm font-bold tracking-widest text-[#b79662]">Media</span>
       <h2 className="mb-8 text-3xl font-bold leading-none text-white lg:text-4xl">
@@ -89,7 +89,32 @@ const TestimonialHero = () => (
       <div className="absolute inset-0 bg-[#b79662]/60 mix-blend-multiply z-10 group-hover:opacity-0 transition-all duration-500"></div>
       <div className="absolute inset-0 z-20 pointer-events-none opacity-20"style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
     </div>
+     <style jsx>{`
+
+            /* Tablet */
+          @media (max-width: 1024px) {
+            .mobile {
+              margin: 35px 35px;
+            }
+          }
+
+          /* Mobile */
+          @media (max-width: 768px) {
+            .mobile {
+              margin: 15px 15px;
+            }
+          }
+
+          /* Small mobile */
+          @media (max-width: 480px) {
+            .mobile {
+              margin: 15px 15px;
+            }
+          }
+  `}</style>
   </section>
+
+ 
 );
 
 // --- Main Page Component ---
