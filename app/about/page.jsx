@@ -295,6 +295,220 @@
 //         </section> */
 // }
 
+// "use client";
+
+// import React, { useState } from "react";
+// import Footer from "../layout/Footer";
+// import Header from "../layout/Header";
+// import BookStore from "../components/BookStore";
+// import BusinessChallenges from "../components/Faq";
+// import {
+//   Heart,
+//   Star,
+//   Phone,
+//   Handshake,
+//   User,
+//   Shield,
+// } from "lucide-react";
+
+// const ValueCard = ({ icon, title, desc }) => (
+//   <div className="bg-[#4c4949] p-8 mx-6 lg:mx-0 rounded-lg text-white text-center hover:-translate-y-2 transition-transform duration-300 border border-gray-600 hover:border-[#b79662] shadow-lg group">
+//     <div className="flex justify-center mb-4 transform group-hover:scale-110 transition-transform">
+//       {icon}
+//     </div>
+//     <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#b79662] transition-colors">
+//       {title}
+//     </h3>
+//     <p className="text-gray-400 group-hover:text-white text-sm ">{desc}</p>
+//   </div>
+// );
+
+// const TestimonialHero = () => (
+//   /* FIX: Changed 'w-full' to 'w-auto' 
+//      This prevents the gap in the menu bar and the horizontal scroll.
+//   */
+//   <section className="mobile flex flex-col lg:flex-row w-auto min-h-[600px] max-w-7xl mx-auto mt-10 lg:mt-20 mb-10 shadow-2xl rounded-lg overflow-hidden">
+//     <div className="w-full lg:w-1/2 bg-[#4c4949] p-10 md:p-16 flex flex-col justify-center relative overflow-hidden">
+//       <div className="relative z-10">
+//         <span className="mb-4 block text-sm font-bold tracking-widest text-[#b79662]">About Bhaswar Paul</span>
+//         <h2 className="text-3xl lg:text-4xl font-bold mb-8 leading-none text-white">
+//           After hours with Tajurba <br />
+//           <span className="text-[#b79662]">Bhaswar Paul in Media Coverage</span>
+//         </h2>
+//         <p className="text-gray-200 text-lg mb-10 leading-relaxed max-w-xl font-light">
+//           My weekdays start early — usually with a cup of tea and some reading,"
+//           Mansharamani said. "I find that this quiet time in the morning helps
+//           set a productive tone for the day. The calmness of the early hours
+//           allows me to focus without distractions, whether it's diving into a
+//           good book or reflecting on my goals for the day. It’s become an
+//           essential part of my routine that fuels my energy and creativity
+//           throughout the busy workday.
+//         </p>
+//         <button
+//           style={{
+//             padding: "14px 40px",
+//             backgroundColor: "#b79662",
+//             borderRadius: "8px",
+//             color: "#fff",
+//             fontSize: "1.1rem",
+//             fontWeight: "700",
+//             cursor: "pointer",
+//             display: "flex",
+//             gap: "10px",
+//             position: "relative",
+//             overflow: "hidden",
+//             zIndex: 1,
+//             border: "2px solid #b79662",
+//             letterSpacing: "1px",
+//             transition: "all 0.3s ease",
+//           }}
+//           onMouseEnter={(e) => {
+//             const fill = e.currentTarget.querySelector(".hover-fill");
+//             const text = e.currentTarget.querySelector(".btn-text");
+//             if (fill) fill.style.width = "100%";
+//             if (text) text.style.color = "#b79662";
+//           }}
+//           onMouseLeave={(e) => {
+//             const fill = e.currentTarget.querySelector(".hover-fill");
+//             const text = e.currentTarget.querySelector(".btn-text");
+//             if (fill) fill.style.width = "0%";
+//             if (text) text.style.color = "#fff";
+//           }}
+//         >
+//           <div
+//             className="hover-fill"
+//             style={{
+//               position: "absolute",
+//               top: 0,
+//               left: 0,
+//               width: "0%",
+//               height: "100%",
+//               background: "#ffffff",
+//               transition: "width 0.4s ease",
+//               zIndex: -1,
+//             }}
+//           />
+//           <span
+//             className="btn-text"
+//             style={{
+//               position: "relative",
+//               zIndex: 1,
+//               color: "#fff",
+//               transition: "color 0.3s ease",
+//             }}
+//           >
+//             Read Article
+//           </span>
+//         </button>
+//       </div>
+//     </div>
+
+//     {/* Right Image Side - Restored original style */}
+//     <div className="twx w-full lg:w-1/2 relative min-h-[400px] lg:min-h-auto bg-[#1e1e1e] group">
+//       <img
+//         src="/assets/TEDx TAPMI/IMG_6622.jpg"
+//         alt="Bhaswar"
+//         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+//       />
+//       <div className="absolute inset-0 bg-[#b79662]/60 mix-blend-multiply z-10 group-hover:opacity-0 transition-all duration-500"></div>
+//       <div
+//         className="absolute inset-0 opacity-20 z-20 pointer-events-none"
+//         style={{
+//           backgroundImage:
+//             "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+//           backgroundSize: "20px 20px",
+//         }}
+//       ></div>
+//     </div>
+
+//     <style jsx>{`
+//       @media (max-width: 1024px) {
+//         .mobile {
+//           margin: 35px 35px;
+//         }
+//       }
+
+//       @media (max-width: 768px) {
+//         .mobile {
+//           margin: 15px 15px;
+//         }
+//         /* Restored your height fix for image */
+//         .twx {
+//           height: 235px;
+//           object-fit: cover;
+//         }
+//       }
+
+//       @media (max-width: 480px) {
+//         .mobile {
+//           margin: 15px 15px;
+//         }
+//       }
+//     `}</style>
+//   </section>
+// );
+
+// const MediaSection = () => {
+//   return (
+//     <>
+//       <Header />
+//       <div className="bg-white flex flex-col">
+//         <TestimonialHero />
+
+//         <section className="bg-[#1e1e1e] py-20" style={{ margin: "50px 0" }}>
+//           <div className="mx-auto px-6 text-center mb-12">
+//             <p className="text-[#b79662] font-bold tracking-widest text-sm mb-2">
+//               Core Values
+//             </p>
+//             <h2 className="text-3xl md:text-4xl font-bold text-white">
+//               We Innovate With Purpose.
+//             </h2>
+//           </div>
+
+//           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+//             <ValueCard
+//               icon={<Heart className="w-10 h-10 text-[#b79662]" />}
+//               title="Empathy"
+//               desc="Understanding the customer needs deeply and acting with care."
+//             />
+//             <ValueCard
+//               icon={<Star className="w-10 h-10 text-[#b79662]" />}
+//               title="Purpose Driven"
+//               desc="Every action is aligned with the long-term vision of success."
+//             />
+//             <ValueCard
+//               icon={<Phone className="w-10 h-10 text-[#b79662]" />}
+//               title="Communication"
+//               desc="Clear, transparent, and constant communication channels."
+//             />
+//             <ValueCard
+//               icon={<Handshake className="w-10 h-10 text-[#b79662]" />}
+//               title="Collaboration"
+//               desc="Building strong partnerships to achieve mutual growth."
+//             />
+//             <ValueCard
+//               icon={<User className="w-10 h-10 text-[#b79662]" />}
+//               title="Leadership"
+//               desc="Inspiring others to dream more, learn more, and do more."
+//             />
+//             <ValueCard
+//               icon={<Shield className="w-10 h-10 text-[#b79662]" />}
+//               title="Integrity"
+//               desc="Upholding the highest standards of honesty and ethics."
+//             />
+//           </div>
+//         </section>
+
+//         <BusinessChallenges />
+//         <BookStore />
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default MediaSection;
+
 "use client";
 
 import React, { useState } from "react";
@@ -324,10 +538,7 @@ const ValueCard = ({ icon, title, desc }) => (
 );
 
 const TestimonialHero = () => (
-  /* FIX: Changed 'w-full' to 'w-auto' 
-     This prevents the gap in the menu bar and the horizontal scroll.
-  */
-  <section className="mobile flex flex-col lg:flex-row w-auto min-h-[600px] max-w-7xl mx-auto mt-10 lg:mt-20 mb-10 shadow-2xl rounded-lg overflow-hidden">
+  <section className="mobile flex flex-col lg:flex-row w-auto min-h-[600px] max-w-7xl mx-auto mt-10 lg:mt-20 mb-5 shadow-2xl rounded-lg overflow-hidden">
     <div className="w-full lg:w-1/2 bg-[#4c4949] p-10 md:p-16 flex flex-col justify-center relative overflow-hidden">
       <div className="relative z-10">
         <span className="mb-4 block text-sm font-bold tracking-widest text-[#b79662]">About Bhaswar Paul</span>
@@ -403,7 +614,6 @@ const TestimonialHero = () => (
       </div>
     </div>
 
-    {/* Right Image Side - Restored original style */}
     <div className="twx w-full lg:w-1/2 relative min-h-[400px] lg:min-h-auto bg-[#1e1e1e] group">
       <img
         src="/assets/TEDx TAPMI/IMG_6622.jpg"
@@ -420,31 +630,6 @@ const TestimonialHero = () => (
         }}
       ></div>
     </div>
-
-    <style jsx>{`
-      @media (max-width: 1024px) {
-        .mobile {
-          margin: 35px 35px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .mobile {
-          margin: 15px 15px;
-        }
-        /* Restored your height fix for image */
-        .twx {
-          height: 235px;
-          object-fit: cover;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .mobile {
-          margin: 15px 15px;
-        }
-      }
-    `}</style>
   </section>
 );
 
@@ -455,6 +640,7 @@ const MediaSection = () => {
       <div className="bg-white flex flex-col">
         <TestimonialHero />
 
+        {/* Core Values Section - Kept Original */}
         <section className="bg-[#1e1e1e] py-20" style={{ margin: "50px 0" }}>
           <div className="mx-auto px-6 text-center mb-12">
             <p className="text-[#b79662] font-bold tracking-widest text-sm mb-2">
@@ -499,10 +685,41 @@ const MediaSection = () => {
           </div>
         </section>
 
-        <BusinessChallenges />
+        {/* Common Business Challenges - Applied .mobile Responsive Margins */}
+        <div className="mobile max-w-7xl mx-auto mb-10 shadow-2xl rounded-lg overflow-hidden">
+           <BusinessChallenges />
+        </div>
+
         <BookStore />
       </div>
       <Footer />
+
+      <style jsx global>{`
+        @media (max-width: 1024px) {
+          .mobile {
+            margin-left: 35px !important;
+            margin-right: 35px !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .mobile {
+            margin-left: 15px !important;
+            margin-right: 15px !important;
+          }
+          .twx {
+            height: 235px;
+            object-fit: cover;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .mobile {
+            margin-left: 15px !important;
+            margin-right: 15px !important;
+          }
+        }
+      `}</style>
     </>
   );
 };

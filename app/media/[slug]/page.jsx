@@ -120,18 +120,37 @@ const ArticleDetail = () => {
             {article.title}
           </h1>
 
-          <div className="flex items-left gap-4 justify-left text-sm text-gray-500 font-medium">
-            <span className="text-[#1a1a1a]">Author: {article.author}</span>
-            <span className="w-1 h-5 bg-gray-300 rounded-full"></span>
-            <span className="text-[#1a1a1a]">
-              Posted On:{" "}
+          {/* <div className="flex items-left gap-4 justify-left text-sm text-gray-500 font-medium">
+            <span className="text-gray-700">Author : {article.author}</span>
+             <span className="hidden sm:inline text-gray-300">|</span>
+            <span className="text-gray-700">
+              Posted On :{" "}
               {new Date(article.publishedDate).toLocaleDateString("en-US", {
                 month: "short",
                 day: "numeric",
                 year: "numeric",
               })}
             </span>
-          </div>
+          </div> */}
+          <div className="flex items-center gap-4 justify-start text-sm text-gray-500 font-medium">
+  <div className="flex items-center gap-2">
+    <span className="text-gray-700 font-semibold">Author:</span>
+    <span>{article.author}</span>
+  </div>
+  
+  <span className="hidden sm:inline text-gray-300">|</span>
+  
+  <div className="flex items-center gap-2">
+    <span className="text-gray-700 font-semibold">Posted On:</span>
+    <span>
+      {new Date(article.publishedDate).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      })}
+    </span>
+  </div>
+</div>
         </header>
 
         {/* --- MAIN FEATURE IMAGE --- */}

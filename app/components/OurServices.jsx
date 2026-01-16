@@ -150,7 +150,7 @@ const ServicesSection = () => {
        <h2 className="text-3xl text-center md:text-4xl font-bold pt-7 text-[#b79662]">
           Our <span className="text-[#b79662]">Services</span>
         </h2>
-        <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 rounded-full"></div>
+        <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-8 rounded-full"></div>
         {/* <div className="w-24 h-1 bg-[#b79662] mx-auto rounded-2xl" /> */}
 
       <div className="flex items-center h-[70vh]">
