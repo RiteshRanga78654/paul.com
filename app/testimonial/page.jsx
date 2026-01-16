@@ -281,17 +281,17 @@ import TestimonialSlider from '../components/TestimonialSlider';
 
 // Mock Data
 const testimonials = [
-  { id: 1, title: "Shailendra Chaurasia | Success Story", videoId: "amFIbFAZx4A" },
-  { id: 2, title: "Suraj Bode OKR Testimonial", videoId: "amFIbFAZx4A" },
-  { id: 3, title: "Dr. Amit Verma Testimonial", videoId: "amFIbFAZx4A" },
-  { id: 4, title: "Corporate Training Feedback", videoId: "amFIbFAZx4A" },
-  { id: 5, title: "Business Coaching Review", videoId: "amFIbFAZx4A" },
-  { id: 6, title: "Startup Growth Story", videoId: "amFIbFAZx4A" },
-  { id: 7, title: "Leadership Workshop Review", videoId: "amFIbFAZx4A" },
-  { id: 8, title: "SME IPO Success Journey", videoId: "amFIbFAZx4A" },
-  { id: 9, title: "Sales Mastery Feedback", videoId: "amFIbFAZx4A" },
+  { id: 1, title: "How Real Estate is Evolving in India | MBA in Real Estate Explained by IREED & DCOIL", videoId: "oLfuidzn2mw" },
+  { id: 2, title: "Real Estate Trends Analysis by Expert Panelist From L&T Realty & Bhaswar Paul", videoId: "G5P7hUiiZfc" },
+  { id: 3, title: "Evolving Buying Behavior in Real Estate | Critical Issues In Real Estate | Podcast", videoId: "n3lfxuttzwY" },
+  { id: 4, title: "Exclusive Interview with Mr Bhaswar Paul, Founder & CEO of IREED Academy", videoId: "amFIbFAZx4A" },
+  { id: 5, title: "आईरीड और डीकॉइल ने लॉन्च किया एमबीए प्रोग्राम, रियल एस्टेट में बढ़ेगे करियर के अवसर ", videoId: "BKVHaG1BNA4" },
+  { id: 6, title: "Transactions Through Channel Partners/Agents/Brokers?", videoId: "8Z6SOsk7lMg" },
+  { id: 7, title: "देश में पहली बार नया MBA कोर्स हुआ लांच ", videoId: "ZERcz3VGj30" },
+  { id: 8, title: "Transform Your Career with the New Real Estate MBA by IREED & DCOIL", videoId: "6S8qOrZMgUE" },
+  { id: 9, title: "Special Conversation with Mr Bhaswar Paul, Founder & CEO of IREED Academy", videoId: "cqQHAKXv_64" },
   { id: 10, title: "Digital Transformation Result", videoId: "amFIbFAZx4A" },
-  { id: 11, title: "Team Management Skills", videoId: "amFIbFAZx4A" },
+  { id: 11, title: "IREED Academy के CEO भास्वर पॉल के साथ खास बातचीत", videoId: "kS4KZSfon48" },
   { id: 12, title: "Financial Freedom Journey", videoId: "amFIbFAZx4A" },
 ];
 

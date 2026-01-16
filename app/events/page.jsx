@@ -1,23 +1,23 @@
-
-
-
 "use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Header from "../layout/Header"; 
-import Footer from '../layout/Footer';
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
 
 // import Footer from "../layout/Footer"; // Adjust path if needed
 
-const EVENTS_API_URL = "https://uat-service.ireedindia.com/v1/events?published=true&page=1&limit=10&website=bhaswarpaul";
+const EVENTS_API_URL =
+  "https://uat-service.ireedindia.com/v1/events?published=true&page=1&limit=10&website=bhaswarpaul";
 
 // Helper: construct proper image URL
 const getImageUrl = (file) => {
   if (!file) return "/placeholder-event.png";
   if (file.startsWith("http://") || file.startsWith("https://")) return file;
-  if (file.startsWith("/uploads")) return `https://uat-service.ireedindia.com${file}`;
-  if (file.startsWith("uploads")) return `https://uat-service.ireedindia.com/${file}`;
+  if (file.startsWith("/uploads"))
+    return `https://uat-service.ireedindia.com${file}`;
+  if (file.startsWith("uploads"))
+    return `https://uat-service.ireedindia.com/${file}`;
   return `https://uat-service.ireedindia.com/image/${file}`;
 };
 
@@ -25,10 +25,14 @@ const getImageUrl = (file) => {
 const getOrdinalDay = (n) => {
   if (n > 3 && n < 21) return n + "th"; // 11th - 20th are exceptions
   switch (n % 10) {
-    case 1: return n + "st";
-    case 2: return n + "nd";
-    case 3: return n + "rd";
-    default: return n + "th";
+    case 1:
+      return n + "st";
+    case 2:
+      return n + "nd";
+    case 3:
+      return n + "rd";
+    default:
+      return n + "th";
   }
 };
 
@@ -37,7 +41,7 @@ function parseDate(dateStr) {
   if (!dateStr) return { month: "", day: "" };
 
   const date = new Date(dateStr);
-  
+
   // Check if date is valid
   if (isNaN(date.getTime())) return { month: "", day: "" };
 
@@ -100,7 +104,7 @@ export default function EventsPage() {
   const headingStyle = {
     fontSize: "42px",
     fontWeight: 700,
-    marginBottom: "40px",
+    // marginBottom: "40px",
     color: "#b79662",
     textAlign: "center",
   };
@@ -199,17 +203,21 @@ export default function EventsPage() {
   return (
     <div style={pageStyle}>
       <Header />
-      
+
       <div style={mainContentStyle}>
         <div style={containerStyle}>
           <h1 style={headingStyle}>
             Upcoming <span style={{ color: "#b79662" }}>Events</span>
           </h1>
-
+          <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
           {loading ? (
-            <p style={{ color: "#d1d5db", textAlign: "center", fontSize: 18 }}>Loading events...</p>
+            <p style={{ color: "#d1d5db", textAlign: "center", fontSize: 18 }}>
+              Loading events...
+            </p>
           ) : eventList.length === 0 ? (
-            <p style={{ color: "#d1d5db", textAlign: "center", fontSize: 18 }}>No events found.</p>
+            <p style={{ color: "#d1d5db", textAlign: "center", fontSize: 18 }}>
+              No events found.
+            </p>
           ) : (
             <>
               {/* Event Grid */}
@@ -218,42 +226,97 @@ export default function EventsPage() {
                   const { month, day } = parseDate(event.date);
                   const firstLocation = event.location?.[0];
                   const locationText = firstLocation
-                    ? `${firstLocation.city || ""}${firstLocation.state ? ", " + firstLocation.state : ""}`
+                    ? `${firstLocation.city || ""}${
+                        firstLocation.state ? ", " + firstLocation.state : ""
+                      }`
                     : "";
 
-                  const shortDesc = (event.subDescription || "").length > 150
+                  const shortDesc =
+                    (event.subDescription || "").length > 150
                       ? event.subDescription.slice(0, 147) + "..."
                       : event.subDescription || "";
 
                   const imageUrl = getImageUrl(event.thumbNail || event.banner);
 
                   return (
-                    <div className="event-card" style={cardStyle} key={event._id || event.slug}>
+                    <div
+                      className="event-card"
+                      style={cardStyle}
+                      key={event._id || event.slug}
+                    >
                       {/* Image Section */}
-                      <div style={{ position: "relative", width: "100%", paddingBottom: "60%", overflow: "hidden", backgroundColor: "#2d2d2d" }}>
+                      <div
+                        style={{
+                          position: "relative",
+                          width: "100%",
+                          paddingBottom: "60%",
+                          overflow: "hidden",
+                          backgroundColor: "#2d2d2d",
+                        }}
+                      >
                         <img
                           src={imageUrl}
                           alt={event.altTag || event.title}
-                          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s ease" }}
-                          onError={(e) => { e.currentTarget.src = "https://via.placeholder.com/400x300?text=Event"; }}
+                          style={{
+                            position: "absolute",
+                            inset: 0,
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            transition: "transform 0.5s ease",
+                          }}
+                          onError={(e) => {
+                            e.currentTarget.src =
+                              "https://via.placeholder.com/400x300?text=Event";
+                          }}
                         />
                         {/* Overlay Gradient */}
-                        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(30,30,30,0.9) 0%, rgba(0,0,0,0) 60%)" }}></div>
+                        <div
+                          style={{
+                            position: "absolute",
+                            inset: 0,
+                            background:
+                              "linear-gradient(to top, rgba(30,30,30,0.9) 0%, rgba(0,0,0,0) 60%)",
+                          }}
+                        ></div>
                       </div>
 
                       {/* Date Badge */}
                       {event.date && (
                         <div style={dateBadgeStyle}>
-                          <span style={{ fontSize: "20px", fontWeight: "800", letterSpacing: "-0.5px" }}>{day}</span>
-                          <span style={{ fontSize: "12px", fontWeight: "500", textTransform: "capitalize" }}>{month}</span>
+                          <span
+                            style={{
+                              fontSize: "20px",
+                              fontWeight: "800",
+                              letterSpacing: "-0.5px",
+                            }}
+                          >
+                            {day}
+                          </span>
+                          <span
+                            style={{
+                              fontSize: "12px",
+                              fontWeight: "500",
+                              textTransform: "capitalize",
+                            }}
+                          >
+                            {month}
+                          </span>
                         </div>
                       )}
 
                       {/* Content Section */}
-                      <div style={{ padding: "20px", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+                      <div
+                        style={{
+                          padding: "20px",
+                          display: "flex",
+                          flexDirection: "column",
+                          flexGrow: 1,
+                        }}
+                      >
                         <h3 style={titleStyle}>{event.title}</h3>
-                        
-                        <div 
+
+                        <div
                           style={descStyle}
                           dangerouslySetInnerHTML={{ __html: shortDesc }}
                         />
@@ -266,79 +329,92 @@ export default function EventsPage() {
                             </div>
                           )}
 
-                          <div className="learn-more-wrap" style={{ marginTop: "20px" }}>
-                            <Link href={`/events/${event.slug}`} style={{ textDecoration: "none" }}>
+                          <div
+                            className="learn-more-wrap"
+                            style={{ marginTop: "20px" }}
+                          >
+                            <Link
+                              href={`/events/${event.slug}`}
+                              style={{ textDecoration: "none" }}
+                            >
                               <button
-            style={{
-            padding: "14px 20px",
-            backgroundColor: "#b79662", // Default Gold Background
-            borderRadius: "8px",
-            color: "#fff", // Default White Text
-            fontSize: "1.1rem",
-            fontWeight: "700",
-            cursor: "pointer",
-            display: "block",
-            // margin:"auto",
+                                style={{
+                                  padding: "14px 20px",
+                                  backgroundColor: "#b79662", // Default Gold Background
+                                  borderRadius: "8px",
+                                  color: "#fff", // Default White Text
+                                  fontSize: "1.1rem",
+                                  fontWeight: "700",
+                                  cursor: "pointer",
+                                  display: "block",
+                                  // margin:"auto",
 
-            gap: "10px",
-            position: "relative",
-            overflow: "hidden",
-            zIndex: 1,
-            border: "2px solid #b79662", // Border keeps the button size stable
+                                  gap: "10px",
+                                  position: "relative",
+                                  overflow: "hidden",
+                                  zIndex: 1,
+                                  border: "2px solid #b79662", // Border keeps the button size stable
 
-            letterSpacing: "1px",
-            transition: "all 0.3s ease",
-          }}
-          onMouseEnter={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
+                                  letterSpacing: "1px",
+                                  transition: "all 0.3s ease",
+                                }}
+                                onMouseEnter={(e) => {
+                                  const fill =
+                                    e.currentTarget.querySelector(
+                                      ".hover-fill"
+                                    );
+                                  const text =
+                                    e.currentTarget.querySelector(".btn-text");
 
-            // Slide in the white background
-            if (fill) fill.style.width = "100%";
+                                  // Slide in the white background
+                                  if (fill) fill.style.width = "100%";
 
-            // Change text color to Gold
-            if (text) text.style.color = "#b79662";
-          }}
-          onMouseLeave={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
+                                  // Change text color to Gold
+                                  if (text) text.style.color = "#b79662";
+                                }}
+                                onMouseLeave={(e) => {
+                                  const fill =
+                                    e.currentTarget.querySelector(
+                                      ".hover-fill"
+                                    );
+                                  const text =
+                                    e.currentTarget.querySelector(".btn-text");
 
-            // Slide out the white background
-            if (fill) fill.style.width = "0%";
+                                  // Slide out the white background
+                                  if (fill) fill.style.width = "0%";
 
-            // Reset text color to White
-            if (text) text.style.color = "#fff";
-          }}
-        >
-          {/* Hover Fill Layer: White */}
-          <div
-            className="hover-fill"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "0%",
-              height: "100%",
-              background: "#ffffff", // White background on hover
-              transition: "width 0.4s ease",
-              zIndex: -1,
-            }}
-          />
+                                  // Reset text color to White
+                                  if (text) text.style.color = "#fff";
+                                }}
+                              >
+                                {/* Hover Fill Layer: White */}
+                                <div
+                                  className="hover-fill"
+                                  style={{
+                                    position: "absolute",
+                                    top: 0,
+                                    left: 0,
+                                    width: "0%",
+                                    height: "100%",
+                                    background: "#ffffff", // White background on hover
+                                    transition: "width 0.4s ease",
+                                    zIndex: -1,
+                                  }}
+                                />
 
-          {/* Text Span with Transition */}
-          <span
-            className="btn-text"
-            style={{
-              position: "relative",
-              zIndex: 1,
-              color: "#fff", // Initial color
-              transition: "color 0.3s ease",
-            }}
-          >
-           Learn More
-          </span>
-        </button>
-                              
+                                {/* Text Span with Transition */}
+                                <span
+                                  className="btn-text"
+                                  style={{
+                                    position: "relative",
+                                    zIndex: 1,
+                                    color: "#fff", // Initial color
+                                    transition: "color 0.3s ease",
+                                  }}
+                                >
+                                  Learn More
+                                </span>
+                              </button>
                             </Link>
                           </div>
                         </div>
@@ -350,12 +426,26 @@ export default function EventsPage() {
 
               {/* Load More Button */}
               {visibleCount < eventList.length && (
-                <div style={{ marginTop: "50px", display: "flex", justifyContent: "center" }}>
-                  <button 
-                    onClick={handleLoadMore} 
-                    style={{...buttonStyle, padding: "14px 40px", fontSize: "1.1rem"}}
-                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = "#967d51"}
-                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = "#b79662"}
+                <div
+                  style={{
+                    marginTop: "50px",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <button
+                    onClick={handleLoadMore}
+                    style={{
+                      ...buttonStyle,
+                      padding: "14px 40px",
+                      fontSize: "1.1rem",
+                    }}
+                    onMouseOver={(e) =>
+                      (e.currentTarget.style.backgroundColor = "#967d51")
+                    }
+                    onMouseOut={(e) =>
+                      (e.currentTarget.style.backgroundColor = "#b79662")
+                    }
                   >
                     Load More Events
                   </button>
@@ -374,10 +464,14 @@ export default function EventsPage() {
           grid-template-columns: repeat(3, 1fr);
         }
         @media (max-width: 1024px) {
-          .event-grid { grid-template-columns: repeat(2, 1fr); }
+          .event-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
         @media (max-width: 768px) {
-          .event-grid { grid-template-columns: 1fr; }
+          .event-grid {
+            grid-template-columns: 1fr;
+          }
         }
         .event-card:hover {
           transform: translateY(-8px);
@@ -388,6 +482,5 @@ export default function EventsPage() {
         }
       `}</style>
     </div>
-    
   );
 }
