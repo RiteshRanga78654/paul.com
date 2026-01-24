@@ -134,7 +134,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <div
-      className="relative w-[80vw] md:w-[290px] h-[350px] md:h-[400px] flex-shrink-0 cursor-pointer overflow-hidden bg-[#4c4949]"
+      className="relative bg-white w-[80vw] md:w-[290px] h-[350px] md:h-[400px] flex-shrink-0 cursor-pointer overflow-hidden bg-[#4c4949]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -160,8 +160,8 @@ const ProjectCard = ({ project }) => {
 
           <div className={`absolute inset-0 p-5 flex flex-col justify-between transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
             <h3 className="text-white text-xs font-bold opacity-90 whitespace-nowrap overflow-hidden text-ellipsis">{project.title}</h3>
-            <h2 className="text-white text-xl font-black uppercase leading-tight font-mono tracking-tight">{`{${project.category}}`}</h2>
-            <p className="text-white text-[10px] md:text-xs font-bold uppercase tracking-widest font-mono">{`{VIEW PROJECT}`}</p>
+            <h2 className="text-white text-xl font-black  leading-tight font-mono tracking-tight">{`{${project.category}}`}</h2>
+            <p className="text-white text-[10px] md:text-xs font-bold tracking-widest font-mono">{`{VIEW PROJECT}`}</p>
           </div>
         </div>
       </motion.div>

@@ -708,7 +708,7 @@ export default function ServicesPage() {
     <>
       <Header />
 
-      <main className="bg-[#fdfdfd] font-sans selection:bg-[#b79662] selection:text-white pb-8 overflow-x-hidden">
+      <main className="bg-white font-sans selection:bg-[#b79662] selection:text-white pb-8 overflow-x-hidden">
         {/* 1. HERO SECTION (Mirroring Reference Code) */}
 
         <section className="mobile mx-auto mt-10 mb-15 flex max-w-7xl flex-col overflow-hidden rounded-lg shadow-2xl lg:mt-20 lg:flex-row">
