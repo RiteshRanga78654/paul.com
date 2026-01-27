@@ -18,6 +18,8 @@ import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import SelectedWork from "./components/SelectedWork";
 import OurServices from "./components/OurServices";
+import Slider from "./components/Slider";
+import Exp from "./components/Exp";
 
 // --- Updated Service Card for Dark Theme ---
 const ServiceCard = ({ icon, title, description, isActive }) => {
@@ -132,56 +134,59 @@ export default function HeroSection() {
     };
   }, []);
 
-
   const content = {
     title:
-      "From Refugee Camp To Business Success: The Inspiring Journey Of Business Coach",
+      "Helping professionals buy, sell, and understand real estate with clarity, strategy, and long-term value.",
     name: "Bhaswar Paul",
-    description:
-      "In a world where success is often reserved for the privileged, Business Coach Suresh Mansharamani was born in a refugee camp in Maharashtra. He started his journey with a job career of just Rs 300/month to making his company 300 times oversubscribed IPO in 1996 and getting listed at the Bombay Stock Exchange. Followed by a Presidential Award, he is now a Certified Gallup Strengths Coach, Business Coach in India, Best OKR Coach, Best SME Coach, Best Sales Trainer, Best SME IPO Coach, Best Motivational Speakers and Author of seven Books.",
+    description: `With a career spanning over 30 years in sales and more than 20 years in Indian real estate, Bhaswar Paul —also known as Paul among colleagues and industry peers—is widely recognised as an ace salesman whose success has been built on consistency, credibility, and deep market understanding.
+
+Over the course of his career, he has closed 100+ real estate transactions, collectively valued at over XXX crores, working across residential and commercial segments. More importantly, these outcomes have been driven by repeat clients, long-standing relationships, and referrals—a testament to trust earned over time rather than short-term gains.
+
+This extensive frontline exposure has given Paul a sharp sense of market intelligence—pricing dynamics, buyer psychology, regulatory impact, and market feasibility—paired with a strong commitment to ethical sales practices. These principles now form the foundation of the education and training delivered through IREED India, empowering both professionals and clients to make informed, responsible decisions.
+`,
     buttonText: "Read More",
-    imageUrl: "/assets/TEDx TAPMI/Tanky You - TEDX & TAPMI.png",
+    imageUrl: "/assets/images/new-bhaswal-paul.jpg.jpeg",
     imageAlt: "Bhaswar Paul speaking into a microphone",
   };
 
   const servicesData = [
     {
-      title: "One-On-One Weekly Business Coaching For Founders And Core Teams",
-      description:
-        "Designed for leaders of companies with a minimum turnover of Rs 50 crore plus, this exclusive coaching program focuses on unlocking exponential growth every 90 days. With personalized strategies tailored to each business's unique needs, Business Coach works closely with founders and core teams to drive high-impact results.",
+      title: "Corporate Workshops & Training",
+      description: `We deliver structured, outcome-driven real estate training and workshops for organisations. Our programs combine industry experience with practical frameworks that help participants develop market-ready skills and strategic competence.
+
+Who this is for: Real estate professionals, sales leaders, channel partners, corporate teams, and career entrants seeking credible real estate education and certification.
+
+`,
       icon: <Users className="w-12 h-12 text-[#b79662]" />,
     },
     {
-      title: "3-Day Art Of Disruption Program: Bootcamp For MSME Owners",
-      description:
-        "Join an intensive three-day boot camp designed for MSME business owners eager to break free from traditional models and seize new market opportunities. In the Art of Disruption program, you'll gain insights to disrupt, drive, and dominate your industry, and learn the strategies to multiply profits by 3x.",
+      title: "Hiring and Placement",
+      description: `We work with organisations to identify, assess, and onboard high-potential real estate talent, ensuring strong alignment between role requirements and candidate capability.
+
+We Support: Candidate shortlisting and screening, Role alignment and capability evaluation, Onboarding readiness.
+Who this is for: Real estate firms seeking trained professionals who can contribute from day one.
+`,
       icon: <Presentation className="w-12 h-12 text-[#b79662]" />,
     },
     {
-      title: "Build To Scale: 1-Year Program For SMEs",
-      description:
-        "This comprehensive year-long program is crafted for ambitious SMEs seeking exponential growth. Through structured modules and actionable insights, the Business Coach provides a roadmap to help your business achieve billion-dollar potential and unlock the keys to long-term, sustainable success.",
+      title: "Campus Workshops",
+      description: `Our campus workshops are designed to provide students with industry-ready real estate skills and practical exposure. Through these workshops, students gain a fundamental understanding of the real estate sector, its current market status, and potential career opportunities. We offer hands-on industry exposure and prepare students for real-world exposure. `,
       icon: <TrendingUp className="w-12 h-12 text-[#b79662]" />,
     },
-    {
-      title: "Sales Training For Large Organizations",
-      description:
-        "Elevate your sales team's effectiveness with a targeted training program that boosts conversions and accelerates performance by 3x. Tailored for large organizations, this sales training focuses on advanced strategies and hands-on tactics to drive real results and foster a high-performing sales culture.",
-      icon: <Briefcase className="w-12 h-12 text-[#b79662]" />,
-    },
-    {
-      title: "SMR IPO Roadmap & Handholding",
-      description:
-        "Navigating an SME IPO requires specialized guidance and a supportive ecosystem. From initial planning to ringing the bell at the SME exchange, we provide end-to-end assistance with a complete roadmap for IPO success. Our expertise ensures you're well-prepared for each stage of this transformative journey.",
-      icon: <Map className="w-12 h-12 text-[#b79662]" />,
-    },
-    {
-      title: "OKR Training For Core Teams",
-      description:
-        "Empower your team to excel and foster a culture of camaraderie through effective OKR implementation. This OKR training aligns your core team's efforts with organizational goals, driving exponential results every 90 days and setting a strong foundation for sustained high performance.",
-      icon: <Target className="w-12 h-12 text-[#b79662]" />,
-    },
   ];
+
+  // 1. State to track if text is expanded
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  // 2. Word limit logic
+  const words = content.description?.split(" ") || [];
+  const isLongText = words.length > 120;
+
+  // Show full text if expanded, otherwise show truncated version
+  const displayText =
+    isExpanded || !isLongText
+      ? content.description
+      : words.slice(0, 90).join(" ") + "...";
 
   return (
     <>
@@ -236,100 +241,173 @@ export default function HeroSection() {
                 className="text-white text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0"
                 style={{ fontWeight: 300 }}
               >
-                Co-Founder & Chief Energy Officer @ Tajurba | Business Coach and
-                OKR Expert | Helping SMEs to Scale up, 3X Profits | Dominate and
-                Launch SME IPO | Mentor | Investor
+                Founder & CEO - IREED India
               </p>
 
               <div className="space-y-2">
                 <p className="text-white text-base sm:text-lg md:text-xl">
-                  Your Business Would Be In DANGER.
+                  Business Visionary | Growth Strategist | Trusted Advisor |
+                  Industry Voice | Real Estate Mentor for Leaders & Founders
                 </p>
                 <h3 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-                  Disrupt, Drive & Dominate
+                  Build. Scale. Lead.
                 </h3>
               </div>
-
-              <div className="pt-4">
-                {/* Changed Button to Gold Theme */}
-                <button
-                  style={{
-                    padding: "14px 40px",
-                    backgroundColor: "#b79662", // Default Gold Background
-                    borderRadius: "8px",
-                    color: "#fff", // Default White Text
-                    fontSize: "1.1rem",
-                    fontWeight: "700",
-                    cursor: "pointer",
-                    display: "flex",
-                    textAlign: "center",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: "10px",
-                    position: "relative",
-                    overflow: "hidden",
-                    zIndex: 1,
-                    border: "2px solid #b79662", // Border keeps the button size stable
-                    margin: "0 auto",
-                    letterSpacing: "1px",
-                    transition: "all 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    const fill = e.currentTarget.querySelector(".hover-fill");
-                    const text = e.currentTarget.querySelector(".btn-text");
-
-                    // Slide in the white background
-                    if (fill) fill.style.width = "100%";
-
-                    // Change text color to Gold
-                    if (text) text.style.color = "#b79662";
-                  }}
-                  onMouseLeave={(e) => {
-                    const fill = e.currentTarget.querySelector(".hover-fill");
-                    const text = e.currentTarget.querySelector(".btn-text");
-
-                    // Slide out the white background
-                    if (fill) fill.style.width = "0%";
-
-                    // Reset text color to White
-                    if (text) text.style.color = "#fff";
-                  }}
-                >
-                  {/* Hover Fill Layer: White */}
-                  <div
-                    className="hover-fill"
+              <div className="flex gap-8 justify-center">
+                <div className="pt-4">
+                  {/* Changed Button to Gold Theme */}
+                  <button
                     style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "0%",
-                      height: "100%",
-                      background: "#ffffff", // White background on hover
-                      transition: "width 0.4s ease",
-                      zIndex: -1,
-                    }}
-                  />
-
-                  {/* Text Span with Transition */}
-                  <span
-                    className="btn-text"
-                    style={{
+                      padding: "14px 40px",
+                      backgroundColor: "#b79662", // Default Gold Background
+                      borderRadius: "8px",
+                      color: "#fff", // Default White Text
+                      fontSize: "1.1rem",
+                      fontWeight: "700",
+                      cursor: "pointer",
+                      display: "flex",
+                      textAlign: "center",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: "10px",
                       position: "relative",
+                      overflow: "hidden",
                       zIndex: 1,
-                      color: "#fff", // Initial color
-                      transition: "color 0.3s ease",
+                      border: "2px solid #b79662", // Border keeps the button size stable
+                      margin: "0 auto",
+                      letterSpacing: "1px",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+
+                      // Slide in the white background
+                      if (fill) fill.style.width = "100%";
+
+                      // Change text color to Gold
+                      if (text) text.style.color = "#b79662";
+                    }}
+                    onMouseLeave={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+
+                      // Slide out the white background
+                      if (fill) fill.style.width = "0%";
+
+                      // Reset text color to White
+                      if (text) text.style.color = "#fff";
                     }}
                   >
-                    Learn to Disrupt
-                  </span>
-                </button>
-              </div>
+                    {/* Hover Fill Layer: White */}
+                    <div
+                      className="hover-fill"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "0%",
+                        height: "100%",
+                        background: "#ffffff", // White background on hover
+                        transition: "width 0.4s ease",
+                        zIndex: -1,
+                      }}
+                    />
 
+                    {/* Text Span with Transition */}
+                    <span
+                      className="btn-text"
+                      style={{
+                        position: "relative",
+                        zIndex: 1,
+                        color: "#fff", // Initial color
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                      Work With Me
+                    </span>
+                  </button>
+                </div>
+                <div className="pt-4">
+                  {/* Changed Button to Gold Theme */}
+                  <button
+                    style={{
+                      padding: "14px 40px",
+                      backgroundColor: "#b79662", // Default Gold Background
+                      borderRadius: "8px",
+                      color: "#fff", // Default White Text
+                      fontSize: "1.1rem",
+                      fontWeight: "700",
+                      cursor: "pointer",
+                      display: "flex",
+                      textAlign: "center",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: "10px",
+                      position: "relative",
+                      overflow: "hidden",
+                      zIndex: 1,
+                      border: "2px solid #b79662", // Border keeps the button size stable
+                      margin: "0 auto",
+                      letterSpacing: "1px",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+
+                      // Slide in the white background
+                      if (fill) fill.style.width = "100%";
+
+                      // Change text color to Gold
+                      if (text) text.style.color = "#b79662";
+                    }}
+                    onMouseLeave={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+
+                      // Slide out the white background
+                      if (fill) fill.style.width = "0%";
+
+                      // Reset text color to White
+                      if (text) text.style.color = "#fff";
+                    }}
+                  >
+                    {/* Hover Fill Layer: White */}
+                    <div
+                      className="hover-fill"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "0%",
+                        height: "100%",
+                        background: "#ffffff", // White background on hover
+                        transition: "width 0.4s ease",
+                        zIndex: -1,
+                      }}
+                    />
+
+                    {/* Text Span with Transition */}
+                    <span
+                      className="btn-text"
+                      style={{
+                        position: "relative",
+                        zIndex: 1,
+                        color: "#fff", // Initial color
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                      Watch Intro Video
+                    </span>
+                  </button>
+                </div>
+              </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
                 <div className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
                   <Instagram className="w-8 h-8 text-white" />
                   <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
-                    2.1M
+                    1.1K
                   </div>
                   <div className="text-white text-xs sm:text-sm">Followers</div>
                 </div>
@@ -337,7 +415,7 @@ export default function HeroSection() {
                 <div className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
                   <Facebook className="w-8 h-8 text-white" />
                   <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
-                    212K
+                    800+
                   </div>
                   <div className="text-white text-xs sm:text-sm">Followers</div>
                 </div>
@@ -345,7 +423,7 @@ export default function HeroSection() {
                 <div className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
                   <Youtube className="w-8 h-8 text-white" />
                   <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
-                    1.08M
+                    200+
                   </div>
                   <div className="text-white text-xs sm:text-sm">
                     Subscribers
@@ -355,7 +433,7 @@ export default function HeroSection() {
                 <div className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
                   <Twitter className="w-8 h-8 text-white" />
                   <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
-                    1.6K
+                    100+
                   </div>
                   <div className="text-white text-xs sm:text-sm">Followers</div>
                 </div>
@@ -369,35 +447,37 @@ export default function HeroSection() {
 
       {/* About Section */}
       <div className="min-h-[85vh] flex items-center justify-center p-1 my-10 sm:p-8 bg-white">
-        {/* Container changed to #4c4949 */}
         <div className="mobile max-w-7xl w-auto bg-[#4c4949] rounded-xl overflow-hidden transition-all duration-300 shadow-2xl border border-gray-700">
           <div className="flex flex-col md:flex-row">
+            {/* Content Side */}
             <div className="p-6 sm:p-12 flex flex-col justify-center w-full md:flex-1">
               <p className="text-lg font-medium text-gray-300 leading-snug mb-2">
                 {content.title}
               </p>
 
-              {/* Name changed to Gold */}
               <h1 className="text-4xl sm:text-5xl lg:text-4xl font-bold text-[#b79662] leading-tight mb-6">
                 {content.name}
               </h1>
 
-              <p className="text-lg text-gray-200 leading-relaxed mb-8">
-                {content.description}
-              </p>
+              {/* Description Area */}
+              <div className="text-lg text-gray-200 text-justify leading-relaxed mb-8">
+                <p>{displayText}</p>
+              </div>
 
+              {/* The Main Trigger Button */}
               <button
+                onClick={() => setIsExpanded(!isExpanded)} // Toggles the text
                 style={{
                   padding: "14px 40px",
-                  backgroundColor: "#b79662", // Default Gold Background
+                  backgroundColor: "#b79662",
                   borderRadius: "8px",
-                  color: "#fff", // Default White Text
+                  color: "#fff",
                   fontSize: "1.1rem",
                   fontWeight: "700",
                   cursor: "pointer",
                   display: "flex",
-                  alignItems: "center", // Ensures text/icon vertical center
-                  justifyContent: "center", // Ensures text/icon horizontal center
+                  alignItems: "center",
+                  justifyContent: "center",
                   gap: "10px",
                   position: "relative",
                   overflow: "hidden",
@@ -405,30 +485,21 @@ export default function HeroSection() {
                   border: "2px solid #b79662",
                   letterSpacing: "1px",
                   transition: "all 0.3s ease",
-                  width: "fit-content", // <--- THIS FIXES THE FULL WIDTH ISSUE
+                  width: "fit-content",
                 }}
                 onMouseEnter={(e) => {
                   const fill = e.currentTarget.querySelector(".hover-fill");
                   const text = e.currentTarget.querySelector(".btn-text");
-
-                  // Slide in the white background
                   if (fill) fill.style.width = "100%";
-
-                  // Change text color to Gold
                   if (text) text.style.color = "#b79662";
                 }}
                 onMouseLeave={(e) => {
                   const fill = e.currentTarget.querySelector(".hover-fill");
                   const text = e.currentTarget.querySelector(".btn-text");
-
-                  // Slide out the white background
                   if (fill) fill.style.width = "0%";
-
-                  // Reset text color to White
                   if (text) text.style.color = "#fff";
                 }}
               >
-                {/* Hover Fill Layer: White */}
                 <div
                   className="hover-fill"
                   style={{
@@ -437,72 +508,54 @@ export default function HeroSection() {
                     left: 0,
                     width: "0%",
                     height: "100%",
-                    background: "#ffffff", // White background on hover
+                    background: "#ffffff",
                     transition: "width 0.4s ease",
                     zIndex: -1,
                   }}
                 />
-
-                {/* Text Span with Transition */}
                 <span
                   className="btn-text"
                   style={{
                     position: "relative",
                     zIndex: 1,
-                    color: "#fff", // Initial color
                     transition: "color 0.3s ease",
                   }}
                 >
-                  {content.buttonText}
+                  {/* Dynamically change button text */}
+                  {isExpanded ? "Show Less" : content.buttonText || "Read More"}
                 </span>
               </button>
             </div>
 
+            {/* Image Side */}
             <div className="relative overflow-hidden md:h-full min-h-[600px] w-full md:flex-1">
               <img
                 src={content.imageUrl}
                 alt={content.imageAlt}
                 className="absolute inset-0 w-full h-full object-cover rounded-none md:rounded-r-xl"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src =
-                    "https://placehold.co/800x600/4c4949/b79662?text=Image+Not+Available";
-                }}
               />
-              <div className="absolute inset-0 opacity-10"></div>
             </div>
           </div>
-            <style jsx>{`
-      @media (max-width: 1024px) {
-        .mobile {
-          margin: 35px 35px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .mobile {
-          margin: 15px 15px;
-        }
-        /* Restored your height fix for image */
-        .twx {
-          height: 235px;
-          object-fit: cover;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .mobile {
-          margin: 15px 15px;
-        }
-      }
-    `}</style>
         </div>
+
+        <style jsx>{`
+          @media (max-width: 1024px) {
+            .mobile {
+              margin: 35px 35px;
+            }
+          }
+          @media (max-width: 768px) {
+            .mobile {
+              margin: 15px 15px;
+            }
+          }
+        `}</style>
       </div>
 
       {/* Services Grid Section */}
       {/* Background changed from blue to dark charcoal to contrast with #4c4949 cards */}
-      
-      <section className="bg-white py-1 px-4 sm:px-6 lg:px-8 mt-[40px] mb-[30px] lg:mt-[-28px]">
+
+      <section className="bg-white py-2 px-4 sm:px-6 lg:px-8 mt-[40px] mb-[30px] lg:mt-[-28px]">
         <h2 className="text-3xl text-center md:text-4xl font-bold text-[#b79662]">
           Our <span className="text-[#b79662]">Services</span>
         </h2>
@@ -528,7 +581,7 @@ export default function HeroSection() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-200 leading-relaxed">
+                <p className="text-sm text-gray-200 text-justify leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -537,17 +590,21 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* Horizontal Scroll Section */}
-     <OurServices/>
+      <Exp />
+
+      <Slider />
+
+      {/* Horizontal Scroll Section
+     <OurServices/> */}
 
       {/* Video Section */}
       <section className="w-full pb-6 px-5 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Text Header Section */}
           <div className="text-center mb-10 space-y-2">
-            <h2 className="text-gray-400 text-sm sm:text-md md:text-md mb-2 mt-4 tracking-wide">
+            {/* <h2 className="text-gray-400 text-sm sm:text-md md:text-md mb-2 mt-4 tracking-wide">
               Adopt These 5 Strategies, You Will Never Face Loss In Business
-            </h2>
+            </h2> */}
             <h2 className="text-3xl md:text-4xl font-bold text-[#b79662]">
               Bhaswar <span className="text-[#b79662]">Paul</span>
             </h2>
@@ -555,23 +612,20 @@ export default function HeroSection() {
           </div>
 
           {/* Video Player Container */}
-          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden h-[550px] shadow-2xl">
             <iframe
               className="absolute top-0 left-0 w-full h-full"
               src="https://www.youtube.com/embed/NYbFAiZgvAM"
-              title="Suresh Mansharamani Business Strategy Video"
+              title="Bhaswar Paul Business Strategy Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
         </div>
       </section>
-      <SelectedWork />
-
       <BookStore />
-
+      <SelectedWork />
       <TestimonialSlider />
-
       <Footer />
     </>
   );

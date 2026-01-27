@@ -121,12 +121,12 @@ if (typeof window !== "undefined") {
 }
 
 const projects = [
-  { id: "01", title: "Partner with NumberDekho", category: "WEB & APP", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop" },
-  { id: "02", title: "Broopi Movers", category: "DATA & APP", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" },
-  { id: "03", title: "StarStell Astrology", category: "WEB DEV", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" },
-  { id: "04", title: "Eco Mobile App", category: "MOBILE APP", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop" },
-  { id: "05", title: "FinTech Dashboard", category: "UI/UX DESIGN", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" },
-  { id: "06", title: "Health Tracker", category: "MOBILE APP", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" },
+  { id: "01", title: "", category: "Gurugram", image: "/assets/images/gurugram.jpg.jpeg" },
+  { id: "02", title: "", category: "Hyderabad", image: "/assets/images/hyderabad.webp" },
+  { id: "03", title: "", category: "vizag", image: "/assets/images/vizag.jpg.jpeg" },
+  { id: "04", title: "", category: "Bangalore", image: "/assets/images/bangalore.jfif.jpeg" },
+  { id: "05", title: "", category: "Ranchi", image: "/assets/images/ranchi.jfif" },
+  // { id: "06", title: "Health Tracker", category: "MOBILE APP", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" },
 ];
 
 const ProjectCard = ({ project }) => {
@@ -134,7 +134,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <div
-      className="relative w-[80vw] md:w-[290px] h-[350px] md:h-[400px] flex-shrink-0 cursor-pointer overflow-hidden bg-[#4c4949]"
+      className="relative bg-white w-[80vw] md:w-[290px] h-[400px] md:h-[500px] flex-shrink-0 cursor-pointer overflow-hidden bg-[#4c4949]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -160,8 +160,8 @@ const ProjectCard = ({ project }) => {
 
           <div className={`absolute inset-0 p-5 flex flex-col justify-between transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
             <h3 className="text-white text-xs font-bold opacity-90 whitespace-nowrap overflow-hidden text-ellipsis">{project.title}</h3>
-            <h2 className="text-white text-xl font-black uppercase leading-tight font-mono tracking-tight">{`{${project.category}}`}</h2>
-            <p className="text-white text-[10px] md:text-xs font-bold uppercase tracking-widest font-mono">{`{VIEW PROJECT}`}</p>
+            <h2 className="text-white text-xl font-black  leading-tight font-mono tracking-tight">{`{${project.category}}`}</h2>
+            <p className="text-white text-[10px] md:text-xs font-bold tracking-widest font-mono">{`{VIEW PROJECT}`}</p>
           </div>
         </div>
       </motion.div>
@@ -203,8 +203,8 @@ const SelectedWork = () => {
   return (
     <div ref={component} className="overflow-hidden bg-white">
       {/* Title Section matching ServicesSection */}
-      <h2 className="text-3xl text-center md:text-4xl font-bold pt-30 text-[#b79662]">
-        Selected <span className="text-[#b79662]">Work</span>
+      <h2 className="text-3xl text-center md:text-4xl font-bold pt-25 text-[#b79662]">
+        Cities We Work <span className="text-[#b79662]">In</span>
       </h2>
       <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 rounded-full"></div>
 

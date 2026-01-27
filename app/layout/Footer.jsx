@@ -23,7 +23,7 @@ const Footer = () => {
       <footer className="bg-[#262626] text-gray-300 pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 ">
           {/* Main Grid Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
             {/* Column 1: Bio & Logo */}
             <div className="space-y-6">
               {/* Logo Section */}
@@ -41,14 +41,12 @@ const Footer = () => {
                 Born in Port Blair, Andaman Nicobar Islands and brought up in
                 New Delhi, Bhaswar Paul is a seasoned Sales, Marketing and
                 Training professional with almost two decades of work
-                experience. He has earned valuable exposure in India and
-                overseas market in Education, IT/ITES Services and Real Estate
-                Industry.
+                experience.
               </p>
             </div>
 
             {/* Column 2: Extra Links */}
-            <div className="lg:pl-8">
+            <div className="lg:pl-10">
               <h3 className="text-[#cba36f] text-xl font-extrabold mb-6 uppercase">
                 Extra Links
               </h3>
@@ -72,24 +70,12 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-
-            {/* Column 3: Contact Information */}
-            <div>
+             {/* Column 3: Get in Touch */}
+            <div className="lg:pl-2">
               <h3 className="text-[#cba36f] text-xl font-extrabold mb-6 uppercase">
-                Contact Information
+                Get In Touch
               </h3>
-              <div className="space-y-5 text-[15px]">
-                <div className="flex items-start gap-3">
-                  <FaMapMarkerAlt className="mt-1 text-white shrink-0" />
-                  <p>
-                    Office Suite 8 & 9, 3rd Floor,
-                    <br />
-                    Ninex City Mart, Sohna Road, Near Radisson Hotel, Sector 49,
-                    <br /> Gurugram - 122018 Haryana, India
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3">
                   <FaEnvelope className="text-white shrink-0" />
                   <a
                     href="mailto:info@bhaswarpaul.com"
@@ -116,6 +102,25 @@ const Footer = () => {
                     </a>
                   </div>
                 </div>
+            </div>
+
+            {/* Column 3: Contact Information */}
+            <div>
+              <h3 className="text-[#cba36f] text-xl font-extrabold mb-6 uppercase">
+                Address
+              </h3>
+              <div className="space-y-5 text-[15px]">
+                <div className="flex items-start gap-3">
+                  <FaMapMarkerAlt className="mt-1 text-white shrink-0" />
+                  <p>
+                    Office Suite 8 & 9, 3rd Floor,
+                    <br />
+                    Ninex City Mart, Sohna Road, Near Radisson Hotel, Sector 49,
+                    <br /> Gurugram - 122018 Haryana, India
+                  </p>
+                </div>
+
+                
               </div>
             </div>
 
