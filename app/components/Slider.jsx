@@ -52,9 +52,6 @@ const ImageCarousel = () => {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              {/* <div className="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-sm px-4 py-3 backdrop-blur-sm">
-                {slide.label}
-              </div> */}
             </div>
           </SwiperSlide>
         ))}

@@ -4,27 +4,27 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 const challenges = [
   {
-    title: "Stagnant Sales And Profits",
+    title: "Revenue and Profitability Stagnation",
     content:
-      "Is your business struggling to grow year after year, despite your best efforts? This stagnation can be frustrating and demotivating, hindering your ability to achieve your goals.",
+      "When a strategy lacks focus, market differentiation fades, and execution fails, converting demand into profit becomes difficult. This slows down your revenue growth despite active market engagement.",
   },
   {
-    title: "Negative Cash Flows",
+    title: "Cash Flow Imbalances and Liquidity Pressure",
     content:
       "Struggling to manage daily expenses due to delayed payments or poor cash flow management? We help you optimize your working capital and ensure financial stability.",
   },
   {
-    title: "Rising Debts And Interest Costs",
+    title: "Escalating Debt Exposure and Financing Costs",
     content:
       "Are mounting debts eating into your profits? Learn strategies to restructure debt, reduce interest burdens, and regain financial freedom.",
   },
   {
-    title: "Ineffective Marketing And Sales",
+    title: "Misaligned Sales and Marketing Effectiveness",
     content:
       "Spending money on ads without getting results? We help you build a high-converting sales funnel and marketing strategy that delivers ROI.",
   },
   {
-    title: "Disengaged Team And Lack Of Accountability",
+    title: "Low Workforce Engagement and Accountability Gaps",
     content:
       "Do you feel like you're the only one working hard? We implement OKR systems to align your team, boost productivity, and build a culture of ownership.",
   },
@@ -78,8 +78,8 @@ const BusinessChallenges = () => {
                 Identifying
               </span>
               <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
-                Common Business{" "}
-                <span className="text-[#b79662]">Challenges</span>
+                Key Business Obstacles {" "}
+                <span className="text-[#b79662]">Impacting Performance</span>
               </h2>
             </div>
 
