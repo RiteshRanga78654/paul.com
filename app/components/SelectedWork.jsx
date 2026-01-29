@@ -155,13 +155,13 @@ const ProjectCard = ({ project }) => {
       >
         <div className="relative w-full h-full">
           <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
-            <span className="text-white text-2xl md:text-3xl font-light font-mono tracking-tighter">{`{${project.id}}`}</span>
+            <span className="text-white text-2xl md:text-3xl font-light font-mono tracking-tighter">{project.id}</span>
           </div>
 
           <div className={`absolute inset-0 p-5 flex flex-col justify-between transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
             <h3 className="text-white text-xs font-bold opacity-90 whitespace-nowrap overflow-hidden text-ellipsis">{project.title}</h3>
-            <h2 className="text-white text-xl font-black  leading-tight font-mono tracking-tight">{`{${project.category}}`}</h2>
-            <p className="text-white text-[10px] md:text-xs font-bold tracking-widest font-mono">{`{VIEW PROJECT}`}</p>
+            <h2 className="text-white text-3xl font-black my-auto leading-tight font-sans tracking-tight">{project.category}</h2>
+            {/* <p className="text-white text-[10px] md:text-xs font-bold tracking-widest font-mono">{`{VIEW PROJECT}`}</p> */}
           </div>
         </div>
       </motion.div>
