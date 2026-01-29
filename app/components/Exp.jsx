@@ -4,10 +4,10 @@ const Partners = () => {
   // Array to manage your logos easily
   const partners = [
     { name: "IREED", src: "/assets/images/Ireed-Logo (1).png" },
-    { name: "M3M", src: "/assets/images/m3m.png" },
+    { name: "Urban style", src: "/assets/images/urban-style-new.png" },
+     { name: "Central park", src: "/assets/images/central-park.png" },
     { name: "Ireo", src: "/assets/images/ireo.png" },
-    { name: "Central park", src: "/assets/images/central-park.png" },
-    { name: "Urban style", src: "/assets/images/urban-style.png" },
+   { name: "M3M", src: "/assets/images/m3m.png" },
     
   ];
 
