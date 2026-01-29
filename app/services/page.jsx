@@ -599,11 +599,11 @@ const services = [
   },
 
   {
-    title: "Fund Raising",
+    title: "Real Estate Certificate Programs",
 
     subtitle: "Capital infusion & Investor relations",
 
-    desc: "Utilizing a colossal network of industry giants built over 20 years to raise substantial capital for startups and high-impact causes within days.",
+    desc: "Our industry-specific real estate certification programs range from foundational to master’s-level training, complemented by digital, technology, and postgraduate business programs that support strategic, data-driven career growth.",
 
     icon: <Coins size={40} className="text-[#b79662]" />,
 
@@ -643,9 +643,10 @@ const challenges = [
   {
     id: "01",
 
-    title: "Stagnant Sales",
+    title: "Sales Growth Stagnation",
+    subtitle:"Performance Assessment",
 
-    desc: "Breaking growth plateaus with proven real estate scaling strategies and mindset shifts.",
+    desc: "Identifying the bottlenecks in your growth and turnaround strategies to reignite continued advancement and sustainable profitability.",
 
     // Visual: A lone businessman overlooking a vast, quiet construction site at dusk
 
@@ -655,10 +656,12 @@ const challenges = [
 
   {
     id: "02",
+    
 
-    title: "Negative Cash Flows",
+    title: "Debt Pressure",
+    subtitle:"Financial Restructuring",
 
-    desc: "Optimizing working capital and financial structures for long-term operational stability.",
+    desc: "Rebalancing obligations and improving the debt structure to regain financial flexibility and enhance long-term business resilience.",
 
     // Visual: Close up of a luxury watch and professional hands signing complex financial documents
 
@@ -669,9 +672,10 @@ const challenges = [
   {
     id: "03",
 
-    title: "Rising Debts",
+    title: "Cash Flow Constraints",
+    subtitle:"Financial Diagnostics",
 
-    desc: "Executive strategies to restructure debt and regain financial freedom in complex markets.",
+    desc: "Strengthening liquidity and capital efficiency through structured financial planning and rigorous cash-flow management.",
 
     // Visual: Dramatic low-angle shot of dark corporate skyscrapers reflecting a cloudy sky
 
@@ -682,9 +686,10 @@ const challenges = [
   {
     id: "04",
 
-    title: "Ineffective Marketing",
+    title: "Marketing Inefficiency",
+    subtitle:"Market Approach Review",
 
-    desc: "Building high-converting sales funnels that deliver consistent ROI and brand authority.",
+    desc: "Sales and marketing alignment to improve conversion rates and generate measurable returns on investment.",
 
     // Visual: A modern glass meeting room with data projections blurring in the background
 
@@ -718,15 +723,12 @@ export default function ServicesPage() {
             </span>
 
             <h2 className="mb-8 text-3xl font-bold leading-none text-white lg:text-4xl">
-              Strategic Solutions for <br />
-              <span className="text-[#b79662]">Real Estate Growth</span>
+              Defining the Future of <br />
+              <span className="text-[#b79662]">Real Estate Performance</span>
             </h2>
 
             <p className="mb-10 max-w-xl text-lg font-light leading-relaxed text-gray-200">
-              Transforming business potential into market leadership through
-              executive training, capital infusion, and elite talent
-              acquisition. We provide the strategic framework for high-impact
-              results.
+             Our strategy involves blending market intelligence with strategic precision to maximize placement and performance across diverse real estate portfolios.
             </p>
 
             {/* Gold Button Style - No style changes, only text */}
@@ -947,7 +949,7 @@ export default function ServicesPage() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Our Strategic <span className="text-[#b79662]">Process</span>
+                Our Winning <span className="text-[#b79662]">Strategy</span>
               </h2>
 
               <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-4 rounded-full"></div>
@@ -958,9 +960,9 @@ export default function ServicesPage() {
                 {
                   step: "01",
 
-                  title: "Discovery & Diagnostic",
+                  title: "Discover Insights",
 
-                  desc: "We deep-dive into your current sales and financial structures, identifying friction points and hidden opportunities through expert analysis.",
+                  desc: "We analyze market trends and internal performance metrics to discover opportunities which enable businesses to achieve sustainable growth and develop scalable business operations.",
 
                   image:
                     "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600",
@@ -969,9 +971,9 @@ export default function ServicesPage() {
                 {
                   step: "02",
 
-                  title: "Strategic Roadmap",
+                  title: "Map Strategy",
 
-                  desc: "A bespoke, actionable plan is designed, leveraging industry insights to eliminate growth barriers and optimize your operational flow.",
+                  desc: "Concise, data-based strategies are developed to ensure business objectives align with market plans and competitive advantage.",
 
                   image:
                     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600",
@@ -980,9 +982,9 @@ export default function ServicesPage() {
                 {
                   step: "03",
 
-                  title: "Execution & Infusion",
+                  title: "Execute Efficiently",
 
-                  desc: "We deploy the agreed-upon strategies, injecting capital, talent, and tailored training directly into your real estate ecosystem.",
+                  desc: "Disciplined execution converts strategy into real results through targeted action, accountability, and performance-driven implementation.",
 
                   image:
                     "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=600",
@@ -991,9 +993,9 @@ export default function ServicesPage() {
                 {
                   step: "04",
 
-                  title: "Market Leadership",
+                  title: "Lead the Market",
 
-                  desc: "Witness measurable results as we work together to achieve sustainable market leadership, increased ROI, and amplified brand authority.",
+                  desc: "Businesses achieve category leadership by sustaining momentum and consistently delivering measurable value.",
 
                   image:
                     "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=600",
@@ -1095,7 +1097,7 @@ export default function ServicesPage() {
                   </h3>
 
                   <p className="text-[#b79662] text-xs font-bold tracking-widest mb-4">
-                    Obstacle Analysis
+                    {item.subtitle}
                   </p>
 
                   <p className="text-gray-600 leading-relaxed text-sm mb-8">

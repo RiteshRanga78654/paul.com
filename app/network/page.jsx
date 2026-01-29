@@ -35,17 +35,13 @@ const DesignComponent = () => {
      Networks
     </h4>
     <h1 className="text-4xl font-bold text-white mb-6">
-      Here's What Our <br />
-      <span className="text-[#b79662]">Customers Have To Say</span>
+      Power Your Growth  <br />
+      <span className="text-[#b79662]">Through Strategic Connections</span>
     </h1>
     <p className="text-gray-200 text-lg mb-8 font-light leading-relaxed">
-      A vibrant network of entrepreneurs,{" "}
-      <span className="font-bold text-white">business owners</span>, and
-      professionals united by a shared passion for{" "}
-      <span className="font-bold text-white">growth</span> and success.
-      Whether you're seeking valuable connections, strategic partnerships,
-      or collaborative opportunities, our network offers a dynamic
-      platform to foster meaningful relationships.
+      A powerful business ecosystem which brings together {" "}
+      <span className="font-bold text-white">entrepreneurs and business executives</span>with professionals who aim for growth.{" "}
+      <span className="font-bold text-white">growth</span>  Our network establishes crucial connections which lead to strategic partnerships that help various sectors achieve goals and build credibility while fulfilling their long-term objectives.
     </p>
 
     <button
@@ -128,7 +124,7 @@ const DesignComponent = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold">
-              Why Join Our <span className="text-[#b79662]">Community?</span>
+              Why Choose  <span className="text-[#b79662]">Us?</span>
             </h2>
             <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 rounded-full"></div>
           </div>
@@ -141,14 +137,10 @@ const DesignComponent = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#b79662] transition-colors">
-                  Connect With Like-Minded Professionals
+                  Right Connections
                 </h3>
                 <p className="text-gray-200 text-sm leading-relaxed font-light">
-                  Surround yourself with a diverse community of driven
-                  individuals who share your entrepreneurial spirit and
-                  ambition. Our network provides a supportive environment where
-                  you can exchange ideas, seek advice, and collaborate on
-                  exciting ventures.
+                  We introduce you to industry players and growth-oriented professionals, which helps you build relationships that create business opportunities and provide measurable value for your company.
                 </p>
               </div>
             </div>
@@ -160,14 +152,10 @@ const DesignComponent = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#b79662] transition-colors">
-                  Access To Exclusive Resources And Opportunities
+                  Exclusive Access
                 </h3>
                 <p className="text-gray-200 text-sm leading-relaxed font-light">
-                  Gain access to a wealth of resources, including industry
-                  insights, market trends, and business tools, to stay ahead of
-                  the curve. From workshops and seminars to networking events
-                  and mastermind groups, our network offers valuable
-                  opportunities.
+                  Get insider access to curated groups and high-value information which help you maintain your competitive edge by tracking market developments, competitive activities and identifying new possibilities in your field.
                 </p>
               </div>
             </div>
@@ -179,14 +167,10 @@ const DesignComponent = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#b79662] transition-colors">
-                  Forge Strategic Partnerships
+                  Strategic Alliances
                 </h3>
                 <p className="text-gray-200 text-sm leading-relaxed font-light">
-                  Cultivate strategic partnerships with fellow members to
-                  leverage each other's strengths and accelerate mutual growth.
-                  Whether you're seeking new clients, suppliers, or investors,
-                  our network serves as a fertile ground for cultivating
-                  fruitful collaborations.
+                  We enable essential partnerships for businesses to operate more efficiently while achieving faster growth. Our team assists you with new avenues of sustainable growth and market expansion.
                 </p>
               </div>
             </div>
@@ -198,13 +182,10 @@ const DesignComponent = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#b79662] transition-colors">
-                  Promote Your Business And Personal Brand
+                  Brand Visibility
                 </h3>
                 <p className="text-gray-200 text-sm leading-relaxed font-light">
-                  Showcase your expertise, products, and services to a captive
-                  audience within our network. From featured profiles and guest
-                  blog posts to speaking opportunities and sponsored events, we
-                  provide various channels to amplify your brand visibility.
+                 Position your brand where influence matters most through premium exposure and thought leadership opportunities that enhance credibility and recognition among key industry stakeholders.
                 </p>
               </div>
             </div>
@@ -230,7 +211,7 @@ const DesignComponent = () => {
         {/* Right: Content */}
         <div className="w-full lg:w-1/2 p-10 lg:p-20 bg-[#1e1e1e] flex flex-col justify-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-12  ">
-            Membership <span className="text-[#b79662]">Benefits</span>
+            Member <span className="text-[#b79662]">Advantages </span>
           </h2>
 
           <div className="space-y-10">
@@ -241,12 +222,10 @@ const DesignComponent = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white mb-2">
-                  Networking Events
+                  Curated Events
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Attend exclusive networking events, mixers, and conferences to
-                  expand your professional circle and foster valuable
-                  connections.
+                  Well-organized meetings that generate top-tier discussions, strategic contacts, and quality business deliverables.
                 </p>
               </div>
             </div>
@@ -258,11 +237,10 @@ const DesignComponent = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white mb-2">
-                  Business Referrals
+                 Referral Business Network
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Tap into our network's referral network to generate leads,
-                  referrals, and new business opportunities.
+                  A trusted network that produces reliable referrals, repeat business, and stable growth.
                 </p>
               </div>
             </div>
@@ -274,12 +252,10 @@ const DesignComponent = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white  mb-2">
-                  Educational Resources
+                 Learning Resources
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Access curated resources, including webinars, e-books, and
-                  whitepapers, to enhance your knowledge and skills across
-                  various business disciplines.
+                  Expert knowledge together with actionable frameworks and practical insights which improve decision-making and leadership effectiveness.
                 </p>
               </div>
             </div>
@@ -291,12 +267,10 @@ const DesignComponent = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white  mb-2">
-                  Member Discounts
+                 Member Privileges
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Enjoy special discounts and offers on business services,
-                  software tools, and training programs from our trusted
-                  partners and affiliates.
+                 Priority access, special privileges, and tailored opportunities are available only to network members.
                 </p>
               </div>
             </div>

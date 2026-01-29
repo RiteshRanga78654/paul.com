@@ -11,22 +11,22 @@ const challenges = [
   {
     title: "Cash Flow Imbalances and Liquidity Pressure",
     content:
-      "Struggling to manage daily expenses due to delayed payments or poor cash flow management? We help you optimize your working capital and ensure financial stability.",
+      "The inability of businesses to maintain constant cash flow and timely payment collection leads to working capital problems, which hinder their capacity to adapt to business expansion and market shifts. ",
   },
   {
     title: "Escalating Debt Exposure and Financing Costs",
     content:
-      "Are mounting debts eating into your profits? Learn strategies to restructure debt, reduce interest burdens, and regain financial freedom.",
+      "Rising borrowing levels and increasing interest obligations reduce financial agility. It weakens balance sheets and diverts resources away from strategic investment and expansion. ",
   },
   {
     title: "Misaligned Sales and Marketing Effectiveness",
     content:
-      "Spending money on ads without getting results? We help you build a high-converting sales funnel and marketing strategy that delivers ROI.",
+      "Disconnected sales and marketing efforts result in decreased conversion rates, which stop revenue growth from achieving its expected outcomes.",
   },
   {
     title: "Low Workforce Engagement and Accountability Gaps",
     content:
-      "Do you feel like you're the only one working hard? We implement OKR systems to align your team, boost productivity, and build a culture of ownership.",
+      "The lack of ownership and motivation across teams results in decreased productivity, which harms organizational performance during essential phases of development.",
   },
 ];
 
