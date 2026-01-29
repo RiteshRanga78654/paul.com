@@ -246,8 +246,8 @@ Who this is for: Real estate firms seeking trained professionals who can contrib
 
               <div className="space-y-2">
                 <p className="text-white text-base sm:text-lg md:text-xl">
-                  Business Visionary | Growth Strategist | Trusted Advisor |
-                  Industry Voice | Real Estate Mentor for Leaders & Founders
+                  Business Visionary | Growth Strategist |
+                  Industry Voice | Mentor & Author for Leaders & Founders
                 </p>
                 <h3 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
                   Build. Scale. Lead.

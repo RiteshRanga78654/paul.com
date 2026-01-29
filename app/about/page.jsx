@@ -547,13 +547,7 @@ const TestimonialHero = () => (
           <span className="text-[#b79662]">Bhaswar Paul in Media Coverage</span>
         </h2>
         <p className="text-gray-200 text-lg mb-10 leading-relaxed max-w-xl font-light">
-          My weekdays start early — usually with a cup of tea and some reading,"
-          Mansharamani said. "I find that this quiet time in the morning helps
-          set a productive tone for the day. The calmness of the early hours
-          allows me to focus without distractions, whether it's diving into a
-          good book or reflecting on my goals for the day. It’s become an
-          essential part of my routine that fuels my energy and creativity
-          throughout the busy workday.
+         Bhaswar Paul is a seasoned professional with over two decades of experience across real estate, education, IT/ITES, and hospitality. He is the driving force behind IREED Academy (India) Private Limited, shaping leaders and high-performance professionals through strategic insight, industry depth, and execution-led growth. Mr. Paul has developed winning sales structures, marketing strategies, and performance-driven training modules. As a highly sought-after consultant, mentor, and motivational speaker, he is known for creating market-ready professionals and driving growth for leading real estate companies.
         </p>
         <button
           style={{
@@ -644,43 +638,43 @@ const MediaSection = () => {
         <section className="bg-[#1e1e1e] py-20" style={{ margin: "50px 0" }}>
           <div className="mx-auto px-6 text-center mb-12">
             <p className="text-[#b79662] font-bold tracking-widest text-sm mb-2">
-              Core Values
+              Core Principles
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              We Innovate With Purpose.
+              Innovation That Creates Impact
             </h2>
           </div>
 
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ValueCard
               icon={<Heart className="w-10 h-10 text-[#b79662]" />}
-              title="Empathy"
-              desc="Understanding the customer needs deeply and acting with care."
+              title="Understanding"
+              desc="Deep knowledge of markets, people, and changing business conditions."
             />
             <ValueCard
               icon={<Star className="w-10 h-10 text-[#b79662]" />}
-              title="Purpose Driven"
-              desc="Every action is aligned with the long-term vision of success."
+              title="Partnership"
+              desc="Collaborative relationships that are built on shared goals and mutual success."
             />
             <ValueCard
               icon={<Phone className="w-10 h-10 text-[#b79662]" />}
-              title="Communication"
-              desc="Clear, transparent, and constant communication channels."
+              title="Clarity"
+              desc="Clear communication that maintains transparency and eliminates ambiguity in decision-making."
             />
             <ValueCard
               icon={<Handshake className="w-10 h-10 text-[#b79662]" />}
-              title="Collaboration"
-              desc="Building strong partnerships to achieve mutual growth."
+              title="Vision-Led"
+              desc="Strategy guided by foresight, purpose, and long-term value creation."
             />
             <ValueCard
               icon={<User className="w-10 h-10 text-[#b79662]" />}
-              title="Leadership"
-              desc="Inspiring others to dream more, learn more, and do more."
+              title="Influence"
+              desc="Shaping decisions, mindsets, and outcomes through credible leadership."
             />
             <ValueCard
               icon={<Shield className="w-10 h-10 text-[#b79662]" />}
-              title="Integrity"
-              desc="Upholding the highest standards of honesty and ethics."
+              title="Trust"
+              desc="Earned through consistency, integrity, and a no-compromise approach."
             />
           </div>
         </section>

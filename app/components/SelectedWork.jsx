@@ -123,7 +123,7 @@ if (typeof window !== "undefined") {
 const projects = [
   { id: "01", title: "", category: "Gurugram", image: "/assets/images/gurugram.jpg.jpeg" },
   { id: "02", title: "", category: "Hyderabad", image: "/assets/images/hyderabad.webp" },
-  { id: "03", title: "", category: "vizag", image: "/assets/images/vizag.jpg.jpeg" },
+  { id: "03", title: "", category: "Vizag", image: "/assets/images/vizag.jpg.jpeg" },
   { id: "04", title: "", category: "Bangalore", image: "/assets/images/bangalore.jfif.jpeg" },
   { id: "05", title: "", category: "Ranchi", image: "/assets/images/ranchi.jfif" },
   // { id: "06", title: "Health Tracker", category: "MOBILE APP", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" },

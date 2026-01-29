@@ -308,13 +308,13 @@ const VideoTestimonials = () => {
       <div className="flex w-full flex-col justify-center bg-[#4c4949] p-10 md:p-16 lg:w-1/2">
         <span className="mb-4 block text-sm font-bold tracking-widest text-[#b79662]">Testimonials</span>
         <h2 className="mb-8 text-3xl font-bold leading-none text-white lg:text-4xl">
-          Here's What Our <br />
+          Here’s What Our <br />
           <span className="text-[#b79662]">
-            Customers Have To Say
+            Customers Are Saying
           </span>
         </h2>
         <p className="mb-10 max-w-xl text-lg font-light leading-relaxed text-gray-200">
-          A vibrant network of entrepreneurs, business owners, and professionals united by a shared passion for growth and success. Whether you're seeking valuable connections or strategic partnerships.
+          Real experiences of business leaders and professionals who have seen tangible growth and improved networking through our programs, partnerships, and strategic network.
         </p>
         
         {/* Gold Button Style */}
