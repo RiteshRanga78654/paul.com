@@ -573,11 +573,11 @@ import Footer from "../layout/Footer";
 
 const services = [
   {
-    title: "Executive Training & Workshops",
+    title: "Executive Training and Workshops",
 
-    subtitle: "Strategic leadership development",
+    subtitle: "Strategic Leadership Development",
 
-    desc: "CEO Bhaswar Paul transforms traditional sales teams into high-performing units through strategic mindset shifts and advanced techniques tailored for the real estate market.",
+    desc: "Advanced leadership growth programs that use practical frameworks and insights made just for the changing real estate sector to improve sales performance and strategic thinking.",
 
     icon: <GraduationCap size={40} className="text-[#b79662]" />,
 
@@ -588,9 +588,9 @@ const services = [
   {
     title: "Hiring and Placement",
 
-    subtitle: "World-class talent acquisition",
+    subtitle: "World-Class Talent Acquisition",
 
-    desc: "Leveraging an elite industry network to connect real estate developers with high-skilled professionals who align with long-term corporate visions.",
+    desc: "Connecting real estate organizations with high-caliber professionals through a trusted industry network to ensure leadership alignment, skill compatibility, and durable value creation for growing businesses.",
 
     icon: <Briefcase size={40} className="text-[#b79662]" />,
 
@@ -616,9 +616,9 @@ const services = [
   {
     title: "Project Consultation",
 
-    subtitle: "Expert Planning & Management",
+    subtitle: "Expert Planning & Management ",
 
-    desc: "Expert consultation to increase profit numbers by leaps and bounds. We handle project complications through specialized advice and insider industry tricks.",
+    desc: "Hands-on advisory support that helps optimize planning and profitability by addressing operational gaps, market challenges, and complex project requirements with proven, results-driven expertise.",
 
     icon: <LineChart size={40} className="text-[#b79662]" />,
 
@@ -626,16 +626,6 @@ const services = [
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
 
     email: "services@bhaswarpaul.com",
-
-    features: [
-      "Strategic planning & management",
-
-      "Market research & analysis",
-
-      "Price negotiation & Taxation advice",
-
-      // "Luxury & Commercial development"
-    ],
   },
 ];
 

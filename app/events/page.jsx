@@ -203,6 +203,130 @@ export default function EventsPage() {
   return (
     <div style={pageStyle}>
       <Header />
+ <section className="mobile mx-auto mt-10 mb-15 flex max-w-7xl flex-col overflow-hidden rounded-lg shadow-2xl lg:mt-20 lg:flex-row">
+          <div className="flex w-full flex-col justify-center bg-[#4c4949] p-10 md:p-16 lg:w-1/2">
+            <span className="mb-4 block text-sm font-bold tracking-widest text-[#b79662]">
+              Our Expertise
+            </span>
+
+            <h2 className="mb-8 text-3xl font-bold leading-none text-white lg:text-4xl">
+              Defining the Future of <br />
+              <span className="text-[#b79662]">Real Estate Performance</span>
+            </h2>
+
+            <p className="mb-10 max-w-xl text-lg font-light leading-relaxed text-gray-200">
+             Our strategy involves blending market intelligence with strategic precision to maximize placement and performance across diverse real estate portfolios.
+            </p>
+
+            {/* Gold Button Style - No style changes, only text */}
+
+            <div className="w-fit">
+              <button
+                style={{
+                  padding: "14px 40px",
+
+                  backgroundColor: "#b79662",
+
+                  borderRadius: "8px",
+
+                  color: "#fff",
+
+                  fontSize: "1.1rem",
+
+                  fontWeight: "700",
+
+                  cursor: "pointer",
+
+                  position: "relative",
+
+                  overflow: "hidden",
+
+                  zIndex: 1,
+
+                  border: "2px solid #b79662",
+
+                  letterSpacing: "1px",
+
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+
+                  const text = e.currentTarget.querySelector(".btn-text");
+
+                  if (fill) fill.style.width = "100%";
+
+                  if (text) text.style.color = "#b79662";
+                }}
+                onMouseLeave={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+
+                  const text = e.currentTarget.querySelector(".btn-text");
+
+                  if (fill) fill.style.width = "0%";
+
+                  if (text) text.style.color = "#fff";
+                }}
+              >
+                <div
+                  className="hover-fill"
+                  style={{
+                    position: "absolute",
+
+                    top: 0,
+
+                    left: 0,
+
+                    width: "0%",
+
+                    height: "100%",
+
+                    background: "#ffffff",
+
+                    transition: "width 0.4s ease",
+
+                    zIndex: -1,
+                  }}
+                />
+
+                <span
+                  className="btn-text"
+                  style={{
+                    position: "relative",
+
+                    zIndex: 1,
+
+                    color: "#fff",
+
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  View Our Events
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div className="group relative min-h-[400px] w-full bg-[#1e1e1e] lg:w-1/2">
+            <img
+              src="/assets/TEDx TAPMI/IMG_6622.jpg"
+              alt="Testimonial Hero"
+              className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+            />
+
+            <div className="absolute inset-0 bg-[#b79662]/60 mix-blend-multiply z-10 group-hover:opacity-0 transition-all duration-500"></div>
+
+            <div
+              className="absolute inset-0 z-20 pointer-events-none opacity-20"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+
+                backgroundSize: "20px 20px",
+              }}
+            />
+          </div>
+        </section>
 
       <div style={mainContentStyle}>
         <div style={containerStyle}>
