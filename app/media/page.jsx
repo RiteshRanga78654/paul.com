@@ -68,13 +68,11 @@ const TestimonialHero = () => (
     <div className="flex w-full flex-col justify-center bg-[#4c4949] p-10 md:p-16 lg:w-1/2">
       <span className="mb-4 block text-sm font-bold tracking-widest text-[#b79662]">Media</span>
       <h2 className="mb-8 text-3xl font-bold leading-none text-white lg:text-4xl">
-        After hours with Tajurba <br />
-        <span className="text-[#b79662]">Bhaswar Paul in Media Coverage</span>
+       Leadership Insights Featured <br />
+        <span className="text-[#b79662]">Across Media Platforms</span>
       </h2>
       <p className="mb-10 max-w-xl text-lg font-light leading-relaxed text-gray-200">
-        "The calmness of the early hours allows me to focus without distractions, 
-        whether it's reading or reflecting on goals. It fuels my energy and creativity 
-        throughout the busy workday."
+        Media coverage offering insight into Bhaswar Paul’s leadership mindset, disciplined execution, decision-making frameworks, and the principles shaping performance beyond public view.
       </p>
       <div className="w-fit">
         <GoldButton text="Explore Stories" onClick={() => {}} />

@@ -210,13 +210,12 @@ export default function EventsPage() {
             </span>
 
             <h2 className="mb-8 text-3xl font-bold leading-none text-white lg:text-4xl">
-              Defining the Future of <br />
-              <span className="text-[#b79662]">Real Estate Performance</span>
+              Real Estate Leadership<br />
+              <span className="text-[#b79662]">That Shapes Markets</span>
             </h2>
 
             <p className="mb-10 max-w-xl text-lg font-light leading-relaxed text-gray-200">
-             Our strategy involves blending market intelligence with strategic precision to maximize placement and performance across diverse real estate portfolios.
-            </p>
+Private events connecting senior professionals through insightful discussions and strategic frameworks that drives performance across real estate ventures.            </p>
 
             {/* Gold Button Style - No style changes, only text */}
 
