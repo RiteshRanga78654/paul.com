@@ -418,14 +418,13 @@ const TestimonialHero = () => (
       <div className="relative z-10">
         <span className="mb-4 block text-sm font-bold tracking-widest text-[#b79662]">Our Blogs</span>
         <h2 className="text-3xl lg:text-4xl font-extrabold mb-8 leading-none text-white">
-          Today’s complex challenges <br />
+          Lessons From Building <br />
           <span className="text-[#b79662]">
-            require bold solutions
+            and Leading Businesses
           </span>
         </h2>
         <p className="text-gray-200 text-lg mb-10 leading-relaxed max-w-xl font-light">
-          Welcome to our blog, where we delve into the realms of business coaching, leadership insights, motivational strategies, and more. Join us as we explore practical tips, success stories, and expert advice curated by Suresh Mansharamani, India's leading business coach.
-        </p>
+Explore our blogs section that combines leadership knowledge with business strategies to explain real business challenges. These blogs decode complex business problems into simple solutions–helping founders and leaders think more sharply and lead with confidence in dynamic markets.        </p>
         <div className="w-fit">
           <GoldButton text="Join our community now" onClick={() => {}} />
         </div>
