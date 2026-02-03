@@ -433,7 +433,7 @@ Explore our blogs section that combines leadership knowledge with business strat
 
     <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-auto bg-[#1e1e1e] group">
       <img 
-        src="/assets/TEDx TAPMI/IMG_9697.jpg" 
+        src="/assets/images/bhaswar-paul-blog.JPG.jpeg" 
         alt="bhaswar paul" 
         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
       />

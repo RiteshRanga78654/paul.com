@@ -308,7 +308,7 @@ Private events connecting senior professionals through insightful discussions an
 
           <div className="group relative min-h-[400px] w-full bg-[#1e1e1e] lg:w-1/2">
             <img
-              src="/assets/TEDx TAPMI/IMG_6622.jpg"
+              src="/assets/images/bhaswar-paul-event.JPG.jpeg"
               alt="Testimonial Hero"
               className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
             />

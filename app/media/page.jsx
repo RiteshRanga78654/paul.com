@@ -80,7 +80,7 @@ const TestimonialHero = () => (
     </div>
     <div className="group relative min-h-[400px] w-full bg-[#1e1e1e] lg:w-1/2">
       <img 
-        src="/assets/TEDx TAPMI/IMG_6622.jpg" 
+        src="/assets/images/bhaswar-paul-media.JPG.jpeg" 
         alt="Bhaswar Paul" 
         className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0" 
       />
