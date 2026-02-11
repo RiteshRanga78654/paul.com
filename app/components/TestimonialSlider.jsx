@@ -5,31 +5,38 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 const testimonials = [
   {
     id: 1,
-    name: "Abhishek Tripathi",
-    role: "Client",
+    name: "Mr. Vineet Chopra",
+    role: "Trident Realty",
     image: "/assets/images/person 1.jfif",
-    text: "Working with Mariox has been a transformative experience for our company. Their team has been instrumental in guiding our digital strategy and implementing innovative solutions that have significantly improved our business operations.",
+    text: "Working with IREED India has been a valuable experience for our team. The corporate training and workshop were practical, well-structured, and impactful, significantly enhancing our sales approach, confidence, and overall performance.",
   },
   {
     id: 2,
-    name: "Anil Mehta",
-    role: "Client",
+    name: "Mr. Kanwal Babber",
+    role: "Trident Realty",
     image: "/assets/images/person 2.jfif",
-    text: "My efforts in app development have changed massively thanks to Mariox. They have tremendously sophisticated technologies that I use to streamline campaigns, analyse data, and improve outcomes. I've had great growth and success because of their professional resources.",
+    text: "The real estate training and workshop delivered clear insights and practical learning. Our team benefited from improved client engagement, stronger execution, and a more confident, professional sales approach.",
   },
   {
     id: 3,
-    name: "Priyanshi Tehlan",
-    role: "Marketing Director",
+    name: "Mr. Jagadish Singh",
+    role: "Paras Buildtech",
     image: "/assets/images/person 5.jfif",
-    text: "The strategic insights provided were invaluable. We saw a 200% increase in engagement within the first quarter. The team is professional, responsive, and truly cares about the success of their clients.",
+    text: "Hands-on learning and strong industry relevance defined this corporate training and workshop. It supported our team in developing a sharper sales mindset, better market clarity, and more confident on-ground execution.",
   },
   {
     id: 4,
-    name: "Yashwant Vats",
-    role: "Tech Lead",
+    name: "Mr. Pritam Dey",
+    role: "Paras Buildtech",
     image: "/assets/images/person 3.jfif",
-    text: "Implementation was seamless. The support team was there every step of the way, ensuring our transition to the new system was smooth and error-free. Highly recommended for any growing enterprise.",
+    text: "Engaging sessions and practical discussions made this training impactful. Our team gained improved selling skills, a clearer understanding of market dynamics, and confidence to handle real estate clients.",
+  },
+  {
+    id: 5,
+    name: "Ms. Suneet Singh",
+    role: "Whiteland",
+    image: "/assets/images/person 3.jfif",
+    text: "Participating in this real estate workshop added clear value to our team. Practical insights and real scenarios helped improve client engagement, execution quality, and professional sales approach.",
   },
 ];
 
@@ -41,7 +48,6 @@ const TestimonialSlider = () => {
   const [itemsPerPage, setItemsPerPage] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(true);
-  
   const timeoutRef = useRef(null);
   const transitionTime = 500; // 500ms match css duration
 

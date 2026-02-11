@@ -12,7 +12,7 @@ import Footer from "../layout/Footer";
 import Header from "../layout/Header";
 
 // Replace these with your actual image paths
-const manInSuit = "/assets/TEDx TAPMI/Tanky You - TEDX & TAPMI.png";
+const manInSuit = "/assets/TEDx TAPMI/networkimg.jfif";
 const manWithMic = "/assets/TEDx TAPMI/IMG_9508.jpg"; // New image for Membership section
 const articleImg1 = "/path/to/article-img-1.jpg";
 const articleImg2 = "/path/to/article-img-2.jpg";

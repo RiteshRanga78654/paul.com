@@ -46,7 +46,7 @@ const BusinessChallenges = () => {
           <div className="w-full lg:w-1/2 relative group">
             <div className="relative rounded-2xl overflow-hidden border-2 border-[#b79662]/20 shadow-[0_0_40px_rgba(183,150,98,0.1)] h-[500px]">
               <img
-                src="/assets/TEDx TAPMI/Congratulations! Girish  Varma (3).png"
+                src="/assets/TEDx TAPMI/bussiness obstacles paul"
                 alt="Identifying Business Challenges"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />

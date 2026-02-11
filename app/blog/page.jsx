@@ -431,7 +431,7 @@ Explore our blogs section that combines leadership knowledge with business strat
       </div>
     </div>
 
-    <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-auto bg-[#1e1e1e] group">
+    <div className="w-full lg:w-1/2 relative min-h-auto lg:min-h-auto bg-[#1e1e1e] group">
       <img 
         src="/assets/images/bhaswar-paul-blog.JPG.jpeg" 
         alt="bhaswar paul" 

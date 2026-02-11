@@ -356,9 +356,9 @@ const VideoTestimonials = () => {
         </div>
       </div>
 
-      <div className="group relative min-h-[400px] w-full bg-[#1e1e1e] lg:w-1/2">
+      <div className="group relative min-h-auto w-full bg-[#1e1e1e] lg:w-1/2">
         <img 
-          src="/assets/TEDx TAPMI/IMG_6622.jpg" 
+          src="/assets/TEDx TAPMI/testimonialimg.jpg" 
           alt="Testimonial Hero" 
           className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0" 
         />

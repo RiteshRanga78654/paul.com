@@ -306,7 +306,7 @@ Private events connecting senior professionals through insightful discussions an
             </div>
           </div>
 
-          <div className="group relative min-h-[400px] w-full bg-[#1e1e1e] lg:w-1/2">
+          <div className="group relative min-h-auto w-full bg-[#1e1e1e] lg:w-1/2">
             <img
               src="/assets/images/bhaswar-paul-event.JPG.jpeg"
               alt="Testimonial Hero"
@@ -602,6 +602,30 @@ Private events connecting senior professionals through insightful discussions an
         }
         .event-card:hover img {
           transform: scale(1.1);
+        }
+          @media (max-width: 1024px) {
+          .mobile {
+            margin-left: 35px !important;
+            margin-right: 35px !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .mobile {
+            margin-left: 15px !important;
+            margin-right: 15px !important;
+          }
+          .twx {
+            height: 235px;
+            object-fit: cover;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .mobile {
+            margin-left: 15px !important;
+            margin-right: 15px !important;
+          }
         }
       `}</style>
     </div>
