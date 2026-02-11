@@ -18,7 +18,7 @@ const ImageCarousel = () => {
   ];
 
   return (
-    <section data-aos="fade-left" className="bg-white py-12   mx-auto max-w-7xl">
+    <section data-aos="fade-left" className="bg-white py-12 mx-4  md:mx-auto max-w-7xl">
       {/* 2. Added a title to your empty H2 */}
        <h2 className="text-3xl text-center md:text-4xl font-bold text-[#b79662]">
          Bhaswar Paul at TEDx TAPMI <br/> <span className="text-[#b79662]"> Guest Speaker</span>
@@ -44,7 +44,7 @@ const ImageCarousel = () => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full h-[300px] md:h-[400px] rounded-lg shadow-md overflow-hidden">
+            <div className="relative w-full h-[200px] md:h-[400px] rounded-lg shadow-md overflow-hidden">
               <img
                 src={slide.src}
                 alt={slide.label}

@@ -20,7 +20,7 @@ const Partners = () => {
       </h2>
       <div className="w-24 h-1 bg-[#b79662] mx-auto mt-5 mb-12 rounded-full"></div>
 
-      <section className="py-6 bg-[#4c4949] max-w-7xl rounded-[10px] mx-auto">
+      <section className="py-6 bg-[#4c4949] max-w-7xl rounded-[10px] md:mx-auto mx-4">
         <div className="container mx-auto px-4">
           {/* Logo Flex Container */}
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
@@ -47,7 +47,9 @@ const Partners = () => {
           </div>
         </div>
       </section>
+      
     </>
+    
   );
 };
 
