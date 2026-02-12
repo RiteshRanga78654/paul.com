@@ -211,19 +211,19 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
   const servicesData = [
     {
       title: "Corporate Training",
-      image: "/assets/TEDx TAPMI/Congratulations! Girish  Varma (3).png",
+      image: "/assets/images/P_K00313.JPG",
       description: `Structured, outcome-driven real estate training for organisations. Our programs combine industry experience with practical frameworks that help participants develop market-ready skills and strategic competence. Who this is for: Real estate professionals, sales leaders, channel partners, corporate teams, and career entrants seeking credible real estate education and certification.`,
     },
     {
       title: "Hire Train Deployment",
       image:
-        "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&auto=format&fit=crop",
+        "/assets/images/paras (1).jpg",
       description: `We work with organisations to identify, assess, and onboard high-potential real estate talent, ensuring strong alignment between role requirements and candidate capability. We Support: Candidate shortlisting and screening, Role alignment and capability evaluation, Onboarding readiness. Who this is for: Real estate firms seeking trained professionals who can contribute from day one.`,
     },
     {
       title: "Project Consulting",
       image:
-        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop",
+        "/assets/images/DSC02421.JPG",
       description: `Our campus workshops are designed to provide students with industry-ready real estate skills and practical exposure. Through these workshops, students gain a fundamental understanding of the real estate sector, its current market status, and potential career opportunities. We offer hands-on industry exposure and prepare students for real-world exposure. `,
     },
   ];
