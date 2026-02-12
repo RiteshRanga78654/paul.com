@@ -28,9 +28,13 @@ import Slider from "./components/Slider";
 // import Exp from "./components/Exp";
 
 // --- NEW SUB-COMPONENT FOR THE UPDATED SERVICES SECTION ---
-const ServiceCardItem = ({ title, description, image }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
+const ServiceCardItem = ({
+  title,
+  description,
+  image,
+  isExpanded,
+  onToggle,
+}) => {
   return (
     <div className="group bg-[#4c4949] rounded-2xl flex flex-col items-start text-left shadow-md hover:shadow-xl hover:shadow-[#b79662]/20 transition-all duration-500 border border-gray-700 hover:scale-[1.02] cursor-default relative overflow-hidden">
       {/* 1. Image Section */}
@@ -43,7 +47,6 @@ const ServiceCardItem = ({ title, description, image }) => {
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           alt={title}
         />
-        {/* Dark overlay to help text transition */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#4c4949] to-transparent opacity-60" />
       </div>
 
@@ -61,7 +64,7 @@ const ServiceCardItem = ({ title, description, image }) => {
           </p>
 
           <button
-            onClick={() => setIsExpanded(!isExpanded)}
+            onClick={onToggle} // Use the prop function here
             className="mt-4 text-[#b79662] font-black text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1"
           >
             {isExpanded ? "Show Less" : "Read More"}
@@ -72,8 +75,6 @@ const ServiceCardItem = ({ title, description, image }) => {
           </button>
         </div>
       </div>
-
-      {/* Subtle bottom accent line */}
       <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#b79662] transition-all duration-500 group-hover:w-full" />
     </div>
   );
@@ -144,6 +145,10 @@ const StarIcon = ({ color = "#b79662" }) => (
 );
 
 export default function HeroSection() {
+  const [allServicesExpanded, setAllServicesExpanded] = useState(false);
+
+  // 2. Function to toggle the state
+  const toggleAllServices = () => setAllServicesExpanded(!allServicesExpanded);
   const containerRef = useRef(null);
   const scrollerRef = useRef(null);
 
@@ -206,8 +211,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
   const servicesData = [
     {
       title: "Corporate Training",
-      image:
-        "/assets/TEDx TAPMI/Congratulations! Girish  Varma (3).png",
+      image: "/assets/TEDx TAPMI/Congratulations! Girish  Varma (3).png",
       description: `Structured, outcome-driven real estate training for organisations. Our programs combine industry experience with practical frameworks that help participants develop market-ready skills and strategic competence. Who this is for: Real estate professionals, sales leaders, channel partners, corporate teams, and career entrants seeking credible real estate education and certification.`,
     },
     {
@@ -279,7 +283,8 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
               </p>
               <div className="space-y-2">
                 <p className="text-white text-base sm:text-lg md:text-xl">
-                  Business Visionary | Growth Strategist | Industry Voice |<br/>
+                  Business Visionary | Growth Strategist | Industry Voice |
+                  <br />
                   Author & Mentor for Industry Leaders
                 </p>
                 <h3 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
@@ -537,7 +542,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
       </div>
 
       {/* Services Grid Section - REPLACED WITH YOUR REQUESTED UPDATES */}
-      <section className="bg-white  px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] lg:mt-[-28px]">
+      <section className="bg-white px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] lg:mt-[-28px]">
         <h2 className="text-3xl text-center md:text-4xl font-bold text-[#b79662]">
           Our <span className="text-[#b79662]">Services</span>
         </h2>
@@ -549,7 +554,10 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
                 key={index}
                 title={service.title}
                 description={service.description}
-                image={service.image} // Pass the image prop
+                image={service.image}
+                // 3. Pass the shared state and toggle function
+                isExpanded={allServicesExpanded}
+                onToggle={toggleAllServices}
               />
             ))}
           </div>
@@ -559,7 +567,6 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
       {/* google review */}
 
       <Googlereview />
-
 
       {/* <Exp /> */}
       <Slider />
@@ -623,6 +630,6 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
       <SelectedWork />
       <TestimonialSlider />
       <Footer />
-      </>
+    </>
   );
 }
