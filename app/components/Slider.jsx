@@ -48,7 +48,7 @@ const ImageCarousel = () => {
               <img
                 src={slide.src}
                 alt={slide.label}
-                fill
+                fill= "true"
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />

@@ -20,7 +20,7 @@ const Footer = () => {
          </button>
       </div> */}
 
-      <footer className="bg-[#262626] text-gray-300 pt-16 pb-8">
+      <footer className="bg-[#262626] text-gray-300 pt-16 ">
         <div className="max-w-7xl mx-auto px-4 ">
           {/* Main Grid Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
@@ -93,12 +93,6 @@ const Footer = () => {
                       className="hover:text-[#cba36f]"
                     >
                       +91 981 883 7873
-                    </a>
-                    <a
-                      href="tel:+919417631294"
-                      className="hover:text-[#cba36f]"
-                    >
-                      +91 941 763 1294
                     </a>
                   </div>
                 </div>
@@ -239,26 +233,35 @@ const Footer = () => {
 
         {/* Bottom Copyright Bar */}
         <div className="bg-black py-6 mt-8 border-t border-gray-800">
-          <div className="container mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-            <p className="mb-4 md:mb-0 text-center md:text-left">
-              Copyright © 2018 Bhaswar Paul | Powered by{" "}
-              <span className="text-[#cba36f]">IREED</span>
-            </p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">
-                Disclaimers
-              </a>
-              <span className="text-gray-700">|</span>
-              <a href="#" className="hover:text-white transition-colors">
-                Privacy Policy
-              </a>
-              <span className="text-gray-700">|</span>
-              <a href="#" className="hover:text-white transition-colors">
-                Terms of Use
-              </a>
-            </div>
-          </div>
-        </div>
+  <div className="container mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+    <p className="mb-4 md:mb-0 text-center md:text-left">
+      Copyright © 2018 Bhaswar Paul | Powered by{" "}
+      {/* Added Link Here */}
+      <a 
+        href="https://ireedindia.com" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-[#cba36f] hover:brightness-125 transition-all duration-300"
+      >
+        IREED
+      </a>
+    </p>
+    
+    <div className="flex gap-6">
+      <a href="#" className="hover:text-white transition-colors">
+        Disclaimers
+      </a>
+      <span className="text-gray-700">|</span>
+      <a href="#" className="hover:text-white transition-colors">
+        Privacy Policy
+      </a>
+      <span className="text-gray-700">|</span>
+      <a href="#" className="hover:text-white transition-colors">
+        Terms of Use
+      </a>
+    </div>
+  </div>
+</div>
       </footer>
     </div>
   );
