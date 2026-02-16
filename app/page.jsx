@@ -17,6 +17,12 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import TestimonialSlider from "./components/TestimonialSlider";
 import BookStore from "./components/BookStore";
 import Header from "./layout/Header";
@@ -29,6 +35,58 @@ import Slider from "./components/Slider";
 // import Exp from "./components/Exp";
 
 // --- NEW SUB-COMPONENT FOR THE UPDATED SERVICES SECTION ---
+// const ServiceCardItem = ({
+//   title,
+//   description,
+//   image,
+//   isExpanded,
+//   onToggle,
+// }) => {
+//   return (
+//     <div className="group bg-[#4c4949] rounded-2xl flex flex-col items-start text-left shadow-md hover:shadow-xl hover:shadow-[#b79662]/20 transition-all duration-500 border border-gray-700 hover:scale-[1.02] cursor-default relative overflow-hidden">
+//       {/* 1. Image Section */}
+//       <div className="relative w-full h-70 overflow-hidden">
+//         <img
+//           src={
+//             image ||
+//             "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop"
+//           }
+//           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+//           alt={title}
+//         />
+//         <div className="absolute inset-0 bg-gradient-to-t from-[#4c4949] to-transparent opacity-60" />
+//       </div>
+
+//       {/* 2. Content Section */}
+//       <div className="p-8 pt-6 w-full">
+//         <h3 className="text-xl font-bold text-[#ffffff] mb-4 leading-snug transition-colors duration-300 group-hover:text-[#b79662]">
+//           {title}
+//         </h3>
+
+//         <div className="relative">
+//           <p
+//             className={`text-sm text-gray-200 leading-relaxed transition-all duration-300 ${!isExpanded ? "line-clamp-3" : ""}`}
+//           >
+//             {description}
+//           </p>
+
+//           <button
+//             onClick={onToggle} // Use the prop function here
+//             className="mt-4 text-[#b79662] font-black text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1"
+//           >
+//             {isExpanded ? "Show Less" : "Read More"}
+//             <ChevronDown
+//               size={14}
+//               className={`transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
+//             />
+//           </button>
+//         </div>
+//       </div>
+//       <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#b79662] transition-all duration-500 group-hover:w-full" />
+//     </div>
+//   );
+// };
+
 const ServiceCardItem = ({
   title,
   description,
@@ -37,9 +95,8 @@ const ServiceCardItem = ({
   onToggle,
 }) => {
   return (
-    <div className="group bg-[#4c4949] rounded-2xl flex flex-col items-start text-left shadow-md hover:shadow-xl hover:shadow-[#b79662]/20 transition-all duration-500 border border-gray-700 hover:scale-[1.02] cursor-default relative overflow-hidden">
-      {/* 1. Image Section */}
-      <div className="relative w-full h-70 overflow-hidden">
+    <div className="group bg-[#4c4949] rounded-2xl flex flex-col items-start text-left shadow-md hover:shadow-xl hover:shadow-[#b79662]/20 transition-all duration-500 border border-gray-700 hover:scale-[1.02] cursor-default relative overflow-hidden h-full">
+      <div className="relative w-full h-64 overflow-hidden">
         <img
           src={
             image ||
@@ -51,21 +108,18 @@ const ServiceCardItem = ({
         <div className="absolute inset-0 bg-gradient-to-t from-[#4c4949] to-transparent opacity-60" />
       </div>
 
-      {/* 2. Content Section */}
-      <div className="p-8 pt-6 w-full">
+      <div className="p-8 pt-6 w-full flex-grow">
         <h3 className="text-xl font-bold text-[#ffffff] mb-4 leading-snug transition-colors duration-300 group-hover:text-[#b79662]">
           {title}
         </h3>
-
         <div className="relative">
           <p
             className={`text-sm text-gray-200 leading-relaxed transition-all duration-300 ${!isExpanded ? "line-clamp-3" : ""}`}
           >
             {description}
           </p>
-
           <button
-            onClick={onToggle} // Use the prop function here
+            onClick={onToggle}
             className="mt-4 text-[#b79662] font-black text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1"
           >
             {isExpanded ? "Show Less" : "Read More"}
@@ -209,23 +263,59 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
     imageAlt: "Bhaswar Paul speaking into a microphone",
   };
 
+  // const servicesData = [
+  //   {
+  //     title: "Corporate Training",
+  //     image: "/assets/images/P_K00313.JPG",
+  //     description: `Structured, outcome-driven real estate training for organisations. Our programs combine industry experience with practical frameworks that help participants develop market-ready skills and strategic competence. Who this is for: Real estate professionals, sales leaders, channel partners, corporate teams, and career entrants seeking credible real estate education and certification.`,
+  //   },
+  //   {
+  //     title: "Hire Train Deployment",
+  //     image:
+  //       "/assets/images/paras (1).jpg",
+  //     description: `We work with organisations to identify, assess, and onboard high-potential real estate talent, ensuring strong alignment between role requirements and candidate capability. We Support: Candidate shortlisting and screening, Role alignment and capability evaluation, Onboarding readiness. Who this is for: Real estate firms seeking trained professionals who can contribute from day one.`,
+  //   },
+  //   {
+  //     title: "Project Consulting",
+  //     image:
+  //       "/assets/images/DSC02421.JPG",
+  //     description: `Our campus workshops are designed to provide students with industry-ready real estate skills and practical exposure. Through these workshops, students gain a fundamental understanding of the real estate sector, its current market status, and potential career opportunities. We offer hands-on industry exposure and prepare students for real-world exposure. `,
+  //   },
+  // ];
+
   const servicesData = [
     {
       title: "Corporate Training",
       image: "/assets/images/P_K00313.JPG",
-      description: `Structured, outcome-driven real estate training for organisations. Our programs combine industry experience with practical frameworks that help participants develop market-ready skills and strategic competence. Who this is for: Real estate professionals, sales leaders, channel partners, corporate teams, and career entrants seeking credible real estate education and certification.`,
+      description: `Structured, outcome-driven real estate training for organisations. Our programs combine industry experience with practical frameworks that help participants develop market-ready skills and strategic competence.`,
     },
     {
       title: "Hire Train Deployment",
-      image:
-        "/assets/images/paras (1).jpg",
-      description: `We work with organisations to identify, assess, and onboard high-potential real estate talent, ensuring strong alignment between role requirements and candidate capability. We Support: Candidate shortlisting and screening, Role alignment and capability evaluation, Onboarding readiness. Who this is for: Real estate firms seeking trained professionals who can contribute from day one.`,
+      image: "/assets/images/paras (1).jpg",
+      description: `We work with organisations to identify, assess, and onboard high-potential real estate talent, ensuring strong alignment between role requirements and candidate capability.`,
     },
     {
       title: "Project Consulting",
+      image: "/assets/images/DSC02421.JPG",
+      description: `Our campus workshops are designed to provide students with industry-ready real estate skills and practical exposure through hands-on industry exposure.`,
+    },
+    {
+      title: "Strategic Advisory",
       image:
-        "/assets/images/DSC02421.JPG",
-      description: `Our campus workshops are designed to provide students with industry-ready real estate skills and practical exposure. Through these workshops, students gain a fundamental understanding of the real estate sector, its current market status, and potential career opportunities. We offer hands-on industry exposure and prepare students for real-world exposure. `,
+        "https://images.unsplash.com/photo-1454165833767-027ffea9e78a?w=800&auto=format&fit=crop",
+      description: `High-level consulting for developers and investment firms to optimize project feasibility and market positioning in the competitive Indian landscape.`,
+    },
+    {
+      title: "Leadership Mentoring",
+      image:
+        "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&auto=format&fit=crop",
+      description: `One-on-one coaching for industry executives focusing on ethical sales practices, consistent growth, and long-term relationship management.`,
+    },
+    {
+      title: "Market Intelligence",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+      description: `Deep-dive data analysis into pricing dynamics, buyer psychology, and regulatory impacts to provide actionable insights for real estate stakeholders.`,
     },
   ];
 
@@ -419,65 +509,78 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
                 </div>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 pt-6">
-  {/* Instagram */}
-  <a 
-    href="https://www.instagram.com/bhaswar.paul?igsh=YzNqNW53ajVhazZ5" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
-  >
-    <Instagram className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
-    <div className="text-[#b79662] text-xl sm:text-2xl font-bold">1.1K</div>
-    <div className="text-white text-xs sm:text-sm">Followers</div>
-  </a>
+                {/* Instagram */}
+                <a
+                  href="https://www.instagram.com/bhaswar.paul?igsh=YzNqNW53ajVhazZ5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <Instagram className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
+                  <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
+                    1.1K
+                  </div>
+                  <div className="text-white text-xs sm:text-sm">Followers</div>
+                </a>
 
-  {/* Facebook */}
-  <a 
-    href="https://www.facebook.com/paulbhaswar/" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
-  >
-    <Facebook className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
-    <div className="text-[#b79662] text-xl sm:text-2xl font-bold">800+</div>
-    <div className="text-white text-xs sm:text-sm">Followers</div>
-  </a>
+                {/* Facebook */}
+                <a
+                  href="https://www.facebook.com/paulbhaswar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <Facebook className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
+                  <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
+                    800+
+                  </div>
+                  <div className="text-white text-xs sm:text-sm">Followers</div>
+                </a>
 
-  {/* YouTube */}
-  <a 
-    href="https://www.youtube.com/channel/UCFtJsRpIY-YJE0GObkTV2wQ" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
-  >
-    <Youtube className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
-    <div className="text-[#b79662] text-xl sm:text-2xl font-bold">200+</div>
-    <div className="text-white text-xs sm:text-sm">Subscribers</div>
-  </a>
+                {/* YouTube */}
+                <a
+                  href="https://www.youtube.com/channel/UCFtJsRpIY-YJE0GObkTV2wQ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <Youtube className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
+                  <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
+                    200+
+                  </div>
+                  <div className="text-white text-xs sm:text-sm">
+                    Subscribers
+                  </div>
+                </a>
 
-  {/* Twitter/X */}
-  <a 
-    href="https://twitter.com/paulbhaswar" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
-  >
-    <Twitter className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
-    <div className="text-[#b79662] text-xl sm:text-2xl font-bold">100+</div>
-    <div className="text-white text-xs sm:text-sm">Followers</div>
-  </a>
+                {/* Twitter/X */}
+                <a
+                  href="https://twitter.com/paulbhaswar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <Twitter className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
+                  <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
+                    100+
+                  </div>
+                  <div className="text-white text-xs sm:text-sm">Followers</div>
+                </a>
 
-  {/* LinkedIn */}
-  <a 
-    href="https://www.linkedin.com/in/bhaswarpaul?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" 
-    target="_blank" 
-    rel="noopener noreferrer"
-className="col-span-2 md:col-span-1 flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"  >
-    <Linkedin className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
-    <div className="text-[#b79662] text-xl sm:text-2xl font-bold">9K+</div>
-    <div className="text-white text-xs sm:text-sm">Followers</div>
-  </a>
-</div>
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/in/bhaswarpaul?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="col-span-2 md:col-span-1 flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <Linkedin className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
+                  <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
+                    9K+
+                  </div>
+                  <div className="text-white text-xs sm:text-sm">Followers</div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -571,7 +674,7 @@ className="col-span-2 md:col-span-1 flex flex-col items-center lg:items-start sp
       </div>
 
       {/* Services Grid Section - REPLACED WITH YOUR REQUESTED UPDATES */}
-      <section className="bg-white px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] lg:mt-[-28px]">
+      {/* <section className="bg-white px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] lg:mt-[-28px]">
         <h2 className="text-3xl text-center md:text-4xl font-bold text-[#b79662]">
           Our <span className="text-[#b79662]">Services</span>
         </h2>
@@ -590,6 +693,108 @@ className="col-span-2 md:col-span-1 flex flex-col items-center lg:items-start sp
               />
             ))}
           </div>
+        </div>
+      </section> */}
+
+      {/* 3. REFACTORED SERVICES SECTION WITH INFINITE LOOP CAROUSEL */}
+      <section className="bg-white px-4 mt-[20px] mb-[40px] lg:mt-[-28px] services-carousel-section">
+        <h2 className="text-3xl text-center md:text-4xl font-bold text-[#b79662]">
+          Our <span className="text-[#b79662]">Services</span>
+        </h2>
+        <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
+
+        <div className="max-w-7xl mx-auto relative group ">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation={true}
+            pagination={{ clickable: true }}
+            // --- SEAMLESS INFINITE LOOP SETTINGS ---
+            loop={true}
+            loopedslides={2} // Ensures enough clones are created for smooth transitions
+            centeredSlides={false} // Set to true if you want the active card in the middle
+            grabCursor={true} // Changes cursor to a hand for better UX
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            // Speed of the transition in milliseconds (higher = smoother/slower)
+            speed={800}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="!pb-14 !px-2"
+          >
+            {servicesData.map((service, index) => (
+              <SwiperSlide key={index} className="h-auto py-4">
+                <ServiceCardItem
+                  title={service.title}
+                  description={service.description}
+                  image={service.image}
+                  isExpanded={allServicesExpanded}
+                  onToggle={toggleAllServices}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <style jsx global>{`
+            .services-carousel-section .swiper-button-next,
+            .services-carousel-section .swiper-button-prev {
+              color: #b79662 !important;
+              background: white;
+              width: 45px;
+              height: 45px;
+              border-radius: 50%;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+              transition: all 0.3s ease;
+              opacity: 0; /* Hidden by default */
+            }
+
+            /* Show arrows on hover of the container */
+            .group:hover .swiper-button-next,
+            .group:hover .swiper-button-prev {
+              opacity: 1;
+            }
+
+            .services-carousel-section .swiper-button-next:after,
+            .services-carousel-section .swiper-button-prev:after {
+              font-size: 18px;
+              font-weight: bold;
+            }
+
+            .services-carousel-section .swiper-button-next:hover,
+            .services-carousel-section .swiper-button-prev:hover {
+              background: #b79662;
+              color: white !important;
+            }
+
+            .services-carousel-section .swiper-pagination-bullet {
+              background: #d1d1d1;
+              opacity: 1;
+            }
+
+            .services-carousel-section .swiper-pagination-bullet-active {
+              background: #b79662 !important;
+              width: 25px; /* Extended pill shape for active dot */
+              border-radius: 4px;
+            }
+            /* Add this inside your existing <style jsx global> block */
+
+            .services-carousel-section .swiper-wrapper {
+              transition-timing-function: ease-in-out !important;
+            }
+
+            /* Optional: Stop the "jump" effect on touch devices */
+            .services-carousel-section .swiper-slide {
+              backface-visibility: hidden;
+              -webkit-backface-visibility: hidden;
+            }
+          `}</style>
         </div>
       </section>
 
@@ -657,7 +862,7 @@ className="col-span-2 md:col-span-1 flex flex-col items-center lg:items-start sp
 
       <BookStore />
       <SelectedWork />
-     <TestimonialSlider />
+      <TestimonialSlider />
       <Footer />
     </>
   );

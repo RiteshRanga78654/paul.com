@@ -172,7 +172,7 @@ const BookStore = () => {
         {/* BookStore Section */}
         <div className="text-center mb-10 sm:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] mb-4 tracking-tight">
-            Bestselling Books Collection
+          Books & Journals Published
           </h2>
           
           {/* Divider: Gold Theme */}
