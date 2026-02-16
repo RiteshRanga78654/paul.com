@@ -128,7 +128,7 @@
 //               </div>
 
 //               {/* Navigation Arrows */}
-//               <div className="absolute top-1/2 -translate-y-1/2 -left-4 md:-left-5 z-20">
+//               <div className="absolute top-1/2 -translate-y-1/2 -left-5 md:-left-5 z-20">
 //                 <button
 //                   onClick={prevSlide}
 //                   className="p-4 rounded-full bg-white/90 text-gray-900 shadow-2xl hover:bg-[#b79662] hover:text-white transition-all transform hover:scale-110"
@@ -136,7 +136,7 @@
 //                   <ChevronLeft size={20} />
 //                 </button>
 //               </div>
-//               <div className="absolute top-1/2 -translate-y-1/2 -right-4 md:-right-5 z-20">
+//               <div className="absolute top-1/2 -translate-y-1/2 -right-5 md:-right-5 z-20">
 //                 <button
 //                   onClick={nextSlide}
 //                   className="p-4 rounded-full bg-white/90 text-gray-900 shadow-2xl hover:bg-[#b79662] hover:text-white transition-all transform hover:scale-110"
@@ -183,7 +183,7 @@ const reviews = [
       "The fund-raising expertise is unmatched. We were able to secure capital in record time thanks to his colossal network and professional guidance.",
     rating: 5,
     bgImage:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop",
+      "/assets/images/Club-Capri-Exterior-Dusk-without-background-building.jpg",
   },
   {
     id: 3,
@@ -193,7 +193,7 @@ const reviews = [
       "The workshops provided by Bhaswar transformed our sales culture. The team is more engaged and the results speak for themselves.",
     rating: 5,
     bgImage:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2000&auto=format&fit=crop",
+      "/assets/images/m3m-urbana-business-park-banner-95984.jpg",
   },
 ];
 
@@ -294,7 +294,7 @@ export default function ParallaxReviewSection() {
 
                   {/* Review Body */}
                   <div className="min-h-[120px] md:min-h-[140px] flex items-center">
-                    <p className="text-white text-base md:text-xl lg:text-2xl font-light leading-relaxed italic">
+                    <p className="text-white text-base md:text-xl lg:text-2xl font-light leading-relaxed ">
                       "{reviews[currentIndex].content}"
                     </p>
                   </div>
@@ -327,17 +327,17 @@ export default function ParallaxReviewSection() {
               <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:-left-8 z-30">
                 <button
                   onClick={prevSlide}
-                  className="p-3 md:p-4 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-2xl hover:bg-[#b79662] transition-all transform hover:scale-110 active:scale-95"
+                  className="p-3 ml-10 md:p-4 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-2xl hover:bg-[#b79662] transition-all transform hover:scale-110 active:scale-95"
                 >
-                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+                  <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
                 </button>
               </div>
               <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:-right-8 z-30">
                 <button
                   onClick={nextSlide}
-                  className="p-3 md:p-4 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-2xl hover:bg-[#b79662] transition-all transform hover:scale-110 active:scale-95"
+                  className="p-3 mr-3 md:p-4 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-2xl hover:bg-[#b79662] transition-all transform hover:scale-110 active:scale-95"
                 >
-                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />{" "}
+                  <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />{" "}
                 </button>
               </div>
             </div>
