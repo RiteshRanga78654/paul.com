@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import React, { useState, useEffect, useCallback, useRef } from "react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -43,7 +43,7 @@ const testimonials = [
 const TestimonialSlider = () => {
   // We duplicate the list to create the illusion of infinity
   const extendedTestimonials = [...testimonials, ...testimonials];
-  
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
@@ -61,8 +61,8 @@ const TestimonialSlider = () => {
       }
     };
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // --- SEAMLESS LOOP LOGIC ---
@@ -75,7 +75,7 @@ const TestimonialSlider = () => {
 
   const prevSlide = () => {
     if (isTransitioning) {
-       setCurrentIndex((prev) => (prev > 0 ? prev - 1 : 0)); 
+      setCurrentIndex((prev) => (prev > 0 ? prev - 1 : 0));
     }
   };
 
@@ -94,7 +94,7 @@ const TestimonialSlider = () => {
     if (!isTransitioning) {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-            setIsTransitioning(true);
+          setIsTransitioning(true);
         });
       });
     }
@@ -105,7 +105,7 @@ const TestimonialSlider = () => {
     if (!isPaused) {
       const interval = setInterval(() => {
         nextSlide();
-      }, 3000); 
+      }, 3000);
       return () => clearInterval(interval);
     }
   }, [isPaused, nextSlide, currentIndex]);
@@ -114,38 +114,39 @@ const TestimonialSlider = () => {
     // Background changed to Dark Charcoal #1e1e1e
     <section className="bg-white py-8 px-4 sm:px-6 lg:px-12 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        
         {/* Header Section */}
         <div className="abc flex flex-col md:flex-row justify-between items-end mb-12 gap-6 border-b border-gray-700 p-8">
           <div className="space-y-2 xyz">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1e1e1e] leading-tight">
-               <span className="text-[#b79662]">{'Testimonials'}</span> 
-             </h2>
-             <p className="text-gray-400 text-sm">See what our partners have to say</p>
-             {/* <h2 className="text-4xl md:text-6xl font-bold text-[#1e1e1e] leading-tight">
+              <span className="text-[#b79662]">{"Testimonials"}</span>
+            </h2>
+            <p className="text-gray-400 text-sm">
+              See what our partners have to say
+            </p>
+            {/* <h2 className="text-4xl md:text-6xl font-bold text-[#1e1e1e] leading-tight">
                <span className="text-[#b79662]">{'Testimonials'}</span> 
              </h2>
              <p className="text-gray-400 text-lg">See what our partners have to say</p> */}
           </div>
-         <style jsx>{`
-  /* ... your existing styles ... */
+          <style jsx>{`
+            /* ... your existing styles ... */
 
-  @media (max-width: 768px) {
-    .abc {
-      align-items: center;
-    }
-  }
-`}</style>
+            @media (max-width: 768px) {
+              .abc {
+                align-items: center;
+              }
+            }
+          `}</style>
 
           <div className="flex gap-4">
             {/* Buttons updated to Gold Border/Text */}
-            <button 
+            <button
               onClick={prevSlide}
               className="w-12 h-12 md:w-14 md:h-14 border border-[#b79662] flex items-center justify-center hover:bg-[#b79662] group transition-colors duration-300 rounded-sm"
             >
               <ChevronLeft className="w-6 h-6 text-[#b79662] group-hover:text-white transition-colors" />
             </button>
-            <button 
+            <button
               onClick={nextSlide}
               className="w-12 h-12 md:w-14 md:h-14 border border-[#b79662] flex items-center justify-center hover:bg-[#b79662] group transition-colors duration-300 rounded-sm"
             >
@@ -155,39 +156,38 @@ const TestimonialSlider = () => {
         </div>
 
         {/* Slider Track */}
-        <div 
+        <div
           className="relative w-full overflow-hidden"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div 
+          <div
             className="flex gap-8"
-            style={{ 
-              transition: isTransitioning ? `transform ${transitionTime}ms ease-in-out` : 'none',
-              transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)` 
+            style={{
+              transition: isTransitioning
+                ? `transform ${transitionTime}ms ease-in-out`
+                : "none",
+              transform: `translateX(-${currentIndex * (100 / itemsPerPage)}%)`,
             }}
           >
-             <div 
-               className="flex w-full"
-             >
-               {extendedTestimonials.map((item, index) => (
-                <div 
-                  key={`${item.id}-${index}`} 
+            <div className="flex w-full">
+              {extendedTestimonials.map((item, index) => (
+                <div
+                  key={`${item.id}-${index}`}
                   className="flex-shrink-0 px-4"
                   style={{ width: `${100 / itemsPerPage}%` }}
                 >
                   {/* Card Container: Dark Gray #4c4949 */}
                   <div className="bg-[#4c4949] p-8 rounded-lg shadow-xl border border-gray-700 h-full flex flex-col md:flex-row gap-6 items-start hover:shadow-[#b79662]/10 transition-shadow duration-300 relative group">
-                    
                     {/* Decorative Quote Icon */}
                     <Quote className="absolute top-4 right-4 w-10 h-10 text-[#3d3a3a] group-hover:text-[#b79662]/20 transition-colors" />
 
                     {/* Image Area */}
                     <div className="relative flex-shrink-0">
                       <div className="w-24 h-24 md:w-28 md:h-28 bg-[#3d3a3a] overflow-hidden rounded-sm border-2 border-gray-600">
-                        <img 
-                          src={item.image} 
-                          alt={item.name} 
+                        <img
+                          src={item.image}
+                          alt={item.name}
                           className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                         />
                       </div>
@@ -213,10 +213,9 @@ const TestimonialSlider = () => {
                   </div>
                 </div>
               ))}
-             </div>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );
