@@ -159,6 +159,9 @@ import React, { useState, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FcGoogle } from "react-icons/fc";
+import Heroslider from "../components/Heroslider";
+import Textslider from "../components/Textslider";
+
 
 // --- TESTIMONIAL DATA (Defined inside or properly scoped) ---
 const reviews = [
@@ -210,7 +213,7 @@ export default function ParallaxReviewSection() {
   }, [currentIndex]);
 
   return (
-    <section className="relative min-h-[80vh] md:min-h-[70vh] flex items-center overflow-hidden py-12 md:py-20 mt-10 md:mt-20 mb-5 bg-black">
+    <><section className="relative min-h-[80vh] md:min-h-[70vh] flex items-center overflow-hidden py-12 md:py-20 mt-10 md:mt-20 mb-5 bg-black">
       {/* --- SEAMLESS BACKGROUND CROSS-FADE --- */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence initial={false}>
@@ -227,8 +230,7 @@ export default function ParallaxReviewSection() {
             style={{
               backgroundImage: `url('${reviews[currentIndex].bgImage}')`,
               willChange: "opacity",
-            }}
-          />
+            }} />
         </AnimatePresence>
         <div className="absolute inset-0 bg-black/60 z-10" />
       </div>
@@ -285,8 +287,7 @@ export default function ParallaxReviewSection() {
                           key={i}
                           size={16}
                           fill="#FFD700"
-                          className="text-[#FFD700]"
-                        />
+                          className="text-[#FFD700]" />
                       ))}
                     </div>
                   </div>
@@ -315,8 +316,7 @@ export default function ParallaxReviewSection() {
                     </div>
                     <Quote
                       size={30}
-                      className="text-[#b79662]/30 hidden sm:block"
-                    />
+                      className="text-[#b79662]/30 hidden sm:block" />
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -345,5 +345,19 @@ export default function ParallaxReviewSection() {
         </div>
       </div>
     </section>
+
+  <section className="bg-white py-10">
+      <div className="max-w-7xl mx-auto px-4 flex justify-center">
+        <img
+          src="/assets/images/goldenmap.png" 
+          alt="Global Connect Map"
+          className="w-full h-auto max-w-5xl object-contain"
+        />
+      </div>
+    </section>
+
+    <Heroslider />
+        <Textslider /></>
+
   );
 }
