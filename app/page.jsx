@@ -747,6 +747,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
             .services-carousel-section .swiper-button-prev {
               color: #b79662 !important;
               background: white;
+              font-size: 18px;
               width: 45px;
               height: 45px;
               border-radius: 50%;
@@ -763,8 +764,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
 
             .services-carousel-section .swiper-button-next:after,
             .services-carousel-section .swiper-button-prev:after {
-              font-size: 18px;
-              font-weight: bold;
+             
             }
 
             .services-carousel-section .swiper-button-next:hover,
