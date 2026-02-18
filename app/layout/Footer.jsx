@@ -343,19 +343,20 @@ const Footer = () => {
               </h3>
               <ul className="space-y-3 text-[15px]">
                 {[
-                  "About Us",
-                  "Services",
-                  "Contact Us",
-                  "Media",
-                  "Books",
-                  "Blogs",
+                  { name: "About Us", link: "/about" },
+                  { name: "Events", link: "/events" },
+                  { name: "Services", link: "/services" },
+                  { name: "Testimonials", link: "/testimonial" },
+                  { name: "Network", link: "/network" },
+                  { name: "Blogs", link: "/blog" },
+                  { name: "Media", link: "/media" },
                 ].map((item) => (
                   <li key={item}>
                     <a
-                      href="#"
+                      href={item.link}
                       className="hover:text-[#cba36f] transition-colors"
                     >
-                      {item}
+                      {item.name}
                     </a>
                   </li>
                 ))}
