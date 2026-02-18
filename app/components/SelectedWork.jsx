@@ -22,7 +22,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <div
-      className="relative bg-white w-[80vw] md:w-[290px] h-[400px] md:h-[500px] flex-shrink-0 cursor-pointer overflow-hidden bg-[#4c4949]"
+      className="relative bg-white w-[80vw] md:w-[330px] h-[400px] md:h-[500px] flex-shrink-0 cursor-pointer overflow-hidden bg-[#4c4949]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -36,8 +36,8 @@ const ProjectCard = ({ project }) => {
       </div>
 
       <motion.div
-        className="absolute bottom-0 left-0 z-30 bg-[#b79662] overflow-hidden shadow-2xl"
-        animate={{ width: isHovered ? "100%" : 70, height: isHovered ? 300 : 70 }}
+        className="absolute bottom-0 left-0 z-30 bg-[#b79662]/80 overflow-hidden shadow-1xl"
+        animate={{ width: isHovered ? "80%" : 70, height: isHovered ? 300 : 80 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
         style={{ originX: 0, originY: 1 }}
       >
@@ -91,7 +91,7 @@ const SelectedWork = () => {
   return (
     <div ref={component} className="overflow-hidden bg-white">
       {/* Title Section matching ServicesSection */}
-      <h2 className="text-3xl text-center md:text-4xl font-bold  pt-25 text-[#b79662]">
+      <h2 className="text-4xl text-center md:text-4xl font-bold  pt-25 text-[#b79662]">
         Our <span className="text-[#b79662]">Presence</span>
       </h2>
       
