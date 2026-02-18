@@ -28,7 +28,7 @@ import BookStore from "./components/BookStore";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import SelectedWork from "./components/SelectedWork";
-
+import AboutSlider from "./components/AboutSlider";
 import Googlereview from "./components/Googlereview";
 
 import Slider from "./components/Slider";
@@ -589,7 +589,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
       <Header />
 
       {/* About Section */}
-      <div className="min-h-[85vh] flex items-center justify-center px-4 my-10 sm:p-8 bg-white">
+      {/* <div className="min-h-[85vh] flex items-center justify-center px-4 my-10 sm:p-8 bg-white">
         <div className="mobile max-w-7xl w-auto bg-[#4c4949] rounded-xl overflow-hidden transition-all duration-300 shadow-2xl border border-gray-700">
           <div className="flex flex-col md:flex-row">
             <div className="p-6 sm:p-12 flex flex-col justify-center w-full md:flex-1">
@@ -671,7 +671,8 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+      <AboutSlider />
 
       {/* Services Grid Section - REPLACED WITH YOUR REQUESTED UPDATES */}
       {/* <section className="bg-white px-4 sm:px-6 lg:px-8 mt-[20px] mb-[20px] lg:mt-[-28px]">
@@ -746,12 +747,12 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
             .services-carousel-section .swiper-button-next,
             .services-carousel-section .swiper-button-prev {
               color: #b79662 !important;
-              background: white;
+
               font-size: 18px;
               width: 45px;
               height: 45px;
-              border-radius: 50%;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+              border-radius: 2%;
+
               transition: all 0.3s ease;
               opacity: 0; /* Hidden by default */
             }
@@ -764,13 +765,10 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
 
             .services-carousel-section .swiper-button-next:after,
             .services-carousel-section .swiper-button-prev:after {
-             
             }
 
             .services-carousel-section .swiper-button-next:hover,
             .services-carousel-section .swiper-button-prev:hover {
-              background: #b79662;
-              color: white !important;
             }
 
             .services-carousel-section .swiper-pagination-bullet {
@@ -863,6 +861,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
       <BookStore />
       <SelectedWork />
       <TestimonialSlider />
+
       <Footer />
     </>
   );

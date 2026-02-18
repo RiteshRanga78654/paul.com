@@ -180,7 +180,7 @@ const reviews = [
     name: "Anjali Sharma",
     role: "CEO, Tech Start-up",
     content:
-      "The fund-raising expertise is unmatched. We were able to secure capital in record time thanks to his colossal network and professional guidance.",
+      "The fund-raising expertise is unmatched. We were able to secure capital in record time thanks to his colossal network and professional guidance. Their team has helped me in taking right/good decisions which yielded great results.",
     rating: 5,
     bgImage:
       "/assets/images/Club-Capri-Exterior-Dusk-without-background-building.jpg",
@@ -190,7 +190,7 @@ const reviews = [
     name: "Vikram Singh",
     role: "Sales Director",
     content:
-      "The workshops provided by Bhaswar transformed our sales culture. The team is more engaged and the results speak for themselves.",
+      "The workshops provided by Bhaswar transformed our sales culture. The team is more engaged and the results speak for themselves. Their team has helped me in taking right/good decisions which yielded great results.",
     rating: 5,
     bgImage:
       "/assets/images/m3m-urbana-business-park-banner-95984.jpg",
@@ -294,7 +294,7 @@ export default function ParallaxReviewSection() {
 
                   {/* Review Body */}
                   <div className="min-h-[120px] md:min-h-[140px] flex items-center">
-                    <p className="text-white text-base md:text-xl lg:text-2xl font-light leading-relaxed ">
+                    <p className="text-white text-base md:text-xl lg:text-[18px] font-light leading-relaxed ">
                       "{reviews[currentIndex].content}"
                     </p>
                   </div>
@@ -324,7 +324,7 @@ export default function ParallaxReviewSection() {
 
             {/* Navigation Arrows - Adjusted for Touch & Desktop Visibility */}
             <div className="flex justify-center lg:block mt-6 lg:mt-0 gap-4">
-              <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:-left-8 z-30">
+              <div className="lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:-left-15 z-30">
                 <button
                   onClick={prevSlide}
                   className="p-3 ml-10 md:p-4 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-2xl hover:bg-[#b79662] transition-all transform hover:scale-110 active:scale-95"
@@ -346,7 +346,7 @@ export default function ParallaxReviewSection() {
       </div>
     </section>
 
-  <section className="bg-white py-10">
+  {/* <section className="bg-white py-10">
       <div className="max-w-7xl mx-auto px-4 flex justify-center">
         <img
           src="/assets/images/goldenmap.png" 
@@ -354,10 +354,12 @@ export default function ParallaxReviewSection() {
           className="w-full h-auto max-w-5xl object-contain"
         />
       </div>
-    </section>
+    </section> */}
 
-    <Heroslider />
-        <Textslider /></>
+    {/* <Heroslider /> */}
+        {/* <Textslider /> */}
+        
+        </>
 
   );
 }
