@@ -1,32 +1,36 @@
-
-
 "use client";
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-
+import React, { useRef, useState } from "react";
+import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from "framer-motion";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
 const data = [
   {
-    title: "Real Estate Visionary",
-    desc: "Transforming skylines and creating sustainable value through strategic land acquisition and innovative development frameworks.",
-    img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070",
+    title: "IREED X DCOIL at Shiksha Mahotsav 2025",
+    desc: "Shiksha Mahotsav is a grand educational festival that brings together students, educators, and industry leaders. Over 800+ students visited our stallShiksha Mahotsav is a grand educational festival that brings together students, educators, and industry leaders. Over 800+ students visited our stallShiksha Mahotsav is a grand educational festival that brings together students, educators, and industry leaders. Over 800+ students visited our stall Shiksha Mahotsav is a grand educational festival that brings together students, educators, and industry leaders. Over 800+ students visited our stall, seeking guidance on career paths in real estate and business analytics. We witnessed an overwhelming response at Shiksha Mahotsav, with students eager to explore career opportunities in real estate. It was inspiring to see future leaders take their first step toward a thriving career",
+    img: "/assets/Event/Doranda College.jpg",
     side: "left",
+    tag: "Development"
   },
-  {
-    title: "Capital Infusion",
-    desc: "Bridging the gap between ambitious industrial projects and elite global capital sources for rapid business scaling.",
-    img: "https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974",
+ {
+    title: "IREED X DCOIL at Shiksha Mahotsav 2025",
+    desc: "Shiksha Mahotsav is a grand educational festival that brings together students, educators, and industry leaders. Over 800+ students visited our stallShiksha Mahotsav is a grand educational festival that brings together students, educators, and industry leaders. Over 800+ students visited our stallShiksha Mahotsav is a grand educational festival that brings together students, educators, and industry leaders. Over 800+ students visited our stall Shiksha Mahotsav is a grand educational festival that brings together students, educators, and industry leaders. Over 800+ students visited our stall, seeking guidance on career paths in real estate and business analytics. We witnessed an overwhelming response at Shiksha Mahotsav, with students eager to explore career opportunities in real estate. It was inspiring to see future leaders take their first step toward a thriving career",
+    img: "/assets/Event/Doranda College.jpg",
     side: "right",
+    tag: "Development"
   },
   {
-    title: "Executive Mentorship",
-    desc: "Empowering industry leaders with growth strategies that redefine market dominance and leadership excellence.",
-    img: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071",
+    title: "IREED X DCOIL at Shiksha Mahotsav 2025",
+    desc: "Shiksha Mahotsav is a grand educational festival that brings together students, educators, and industry leaders. Over 800+ students visited our stallShiksha Mahotsav is a grand educational festival that brings together students, educators, and industry leaders. Over 800+ students visited our stallShiksha Mahotsav is a grand educational festival that brings together students, educators, and industry leaders. Over 800+ students visited our stall Shiksha Mahotsav is a grand educational festival that brings together students, educators, and industry leaders. Over 800+ students visited our stall, seeking guidance on career paths in real estate and business analytics. We witnessed an overwhelming response at Shiksha Mahotsav, with students eager to explore career opportunities in real estate. It was inspiring to see future leaders take their first step toward a thriving career",
+    img: "/assets/Event/Doranda College.jpg",
     side: "left",
-  }
+    tag: "Development"
+  },
 ];
 
 const ScrollSection = ({ item, index }) => {
   const container = useRef(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const isInView = useInView(container, { amount: 0.2, once: false });
   const isImageLeft = item.side === "left";
 
   const { scrollYProgress } = useScroll({
@@ -34,84 +38,147 @@ const ScrollSection = ({ item, index }) => {
     offset: ["start end", "end start"],
   });
 
-  // Smoothing the scroll progress for the "Buttery" feel
-  const smoothY = useSpring(scrollYProgress, { stiffness: 50, damping: 20 });
-  
-  // This moves the text block vertically at a different speed than the scroll
-  const yTranslate = useTransform(smoothY, [0, 1], [250, -250]);
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+  const imgY = useTransform(smoothProgress, [0, 1], ["-5%", "5%"]);
+  const textY = useTransform(smoothProgress, [0, 1], ["8%", "-8%"]);
+
+  // Helper to truncate text
+  const truncatedDesc = item.desc.slice(0, 150) + "...";
 
   return (
-    <div ref={container} className="relative h-screen w-full overflow-hidden bg-[#b3b3b3]">
-      <div className="container mx-auto h-full flex items-center relative">
+    <section 
+      ref={container} 
+      className="relative min-h-[70vh] border-t-4 border-dotted border-[#b79662] md:min-h-[90vh] w-full bg-[#fef1dd] flex items-center overflow-hidden py-10 md:py-16"
+    >
+      <div className={`container mx-auto px-6 flex flex-col ${isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-0 md:gap-10`}>
         
-        {/* 1. THE STICKY IMAGE (Fixed in Background) */}
-        <div className={`w-full md:w-8/12 h-[70vh] sticky top-[15vh] overflow-hidden 
-          ${isImageLeft ? "md:mr-auto" : "md:ml-auto"}`}>
-          <motion.img 
-            initial={{ scale: 1.3 }}
-            whileInView={{ scale: 1 }}
-            transition={{ duration: 2, ease: "easeOut" }}
-            src={item.img} 
-            className="w-full h-full object-cover "
-          />
-        </div>
-
-        {/* 2. THE MASSIVE GLIDING LAYER (Overlapping Foreground) */}
+        {/* IMAGE BLOCK */}
         <motion.div 
-          style={{ y: yTranslate }}
-          className={`absolute z-20 w-full md:w-6/12 h-[80vh] flex flex-col justify-center p-12 md:p-20 bg-[#151515] shadow-[0_0_100px_rgba(0,0,0,0.8)] border-y border-white/5
-            ${isImageLeft ? "right-0 md:right-0" : "left-0 md:left-0"}`}
+          className="relative w-full md:w-7/12 aspect-[16/10] md:h-[65vh] overflow-hidden z-10 rounded-sm"
+          style={{
+            clipPath: isInView ? "inset(0% 0% 0% 0%)" : "inset(2% 2% 2% 2%)",
+            transition: "clip-path 1s cubic-bezier(0.19, 1, 0.22, 1)"
+          }}
         >
-          <span className="text-[#b79662] font-mono tracking-[0.5em] uppercase text-xs mb-4">
-            Vertical 0{index + 1}
-          </span>
-          <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase leading-[0.9]">
-            {item.title.split(' ')[0]} <br/>
-            <span className="text-[#b79662]">{item.title.split(' ').slice(1).join(' ')}</span>
-          </h2>
-          <div className="h-[2px] w-24 bg-[#b79662] my-8" />
-          <p className="text-[#b3b3b3] text-xl leading-relaxed max-w-md">
-            {item.desc}
-          </p>
-          <button className="mt-10 self-start border-b-2 border-[#b79662] pb-1 text-[#b79662] uppercase tracking-[0.3em] text-xs font-bold hover:tracking-[0.5em] transition-all">
-            Discover Project
-          </button>
+          <motion.img 
+            style={{ y: imgY, scale: 1.05 }}
+            src={item.img} 
+            alt={item.title}
+            className="w-full h-full object-cover  transition-all duration-1000"
+          />
         </motion.div>
 
+        {/* TEXT CONTENT BLOCK */}
+        <motion.div 
+          style={{ y: typeof window !== 'undefined' && window.innerWidth > 768 ? textY : 0 }}
+          className={`
+            relative z-20 w-[94%] md:w-5/12 
+            -mt-12 md:mt-0 
+            ${isImageLeft ? "md:-ml-20" : "md:-mr-20"} 
+            p-8 md:p-12  
+            bg-[#111111]/98 backdrop-blur-md 
+            border border-white/5 shadow-2xl
+          `}
+        >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <span className="text-[#b79662] font-mono tracking-[0.3em] uppercase text-[9px] block mb-3">0{index + 1} / {item.tag}</span>
+            <h2 className="text-1xl md:text-4xl font-black text-white leading-none uppercase mb-5">
+              <span className="text-[#b79662] font-light">{item.title}</span>
+            </h2>
+            <div className="w-10 h-[1px] bg-[#b79662] mb-5" />
+            
+            {/* DESCRIPTION SECTION WITH READ MORE */}
+            <div className="relative">
+              <motion.p 
+                layout
+                className="text-gray-400 text-sm md:text-base leading-relaxed mb-4 max-w-sm"
+              >
+                {isExpanded ? item.desc : truncatedDesc}
+              </motion.p>
+              
+              <button 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-[#b79662] text-[10px] font-bold uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2"
+              >
+                {isExpanded ? "Show Less" : "Read More"}
+                <motion.span animate={{ rotate: isExpanded ? 180 : 0 }}>
+                  ↓
+                </motion.span>
+              </button>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default function BhaswarPaulSmoothScroll() {
+export default function BhaswarPaulEvents() {
   return (
-    <main className="bg-[#1e1e1e] selection:bg-[#b79662]">
+    <>
+      <Header />
+    <main className="bg-[#0a0a0a] selection:bg-[#b79662] selection:text-white overflow-x-hidden">
+      
       {/* HERO SECTION */}
-      <section className="h-screen flex items-center justify-center relative z-30">
-        <div className="absolute inset-0 bg-black/40 z-10" />
-        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover grayscale opacity-50">
-          <source src="/hero.mp4" />
-        </video>
-        <h1 className="relative z-20 text-8xl md:text-[12rem] font-black text-white tracking-tighter opacity-90 uppercase">
-          Visionary
-        </h1>
-      </section>
+      <section className="relative h-[100vh] md:h-screen w-full flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute " />
+          <div className="absolute " />
+          
+          <motion.video 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.4 }} 
+            transition={{ duration: 1.5 }}
+            autoPlay loop muted playsInline 
+            className="w-full h-full object-cover "
+          >
+            <source src="/assets/video/slider-video.mp4" type="video/mp4" />
+          </motion.video>
+        </div>
 
-      {/* CONNECTED GLIDING SECTIONS */}
-      <div className="flex flex-col">
+        {/* <div className="relative z-20 text-center px-4">
+          <motion.p 
+            initial={{ opacity: 0, letterSpacing: "0.2em" }}
+            animate={{ opacity: 1, letterSpacing: "1em" }}
+            transition={{ duration: 1 }}
+            className="text-[#b79662] uppercase text-[10px] md:text-xs mb-4"
+          >
+            Strategic Excellence
+          </motion.p>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-6xl md:text-[9rem] font-black text-white uppercase tracking-tighter leading-tight"
+          >
+            Visionary
+          </motion.h1>
+          <motion.div 
+            initial={{ width: 0 }}
+            animate={{ width: "60px" }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="h-[1px] bg-[#b79662] mx-auto mt-6"
+          />
+        </div> */}
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+            <div className="w-[1px] h-12 " />
+        </div>
+      </section>
+<br/>
+<br/>
+<br/>
+      {/* CONTENT SECTIONS */}
+      <div className="relative z-10 -mt-10 md:-mt-20">
         {data.map((item, index) => (
           <ScrollSection key={index} item={item} index={index} />
         ))}
       </div>
 
-      {/* FOOTER */}
-      <footer className="h-screen flex flex-col items-center justify-center bg-[#151515] relative z-30">
-          <h2 className="text-[#b79662] text-sm tracking-[1em] uppercase mb-10">Bhaswar Paul</h2>
-          <div className="text-4xl md:text-6xl font-light text-white text-center">
-            Strategic Growth. <br/> Industrial Impact.
-          </div>
-          <p className="mt-20 text-[#4c4949] text-[10px] tracking-widest">POWERED BY IREED INDIA</p>
-      </footer>
+     
+
     </main>
+    <Footer />
+    </>
   );
 }
