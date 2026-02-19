@@ -509,6 +509,20 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
                 </div>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 pt-6">
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/in/bhaswarpaul?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="col-span-2 md:col-span-1 flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <Linkedin className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
+                  <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
+                    9K+
+                  </div>
+                  <div className="text-white text-xs sm:text-sm">Followers</div>
+                </a>
+
                 {/* Instagram */}
                 <a
                   href="https://www.instagram.com/bhaswar.paul?igsh=YzNqNW53ajVhazZ5"
@@ -519,20 +533,6 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
                   <Instagram className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
                   <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
                     1.1K
-                  </div>
-                  <div className="text-white text-xs sm:text-sm">Followers</div>
-                </a>
-
-                {/* Facebook */}
-                <a
-                  href="https://www.facebook.com/paulbhaswar/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
-                >
-                  <Facebook className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
-                  <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
-                    800+
                   </div>
                   <div className="text-white text-xs sm:text-sm">Followers</div>
                 </a>
@@ -553,6 +553,20 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
                   </div>
                 </a>
 
+                {/* Facebook */}
+                <a
+                  href="https://www.facebook.com/paulbhaswar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
+                >
+                  <Facebook className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
+                  <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
+                    800+
+                  </div>
+                  <div className="text-white text-xs sm:text-sm">Followers</div>
+                </a>
+
                 {/* Twitter/X */}
                 <a
                   href="https://twitter.com/paulbhaswar"
@@ -563,20 +577,6 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
                   <Twitter className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
                   <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
                     100+
-                  </div>
-                  <div className="text-white text-xs sm:text-sm">Followers</div>
-                </a>
-
-                {/* LinkedIn */}
-                <a
-                  href="https://www.linkedin.com/in/bhaswarpaul?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="col-span-2 md:col-span-1 flex flex-col items-center lg:items-start space-y-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group"
-                >
-                  <Linkedin className="w-8 h-8 text-white group-hover:text-[#b79662] transition-colors" />
-                  <div className="text-[#b79662] text-xl sm:text-2xl font-bold">
-                    9K+
                   </div>
                   <div className="text-white text-xs sm:text-sm">Followers</div>
                 </a>
@@ -804,7 +804,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
       <Slider />
 
       {/* Video Section */}
-      <section className="w-full py-16 px-5 bg-white">
+      <section className="w-full py-4 px-5 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 space-y-2">

@@ -114,7 +114,6 @@
 //                   </p>
 //                 </div>
 
-                
 //               </div>
 //             </div>
 
@@ -237,16 +236,16 @@
 //     <p className="mb-4 md:mb-0 text-center md:text-left">
 //       Copyright © 2018 Bhaswar Paul | Powered by{" "}
 //       {/* Added Link Here */}
-//       <a 
-//         href="https://ireedindia.com" 
-//         target="_blank" 
-//         rel="noopener noreferrer" 
+//       <a
+//         href="https://ireedindia.com"
+//         target="_blank"
+//         rel="noopener noreferrer"
 //         className="text-[#cba36f] hover:brightness-125 transition-all duration-300"
 //       >
 //         IREED
 //       </a>
 //     </p>
-    
+
 //     <div className="flex gap-6">
 //       <a href="#" className="hover:text-white transition-colors">
 //         Disclaimers
@@ -284,7 +283,7 @@
 //     // We keep YOUR exact classes: w-8 h-8, rounded-full, etc.
 //     // We only add 'relative z-50' to make it clickable.
 //     className={`w-8 h-8 ${color} rounded flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 cursor-pointer relative z-50`}
-//     onClick={(e) => e.stopPropagation()} 
+//     onClick={(e) => e.stopPropagation()}
 //   >
 //     <Icon size={14} />
 //   </a>
@@ -307,9 +306,9 @@ import {
 const Footer = () => {
   return (
     <div className="relative font-sans">
-      <footer 
+      <footer
         className="relative text-gray-300 pt-16 bg-cover bg-center bg-no-repeat"
-        style={{ 
+        style={{
           // Applying the background image with a color overlay
           backgroundImage: `linear-gradient(rgba(38, 38, 38, 0.92), rgba(38, 38, 38, 0.72)), url('/assets/images/goldenmap.png')`,
         }}
@@ -342,6 +341,8 @@ const Footer = () => {
                 Extra Links
               </h3>
               <ul className="space-y-3 text-[15px]">
+                // Find this section in your Footer component (around line
+                353-354)
                 {[
                   { name: "About Us", link: "/about" },
                   { name: "Events", link: "/events" },
@@ -351,7 +352,8 @@ const Footer = () => {
                   { name: "Blogs", link: "/blog" },
                   { name: "Media", link: "/media" },
                 ].map((item) => (
-                  <li key={item}>
+                  // CHANGE THIS LINE:
+                  <li key={item.name}>
                     <a
                       href={item.link}
                       className="hover:text-[#cba36f] transition-colors"
@@ -381,10 +383,7 @@ const Footer = () => {
               <div className="flex items-start gap-3 mt-4">
                 <FaPhoneAlt className="mt-1 text-white shrink-0" />
                 <div className="flex flex-col">
-                  <a
-                    href="tel:+919818837873"
-                    className="hover:text-[#cba36f]"
-                  >
+                  <a href="tel:+919818837873" className="hover:text-[#cba36f]">
                     +91 981 883 7873
                   </a>
                 </div>
@@ -510,21 +509,27 @@ const Footer = () => {
           <div className="container mx-auto px-4 lg:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
             <p className="mb-4 md:mb-0 text-center md:text-left">
               Copyright © 2018 Bhaswar Paul | Powered by{" "}
-              <a 
-                href="https://ireedindia.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://ireedindia.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-[#cba36f] hover:brightness-125 transition-all duration-300"
               >
                 IREED
               </a>
             </p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors">Disclaimers</a>
+              <a href="#" className="hover:text-white transition-colors">
+                Disclaimers
+              </a>
               <span className="text-gray-700">|</span>
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">
+                Privacy Policy
+              </a>
               <span className="text-gray-700">|</span>
-              <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
+              <a href="#" className="hover:text-white transition-colors">
+                Terms of Use
+              </a>
             </div>
           </div>
         </div>
@@ -539,7 +544,7 @@ const SocialIcon = ({ Icon, color, href }) => (
     target="_blank"
     rel="noopener noreferrer"
     className={`w-8 h-8 ${color} rounded flex items-center justify-center text-white hover:scale-110 transition-transform duration-300 cursor-pointer relative z-50`}
-    onClick={(e) => e.stopPropagation()} 
+    onClick={(e) => e.stopPropagation()}
   >
     <Icon size={14} />
   </a>
