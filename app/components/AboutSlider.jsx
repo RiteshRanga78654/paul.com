@@ -5,14 +5,14 @@ import { ChevronRight, ChevronLeft } from "lucide-react";
 export default function ImageSlider() {
   // 1. Memoize images so they don't get recreated on every render
   const originalImages = useMemo(() => [
-    { url: "/assets/BPimages/FOB_0149.JPG", title: "Luxury Service 1" },
-    { url: "/assets/BPimages/DSC_0342.JPG", title: "Luxury Service 2" },
-    { url: "/assets/BPimages/DSC_0382.JPG", title: "Luxury Service 3" },
-    { url: "/assets/BPimages/DSC02419.JPG", title: "Luxury Service 4" },
-    { url: "/assets/BPimages/DSC02249.JPG", title: "Luxury Service 5" },
-    { url: "/assets/BPimages/DSC02396.JPG", title: "Luxury Service 6" },
-    { url: "/assets/BPimages/paras (1).jpg", title: "Luxury Service 7" },
-    { url: "/assets/BPimages/DSC_0421.JPG", title: "Luxury Service 8" },
+    { url: "/assets/BPimages/FOB_0149.JPG",    title: "" },
+    { url: "/assets/BPimages/DSC_0342.JPG",    title: "" },
+    { url: "/assets/BPimages/DSC_0382.JPG",    title: "" },
+    { url: "/assets/BPimages/DSC02419.JPG",    title: "" },
+    { url: "/assets/BPimages/DSC02249.JPG",    title: "" },
+    { url: "/assets/BPimages/DSC02396.JPG",    title: "" },
+    { url: "/assets/BPimages/paras (1).jpg",   title: "" },
+    { url: "/assets/BPimages/DSC_0421.JPG",    title: "" },
   ], []);
 
   const images = useMemo(() => [
