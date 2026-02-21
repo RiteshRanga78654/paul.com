@@ -350,7 +350,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
             <div className="w-full lg:w-[600px] flex justify-center lg:justify-center order-1 lg:order-1">
               <div className="qwe relative w-64 sm:w-80 lg:w-[600px] xl:w-[500px]">
                 <div className="absolute inset-0 rounded-full blur-3xl"></div>
-                <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
+                <div className="relative top-5 w-full h-full rounded-lg overflow-hidden shadow-2xl">
                   <img
                     src="/assets/images/corporate-trainings.png"
                     alt="Bhaswar Paul"
