@@ -341,8 +341,7 @@ const Footer = () => {
                 Extra Links
               </h3>
               <ul className="space-y-3 text-[15px]">
-                // Find this section in your Footer component (around line
-                353-354)
+               
                 {[
                   { name: "About Us", link: "/about" },
                   { name: "Events", link: "/events" },
