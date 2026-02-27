@@ -477,7 +477,7 @@ const MetamorphServicesPage = () => {
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Left Side: Image */}
             <div className="w-full lg:w-1/2">
-              <div className="rounded-[40px] overflow-hidden shadow-2xl relative group">
+              <div className="rounded-[8px] overflow-hidden shadow-2xl relative group">
                 <img
                   src="/assets/images/new-bhaswal-paul.jpg.jpeg" // Replace with your actual image path
                   alt="Metamorph PMC Team"
