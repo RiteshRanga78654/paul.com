@@ -616,13 +616,13 @@ const MetamorphServicesPage = () => {
                   key={idx}
                   className="bg-[#262626] p-8 rounded-[10px] border border-[#4c4949]/20 hover:border-[#b79662]/50 transition-all group"
                 >
-                  <div className="mb-6 inline-block px-5 py-3 rounded-full bg-[#1e1e1e] text-2xl font-extrabold text-[#b79662] group-hover:bg-[#b79662]/10 transition-colors">
+                  <div className="mb-6 inline-block px-5 py-3 rounded-full bg-[#1e1e1e] text-2xl md:text-4xl font-extrabold text-[#b79662] group-hover:bg-[#b79662]/10 transition-colors">
                     {item.icon}
                   </div>
                   <h3 className="text-white font-bold text-lg mb-4 leading-tight group-hover:text-[#b79662] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-[#4c4949] text-sm leading-relaxed">
+                  <p className="text-[#ffffff] text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
