@@ -614,7 +614,7 @@ const MetamorphServicesPage = () => {
               {steps.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-[#262626] p-8 rounded-[10px] border border-[#4c4949]/20 hover:border-[#b79662]/50 transition-all group"
+                  className="bg-[#4c4949] p-8 rounded-[10px] border border-[#4c4949]/20 hover:border-[#b79662]/50 transition-all group"
                 >
                   <div className="mb-6 inline-block px-5 py-3 rounded-full bg-[#1e1e1e] text-2xl md:text-4xl font-extrabold text-[#b79662] group-hover:bg-[#b79662]/10 transition-colors">
                     {item.icon}
