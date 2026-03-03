@@ -238,7 +238,7 @@ const HeroSlider = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent z-0"></div>
 
-                <div className="container mx-auto px-6 md:px-12 relative z-10">
+                <div className="container mx-auto px-6 md:px-22 relative z-10">
                   <div className="max-w-3xl space-y-6">
                     <h1 className="text-4xl md:text-7xl font-bold text-[#f4f4f4] leading-tight">
                       {slide.title} <br />
@@ -252,12 +252,7 @@ const HeroSlider = () => {
                     </p>
 
                     <div className="pt-4">
-                      <button className="flex items-center gap-3 text-white font-bold uppercase tracking-[0.2em] text-sm group">
-                        Read More
-                        <span className="text-[#b79662] text-xl group-hover:translate-x-2 transition-transform duration-300">
-                          &gt;
-                        </span>
-                      </button>
+                    
                     </div>
                   </div>
                 </div>
