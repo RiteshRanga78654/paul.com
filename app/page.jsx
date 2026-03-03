@@ -443,7 +443,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
                     >
                       Work With Me
                     </span>
-                  </button>
+                  </button>  
                 </div>
                 <div className="pt-4">
                   <button

@@ -30,6 +30,11 @@ const SingleBlogPage = () => {
     const fetchBlog = async () => {
       try {
         setLoading(true);
+        setError(null);
+        
+        // RESET: Clear old blog data immediately so it doesn't show during loading
+        setBlog(null);
+
         const response = await axios.get(`${API_BASE}?slug=${params.slug}&website=bhaswarpaul&published=true`);
         
         let data = response.data;
@@ -37,8 +42,13 @@ const SingleBlogPage = () => {
         else if (data.blogs && Array.isArray(data.blogs)) data = data.blogs[0];
         else if (Array.isArray(data)) data = data[0];
 
-        if (data) setBlog(data);
-        else setError("Article not found.");
+        if (data) {
+          setBlog(data);
+          // FIX: Force scroll to top when slug changes
+          window.scrollTo(0, 0);
+        } else {
+          setError("Article not found.");
+        }
       } catch (err) {
         console.error("Error fetching blog:", err);
         setError("Could not load the article.");
@@ -48,7 +58,7 @@ const SingleBlogPage = () => {
     };
 
     fetchBlog();
-  }, [params.slug]);
+  }, [params.slug]); // Re-run whenever the slug changes
 
   if (loading) return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -75,7 +85,8 @@ const SingleBlogPage = () => {
     : "/assets/images/placeholder.jpg";
 
   return (
-    <div className="bg-white min-h-screen font-sans text-gray-900">
+    // Added 'key' here: This tells React to reset the whole div when the slug changes
+    <div key={params.slug} className="bg-white min-h-screen font-sans text-gray-900">
       <Header />
 
       {/* ================= HEADER CONTAINER ================= */}
@@ -91,9 +102,6 @@ const SingleBlogPage = () => {
         >
           {blog.title}
         </h1>
-          {/* <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] mb-4 tracking-tight">
-            Bestselling Books Collection
-          </h2> */}
 
         <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-8 border-b border-gray-100 pb-4">
              <div className="flex items-center gap-2">
@@ -104,7 +112,6 @@ const SingleBlogPage = () => {
              <div className="flex items-center gap-2">
                 <span className="font-semibold text-gray-700">Posted On:</span>
                 <span>{new Date(blog.date || blog.createdAt).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                
              </div>
         </div>
 
@@ -120,12 +127,9 @@ const SingleBlogPage = () => {
 
       {/* ================= MAIN CONTENT GRID ================= */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* ADDED 'items-start' HERE TO FIX THE SIDEBAR MOVING ISSUE */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
-            {/* --- LEFT COLUMN: CONTENT (8 Cols) --- */}
             <div className="lg:col-span-8">
-                
                 {blog.description && (
                     <div className="bg-[#fcfcfc] p-6 rounded-lg border-l-4 border-[#b79662] mb-8">
                          <div 
@@ -165,141 +169,56 @@ const SingleBlogPage = () => {
                 )}
             </div>
 
-            {/* --- RIGHT COLUMN: SIDEBAR (4 Cols) --- */}
-            {/* APPLIED 'sticky' DIRECTLY TO ASIDE FOR STABILITY */}
             <aside className="lg:col-span-4 sticky top-24 space-y-6">
-                    
-                    {/* Share Widget */}
                     <div className="bg-white p-5 rounded-lg border border-gray-200">
                         <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Share Article</h4>
                         <div className="flex gap-2">
-                          {/* LinkedIn */}
-                          <a 
-                            href="https://www.linkedin.com/in/bhaswarpaul?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#0077b5] hover:text-white transition"
-                          >
+                          <a href="https://www.linkedin.com/in/bhaswarpaul" target="_blank" rel="noopener noreferrer" className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#0077b5] hover:text-white transition">
                             <Linkedin size={18} />
                           </a>
-                        
-                          {/* Twitter */}
-                          <a 
-                            href="https://twitter.com/paulbhaswar" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#1DA1F2] hover:text-white transition"
-                          >
+                          <a href="https://twitter.com/paulbhaswar" target="_blank" rel="noopener noreferrer" className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#1DA1F2] hover:text-white transition">
                             <Twitter size={18} />
                           </a>
-                        
-                          {/* Facebook */}
-                          <a 
-                            href="https://www.facebook.com/paulbhaswar/" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#4267B2] hover:text-white transition"
-                          >
+                          <a href="https://www.facebook.com/paulbhaswar/" target="_blank" rel="noopener noreferrer" className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[#4267B2] hover:text-white transition">
                             <Facebook size={18} />
                           </a>
-
-                          <a 
-                            href="https://www.instagram.com/bhaswar.paul?igsh=YzNqNW53ajVhazZ5" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[red] hover:text-white transition"
-                          >
+                          <a href="https://www.instagram.com/bhaswar.paul" target="_blank" rel="noopener noreferrer" className="flex-1 py-2 bg-gray-50 rounded flex justify-center items-center hover:bg-[red] hover:text-white transition">
                             <Instagram size={18} />
                           </a>
-                        
-                          </div> 
+                        </div> 
                     </div>
 
-                    {/* Author / Promo Card */}
                     <div className="bg-[#1e1e1e] p-6 rounded-lg text-center relative overflow-hidden">
                         <div className="relative z-10">
                              <div className="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-3 border-2 border-[#b79662] overflow-hidden">
                                 <img src="/assets/images/Bhaswar-Paul.jpg" alt="Author" className="w-full h-full object-cover" onError={(e) => e.target.style.display='none'}/>
                             </div>
-                            <h4 className="text-white font-bold text-base mb-1">{blog.userPostDataInfo?.[0]?.name || "Suresh Mansharamani"}</h4>
+                            <h4 className="text-white font-bold text-base mb-1">{blog.userPostDataInfo?.[0]?.name || "Business Expert"}</h4>
                             <p className="text-[#b79662] text-[10px] uppercase font-bold tracking-widest mb-4">Business Coach</p>
-                            {/* <button className="w-full py-2.5 bg-[#b79662] text-white font-bold text-xs rounded hover:bg-white hover:text-black transition-colors uppercase tracking-wide">
-                                Join Community
-                            </button> */}
+                            
                             <button
-            style={{
-            padding: "14px 20px",
-            backgroundColor: "#b79662", // Default Gold Background
-            borderRadius: "8px",
-            color: "#fff", // Default White Text
-            fontSize: "1.1rem",
-            fontWeight: "700",
-            cursor: "pointer",
-            display: "block",
-            margin:"auto",
-            width:"100%",
-            gap: "10px",
-            position: "relative",
-            overflow: "hidden",
-            zIndex: 1,
-            border: "2px solid #b79662", // Border keeps the button size stable
-
-            letterSpacing: "1px",
-            transition: "all 0.3s ease",
-          }}
-          onMouseEnter={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
-
-            // Slide in the white background
-            if (fill) fill.style.width = "100%";
-
-            // Change text color to Gold
-            if (text) text.style.color = "#b79662";
-          }}
-          onMouseLeave={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
-
-            // Slide out the white background
-            if (fill) fill.style.width = "0%";
-
-            // Reset text color to White
-            if (text) text.style.color = "#fff";
-          }}
-        >
-          {/* Hover Fill Layer: White */}
-          <div
-            className="hover-fill"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "0%",
-              height: "100%",
-              background: "#ffffff", // White background on hover
-              transition: "width 0.4s ease",
-              zIndex: -1,
-            }}
-          />
-
-          {/* Text Span with Transition */}
-          <span
-            className="btn-text"
-            style={{
-              position: "relative",
-              zIndex: 1,
-              color: "#fff", // Initial color
-              transition: "color 0.3s ease",
-            }}
-          >
-          Join Community
-          </span>
-        </button>
+                                style={{
+                                    padding: "14px 20px", backgroundColor: "#b79662", borderRadius: "8px",
+                                    color: "#fff", fontSize: "1.1rem", fontWeight: "700", cursor: "pointer",
+                                    display: "block", margin:"auto", width:"100%", position: "relative",
+                                    overflow: "hidden", zIndex: 1, border: "2px solid #b79662",
+                                    letterSpacing: "1px", transition: "all 0.3s ease",
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.querySelector(".hover-fill").style.width = "100%";
+                                    e.currentTarget.querySelector(".btn-text").style.color = "#b79662";
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.querySelector(".hover-fill").style.width = "0%";
+                                    e.currentTarget.querySelector(".btn-text").style.color = "#fff";
+                                }}
+                            >
+                                <div className="hover-fill" style={{ position: "absolute", top: 0, left: 0, width: "0%", height: "100%", background: "#ffffff", transition: "width 0.4s ease", zIndex: -1 }} />
+                                <span className="btn-text" style={{ position: "relative", zIndex: 1, color: "#fff", transition: "color 0.3s ease" }}>Join Community</span>
+                            </button>
                         </div>
                     </div>
 
-                    {/* Tags */}
                     {blog.key && (
                         <div className="bg-white p-5 rounded-lg border border-gray-200">
                             <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
@@ -315,7 +234,6 @@ const SingleBlogPage = () => {
                         </div>
                     )}
             </aside>
-
         </div>
       </main>
     </div>

@@ -10,6 +10,8 @@ import {
 } from "react-icons/fa";
 import Footer from "../layout/Footer";
 import Header from "../layout/Header";
+import { motion } from 'framer-motion';
+import { ArrowRight, Star, Target, Shield, Clock } from 'lucide-react';
 
 // Replace these with your actual image paths
 const manInSuit = "/assets/TEDx TAPMI/networkimg.jfif";
@@ -29,94 +31,129 @@ const DesignComponent = () => {
     <Header />
     <div className="font-sans bg-[#1e1e1e] text-white">
       {/* 1. Testimonials Intro Section */}
-     <section className="relative flex flex-col lg:flex-row border-b border-gray-800">
-  <div className="w-full lg:w-1/2 p-10 lg:p-24 flex flex-col justify-center z-10 bg-[#4c4949]">
-    <h4 className="text-[#b79662] font-bold text-sm tracking-wider mb-4">
-     Networks
-    </h4>
-    <h1 className="text-4xl font-bold text-white mb-6">
-      Power Your Growth  <br />
-      <span className="text-[#b79662]">Through Strategic Connections</span>
-    </h1>
-    <p className="text-gray-200 text-lg mb-8 font-light leading-relaxed">
-      A powerful business ecosystem which brings together {" "}
-      <span className="font-bold text-white">entrepreneurs and business executives</span>with professionals who aim for growth.{" "}
-      <span className="font-bold text-white">growth</span>  Our network establishes crucial connections which lead to strategic partnerships that help various sectors achieve goals and build credibility while fulfilling their long-term objectives.
-    </p>
+   <section className="relative min-h-[90vh] flex items-center bg-black overflow-hidden font-sans">
+      {/* Background with Gold-Tinted Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070" 
+          alt="Corporate Building" 
+          className="w-full h-full object-cover opacity-40 grayscale"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+      </div>
 
-    <button
-      style={{
-        padding: "14px 40px",
-        backgroundColor: "#b79662",
-        borderRadius: "8px",
-        color: "#fff",
-        fontSize: "1.1rem",
-        fontWeight: "700",
-        cursor: "pointer",
-        width: "fit-content", // <--- ADDED THIS LINE TO FIX WIDTH
-        gap: "10px",
-        position: "relative",
-        overflow: "hidden",
-        zIndex: 1,
-        border: "2px solid #b79662",
-        letterSpacing: "1px",
-        transition: "all 0.3s ease",
-      }}
-      onMouseEnter={(e) => {
-        const fill = e.currentTarget.querySelector(".hover-fill");
-        const text = e.currentTarget.querySelector(".btn-text");
-        if (fill) fill.style.width = "100%";
-        if (text) text.style.color = "#b79662";
-      }}
-      onMouseLeave={(e) => {
-        const fill = e.currentTarget.querySelector(".hover-fill");
-        const text = e.currentTarget.querySelector(".btn-text");
-        if (fill) fill.style.width = "0%";
-        if (text) text.style.color = "#fff";
-      }}
-    >
-      <div
-        className="hover-fill"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "0%",
-          height: "100%",
-          background: "#ffffff",
-          transition: "width 0.4s ease",
-          zIndex: -1,
-        }}
-      />
-      <span
-        className="btn-text"
-        style={{
-          position: "relative",
-          zIndex: 1,
-          color: "#fff",
-          transition: "color 0.3s ease",
-        }}
-      >
-        Join Our Communities
-      </span>
-    </button>
-  </div>
-  
-  {/* Right Image Part */}
-  <div className="w-full lg:w-1/2 relative min-h-[500px] bg-[#1e1e1e]  ">
-    <Image
-      src={manInSuit}
-      alt="Man in Suit"
-      layout="fill"
-      objectFit="cover"
-      className="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-500"
-    />
-    <div className="absolute inset-0 bg-[#b79662]/40 mix-blend-multiply z-10 group-hover:opacity-0 transition-all duration-500" ></div>
-    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30 z-20" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-  </div>
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 flex flex-col lg:flex-row items-center gap-16">
+        
+        {/* Left Content */}
+        <div className="w-full lg:w-3/5 space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#b79662]/10 border border-[#b79662]/30 text-[#b79662] text-xs font-bold uppercase tracking-widest"
+          >
+            <Star size={14} fill="#b79662" /> Premium Construction Services
+          </motion.div>
 
-  
-</section>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-5xl lg:text-7xl font-bold text-white leading-tight"
+          >
+            Building <br />
+            <span className="text-[#b79662]">Excellence</span> <br />
+            Through Precision
+          </motion.h1>
+
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-[#b3b3b3] text-lg lg:text-xl max-w-xl leading-relaxed"
+          >
+            At MANO Project Consultants, we provide end-to-end consulting solutions that help organizations plan smarter, execute faster, and maintain uncompromising quality.
+          </motion.p>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="flex flex-wrap gap-4"
+          >
+            <button className="flex items-center gap-3 bg-[#b79662] text-black px-8 py-4 font-bold uppercase tracking-widest hover:bg-white transition-all group">
+              Explore Services <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+            </button>
+          </motion.div>
+        </div>
+
+        {/* Right Stats Card (Glassmorphism Gold Theme) */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4 }}
+          className="w-full lg:w-2/5 relative"
+        >
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 lg:p-10 rounded-3xl shadow-2xl relative z-10">
+            {/* Main Metric */}
+            <div className="flex items-center gap-6 mb-10">
+              <div className="p-4 bg-[#b79662] rounded-2xl text-black">
+                <Target size={32} />
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-white">500+</div>
+                <div className="text-[#b3b3b3] text-sm uppercase tracking-wider">Clients Served</div>
+              </div>
+            </div>
+
+            {/* Satisfaction Progress */}
+            <div className="mb-10 space-y-3">
+              <div className="flex justify-between text-sm uppercase tracking-widest font-bold">
+                <span className="text-white">Client Satisfaction</span>
+                <span className="text-[#b79662]">98%</span>
+              </div>
+              <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+                <motion.div 
+                  initial={{ width: 0 }}
+                  animate={{ width: "98%" }}
+                  transition={{ duration: 1.5, delay: 0.8 }}
+                  className="h-full bg-[#b79662]"
+                ></motion.div>
+              </div>
+            </div>
+
+            {/* Sub Metrics Grid */}
+            <div className="grid grid-cols-3 gap-4 text-center border-t border-white/10 pt-8">
+              <div>
+                <div className="text-2xl font-bold text-white">12+</div>
+                <div className="text-[10px] text-[#b3b3b3] uppercase mt-1">Years</div>
+              </div>
+              <div className="border-x border-white/10">
+                <div className="text-2xl font-bold text-white">100%</div>
+                <div className="text-[10px] text-[#b3b3b3] uppercase mt-1">Quality</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-white">24/7</div>
+                <div className="text-[10px] text-[#b3b3b3] uppercase mt-1">Support</div>
+              </div>
+            </div>
+
+            {/* Badges */}
+            <div className="flex gap-3 mt-8">
+              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-500 text-[10px] font-bold uppercase">
+                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div> Active
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#b79662]/10 border border-[#b79662]/20 text-[#b79662] text-[10px] font-bold uppercase">
+                <Shield size={10} /> Premium
+              </div>
+            </div>
+          </div>
+          
+          {/* Decorative Gold Glow */}
+          <div className="absolute -inset-4 bg-[#b79662] opacity-10 blur-3xl -z-0"></div>
+        </motion.div>
+      </div>
+    </section>
+
 
       {/* Why Join Our Community Section */}
       <section className="py-20 px-4 lg:px-24 bg-[#1e1e1e] text-white">
@@ -417,3 +454,4 @@ export default DesignComponent;
       }
     `}</style>
   </section>
+
