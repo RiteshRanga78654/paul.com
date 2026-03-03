@@ -242,19 +242,19 @@ const HeroSlider = () => {
                   <div className="max-w-3xl space-y-6">
                     <h1 className="text-4xl md:text-7xl font-bold text-[#f4f4f4] leading-tight">
                       {slide.title} <br />
-                      <span className="text-[#cc0000] uppercase">
+                      <span className="text-[#b79662]">
                         {slide.highlight}
                       </span>
                     </h1>
 
-                    <p className="text-[#b3b3b3] text-lg md:text-xl max-w-xl leading-relaxed border-l-4 border-[#cc0000] pl-6">
+                    <p className="text-[#b3b3b3] text-lg md:text-xl max-w-xl leading-relaxed border-l-4 border-[#b79662] pl-6">
                       {slide.desc}
                     </p>
 
                     <div className="pt-4">
                       <button className="flex items-center gap-3 text-white font-bold uppercase tracking-[0.2em] text-sm group">
                         Read More
-                        <span className="text-[#cc0000] text-xl group-hover:translate-x-2 transition-transform duration-300">
+                        <span className="text-[#b79662] text-xl group-hover:translate-x-2 transition-transform duration-300">
                           &gt;
                         </span>
                       </button>
