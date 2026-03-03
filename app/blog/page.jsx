@@ -81,9 +81,66 @@ const MediaSection = () => {
           {description}
         </p>
         <div className="max-w-[220px] mx-auto w-full">
-          <button className="w-full py-4 bg-[#b79662] text-white font-bold rounded-lg tracking-widest text-sm hover:opacity-90 transition-opacity">
-            learn more
-          </button>
+         <button
+                    style={{
+                      padding: "14px 40px",
+                      backgroundColor: "#b79662",
+                      borderRadius: "8px",
+                      color: "#fff",
+                      fontSize: "1.1rem",
+                      fontWeight: "700",
+                      cursor: "pointer",
+                      display: "flex",
+                      textAlign: "center",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: "10px",
+                      position: "relative",
+                      overflow: "hidden",
+                      zIndex: 1,
+                      border: "2px solid #b79662",
+                      margin: "0 auto",
+                      letterSpacing: "1px",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "100%";
+                      if (text) text.style.color = "#b79662";
+                    }}
+                    onMouseLeave={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "0%";
+                      if (text) text.style.color = "#fff";
+                    }}
+                  >
+                    <div
+                      className="hover-fill"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "0%",
+                        height: "100%",
+                        background: "#ffffff",
+                        transition: "width 0.4s ease",
+                        zIndex: -1,
+                      }}
+                    />
+                    <span
+                      className="btn-text"
+                      style={{
+                        position: "relative",
+                        zIndex: 1,
+                        color: "#fff",
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                      Learn More
+                    </span>
+                  </button>  
         </div>
       </div>
     </div>
@@ -144,9 +201,66 @@ const MediaSection = () => {
         <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight ">
           Sign Up For Our Newsletter
         </h2>
-        <button className="bg-white text-[#b79662] font-bold py-4 px-12 rounded-full  tracking-widest hover:bg-gray-100 transition-all shadow-lg">
-          Subscribe
-        </button>
+        <button
+                    style={{
+                      padding: "14px 40px",
+                      backgroundColor: "#b79662",
+                      borderRadius: "8px",
+                      color: "#fff",
+                      fontSize: "1.1rem",
+                      fontWeight: "700",
+                      cursor: "pointer",
+                      display: "flex",
+                      textAlign: "center",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: "10px",
+                      position: "relative",
+                      overflow: "hidden",
+                      zIndex: 1,
+                      border: "2px solid #b79662",
+                      margin: "0 auto",
+                      letterSpacing: "1px",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "100%";
+                      if (text) text.style.color = "#b79662";
+                    }}
+                    onMouseLeave={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "0%";
+                      if (text) text.style.color = "#fff";
+                    }}
+                  >
+                    <div
+                      className="hover-fill"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "0%",
+                        height: "100%",
+                        background: "#ffffff",
+                        transition: "width 0.4s ease",
+                        zIndex: -1,
+                      }}
+                    />
+                    <span
+                      className="btn-text"
+                      style={{
+                        position: "relative",
+                        zIndex: 1,
+                        color: "#fff",
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                      Suscribe
+                    </span>
+                  </button>  
       </div>
     </section>
   );
@@ -231,12 +345,68 @@ const MediaSection = () => {
             )}
 
             <div className="flex justify-center mt-20">
-              <button
-                onClick={() => setVisibleCount((v) => v + 3)}
-                className="bg-[#b79662] text-white font-bold py-4 px-12  tracking-widest text-sm shadow-md hover:bg-slate-800 transition-colors"
-              >
-                View All Insights
-              </button>
+           
+               <button
+               onClick={() => setVisibleCount((v) => v + 3)}
+                    style={{
+                      padding: "14px 40px",
+                      backgroundColor: "#b79662",
+                      borderRadius: "8px",
+                      color: "#fff",
+                      fontSize: "1.1rem",
+                      fontWeight: "700",
+                      cursor: "pointer",
+                      display: "flex",
+                      textAlign: "center",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: "10px",
+                      position: "relative",
+                      overflow: "hidden",
+                      zIndex: 1,
+                      border: "2px solid #b79662",
+                      margin: "0 auto",
+                      letterSpacing: "1px",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "100%";
+                      if (text) text.style.color = "#b79662";
+                    }}
+                    onMouseLeave={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "0%";
+                      if (text) text.style.color = "#fff";
+                    }}
+                  >
+                    <div
+                      className="hover-fill"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "0%",
+                        height: "100%",
+                        background: "#ffffff",
+                        transition: "width 0.4s ease",
+                        zIndex: -1,
+                      }}
+                    />
+                    <span
+                      className="btn-text"
+                      style={{
+                        position: "relative",
+                        zIndex: 1,
+                        color: "#fff",
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                     View All Insights
+                    </span>
+                  </button>  
             </div>
           </div>
         </section>
