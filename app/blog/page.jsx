@@ -48,15 +48,15 @@ const MediaSection = () => {
       >
         <div className="absolute inset-0 bg-black/50" />
       </div>
-      <div className="relative z-10 text-center text-white px-4 max-w-5xl">
-        <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight ">
+      <div className="relative z-10 text-center text-[#b79662] px-4 max-w-5xl">
+        <h1 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight ">
           A New Way Forward
         </h1>
-        <p className="text-xl md:text-2xl font-semibold mb-6 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-white font-semibold mb-6 max-w-3xl mx-auto leading-relaxed">
           At the Persimmon Group, We Help Leaders, Teams, and Organizations
           Execute With Speed and Discipline.
         </p>
-        <p className="text-lg md:text-xl italic font-light opacity-90">
+        <p className="text-lg md:text-xl italic text-white font-light opacity-90">
           Why? Because if You Aren't Moving Forward, You're Falling Behind.
         </p>
       </div>
@@ -73,10 +73,10 @@ const MediaSection = () => {
         />
       </div>
       <div className="p-10 flex-grow flex flex-col text-center">
-        <span className="text-[#b79662] font-bold  tracking-[0.2em] text-[11px] mb-4">
+        <span className="text-[#111111] font-bold  tracking-[0.1em] text-[13px] mb-2">
           {eyebrow}
         </span>
-        <h3 className="text-4xl font-extrabold text-slate-900 mb-8">{title}</h3>
+        <h3 className="text-4xl font-bold text-[#b79662] mb-5">{title}</h3>
         <p className="text-slate-600 leading-relaxed mb-10 flex-grow text-[16px] font-light">
           {description}
         </p>
@@ -301,10 +301,10 @@ const MediaSection = () => {
         {/* HOW WE HELP */}
         <section className="py-16 px-4 md:px-8 lg:px-20 bg-white">
           <div className="max-w-7xl mx-auto text-center mb-10">
-            <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] mb-4">
               How We Help
             </h2>
-            <p className="text-xl text-[#b79662] font-medium leading-relaxed max-w-3xl mx-auto">
+            <p className="text-m text-[#b79662] font-medium leading-relaxed max-w-4xl mx-auto">
               The Persimmon Group is a business consulting firm that guides
               organizations to build competitive strategy, execute strategic
               projects with purpose and precision, and develop the top talent
@@ -321,13 +321,13 @@ const MediaSection = () => {
         {/* BLOGS SECTION */}
         <section className="py-24 px-4 md:px-8 lg:px-20 bg-[#f8f9fa]">
           <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-4 tracking-tight ">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] mb-4 tracking-tight ">
               What We're Thinking About
             </h2>
-            <p className="text-2xl text-[#b79662] font-semibold mb-16">
+            <p className="text-m text-[#b79662] font-semibold ">
               Featured Insights From Our Team
             </p>
-
+ <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
             {loading ? (
               <div className="flex justify-center h-64">
                 <Loader2 className="animate-spin text-[#b79662] w-14 h-14" />

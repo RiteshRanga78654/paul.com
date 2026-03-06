@@ -5,6 +5,7 @@ import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 import { ArrowRight } from "lucide-react";
 import TestimonialSlider from "../components/TestimonialSlider";
+import Marquee from "../components/Marquee";
 
 // --- 1. CountUp Animation Logic (The Missing Part) ---
 const CountUp = ({ end, duration = 2000 }) => {
@@ -231,13 +232,66 @@ const Page = () => {
                 company specialize in corporate events management, BTL
                 activation.
               </p>
-              <button className="group flex items-center gap-3 border border-[#4c4949] px-8 py-4 rounded-full text-[#1e1e1e] font-bold hover:bg-[#b79662] hover:border-[#b79662] transition-all duration-300">
-                View More
-                <ArrowRight
-                  className="group-hover:translate-x-2 transition-transform"
-                  size={20}
-                />
-              </button>
+              <button
+                    style={{
+                      padding: "14px 40px",
+                      backgroundColor: "#b79662",
+                      borderRadius: "8px",
+                      color: "#fff",
+                      fontSize: "1.1rem",
+                      fontWeight: "700",
+                      cursor: "pointer",
+                      display: "flex",
+                      textAlign: "center",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: "10px",
+                      position: "relative",
+                      overflow: "hidden",
+                      zIndex: 1,
+                      border: "2px solid #b79662",
+                    
+                      letterSpacing: "1px",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "100%";
+                      if (text) text.style.color = "#b79662";
+                    }}
+                    onMouseLeave={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "0%";
+                      if (text) text.style.color = "#fff";
+                    }}
+                  >
+                    <div
+                      className="hover-fill"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "0%",
+                        height: "100%",
+                        background: "#ffffff",
+                        transition: "width 0.4s ease",
+                        zIndex: -1,
+                      }}
+                    />
+                    <span
+                      className="btn-text"
+                      style={{
+                        position: "relative",
+                        zIndex: 1,
+                        color: "#fff",
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                      View More
+                    </span>
+                  </button>  
             </div>
 
             <div className="relative">
@@ -282,7 +336,7 @@ const Page = () => {
           </div>
 
           <div className="border-t border-[#4c4949]/20 pt-12">
-            <h3 className="text-[#b79662] text-xs font-bold tracking-[0.3em] uppercase mb-10">
+            <h3 className="text-[#b79662] text-m font-bold   mb-10">
               Our Partners
             </h3>
             <div className="flex flex-wrap items-center justify-between gap-8 md:gap-4">
@@ -305,8 +359,8 @@ const Page = () => {
 
       {/* Counter Section */}
       <section className="bg-[#1e1e1e] py-16 px-6 sm:px-8 md:px-16 border-b border-[#4c4949]/20">
-        <h1 className="text-white text-center text-2xl md:text-3xl font-bold mb-12">
-          SUCCESSFULLY COMPLETED 7000+ PROJECTS
+        <h1 className="text-white text-center text-2xl md:text-3xl  font-bold mb-12">
+          Successfully Compeletd Projects with 100% Client Satisfaction
         </h1>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
@@ -317,7 +371,7 @@ const Page = () => {
                 </div>
                 <div className="w-16 h-[2px] bg-[#b79662]"></div>
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-white uppercase tracking-wide">
+                  <h3 className="text-xl font-bold text-white  tracking-wide">
                     {stat.label}
                   </h3>
                   <p className="text-[#4c4949] text-sm leading-relaxed max-w-[260px]">
@@ -332,12 +386,12 @@ const Page = () => {
 
       {/*  */}
 
-      <section className="bg-black py-20 px-6 md:px-16 overflow-hidden">
-        <div className="max-w-7xl mx-auto border-b border-white/10 pb-20">
+      <section className="bg-white py-20 px-6 md:px-16 overflow-hidden">
+        <div className="max-w-7xl mx-auto  ">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Side: Content */}
             <div className="space-y-8 order-2 lg:order-1">
-              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-black leading-tight">
                 Why You Should{" "}
                 <span className="text-[#b79662]">Choose Us?</span>
               </h2>
@@ -355,7 +409,7 @@ const Page = () => {
                   Here, you'll find a platform that will be unique to you and
                   your brand – a platform that will define your success. Current
                   success stories at{" "}
-                  <span className="text-white">"Craftworld Events"</span>{" "}
+                  <span className="text-[#b79662]">"Craftworld Events"</span>{" "}
                   include Indian Kids Fashion Week and Chef's Connect.
                 </p>
               </div>
@@ -384,38 +438,42 @@ const Page = () => {
                   allowFullScreen
                 ></iframe>
               </div>
+               <div className="absolute -bottom-4 -left-4 w-1/2 h-1/2 border-b-2 border-l-2 border-[#b79662] z-0 hidden md:block"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* 4. Infinite "Our Work" Slider Section */}
-      <section className="bg-[#ffffff] py-24 overflow-hidden border-t border-gray-100">
+      <section className="bg-[#ffffff] py-5 overflow-hidden ">
         <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-black mb-2">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] ">
             Our <span className="text-[#b79662]">Work</span>
           </h2>
-          <div className="w-20 h-1 bg-[#b79662] mx-auto"></div>
+          <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
+        
         </div>
 
         <div className="flex flex-col gap-6 md:gap-10 max-w-7xl mx-auto ">
           <ScrollingRow
             images={workImages.slice(0, 4)}
             direction="right"
-            duration={35}
+            duration={120}
           />
           <ScrollingRow
             images={workImages.slice(4, 8)}
             direction="left"
-            duration={40}
+            duration={120}
           />
           <ScrollingRow
             images={workImages.slice(0, 4)}
             direction="right"
-            duration={30}
+            duration={120}
           />
         </div>
       </section>
+
+      {/* <Marquee /> */}
       <TestimonialSlider />
       <Footer />
     </>
