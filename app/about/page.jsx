@@ -319,13 +319,126 @@ const MetamorphServicesPage = () => {
                 ))}
               </div>
 
-              <div className="flex flex-wrap gap-4 pt-4">
-                <button className="bg-[#b79662] hover:bg-transparent text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 transition-all">
-                  Get Free PMC Consultation <ArrowUpRight size={20} />
+              <div className="flex gap-4 pt-4">
+                <button
+                  style={{
+                    padding: "14px 40px",
+                    backgroundColor: "#b79662",
+                    borderRadius: "8px",
+                    color: "#fff",
+                    fontSize: "1.1rem",
+                    fontWeight: "700",
+                    cursor: "pointer",
+                    display: "flex",
+                    textAlign: "center",
+                    justifyContent: "left",
+                    alignItems: "center",
+                    gap: "10px",
+                    position: "relative",
+                    overflow: "hidden",
+                    zIndex: 1,
+                    border: "2px solid #b79662",
+                    letterSpacing: "1px",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    const fill = e.currentTarget.querySelector(".hover-fill");
+                    const text = e.currentTarget.querySelector(".btn-text");
+                    if (fill) fill.style.width = "100%";
+                    if (text) text.style.color = "#b79662";
+                  }}
+                  onMouseLeave={(e) => {
+                    const fill = e.currentTarget.querySelector(".hover-fill");
+                    const text = e.currentTarget.querySelector(".btn-text");
+                    if (fill) fill.style.width = "0%";
+                    if (text) text.style.color = "#fff";
+                  }}
+                >
+                  <div
+                    className="hover-fill"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "0%",
+                      height: "100%",
+                      background: "#ffffff",
+                      transition: "width 0.4s ease",
+                      zIndex: -1,
+                    }}
+                  />
+                  <span
+                    className="btn-text"
+                    style={{
+                      position: "relative",
+                      zIndex: 1,
+                      color: "#fff",
+                      transition: "color 0.3s ease",
+                    }}
+                  >
+                    Get Free PMC <span><br/>Consultation</span> 
+                  </span>
                 </button>
-                <button className="border border-white/20 bg-white/5 backdrop-blur-md hover:bg-white/10 text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 transition-all">
-                  Call Us On +91 9925100697{" "}
-                  <ArrowUpRight size={20} className="text-[#b79662]" />
+
+                <button
+                  style={{
+                    padding: "14px 40px",
+                    backgroundColor: "#b79662",
+                    borderRadius: "8px",
+                    color: "#fff",
+                    fontSize: "1.1rem",
+                    fontWeight: "700",
+                    cursor: "pointer",
+                    display: "flex",
+                    textAlign: "center",
+                    justifyContent: "left",
+                    alignItems: "center",
+                    gap: "10px",
+                    position: "relative",
+                    overflow: "hidden",
+                    zIndex: 1,
+                    border: "2px solid #b79662",
+                    letterSpacing: "1px",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    const fill = e.currentTarget.querySelector(".hover-fill");
+                    const text = e.currentTarget.querySelector(".btn-text");
+                    if (fill) fill.style.width = "100%";
+                    if (text) text.style.color = "#b79662";
+                  }}
+                  onMouseLeave={(e) => {
+                    const fill = e.currentTarget.querySelector(".hover-fill");
+                    const text = e.currentTarget.querySelector(".btn-text");
+                    if (fill) fill.style.width = "0%";
+                    if (text) text.style.color = "#fff";
+                  }}
+                >
+                  <div
+                    className="hover-fill"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "0%",
+                      height: "100%",
+                      background: "#ffffff",
+                      transition: "width 0.4s ease",
+                      zIndex: -1,
+                    }}
+                  />
+                  <span
+                    className="btn-text"
+                    style={{
+                      position: "relative",
+                      zIndex: 1,
+                      color: "#fff",
+                      transition: "color 0.3s ease",
+                    }}
+                  >
+                    <span>Call Us Now </span><br/>
+                    <span>+91 9818837873</span>
+                  </span>
                 </button>
               </div>
             </div>
@@ -371,9 +484,68 @@ const MetamorphServicesPage = () => {
                   className="w-full bg-[#f5f5f5] border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-[#b79662] outline-none text-black mb-6"
                 ></textarea>
 
-                <button className="w-full bg-[#b79662]  text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-orange-500/20 mb-6">
-                  Submit
-                </button>
+                 <button
+                    style={{
+                      padding: "14px 40px",
+                      backgroundColor: "#b79662",
+                      borderRadius: "8px",
+                      color: "#fff",
+                      fontSize: "1.1rem",
+                      fontWeight: "700",
+                      cursor: "pointer",
+                      display: "flex",
+                      textAlign: "center",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: "10px",
+                      position: "relative",
+                      overflow: "hidden",
+                      zIndex: 1,
+                      border: "2px solid #b79662",
+                      width: "100%",
+                      letterSpacing: "1px",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "100%";
+                      if (text) text.style.color = "#b79662";
+                    }}
+                    onMouseLeave={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "0%";
+                      if (text) text.style.color = "#fff";
+                    }}
+                  >
+                    <div
+                      className="hover-fill"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "0%",
+                        height: "100%",
+                        background: "#ffffff",
+                        transition: "width 0.4s ease",
+                        zIndex: -1,
+                        
+                      }}
+                    />
+                    <span
+                      className="btn-text"
+                      style={{
+                        position: "relative",
+                        zIndex: 1,
+                        color: "#fff",
+                        transition: "color 0.3s ease",
+                       
+                      }}
+                    >
+                      Submit
+                    </span>
+                  </button>  
 
                 <div className="space-y-3">
                   {[
@@ -381,7 +553,7 @@ const MetamorphServicesPage = () => {
                     "Structured Project Evaluation",
                     "Dedicated PMC On Every Project",
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center space-x-2">
+                    <div key={i} className="flex items-center space-x-2 mt-4">
                       <Check
                         size={16}
                         className="text-[#b79662]"
@@ -399,7 +571,7 @@ const MetamorphServicesPage = () => {
         </section>
 
         {/* Counter */}
-        <section className="bg-[#1e1e1e] py-10 px-6 sm:px-8 md:px-16 border-b border-[#4c4949]/20">
+        <section className="bg-[#1e1e1e] py-10 px-6 sm:px-8 md:px-16 ">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
               {stats.map((stat, index) => (
@@ -473,7 +645,7 @@ const MetamorphServicesPage = () => {
 
         {/* section image */}
 
-        <section className="bg-white py-20 px-6 sm:px-8 md:px-16 overflow-hidden">
+        <section className="bg-white py-5 px-6 sm:px-8 md:px-16 overflow-hidden">
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Left Side: Image */}
             <div className="w-full lg:w-1/2">
@@ -492,7 +664,7 @@ const MetamorphServicesPage = () => {
             <div className="w-full lg:w-1/2 space-y-6 text-[#1e1e1e]">
               {/* Tagline */}
               <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-[#b79662]"></div>
                 <span className="text-xs font-bold uppercase tracking-widest text-gray-500">
                   About The Service
                 </span>
@@ -547,14 +719,13 @@ const MetamorphServicesPage = () => {
 
         {/* slider */}
 
-        <section className="bg-white py-16 overflow-hidden">
+        <section className="bg-white pt-16 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6">
-                 <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
-              Proudly{" "}
-              <span className="text-[#b79662]">
-                Associated with
-              </span>
+         
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#b79662] ">
+              Proudly <span className="text-[#b79662]">Associated with</span>
             </h2>
+            <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
           </div>
 
           {/* The Wrapper for the infinite scroll */}
@@ -599,16 +770,17 @@ const MetamorphServicesPage = () => {
         </section>
 
         {/* 1. Our PMC Workflow Section */}
-        <section className="py-20 px-6 sm:px-8 md:px-16 border-b border-[#4c4949]/30">
+        <section className="pt-16 px-6 sm:px-8 md:px-16 ">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <div className="text-center ">
               <span className="text-sm font-semibold text-[#b79662] tracking-wide">
                 Our PMC Focus Areas
               </span>
-              <h2 className="text-3xl md:text-5xl font-bold mt-2">
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 text-[#b79662]">
                 Our PMC Workflow{" "}
                 <span className="text-[#b79662]">(Step-By-Step Process)</span>
               </h2>
+              <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {steps.map((item, idx) => (
@@ -632,12 +804,13 @@ const MetamorphServicesPage = () => {
         </section>
 
         {/* 2. What We Manage Section */}
-        <section className="py-20 px-6 sm:px-8 md:px-16 border-b border-[#4c4949]/30">
+        <section className="pt-16 px-6 sm:px-8 md:px-16">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
+            <h2 className="text-3xl md:text-4xl text-[#b79662] font-bold text-center ">
               <span className="text-[#b79662]">What We Manage</span> Under Our
               PMC Services
             </h2>
+            <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {projects.map((item, idx) => (
                 <div
@@ -666,12 +839,13 @@ const MetamorphServicesPage = () => {
         </section>
 
         {/* 3. Why Choose Metamorph Section */}
-        <section className="py-20 px-6 sm:px-8 md:px-16 border-b border-[#4c4949]/30">
+        <section className="pt-16 px-6 sm:px-8 md:px-16 ">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
+            <h2 className="text-3xl md:text-4xl text-[#b79662] font-bold text-center ">
               Why Choose Metamorph As Your{" "}
               <span className="text-[#b79662]">PMC Partner?</span>
             </h2>
+            <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map((item, idx) => (
                 <div
@@ -698,17 +872,18 @@ const MetamorphServicesPage = () => {
         </section>
 
         {/* 4. FAQ Section */}
-        <section className="py-20 px-6 sm:px-8 md:px-16">
+        <section className="py-16 px-6 sm:px-8 md:px-16">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center  text-[#b79662]">
               Quick And Clear{" "}
               <span className="text-[#b79662]">
                 Answers To Your Key Questions
               </span>
             </h2>
+            <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-8 rounded-full"></div>
             <div className="space-y-2">
               {faqs.map((faq, index) => (
-                <div key={index} className="border-b border-[#4c4949]/30 pb-4">
+                <div key={index} className=" pb-4">
                   <button
                     onClick={() =>
                       setOpenIndex(openIndex === index ? null : index)

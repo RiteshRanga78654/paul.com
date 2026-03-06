@@ -114,7 +114,7 @@ const MediaSection = () => {
             <span className="mb-4 block text-xs font-bold tracking-[0.4em] text-[#b79662] uppercase">
               Media & Press
             </span>
-            <h1 className="mb-6 text-5xl font-extrabold text-white md:text-7xl">
+            <h1 className="mb-6 text-5xl font-bold text-[#b79662] md:text-7xl">
               Leadership <span className="text-[#b79662]">Insights</span>
             </h1>
             <p className="mx-auto max-w-2xl text-lg font-light text-gray-300 md:text-xl">
@@ -128,13 +128,13 @@ const MediaSection = () => {
         <section className="relative z-20 -mt-16 px-4">
           <div className="mx-auto flex max-w-7xl flex-col overflow-hidden rounded-2xl bg-[#1a1a1a] shadow-2xl lg:flex-row">
             <div className="flex flex-1 items-center justify-center bg-[#b79662] p-12">
-  <GoldButton
-    text="Purchase Entries"
-    className="!bg-[#b79662] !border-[#ffffff] !text-white  
+              <GoldButton
+                text="Purchase Entries"
+                className="!bg-[#b79662] !border-[#ffffff] !text-white  
                hover:!bg-[#b79662] hover:!border-[#b79662] 
                py-5 px-12 text-xl"
-  />
-</div>
+              />
+            </div>
             <div className="flex-[1.5] p-10 md:p-16">
               <h2 className="mb-4 text-2xl font-bold text-white md:text-3xl">
                 The MCA Awards 2026
@@ -176,36 +176,36 @@ const MediaSection = () => {
 
         {/* 4. NEW: ICON NAVIGATION SECTION (From Image 2) */}
         <section className="relative bg-[#0d0d0d]   border-[#b79662] border-b">
-         <div
-  className="relative py-16 bg-cover bg-center bg-no-repeat"
-  style={{
-    backgroundImage: "url('/assets/unnamed.jpg')",
-  }}
->
-  {/* Overlay */}
-  <div className="absolute inset-0  bg-black/60"></div>
+          <div
+            className="relative py-16 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/assets/unnamed.jpg')",
+            }}
+          >
+            {/* Overlay */}
+            <div className="absolute inset-0  bg-black/60"></div>
 
-  <div className="relative grid grid-cols-2 gap-8 md:grid-cols-4">
-    {[
-      { name: "TIMELINE", icon: "📅" },
-      { name: "CATEGORIES", icon: "📁" },
-      { name: "FAQS", icon: "💬" },
-      { name: "GUIDANCE", icon: "📂" },
-    ].map((item, index) => (
-      <div
-        key={index}
-        className="group flex flex-col items-center cursor-pointer"
-      >
-        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#1a1a1a] text-3xl transition-all duration-300 group-hover:bg-[#b79662]">
-          {item.icon}
-        </div>
-        <span className="text-xs font-bold tracking-widest text-white group-hover:text-[#b79662]">
-          {item.name}
-        </span>
-      </div>
-    ))}
-  </div>
-</div>
+            <div className="relative grid grid-cols-2 gap-8 md:grid-cols-4">
+              {[
+                { name: "TIMELINE", icon: "📅" },
+                { name: "CATEGORIES", icon: "📁" },
+                { name: "FAQS", icon: "💬" },
+                { name: "GUIDANCE", icon: "📂" },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="group flex flex-col items-center cursor-pointer"
+                >
+                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#1a1a1a] text-3xl transition-all duration-300 group-hover:bg-[#b79662]">
+                    {item.icon}
+                  </div>
+                  <span className="text-xs font-bold tracking-widest text-white group-hover:text-[#b79662]">
+                    {item.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* 5. NEW: CONTACT SECTION (From Image 2) */}

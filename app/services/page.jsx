@@ -302,7 +302,7 @@ const HeroSlider = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white uppercase leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-white  leading-tight">
               Global Capability Centers (GCC): <br />
               <span className="text-[#b79662]">Advantage India</span>
             </h2>
@@ -332,7 +332,7 @@ const HeroSlider = () => {
 
         {/* MIDDLE SECTION: Types of GCC Header */}
         <div className="mb-12">
-          <h3 className="text-3xl font-bold text-white uppercase mb-4">
+          <h3 className="text-3xl font-bold text-white  mb-4">
             Types of <span className="text-[#b79662]">Global Capability Center</span>
           </h3>
           <p className="text-[#b3b3b3] max-w-2xl">
@@ -357,7 +357,7 @@ const HeroSlider = () => {
                 </span>
                 <div className="text-[#b79662]">{type.icon}</div>
               </div>
-              <h4 className="text-xl font-bold text-white mb-4 group-hover:text-[#b79662] transition-colors uppercase tracking-wide">
+              <h4 className="text-xl font-bold text-white mb-4 group-hover:text-[#b79662] transition-colors  tracking-wide">
                 {type.title}
               </h4>
               <p className="text-sm text-[#b3b3b3] leading-relaxed group-hover:text-white/80 transition-colors">
@@ -376,7 +376,7 @@ const HeroSlider = () => {
             <p className="text-xl font-bold italic leading-tight">
               "You need extraordinary resources to deliver an exceptional solution. That's where India comes to the fore."
             </p>
-            <button className="mt-8 flex items-center gap-2 font-bold uppercase text-sm border-b-2 border-black w-fit pb-1 hover:gap-4 transition-all">
+            <button className="mt-8 flex items-center gap-2 font-bold  text-sm border-b-2 border-black w-fit pb-1 hover:gap-4 transition-all">
               Inquire Now <ArrowUpRight size={18} />
             </button>
           </motion.div>
@@ -384,14 +384,15 @@ const HeroSlider = () => {
       </div>
     </section>
 
-      <section className="bg-[#000000] py-20 px-6 font-sans">
+      <section className="bg-[#ffffff] pt-16 px-6 font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Heading Section */}
-        <div className="mb-16 border-l-4 border-[#b79662] pl-6">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#f4f4f4] uppercase tracking-tight">
-            Steps in setting up <br />
-            <span className="text-[#b79662]">Global Capability Center (GCC)</span>
+        <div className=" mx-auto max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#b79662]  tracking-tight">
+            Steps in setting up  
+            <span className="text-[#b79662]"> Global Capability Center (GCC)</span>
           </h2>
+           <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
         </div>
 
         {/* Steps Grid */}
@@ -407,7 +408,7 @@ const HeroSlider = () => {
                 delay: idx * 0.1,
                 ease: "easeOut" 
               }}
-              className="group p-8 bg-[#141414] border border-white/5 rounded-br-[40px] hover:border-[#b79662]/40 transition-all duration-500 shadow-xl"
+              className="group p-8 bg-[#141414] border border-white/5 rounded-br-[40px] hover:border-[#b79662]/40 transition-all duration-500 hover:scale-102 shadow-xl"
             >
               {/* Icon Container */}
               <div className="mb-6 inline-flex p-4 bg-white/5 rounded-2xl text-[#b79662] group-hover:bg-[#b79662] group-hover:text-black transition-all duration-300">
@@ -434,7 +435,7 @@ const HeroSlider = () => {
 
       <main className="bg-white font-sans selection:bg-[#b79662] selection:text-white pb-8 overflow-x-hidden">
         {/* SERVICES GRID */}
-        <h2 className="text-3xl text-center md:text-4xl mt-10 font-bold text-[#b79662]">
+        <h2 className="text-3xl text-center md:text-4xl mt-16 font-bold text-[#b79662]">
           Our <span className="text-[#b79662]">Services</span>
         </h2>
         <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-4 rounded-full"></div>
@@ -618,7 +619,7 @@ const HeroSlider = () => {
                   <h3 className="text-2xl font-bold mb-2 text-[#b79662]">
                     {item.title}
                   </h3>
-                  <p className="text-[#b79662] text-xs font-bold tracking-widest mb-4 uppercase">
+                  <p className="text-[#b79662] text-xs font-bold tracking-widest mb-4 ">
                     {item.subtitle}
                   </p>
                   <p className="text-gray-600 leading-relaxed text-sm mb-8">
