@@ -110,7 +110,7 @@ const MediaSection = () => {
             alt="Hero Background"
           />
           <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
-           <div className="relative z-10 px-4 text-center -mt-30">
+           <div className="relative z-10 px-4 text-center -mt-3`0">
             <span className="mb-4 block text-xs font-bold tracking-[0.4em] text-[#b79662] uppercase">
               Media & Press
             </span>

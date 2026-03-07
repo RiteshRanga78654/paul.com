@@ -168,7 +168,7 @@ const Page = () => {
               playsInline
               className="w-full h-full object-cover"
             >
-              <source src="/assets/video/slider-video.mp4" type="video/mp4" />
+              <source src="/assets/video/0_Business_Conference_2160x3840.mov" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-black/30"></div>
           </div>
