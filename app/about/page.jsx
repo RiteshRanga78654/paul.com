@@ -651,7 +651,7 @@ const MetamorphServicesPage = () => {
             <div className="w-full lg:w-1/2">
               <div className="rounded-[8px] overflow-hidden shadow-2xl relative group">
                 <img
-                  src="/assets/images/new-bhaswal-paul.jpg.jpeg" // Replace with your actual image path
+                  src="/assets/about/WhatsApp Image 2026-03-07 at 5.05.55 PM.jpeg" // Replace with your actual image path
                   alt="Metamorph PMC Team"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
