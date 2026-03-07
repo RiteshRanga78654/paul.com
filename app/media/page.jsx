@@ -105,12 +105,12 @@ const MediaSection = () => {
         {/* 1. HERO SECTION */}
         <section className="relative flex h-[90vh] items-center justify-center overflow-hidden">
           <img
-            src="/assets/images/bhaswar-paul-media.JPG.jpeg"
+            src="/assets/close-up-recording-video-with-smartphone-concert-toned-picture.jpg"
             className="absolute inset-0 h-full w-full object-cover"
             alt="Hero Background"
           />
           <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
-          <div className="relative z-10 px-4 text-center">
+           <div className="relative z-10 px-4 text-center -mt-30">
             <span className="mb-4 block text-xs font-bold tracking-[0.4em] text-[#b79662] uppercase">
               Media & Press
             </span>
