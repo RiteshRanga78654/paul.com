@@ -48,11 +48,11 @@ const TestimonialsPage = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-white overflow-x-hidden">
+      <div className="min-h-screen bg-white">
         <Header />
 
         {/* 1. Hero Section - Optimized for spacing and alignment */}
-        <section className="relative w-full min-h-[60vh] md:min-h-[90vh] flex items-center pt-20">
+        <section className="relative w-full min-h-[60vh] md:min-h-[90vh] flex items-center pt-20  overflow-x-hidden">
           <div
             className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
             style={{
