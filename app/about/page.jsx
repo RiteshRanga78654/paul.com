@@ -79,6 +79,7 @@ const imagesRow2 = [
 "/assets/about/slider/projectimg17.jpg",
 "/assets/about/slider/projectimg13.jpg",
 
+
 ];
 
 const logos = [
