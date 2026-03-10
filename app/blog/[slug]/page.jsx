@@ -190,8 +190,8 @@ const SingleBlogPage = () => {
 
                     <div className="bg-[#1e1e1e] p-6 rounded-lg text-center relative overflow-hidden">
                         <div className="relative z-10">
-                             <div className="w-16 h-16 bg-gray-300 rounded-full mx-auto mb-3 border-2 border-[#b79662] overflow-hidden">
-                                <img src="/assets/images/Bhaswar-Paul.jpg" alt="Author" className="w-full h-full object-cover" onError={(e) => e.target.style.display='none'}/>
+                             <div className="w-20 h-20 bg-gray-300 rounded-full mx-auto mb-3 border-2 border-[#b79662] overflow-hidden">
+                                <img src="/assets/BPimages/DSC_0421.JPG" alt="Author" className="w-full h-full object-cover" onError={(e) => e.target.style.display='none'}/>
                             </div>
                             <h4 className="text-white font-bold text-base mb-1">{blog.userPostDataInfo?.[0]?.name || "Business Expert"}</h4>
                             <p className="text-[#b79662] text-[10px] uppercase font-bold tracking-widest mb-4">Business Coach</p>
