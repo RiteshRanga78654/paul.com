@@ -454,20 +454,20 @@ const Page = () => {
                   include Indian Kids Fashion Week and Chef's Connect.
                 </p>
               </div>
-
+{/* 
               <button className="group flex items-center gap-3 bg-transparent border border-white/20 px-10 py-4 rounded-md text-white font-bold hover:bg-[#b79662] hover:border-[#b79662] transition-all duration-300">
                 View More
                 <ArrowRight
                   className="group-hover:translate-x-2 transition-transform"
                   size={20}
                 />
-              </button>
+              </button> */}
             </div>
 
             {/* Right Side: Video Embed with Decorative Frame */}
             <div className="relative order-1 lg:order-2">
               {/* Bhaswar Paul Decorative Border */}
-              <div className="absolute -top-4 -right-4 w-1/2 h-1/2 border-t-2 border-r-2 border-[#b79662] z-0 hidden md:block"></div>
+              <div className="absolute -top-4 -right-4 w-1/2 h-1/2 border-t-2 border-r-2 border-[#b79662] z-0 md:block"></div>
 
               <div className="relative z-10 aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/10">
                 <iframe
