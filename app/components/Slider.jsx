@@ -17,7 +17,7 @@ const ImageCarousel = () => {
 
   return (
     <section data-aos="fade-left" className="bg-white pt-12 pb-8 mx-4 md:mx-auto max-w-7xl">
-      <h2 className="text-3xl text-center md:text-4xl font-bold text-[#b79662]">
+      <h2 className="text-3xl text-center md:text-4xl font-bold text-[#000]">
         Guest Speaker<span className="text-[#b79662]"> @ TEDx TAPMI</span>
       </h2>
       <div className="w-24 h-1 bg-[#b79662] mx-auto mt-5 mb-6 rounded-full"></div>

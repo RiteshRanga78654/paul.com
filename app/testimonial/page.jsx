@@ -130,7 +130,7 @@ const TestimonialsPage = () => {
                         transition: "color 0.3s ease",
                       }}
                     >
-                     Start your Journey
+                     Start Your Journey
                     </span>
                   </button>  
             </div>

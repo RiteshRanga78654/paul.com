@@ -12,6 +12,14 @@ import Footer from "../layout/Footer";
 import Header from "../layout/Header";
 import { motion } from "framer-motion";
 import { ArrowRight, Star, Target, Shield, Clock } from "lucide-react";
+import {
+  LayoutDashboard,
+  Map,
+  Briefcase,
+  ShieldCheck,
+  BarChart3,
+  CheckCircle2,
+} from "lucide-react";
 
 // Replace these with your actual image paths
 const manInSuit = "/assets/TEDx TAPMI/networkimg.jfif";
@@ -23,6 +31,40 @@ const videoThumb1 = "/path/to/video-thumb-1.jpg";
 const videoThumb2 = "/path/to/video-thumb-2.jpg";
 const videoThumb3 = "/path/to/video-thumb-3.jpg";
 const videoThumb4 = "/path/to/video-thumb-4.jpg";
+
+
+const services = [
+  {
+    id: "01",
+    title: "Requirement Analysis",
+    icon: LayoutDashboard,
+  },
+  {
+    id: "02",
+    title: "Planning & Strategy",
+    icon: Map,
+  },
+  {
+    id: "03",
+    title: "Execution & Monitoring",
+    icon: Briefcase,
+  },
+  {
+    id: "04",
+    title: "Quality & Audits",
+    icon: ShieldCheck,
+  },
+  {
+    id: "05",
+    title: "Reporting & Optimization",
+    icon: BarChart3,
+  },
+  {
+    id: "06",
+    title: "Successful Closure",
+    icon: CheckCircle2,
+  },
+];
 
 const DesignComponent = () => {
   return (
@@ -395,6 +437,51 @@ const DesignComponent = () => {
             </div>
           </div>
         </section>
+
+          <section className="py-20 bg-white text-[#b79662]">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* Heading */}
+        <h2 className="text-center text-4xl md:text-5xl font-semibold mb-5 text-black">
+          Service <span className="text-[#b79662]">Delivery Model</span>
+        </h2>
+         <div className="w-24 h-1.5 bg-[#b79662] mx-auto mt-4  mb-10 rounded-full"></div>
+
+        {/* Grid */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {services.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <div
+                key={index}
+                className="relative p-8 rounded-2xl border border-white/10 
+                bg-gradient-to-r from-[#05080d] to-[#0b1320]
+                hover:border-[#b79660]/40 transition-all duration-500 hover:scale-105 group"
+              >
+                {/* Large Number */}
+                <span className="absolute right-6 top-6 text-6xl font-bold text-white/5">
+                  {item.id}
+                </span>
+
+                {/* Icon */}
+                <div className="w-12 h-12 rounded-lg bg-[#0d1b2a] flex items-center justify-center mb-6 text-[#b79660]">
+                  <Icon size={22} />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-semibold mb-3">
+                  {item.title}
+                </h3>
+
+                {/* Underline */}
+                <div className="w-10 h-[3px] bg-[#b79660] rounded-full group-hover:w-[100%] transition-all duration-300"></div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
 
         <Footer />
       </div>

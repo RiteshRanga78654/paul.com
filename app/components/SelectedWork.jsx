@@ -91,7 +91,7 @@ const SelectedWork = () => {
   return (
     <div ref={component} className="overflow-hidden bg-white">
       {/* Title Section matching ServicesSection */}
-      <h2 className="text-4xl text-center md:text-4xl font-bold  pt-25 text-[#b79662]">
+      <h2 className="text-4xl text-center md:text-4xl font-bold  pt-25 text-[#000]">
         Our <span className="text-[#b79662]">Presence</span>
       </h2>
       

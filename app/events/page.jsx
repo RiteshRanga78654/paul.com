@@ -6,6 +6,13 @@ import Footer from "../layout/Footer";
 import { ArrowRight } from "lucide-react";
 import TestimonialSlider from "../components/TestimonialSlider";
 import Marquee from "../components/Marquee";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Optional: for icons
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
 
 // --- 1. CountUp Animation Logic (The Missing Part) ---
 const CountUp = ({ end, duration = 2000 }) => {
@@ -109,25 +116,27 @@ const Page = () => {
   ];
 
   const partners = [
-    { name: "Maruti Suzuki", logo: "/assets/paras (6).jpg" },
-    { name: "Lupin", logo: "/assets/paras (6).jpg" },
-    { name: "Kanakia", logo: "/assets/paras (6).jpg" },
-    { name: "IvyCap", logo: "/assets/paras (6).jpg" },
-    { name: "IndianOil", logo: "/assets/paras (6).jpg" },
-    { name: "Hyundai", logo: "/assets/paras (6).jpg" },
-    { name: "Aditya Birla", logo: "/assets/paras (6).jpg" },
+    { name: "Maruti Suzuki", logo: "/assets/Event/media-partner/4.png" },
+    { name: "Lupin", logo: "/assets/Event/media-partner/10.png" },
+    { name: "Kanakia", logo: "/assets/Event/media-partner/12.png" },
+    { name: "IvyCap", logo: "/assets/Event/media-partner/13.png" },
+    { name: "IndianOil", logo: "/assets/Event/media-partner/15.png" },
+    { name: "Hyundai", logo: "/assets/Event/media-partner/21.png" },
+    { name: "Aditya Birla", logo: "/assets/Event/media-partner/22.png" },
+    { name: "Hyundai", logo: "/assets/Event/media-partner/23.png" },
+    { name: "Aditya Birla", logo: "/assets/Event/media-partner/24.png" },
   ];
 
   const workImages = [
-    "/assets/paras (6).jpg",
-    "/assets/paras (6).jpg",
-    "/assets/paras (6).jpg",
-    "/assets/paras (6).jpg",
-    "/assets/paras (6).jpg",
-    "/assets/paras (6).jpg",
-    "/assets/paras (6).jpg",
-    "/assets/paras (6).jpg",
-    "/assets/paras (6).jpg",
+    "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.12.54 AM.jpeg",
+    "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.12.57 AM.jpeg",
+    "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.13.02 AM (3).jpeg",
+    "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.13.00 AM (2).jpeg",
+    "/assets/about/slider/projectimg4.jpg",
+    "/assets/about/slider/projectimg9.jpg",
+    "/assets/about/slider/projectimg17.jpg",
+    "/assets/about/slider/projectimg13.jpg",
+   
   ];
 
   const stats = [
@@ -168,7 +177,10 @@ const Page = () => {
               playsInline
               className="w-full h-full object-cover"
             >
-              <source src="/assets/video/0_Business_Conference_2160x3840.mov" type="video/mp4" />
+              <source
+                src="/assets/video/0_Business_Conference_2160x3840.mov"
+                type="video/mp4"
+              />
             </video>
             <div className="absolute inset-0 bg-black/30"></div>
           </div>
@@ -233,65 +245,65 @@ const Page = () => {
                 activation.
               </p>
               <button
-                    style={{
-                      padding: "14px 40px",
-                      backgroundColor: "#b79662",
-                      borderRadius: "8px",
-                      color: "#fff",
-                      fontSize: "1.1rem",
-                      fontWeight: "700",
-                      cursor: "pointer",
-                      display: "flex",
-                      textAlign: "center",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      gap: "10px",
-                      position: "relative",
-                      overflow: "hidden",
-                      zIndex: 1,
-                      border: "2px solid #b79662",
-                    
-                      letterSpacing: "1px",
-                      transition: "all 0.3s ease",
-                    }}
-                    onMouseEnter={(e) => {
-                      const fill = e.currentTarget.querySelector(".hover-fill");
-                      const text = e.currentTarget.querySelector(".btn-text");
-                      if (fill) fill.style.width = "100%";
-                      if (text) text.style.color = "#b79662";
-                    }}
-                    onMouseLeave={(e) => {
-                      const fill = e.currentTarget.querySelector(".hover-fill");
-                      const text = e.currentTarget.querySelector(".btn-text");
-                      if (fill) fill.style.width = "0%";
-                      if (text) text.style.color = "#fff";
-                    }}
-                  >
-                    <div
-                      className="hover-fill"
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "0%",
-                        height: "100%",
-                        background: "#ffffff",
-                        transition: "width 0.4s ease",
-                        zIndex: -1,
-                      }}
-                    />
-                    <span
-                      className="btn-text"
-                      style={{
-                        position: "relative",
-                        zIndex: 1,
-                        color: "#fff",
-                        transition: "color 0.3s ease",
-                      }}
-                    >
-                      View More
-                    </span>
-                  </button>  
+                style={{
+                  padding: "14px 40px",
+                  backgroundColor: "#b79662",
+                  borderRadius: "8px",
+                  color: "#fff",
+                  fontSize: "1.1rem",
+                  fontWeight: "700",
+                  cursor: "pointer",
+                  display: "flex",
+                  textAlign: "center",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "10px",
+                  position: "relative",
+                  overflow: "hidden",
+                  zIndex: 1,
+                  border: "2px solid #b79662",
+
+                  letterSpacing: "1px",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
+                  if (fill) fill.style.width = "100%";
+                  if (text) text.style.color = "#b79662";
+                }}
+                onMouseLeave={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
+                  if (fill) fill.style.width = "0%";
+                  if (text) text.style.color = "#fff";
+                }}
+              >
+                <div
+                  className="hover-fill"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "0%",
+                    height: "100%",
+                    background: "#ffffff",
+                    transition: "width 0.4s ease",
+                    zIndex: -1,
+                  }}
+                />
+                <span
+                  className="btn-text"
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                    color: "#fff",
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  View More
+                </span>
+              </button>
             </div>
 
             <div className="relative">
@@ -336,22 +348,51 @@ const Page = () => {
           </div>
 
           <div className="border-t border-[#4c4949]/20 pt-12">
-            <h3 className="text-[#b79662] text-m font-bold   mb-10">
-              Our Partners
-            </h3>
-            <div className="flex flex-wrap items-center justify-between gap-8 md:gap-4">
-              {partners.map((p, i) => (
-                <div
-                  key={i}
-                  className="h-12 md:h-26 flex items-center justify-center transition-all duration-500 cursor-pointer"
-                >
-                  <img
-                    src={p.logo}
-                    alt={p.name}
-                    className="max-h-full w-auto object-contain "
-                  />
-                </div>
-              ))}
+            {/* Header Section */}
+            <div className="flex items-center justify-between mb-10  max-w-7xl mx-auto">
+              <h3 className="text-[#b79660] text-lg font-bold  tracking-wider">
+                Our Media Partners
+              </h3>
+
+              {/* Navigation Buttons in Gold */}
+              <div className="flex gap-3">
+                <button className="prev-btn p-2 border border-[#b79660]/40 text-[#b79660] rounded-5px hover:bg-[#b79660] hover:text-white transition-all duration-300">
+                  <ChevronLeft size={30} />
+                </button>
+                <button className="next-btn p-2 border border-[#b79660]/40 text-[#b79660] rounded-5px hover:bg-[#b79660] hover:text-white transition-all duration-300">
+                  <ChevronRight size={30} />
+                </button>
+              </div>
+            </div>
+
+            <div className="w-full max-w-7xl mx-auto pb-10 ">
+              <Swiper
+                modules={[Navigation]}
+                spaceBetween={20}
+                slidesPerView={2}
+                navigation={{
+                  prevEl: ".prev-btn",
+                  nextEl: ".next-btn",
+                }}
+                breakpoints={{
+                  640: { slidesPerView: 3 },
+                  1024: { slidesPerView: 5 },
+                }}
+                className="partner-swiper"
+              >
+                {partners.map((p, i) => (
+                  <SwiperSlide key={i}>
+                    {/* Logo Card with Gold Border & Glow on Hover */}
+                    <div className="group h-32 flex items-center justify-center border border-[#b79660]/20 rounded-lg p-6 bg-white/5 hover:border-[#b79660] hover:shadow-[0_0_15px_rgba(183,150,96,0.3)] transition-all duration-500 cursor-pointer">
+                      <img
+                        src={p.logo}
+                        alt={p.name}
+                        className="max-h-full w-auto object-contain  transition-all duration-500"
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>
@@ -438,7 +479,7 @@ const Page = () => {
                   allowFullScreen
                 ></iframe>
               </div>
-               <div className="absolute -bottom-4 -left-4 w-1/2 h-1/2 border-b-2 border-l-2 border-[#b79662] z-0 hidden md:block"></div>
+              <div className="absolute -bottom-4 -left-4 w-1/2 h-1/2 border-b-2 border-l-2 border-[#b79662] z-0 hidden md:block"></div>
             </div>
           </div>
         </div>
@@ -447,11 +488,10 @@ const Page = () => {
       {/* 4. Infinite "Our Work" Slider Section */}
       <section className="bg-[#ffffff] py-5 overflow-hidden ">
         <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] ">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#000] ">
             Our <span className="text-[#b79662]">Work</span>
           </h2>
           <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
-        
         </div>
 
         <div className="flex flex-col gap-6 md:gap-10 max-w-7xl mx-auto ">
@@ -465,11 +505,11 @@ const Page = () => {
             direction="left"
             duration={120}
           />
-          <ScrollingRow
+          {/* <ScrollingRow
             images={workImages.slice(0, 4)}
             direction="right"
             duration={120}
-          />
+          /> */}
         </div>
       </section>
 

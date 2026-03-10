@@ -699,7 +699,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
 
       {/* 3. REFACTORED SERVICES SECTION WITH INFINITE LOOP CAROUSEL */}
       <section className="bg-white px-4 mt-[20px] mb-[40px] lg:mt-[-28px] services-carousel-section">
-        <h2 className="text-3xl text-center md:text-4xl font-bold text-[#b79662]">
+        <h2 className="text-3xl text-center md:text-4xl font-bold text-[#000]">
           Our <span className="text-[#b79662]">Services</span>
         </h2>
         <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
@@ -808,7 +808,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 space-y-2">
-            <h2 className="text-3xl text-center md:text-4xl font-bold text-[#b79662]">
+            <h2 className="text-3xl text-center md:text-4xl font-bold text-[#000]">
               Insight <span className="text-[#b79662]">Gallery</span>
             </h2>
             <div className="w-24 h-1.5 bg-[#b79662] mx-auto mt-4 rounded-full"></div>
