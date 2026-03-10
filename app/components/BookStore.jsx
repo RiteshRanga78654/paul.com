@@ -171,8 +171,8 @@ const BookStore = () => {
         
         {/* BookStore Section */}
         <div className="text-center mb-10 sm:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] mb-4 tracking-tight">
-          Books & Journals Published
+          <h2 className="text-3xl md:text-4xl font-bold text-[#000] mb-4 tracking-tight">
+          Books & Journals <span className="text-[#b79662]">Published</span>
           </h2>
           
           {/* Divider: Gold Theme */}

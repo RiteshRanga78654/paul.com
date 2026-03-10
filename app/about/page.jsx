@@ -67,28 +67,30 @@ const CountUp = ({ end, duration = 2000 }) => {
 };
 
 const imagesRow1 = [
-  "/assets/about/Farmhouses-Retreat-Villas.jpg", // Replace with your actual paths
-  "/assets/about/Industrial-Space.jpg",
-  "/assets/about/Premium-Bungalows.jpg",
-  "/assets/about/1967.jpg",
+  "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.12.54 AM.jpeg",
+  "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.12.57 AM.jpeg",
+  "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.13.02 AM (3).jpeg",
+  "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.13.00 AM (2).jpeg",
 ];
 
 const imagesRow2 = [
-  "/assets/about/1967.jpg",
-  "/assets/about/Premium-Bungalows.jpg",
-  "/assets/about/Industrial-Space.jpg",
-  "/assets/about/Farmhouses-Retreat-Villas.jpg",
+"/assets/about/slider/projectimg4.jpg",
+"/assets/about/slider/projectimg9.jpg",
+"/assets/about/slider/projectimg17.jpg",
+"/assets/about/slider/projectimg13.jpg",
+
 ];
 
 const logos = [
   { id: 1, src: "/assets/images/Ireed-Logo (1).png", alt: "Essentia" },
   { id: 2, src: "/assets/images/ireo.png", alt: "ZDS" },
-  { id: 3, src: "/assets/images/m3m.png", alt: "Hiren Patel Architects" },
-  {
-    id: 4,
-    src: "/assets/images/urban-style-new.png",
-    alt: "The Grid Architects",
-  },
+  
+  { id: 4, src: "/assets/about/logo/whiteland2.png", alt: "whiteland" },
+  { id: 5, src: "/assets/about/logo/tridentlogo.png", alt: "trident" },
+  { id: 6, src: "/assets/about/logo/paras.jpg", alt: "paras" },
+  { id: 7, src: "/assets/about/logo/mangal-realty (3).png", alt: "mangal" },
+  { id: 3, src: "/assets/about/logo/logooooo.webp", alt: "svs" },
+  
 ];
 
 const faqs = [
@@ -273,7 +275,7 @@ const MetamorphServicesPage = () => {
           {/* Background with Overlay */}
           <div className="absolute inset-0 z-0">
             <img
-              src="/assets/about/Farmhouses-Retreat-Villas.jpg" // Replace with your actual hero image path
+              src="/assets/about/clubhousehero.png" // Replace with your actual hero image path
               alt="Modern Architecture"
               className="w-full h-full object-cover"
             />
@@ -297,7 +299,7 @@ const MetamorphServicesPage = () => {
                 For Construction Projects
               </h1>
 
-              <p className="text-[#4c4949] text-lg md:text-xl max-w-xl leading-relaxed">
+              <p className="text-white text-lg md:text-xl max-w-xl leading-relaxed">
                 Managing a construction project is more than coordinating labour
                 or completing interiors; it's about ensuring every stage, from
                 planning to handover, follows a structured, disciplined path.
@@ -376,7 +378,11 @@ const MetamorphServicesPage = () => {
                       transition: "color 0.3s ease",
                     }}
                   >
-                    Get Free PMC <span><br/>Consultation</span> 
+                    Get Free PMC{" "}
+                    <span>
+                      <br />
+                      Consultation
+                    </span>
                   </span>
                 </button>
 
@@ -436,7 +442,8 @@ const MetamorphServicesPage = () => {
                       transition: "color 0.3s ease",
                     }}
                   >
-                    <span>Call Us Now </span><br/>
+                    <span>Call Us Now </span>
+                    <br />
                     <span>+91 9818837873</span>
                   </span>
                 </button>
@@ -484,68 +491,66 @@ const MetamorphServicesPage = () => {
                   className="w-full bg-[#f5f5f5] border-none rounded-xl p-4 text-sm focus:ring-2 focus:ring-[#b79662] outline-none text-black mb-6"
                 ></textarea>
 
-                 <button
+                <button
+                  style={{
+                    padding: "14px 40px",
+                    backgroundColor: "#b79662",
+                    borderRadius: "8px",
+                    color: "#fff",
+                    fontSize: "1.1rem",
+                    fontWeight: "700",
+                    cursor: "pointer",
+                    display: "flex",
+                    textAlign: "center",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "10px",
+                    position: "relative",
+                    overflow: "hidden",
+                    zIndex: 1,
+                    border: "2px solid #b79662",
+                    width: "100%",
+                    letterSpacing: "1px",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    const fill = e.currentTarget.querySelector(".hover-fill");
+                    const text = e.currentTarget.querySelector(".btn-text");
+                    if (fill) fill.style.width = "100%";
+                    if (text) text.style.color = "#b79662";
+                  }}
+                  onMouseLeave={(e) => {
+                    const fill = e.currentTarget.querySelector(".hover-fill");
+                    const text = e.currentTarget.querySelector(".btn-text");
+                    if (fill) fill.style.width = "0%";
+                    if (text) text.style.color = "#fff";
+                  }}
+                >
+                  <div
+                    className="hover-fill"
                     style={{
-                      padding: "14px 40px",
-                      backgroundColor: "#b79662",
-                      borderRadius: "8px",
-                      color: "#fff",
-                      fontSize: "1.1rem",
-                      fontWeight: "700",
-                      cursor: "pointer",
-                      display: "flex",
-                      textAlign: "center",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      gap: "10px",
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "0%",
+                      height: "100%",
+                      background: "#ffffff",
+                      transition: "width 0.4s ease",
+                      zIndex: -1,
+                    }}
+                  />
+                  <span
+                    className="btn-text"
+                    style={{
                       position: "relative",
-                      overflow: "hidden",
                       zIndex: 1,
-                      border: "2px solid #b79662",
-                      width: "100%",
-                      letterSpacing: "1px",
-                      transition: "all 0.3s ease",
-                    }}
-                    onMouseEnter={(e) => {
-                      const fill = e.currentTarget.querySelector(".hover-fill");
-                      const text = e.currentTarget.querySelector(".btn-text");
-                      if (fill) fill.style.width = "100%";
-                      if (text) text.style.color = "#b79662";
-                    }}
-                    onMouseLeave={(e) => {
-                      const fill = e.currentTarget.querySelector(".hover-fill");
-                      const text = e.currentTarget.querySelector(".btn-text");
-                      if (fill) fill.style.width = "0%";
-                      if (text) text.style.color = "#fff";
+                      color: "#fff",
+                      transition: "color 0.3s ease",
                     }}
                   >
-                    <div
-                      className="hover-fill"
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "0%",
-                        height: "100%",
-                        background: "#ffffff",
-                        transition: "width 0.4s ease",
-                        zIndex: -1,
-                        
-                      }}
-                    />
-                    <span
-                      className="btn-text"
-                      style={{
-                        position: "relative",
-                        zIndex: 1,
-                        color: "#fff",
-                        transition: "color 0.3s ease",
-                       
-                      }}
-                    >
-                      Submit
-                    </span>
-                  </button>  
+                    Submit
+                  </span>
+                </button>
 
                 <div className="space-y-3">
                   {[
@@ -588,7 +593,7 @@ const MetamorphServicesPage = () => {
                     <h3 className="text-xl font-bold text-white uppercase tracking-wide">
                       {stat.label}
                     </h3>
-                    <p className="text-[#4c4949] text-sm leading-relaxed max-w-[260px]">
+                    <p className="text-white text-sm leading-relaxed max-w-[260px]">
                       {stat.desc}
                     </p>
                   </div>
@@ -721,8 +726,7 @@ const MetamorphServicesPage = () => {
 
         <section className="bg-white pt-16 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6">
-         
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#b79662] ">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-[#000] ">
               Proudly <span className="text-[#b79662]">Associated with</span>
             </h2>
             <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
@@ -776,7 +780,7 @@ const MetamorphServicesPage = () => {
               <span className="text-sm font-semibold text-[#b79662] tracking-wide">
                 Our PMC Focus Areas
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 text-[#b79662]">
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 text-[#000]">
                 Our PMC Workflow{" "}
                 <span className="text-[#b79662]">(Step-By-Step Process)</span>
               </h2>
@@ -807,7 +811,7 @@ const MetamorphServicesPage = () => {
         <section className="pt-16 px-6 sm:px-8 md:px-16">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl text-[#b79662] font-bold text-center ">
-              <span className="text-[#b79662]">What We Manage</span> Under Our
+              <span className="text-[#000]">What We Manage</span> Under Our
               PMC Services
             </h2>
             <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
@@ -841,7 +845,7 @@ const MetamorphServicesPage = () => {
         {/* 3. Why Choose Metamorph Section */}
         <section className="pt-16 px-6 sm:px-8 md:px-16 ">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl text-[#b79662] font-bold text-center ">
+            <h2 className="text-3xl md:text-4xl text-[#000] font-bold text-center ">
               Why Choose Metamorph As Your{" "}
               <span className="text-[#b79662]">PMC Partner?</span>
             </h2>
@@ -874,7 +878,7 @@ const MetamorphServicesPage = () => {
         {/* 4. FAQ Section */}
         <section className="py-16 px-6 sm:px-8 md:px-16">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center  text-[#b79662]">
+            <h2 className="text-3xl md:text-4xl font-bold text-center  text-[#000]">
               Quick And Clear{" "}
               <span className="text-[#b79662]">
                 Answers To Your Key Questions

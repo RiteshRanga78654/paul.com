@@ -6,6 +6,7 @@ import Link from "next/link";
 import Footer from "../layout/Footer";
 import Header from "../layout/Header";
 import { Loader2 } from "lucide-react";
+import CaseStudy from "../components/CaseStudy";
 
 // --- CONFIGURATION ---
 const API_URL =
@@ -194,13 +195,18 @@ const MediaSection = () => {
 
   const NewsletterSection = () => (
     <section
-      className="relative py-24 px-4 overflow-hidden bg-cover bg-center"
+      className="relative py-35 px-4 overflow-hidden bg-cover bg-center"
       style={{ backgroundImage: "url('/assets/unnamed.jpg')" }}
     >
       <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight ">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight ">
           Sign Up For Our Newsletter
         </h2>
+
+        <p className="mb-8 text-xl font-light  max-w-7xl blod mx-auto leading-relaxed">
+          Practical strategies to help you thrive in Leadership, Project
+          Management, and more.
+        </p>
         <button
           style={{
             padding: "14px 40px",
@@ -327,7 +333,7 @@ const MediaSection = () => {
             <p className="text-m text-[#b79662] font-semibold ">
               Featured Insights From Our Team
             </p>
- <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
+            <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
             {loading ? (
               <div className="flex justify-center h-64">
                 <Loader2 className="animate-spin text-[#b79662] w-14 h-14" />
@@ -409,6 +415,7 @@ const MediaSection = () => {
             </div>
           </div>
         </section>
+        <CaseStudy/>
         <NewsletterSection />
       </div>
       <Footer />

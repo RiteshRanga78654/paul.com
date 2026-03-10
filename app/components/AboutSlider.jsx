@@ -119,11 +119,11 @@ export default function ImageSlider() {
             </div>
 
             {/* Controls */}
-            <button onClick={prevSlide} className="absolute top-1/2 left-4 -translate-y-1/2 bg-[#b79662]/90 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all z-20 hover:scale-110">
-              <ChevronLeft size={30} />
+            <button onClick={prevSlide} className="absolute top-1/2 left-4 -translate-y-1/2 text-[#b79662] p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all z-20 hover:scale-110">
+              <ChevronLeft size={70} />
             </button>
-            <button onClick={nextSlide} className="absolute top-1/2 right-4 -translate-y-1/2 bg-[#b79662]/90 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all z-20 hover:scale-110">
-              <ChevronRight size={30} />
+            <button onClick={nextSlide} className="absolute top-1/2 right-4 -translate-y-1/2  text-[#b79662] p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all z-20 hover:scale-110">
+              <ChevronRight size={70} />
             </button>
           </div>
 
