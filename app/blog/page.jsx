@@ -307,8 +307,8 @@ const MediaSection = () => {
         {/* HOW WE HELP */}
         <section className="py-16 px-4 md:px-8 lg:px-20 bg-white">
           <div className="max-w-7xl mx-auto text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] mb-4">
-              How We Help
+            <h2 className="text-3xl md:text-4xl font-bold text-[#000] mb-4">
+              How <span className="text-[#b79662]">We Help</span> 
             </h2>
             <p className="text-m text-[#b79662] font-medium leading-relaxed max-w-4xl mx-auto">
               The Persimmon Group is a business consulting firm that guides
@@ -327,8 +327,8 @@ const MediaSection = () => {
         {/* BLOGS SECTION */}
         <section className="py-24 px-4 md:px-8 lg:px-20 bg-[#f8f9fa]">
           <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#b79662] mb-4 tracking-tight ">
-              What We're Thinking About
+            <h2 className="text-3xl md:text-4xl font-bold text-[#000] mb-4 tracking-tight ">
+              What We're<span className="text-[#b79662]">Thinking About</span> 
             </h2>
             <p className="text-m text-[#b79662] font-semibold ">
               Featured Insights From Our Team

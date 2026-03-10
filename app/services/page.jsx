@@ -120,7 +120,7 @@ const HeroSlider = () => {
       title: "Innovative",
       highlight: "Tech Solutions",
       desc: "Scalable infrastructure and digital transformation strategies for modern enterprises.",
-      bg: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070",
+      bg: "/assets/full-stack.jpg",
     },
     {
       id: 3,
@@ -134,7 +134,7 @@ const HeroSlider = () => {
       title: "Global Reach",
       highlight: "Local Impact",
       desc: "Bridging the gap between international standards and local execution excellence.",
-      bg: "https://images.unsplash.com/photo-1449156001935-d28615224895?q=80&w=2070",
+      bg: "/assets/BPimages/DSC02419.JPG",
     },
     {
       id: 5,
@@ -302,7 +302,7 @@ const HeroSlider = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text- not-[]:  leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-white not-[]:  leading-tight">
               Global Capability Centers (GCC): <br />
               <span className="text-[#b79662]">Advantage India</span>
             </h2>
@@ -335,6 +335,7 @@ const HeroSlider = () => {
           <h3 className="text-3xl font-bold text-white  mb-4">
             Types of <span className="text-[#b79662]">Global Capability Center</span>
           </h3>
+           <div className="w-20 h-1 bg-[#b79662] mb-6"></div>
           <p className="text-[#b3b3b3] max-w-2xl">
             India offers a diverse range of GCCs designed to enhance efficiency, drive innovation, and optimize operations:
           </p>
@@ -349,7 +350,7 @@ const HeroSlider = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="p-8 bg-[#111111] border-l-2 border-white/5 hover:border-[#b79662] transition-all duration-500 group"
+              className="p-8 bg-[#111111] border-l-2 border-white/5 hover:border-[#b79662] cursor-pointer transition-all duration-500 group"
             >
               <div className="flex justify-between items-start mb-6">
                 <span className="text-sm font-bold text-[#b79662]/40 group-hover:text-[#b79662] transition-colors">
@@ -371,7 +372,7 @@ const HeroSlider = () => {
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
-             className="p-8 bg-[#b79662] text-black rounded-tr-[40px] flex flex-col justify-between"
+             className="p-8 bg-[#b79662] text-black rounded-tr-[40px] flex flex-col justify-between cursor-pointer"
           >
             <p className="text-xl font-bold italic leading-tight">
               "You need extraordinary resources to deliver an exceptional solution. That's where India comes to the fore."
@@ -388,7 +389,7 @@ const HeroSlider = () => {
       <div className="max-w-7xl mx-auto">
         {/* Heading Section */}
         <div className=" mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#b79662]  tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#000]  tracking-tight">
             Steps in setting up  
             <span className="text-[#b79662]"> Global Capability Center (GCC)</span>
           </h2>
@@ -435,7 +436,7 @@ const HeroSlider = () => {
 
       <main className="bg-white font-sans selection:bg-[#b79662] selection:text-white pb-8 overflow-x-hidden">
         {/* SERVICES GRID */}
-        <h2 className="text-3xl text-center md:text-4xl mt-16 font-bold text-[#b79662]">
+        <h2 className="text-3xl text-center md:text-4xl mt-16 font-bold text-[#000]">
           Our <span className="text-[#b79662]">Services</span>
         </h2>
         <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-4 rounded-full"></div>
@@ -577,7 +578,7 @@ const HeroSlider = () => {
         </section>
 
         {/* CHALLENGES SECTION */}
-        <h2 className="text-3xl text-center md:text-4xl mt-10 font-bold text-[#b79662]">
+        <h2 className="text-3xl text-center md:text-4xl mt-10 font-bold text-[#000]">
           Market <span className="text-[#b79662]">Diagnostics</span>
         </h2>
         <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-4 rounded-full"></div>
@@ -640,9 +641,6 @@ const HeroSlider = () => {
           </div>
         </section>
       </main>
-
-    
-
       <Footer />
     </>
   );

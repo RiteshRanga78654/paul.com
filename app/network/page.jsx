@@ -438,11 +438,11 @@ const DesignComponent = () => {
           </div>
         </section>
 
-          <section className="py-20 bg-white text-[#b79662]">
+          <section className="py-16 bg-white text-[#b79662]">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <h2 className="text-center text-4xl md:text-5xl font-semibold mb-5 text-black">
+        <h2 className="text-center text-3xl md:text-4xl font-semibold mb-5 text-black">
           Service <span className="text-[#b79662]">Delivery Model</span>
         </h2>
          <div className="w-24 h-1.5 bg-[#b79662] mx-auto mt-4  mb-10 rounded-full"></div>

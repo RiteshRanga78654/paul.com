@@ -45,8 +45,8 @@ export default function CaseStudySlider() {
         <p className="text-[#b79660] font-bold tracking-[0.3em] text-xs mb-4 ">
           Client Success Stories
         </p>
-        <h2 className="text-[#2d2d2d] text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-          Real Challenges. Real Solutions. Real Impact.
+        <h2 className="text-[#000] text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+          Real Challenges. <span className="text-[#b79660]">Real Solutions. Real Impact.</span> 
         </h2>
         <p className="text-[#b79660] text-lg max-w-2xl mx-auto">
           See how we help organizations achieve meaningful, lasting results.
@@ -117,11 +117,11 @@ export default function CaseStudySlider() {
       </div>
 
       {/* Footer View All Button */}
-      <div className="mt-8 text-center">
+      {/* <div className="mt-8 text-center">
         <button className="bg-[#b79660] text-white px-12 py-4 font-bold uppercase text-xs tracking-[0.2em] hover:brightness-110 transition-all shadow-lg shadow-[#b79660]/20">
           View All Case Studies
         </button>
-      </div>
+      </div> */}
 
       <style jsx global>{`
         .swiper-pagination-bullet {
