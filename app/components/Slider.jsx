@@ -44,11 +44,11 @@ const ImageCarousel = () => {
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className="relative w-full h-[200px] md:h-[400px] rounded-lg shadow-md overflow-hidden">
-                <img
+              <a href='https://www.youtube.com/watch?v=sjrOZIvuV70' target='_blank'>  <img
                   src={slide.src}
                   alt={slide.label || "Slide Image"}
                   className="object-cover w-full h-full"
-                />
+                /></a>
               </div>
             </SwiperSlide>
           ))}
