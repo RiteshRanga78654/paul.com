@@ -12,30 +12,30 @@ import Textslider from "../components/Textslider";
 const reviews = [
   {
     id: 1,
-    name: "Rajinder Takhar",
-    role: "Property Investor",
+    name: "Vikram Singh",
+    role: "Sales Director",
     content:
-      "I have known Estate Avenues for the last many years. I found them to be very focused and thorough with their work. Their team has helped me in taking right/good decisions which yielded great results.",
+      "The workshops provided by Mr. Bhaswar Paul has transformed our sales culture. The team is more engaged and the results speak for themselves. The industry insight of Mr. Paul is absolutely matchless and his engagement with our team members has helped us all towards improved sales productivity.",
     rating: 5,
     bgImage:
       "https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=2000&auto=format&fit=crop",
   },
   {
     id: 2,
-    name: "Anjali Sharma",
-    role: "CEO, Tech Start-up",
+    name: "Rajinder Takhar",
+    role: "Property Investor",
     content:
-      "The fund-raising expertise is unmatched. We were able to secure capital in record time thanks to his colossal network and professional guidance. Their team has helped me in taking right/good decisions which yielded great results.",
+      "I have known Mr. Bhaswar Paul for the last several years. I have always found him to be very focused and thorough with his subject of work. He has helped me in taking right decisions which yielded great results for my professional career.",
     rating: 5,
     bgImage:
       "/assets/images/Club-Capri-Exterior-Dusk-without-background-building.jpg",
   },
   {
     id: 3,
-    name: "Vikram Singh",
-    role: "Sales Director",
+    name: "Anjali Sharma",
+    role: "CEO, PropTech Start-up",
     content:
-      "The workshops provided by Bhaswar transformed our sales culture. The team is more engaged and the results speak for themselves. Their team has helped me in taking right/good decisions which yielded great results.",
+      "The fund raising expertise of Mr. Bhaswar Paul is just unmatched. We were able to secure capital in record time thanks to his colossal network and professional guidance. His team is very professional and supportive. They have helped me meet several international investor groups .",
     rating: 5,
     bgImage: "/assets/images/m3m-urbana-business-park-banner-95984.jpg",
   },
