@@ -86,16 +86,17 @@ import Slider from "./components/Slider";
 //     </div>
 //   );
 // };
-
 const ServiceCardItem = ({
   title,
   description,
   image,
+  bullets,
   isExpanded,
   onToggle,
 }) => {
   return (
-    <div className="group bg-[#4c4949] rounded-2xl flex flex-col items-start text-left shadow-md hover:shadow-xl hover:shadow-[#b79662]/20 transition-all duration-500 border border-gray-700 hover:scale-[1.02] cursor-default relative overflow-hidden h-full">
+    <div className="group bg-[#4c4949] rounded-2xl flex flex-col items-start text-left shadow-md hover:shadow-xl hover:shadow-[#b79662]/20 transition-all duration-500 border border-gray-700 hover:scale-[1.02] relative overflow-hidden h-full">
+      {/* Image */}
       <div className="relative w-full h-64 overflow-hidden">
         <img
           src={
@@ -108,78 +109,54 @@ const ServiceCardItem = ({
         <div className="absolute inset-0 bg-gradient-to-t from-[#4c4949] to-transparent opacity-60" />
       </div>
 
-      <div className="p-8 pt-6 w-full flex-grow">
-        <h3 className="text-xl font-bold text-[#ffffff] mb-4 leading-snug transition-colors duration-300 group-hover:text-[#b79662]">
+      {/* Content */}
+      <div className="p-8 pt-6 w-full flex-grow flex flex-col">
+        <h3 className="text-xl font-bold text-white mb-4 leading-snug group-hover:text-[#b79662] transition-colors">
           {title}
         </h3>
-        <div className="relative">
-          <p
-            className={`text-sm text-gray-200 leading-relaxed transition-all duration-300 ${!isExpanded ? "line-clamp-3" : ""}`}
-          >
-            {description}
-          </p>
-          <button
-            onClick={onToggle}
-            className="mt-4 text-[#b79662] font-black text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1"
-          >
-            {isExpanded ? "Show Less" : "Read More"}
-            <ChevronDown
-              size={14}
-              className={`transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
-            />
-          </button>
-        </div>
-      </div>
-      <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#b79662] transition-all duration-500 group-hover:w-full" />
-    </div>
-  );
-};
 
-// --- Updated Service Card for Dark Theme (Original Horizontal Slider Version) ---
-const ServiceCard = ({ icon, title, description, isActive }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className={`flex-shrink-0 w-[320px] bg-[#4c4949] border border-gray-600 overflow-visible relative transition-all duration-500 ease-out ${
-        isHovered ? "scale-105 z-10" : "scale-100"
-      }`}
-    >
-      <div
-        className={`${
-          isActive ? "bg-[#b79662]" : "bg-[#3d3a3a]"
-        } p-10 flex flex-col items-start relative transition-all duration-300 h-[280px]`}
-      >
-        <div
-          className={`mb-8 transition-transform duration-700 ease-in-out ${
-            isHovered ? "rotate-[360deg]" : "rotate-0"
+        {/* Description */}
+        <p
+          className={`text-sm text-gray-200 leading-relaxed whitespace-pre-line transition-all duration-300 ${
+            !isExpanded ? "line-clamp-3" : ""
           }`}
         >
-          {isActive ? (
-            <StarIcon color="#ffffff" />
-          ) : (
-            <StarIcon color="#b79662" />
+          {description}
+        </p>
+
+        {/* Bullets */}
+        <div
+          className={`transition-all duration-500 overflow-hidden ${
+            isExpanded ? "max-h-60 mt-4 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          {bullets && (
+            <ul className="list-disc pl-5 space-y-1 text-sm text-gray-200 marker:text-[#b79662]">
+              {bullets.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
           )}
         </div>
-        <h3
-          className={`text-xl font-normal ${
-            isActive ? "text-white" : "text-[#b79662]"
-          } transition-colors duration-300`}
+
+        {/* Button */}
+        <button
+          onClick={onToggle}
+          className="mt-4 text-[#b79662] font-black text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1"
         >
-          {title}
-        </h3>
-      </div>
-      <div className="p-8 bg-[#4c4949]">
-        <p className="text-gray-200 leading-relaxed text-sm">{description}</p>
+          {isExpanded ? "Show Less" : "Read More"}
+
+          <ChevronDown
+            size={14}
+            className={`transition-transform duration-300 ${
+              isExpanded ? "rotate-180" : ""
+            }`}
+          />
+        </button>
       </div>
 
-      <div
-        className={`absolute bottom-0 left-0 w-8 h-8 bg-[#b79662] transition-all duration-300 ${
-          isHovered ? "opacity-100 translate-y-4" : "opacity-0 translate-y-0"
-        }`}
-      />
+      {/* Bottom Hover Line */}
+      <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#b79662] transition-all duration-500 group-hover:w-full" />
     </div>
   );
 };
@@ -287,35 +264,70 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
     {
       title: "Corporate Training",
       image: "/assets/images/P_K00313.JPG",
-      description: `Structured, outcome-driven real estate training for organisations. Our programs combine industry experience with practical frameworks that help participants develop market-ready skills and strategic competence.`,
+      description: `Bhaswar Paul is widely regarded as a veteran in the field of real estate education and professional capability development in India. 
+
+His extensive hands-on industry experience and deep insights into market behavior have built a strong reputation for delivering specialized training programs designed to strengthen the industry stakeholders.
+
+Bhaswar’s continued focus on capability building reflects a broader mission to bridge the knowledge and skill gaps that exist within the sector and empower real estate professionals.
+`,
     },
     {
-      title: "Hire Train Deployment",
+      title: "Hire Train Deploy (HTD)",
       image: "/assets/images/paras (1).jpg",
-      description: `We work with organisations to identify, assess, and onboard high-potential real estate talent, ensuring strong alignment between role requirements and candidate capability.`,
+      description: `HTD is a structured workforce development model designed specifically to solve the talent gap in the real estate sector. 
+
+IREED India works with real estate development organizations to identify, assess, and onboard high-potential real estate talent, ensuring strong alignment between role requirements and candidate capability.
+
+In this model, IREED India recruits potential candidates, trains them to be industry-ready, and then deploy them into real estate development organizations that require skilled manpower, enabling sustainable growth and long-term industry development.
+`,
     },
     {
-      title: "Project Consulting",
+      title: "Project Consultancy",
       image: "/assets/images/DSC02421.JPG",
-      description: `Our campus workshops are designed to provide students with industry-ready real estate skills and practical exposure through hands-on industry exposure.`,
+      description: `IREED India Project Consultancy refers to end-to-end strategic and operational advisory services provided to real estate stakeholders throughout the entire lifecycle of a project — from land acquisition to project delivery and sales.
+
+IREED India supports emerging developers in planning, structuring, executing, and successfully delivering real estate projects. It combines technical expertise, financial planning, market intelligence, legal compliance, and project management to ensure that a real estate project is feasible, profitable, compliant, and efficiently executed.
+`,
     },
     {
       title: "Strategic Advisory",
       image:
         "https://images.unsplash.com/photo-1454165833767-027ffea9e78a?w=800&auto=format&fit=crop",
-      description: `High-level consulting for developers and investment firms to optimize project feasibility and market positioning in the competitive Indian landscape.`,
+      description: `IREED’s strategic advisory services help entrepreneurs to design scalable and sustainable business models.
+
+IREED goes beyond conventional consulting. It combines market intelligence, project advisory, business scaling strategies, and workforce capability building.
+
+Strategic advisory for stakeholders offers:
+`,
+      bullets: [
+        "Business strategy development",
+        "Market positioning",
+        "Expansion and scaling strategies",
+        "Fundraising and investor readiness",
+        "Operational efficiency frameworks",
+      ],
     },
     {
       title: "Leadership Mentoring",
       image:
         "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&auto=format&fit=crop",
-      description: `One-on-one coaching for industry executives focusing on ethical sales practices, consistent growth, and long-term relationship management.`,
+      description: `IREED India’s One-on-One real estate business coaching aims to build ethical leaders and create sustainable real estate enterprises.
+
+IREED India believes that real estate entrepreneurship requires far more than transactional knowledge. It requires a combination of strategic thinking, ethical conduct, operational discipline, and market foresight. 
+
+Through its personalized coaching model, IREED India works closely with real estate entrepreneurs, developers, sales leaders, and emerging professionals to transform their capabilities and leadership potential.
+`,
     },
     {
       title: "Market Intelligence",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
-      description: `Deep-dive data analysis into pricing dynamics, buyer psychology, and regulatory impacts to provide actionable insights for real estate stakeholders.`,
+      description: `Bhaswar Paul, Founder & CEO of IREED India, is known for his analytical approach to the real estate sector, where he deep-dives into market data to decode pricing dynamics, buyer psychology, and regulatory influences shaping India’s property landscape. 
+
+Through rigorous analysis of sales patterns, demand–supply shifts, and policy frameworks, he delivers actionable insights that help developers, investors, and sales leaders make informed strategic decisions.
+
+His analytical frameworks examine how multiple factors—such as infrastructure development, financing conditions, and market demand.
+`,
     },
   ];
 
@@ -443,7 +455,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
                     >
                       Work With Me
                     </span>
-                  </button>  
+                  </button>
                 </div>
                 <div className="pt-4">
                   <button
@@ -735,6 +747,7 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
                 <ServiceCardItem
                   title={service.title}
                   description={service.description}
+                  bullets={service.bullets}
                   image={service.image}
                   isExpanded={allServicesExpanded}
                   onToggle={toggleAllServices}
