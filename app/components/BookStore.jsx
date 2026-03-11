@@ -6,8 +6,8 @@ const books = [
   {
     id: 1,
     category: "OWN THE STAGE",
-    title: "REAL ESTATE MASTERY",
-    description: "Simple Techniques for Public Speaking and Communication Skills: How to become a Great Speaker, Influence People with Communication Skills and Own the Stage.",
+    title: "Real Estate Mastery",
+    description: "This book is a powerful guide to understand, navigate, and succeed in the dynamic world of real estate based on over two decades of experience in sales, marketing, and customer hospitality.",
     imageAlt: "Own The Stage Book Cover",
     buttonText: "Buy From Amazon",
     imageSrc: "/assets/images/book-1.jpeg" ,
@@ -16,8 +16,8 @@ const books = [
   {
     id: 2,
     category: "LOSE 20+ KGS AND REVERSE YOUR DIABETES IN 90 DAYS",
-    title: "FOUNDATION OF REAL ESTATE",
-    description: "Do you wish to lose weight in 90 days so that you can improve your diabetes, feel younger and fitter like 20 years old? Are you wondering where to start?",
+    title: "Foundation Of Real Estate",
+    description: "The book is designed and scripted as a practical guide for real estate professionals, entrepreneurs, sales leaders, investors, and aspiring realtors who want to build sustainable and scalable careers in the real estate ecosystem.",
     imageAlt: "Weight Loss Journey Book Cover",
     buttonText: "Buy From Amazon",
     imageSrc: "/assets/images/image.png" ,
@@ -26,8 +26,8 @@ const books = [
   {
     id: 3,
     category: "CLOSING YOUR SALES",
-title: "EXPLORING REAL ESTATE FRONTIERS",
-    description: "Well, you have come to the right place. If you asked any salesperson, they would tell you that there are hundreds of ways to close sales.",
+title: "Exploring Real Estate Frontiers ",
+    description: "This is a forward looking book scripted to offer deep insights into the evolving dynamics of the real estate sector, encouraging professionals to move beyond conventional selling methods and adopt strategic thinking, ethical practices, and sustainable growth models.",
     imageAlt: "Closing Your Sales Book Cover",
     buttonText: "Buy From Amazon",
     imageSrc: "/assets/images/book-3.jpeg",
@@ -49,11 +49,11 @@ const BookCard = ({ book }) => {
         
         <div className="relative z-10 flex flex-col h-full justify-between">
           <div>
-            <span className="text-xs sm:text-sm font-bold tracking-widest uppercase opacity-60 mb-2 block text-gray-300">
+            {/* <span className="text-xs sm:text-sm font-bold tracking-widest uppercase opacity-60 mb-2 block text-gray-300">
               {book.category}
-            </span>
+            </span> */}
             {/* Title: Gold Theme #b79662 */}
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold uppercase leading-tight mb-4 sm:mb-6 text-[#b79662]">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold leading-tight mb-4 sm:mb-6 text-[#b79662]">
               {book.title}
             </h3>
             <p className="text-sm sm:text-base leading-relaxed text-gray-200 mb-6 sm:mb-8 line-clamp-4 md:line-clamp-none">

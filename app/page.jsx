@@ -264,11 +264,9 @@ This extensive frontline exposure has given Paul a sharp sense of market intelli
     {
       title: "Corporate Training",
       image: "/assets/images/P_K00313.JPG",
-      description: `Bhaswar Paul is widely regarded as a veteran in the field of real estate education and professional capability development in India. 
-
-His extensive hands-on industry experience and deep insights into market behavior have built a strong reputation for delivering specialized training programs designed to strengthen the industry stakeholders.
-
-Bhaswar’s continued focus on capability building reflects a broader mission to bridge the knowledge and skill gaps that exist within the sector and empower real estate professionals.
+      description: `Bhaswar Paul is widely regarded as a veteran in the field of real estate education and professional capability development in India. With extensive hands-on industry experience and a deep understanding of market behavior, he has built a strong reputation for delivering specialized training programs that strengthen the capabilities of real estate stakeholders across the sector.
+ 
+He has consistently focused on developing industry-ready professionals by sharing practical insights, strategic knowledge, and ethical business practices. Programs are designed to enhance sales performance and leadership abilities to equip industry professionals to navigate market dynamics.
 `,
     },
     {
@@ -284,9 +282,9 @@ In this model, IREED India recruits potential candidates, trains them to be indu
     {
       title: "Project Consultancy",
       image: "/assets/images/DSC02421.JPG",
-      description: `IREED India Project Consultancy refers to end-to-end strategic and operational advisory services provided to real estate stakeholders throughout the entire lifecycle of a project — from land acquisition to project delivery and sales.
+      description: `IREED Project Consultancy refers to end to end strategic and operational services for real estate stakeholders throughout the entire lifecycle of a project — land acquisition to project delivery and sales.
 
-IREED India supports emerging developers in planning, structuring, executing, and successfully delivering real estate projects. It combines technical expertise, financial planning, market intelligence, legal compliance, and project management to ensure that a real estate project is feasible, profitable, compliant, and efficiently executed.
+IREED India supports emerging developers in planning, structuring, executing, and successfully delivering real estate projects. It combines technical expertise, financial planning, market intelligence, legal compliance, and project management to ensure that a project is feasible, profitable, compliant, and efficiently executed. Markets where developers lack structured knowledge and experienced project planning, IREED Project Consultancy becomes a crucial enabler for sustainable development.
 `,
     },
     {
