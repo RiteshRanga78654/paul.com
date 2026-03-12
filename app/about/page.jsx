@@ -74,24 +74,21 @@ const imagesRow1 = [
 ];
 
 const imagesRow2 = [
-"/assets/about/slider/projectimg4.jpg",
-"/assets/about/slider/projectimg9.jpg",
-"/assets/about/slider/projectimg17.jpg",
-"/assets/about/slider/projectimg13.jpg",
-
-
+  "/assets/about/slider/projectimg4.jpg",
+  "/assets/about/slider/projectimg9.jpg",
+  "/assets/about/slider/projectimg17.jpg",
+  "/assets/about/slider/projectimg13.jpg",
 ];
 
 const logos = [
   { id: 1, src: "/assets/images/Ireed-Logo (1).png", alt: "Essentia" },
   { id: 2, src: "/assets/images/ireo.png", alt: "ZDS" },
-  
+
   { id: 4, src: "/assets/about/logo/whiteland2.png", alt: "whiteland" },
   { id: 5, src: "/assets/about/logo/tridentlogo.png", alt: "trident" },
   { id: 6, src: "/assets/about/logo/paras.jpg", alt: "paras" },
   { id: 7, src: "/assets/about/logo/mangal-realty (3).png", alt: "mangal" },
   { id: 3, src: "/assets/about/logo/logooooo.webp", alt: "svs" },
-  
 ];
 
 const faqs = [
@@ -275,11 +272,22 @@ const MetamorphServicesPage = () => {
         <section className="relative min-h-[90vh] w-full flex items-center pt-10 pb-12 px-6 sm:px-8 md:px-16 overflow-hidden">
           {/* Background with Overlay */}
           <div className="absolute inset-0 z-0">
-            <img
-              src="/assets/about/clubhousehero.png" // Replace with your actual hero image path
-              alt="Modern Architecture"
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
               className="w-full h-full object-cover"
-            />
+            >
+              <source src="/assets/video/bg video.mp4" type="video/mp4" />
+              {/* Optional: fall back image if video fails to load */}
+              <img
+                src="/assets/about/clubhousehero.png"
+                alt="Modern Architecture"
+              />
+            </video>
+
+            {/* The Overlay and Blur */}
             <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
           </div>
 
@@ -452,7 +460,7 @@ const MetamorphServicesPage = () => {
             </div>
 
             {/* Right Form */}
-            <div className="flex justify-center lg:justify-end">
+            {/* <div className="flex justify-center lg:justify-end">
               <div className="bg-white rounded-3xl p-8 md:p-10 w-full max-w-md shadow-2xl">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <input
@@ -572,7 +580,7 @@ const MetamorphServicesPage = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
 
@@ -812,8 +820,8 @@ const MetamorphServicesPage = () => {
         <section className="pt-16 px-6 sm:px-8 md:px-16">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl text-[#b79662] font-bold text-center ">
-              <span className="text-[#000]">What We Manage</span> Under Our
-              PMC Services
+              <span className="text-[#000]">What We Manage</span> Under Our PMC
+              Services
             </h2>
             <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

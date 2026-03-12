@@ -281,7 +281,7 @@ In this model, IREED India recruits potential candidates, trains them to be indu
     },
     {
       title: "Project Consultancy",
-      image: "/assets/images/DSC02421.JPG",
+      image: "/assets/about/WhatsApp Image 2026-03-07 at 5.05.55 PM.jpeg",
       description: `IREED Project Consultancy refers to end to end strategic and operational services for real estate stakeholders throughout the entire lifecycle of a project — land acquisition to project delivery and sales.
 
 IREED India supports emerging developers in planning, structuring, executing, and successfully delivering real estate projects. It combines technical expertise, financial planning, market intelligence, legal compliance, and project management to ensure that a project is feasible, profitable, compliant, and efficiently executed. Markets where developers lack structured knowledge and experienced project planning, IREED Project Consultancy becomes a crucial enabler for sustainable development.
@@ -290,7 +290,7 @@ IREED India supports emerging developers in planning, structuring, executing, an
     {
       title: "Strategic Advisory",
       image:
-        "https://images.unsplash.com/photo-1454165833767-027ffea9e78a?w=800&auto=format&fit=crop",
+        "/assets/images/DSC02421.JPG",
       description: `IREED’s strategic advisory services help entrepreneurs to design scalable and sustainable business models.
 
 IREED goes beyond conventional consulting. It combines market intelligence, project advisory, business scaling strategies, and workforce capability building.
@@ -826,46 +826,30 @@ His analytical frameworks examine how multiple factors—such as infrastructure 
           </div>
 
           {/* Video Grid Container */}
-          <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
-            {/* 1. Main Video Section (70% on desktop) */}
-            <div className="lg:col-span-7 w-full">
-              <div className="relative w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 md:border-4 border-gray-50">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/NYbFAiZgvAM"
-                  title="Bhaswar Paul Main Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {/* Video 1 */}
+  <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
+    <iframe
+      className="absolute top-0 left-0 w-full h-full"
+      src="https://www.youtube.com/embed/sjrOZIvuV70"
+      title="IREED Academy: Your Partner in Real Estate Growth"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+    <div className="absolute inset-0 bg-[#b79662]/10 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300" />
+  </div>
 
-            {/* 2. Side Videos Section (30% on desktop) */}
-            <div className="lg:col-span-3 flex flex-col gap-8">
-              {/* Small Video 1 */}
-              <div className="relative aspect-video lg:h-58 rounded-2xl overflow-hidden shadow-lg border-4 border-white group">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/gc9ZAfi2C_w"
-                  title="Related Video 1"
-                  allowFullScreen
-                ></iframe>
-                {/* Subtle hover effect overlay */}
-                <div className="absolute inset-0 bg-[#b79662]/10 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300" />
-              </div>
-
-              {/* Small Video 2 */}
-              <div className="relative aspect-video lg:h-58 rounded-2xl overflow-hidden shadow-lg border-4 border-white group">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/G5P7hUiiZfc"
-                  title="Related Video 2"
-                  allowFullScreen
-                ></iframe>
-                <div className="absolute inset-0 bg-[#b79662]/10 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300" />
-              </div>
-            </div>
-          </div>
+  {/* Video 2 */}
+  <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg border-4 border-white group">
+    <iframe
+      className="absolute top-0 left-0 w-full h-full"
+      src="https://www.youtube.com/embed/NYbFAiZgvAM"
+      title="REITs in India Explained"
+      allowFullScreen
+    ></iframe>
+    <div className="absolute inset-0 bg-[#b79662]/10 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300" />
+  </div>
+</div>
         </div>
       </section>
 
