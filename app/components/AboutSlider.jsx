@@ -5,14 +5,14 @@ import { ChevronRight, ChevronLeft } from "lucide-react";
 export default function ImageSlider() {
   // 1. Memoize images so they don't get recreated on every render
   const originalImages = useMemo(() => [
-    { url: "/assets/BPimages/FOB_0149.JPG",    title: "" },
-    { url: "/assets/BPimages/DSC_0342.JPG",    title: "" },
-    { url: "/assets/BPimages/DSC_0382.JPG",    title: "" },
-    { url: "/assets/BPimages/DSC02419.JPG",    title: "" },
-    { url: "/assets/BPimages/DSC02249.JPG",    title: "" },
-    { url: "/assets/BPimages/DSC02396.JPG",    title: "" },
-    { url: "/assets/BPimages/paras (1).jpg",   title: "" },
-    { url: "/assets/BPimages/DSC_0421.JPG",    title: "" },
+    { url: "/assets/BPimages/FOB_0149.JPG",    title: "xyz" , content:"asdfghjk"},
+    { url: "/assets/BPimages/DSC_0342.JPG",    title: "xyz" , content:"asdfghjk"},
+    { url: "/assets/BPimages/DSC_0382.JPG",    title: "xyz" , content:"asdfghjk"},
+    { url: "/assets/BPimages/DSC02419.JPG",    title: "xyz" , content:"asdfghjk"},
+    { url: "/assets/BPimages/DSC02249.JPG",    title: "xyz" , content:"asdfghjk"},
+    { url: "/assets/BPimages/DSC02396.JPG",    title: "xyz" , content:"asdfghjk"},
+    { url: "/assets/BPimages/paras (1).jpg",   title: "xyz" , content:"asdfghjk"},
+    { url: "/assets/BPimages/DSC_0421.JPG",    title: "xyz" , content:"asdfghjk"},
   ], []);
 
   const images = useMemo(() => [
@@ -100,20 +100,22 @@ export default function ImageSlider() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   
-                  <div className="absolute inset-x-0 bottom-12 flex justify-center px-4">
-                    <h3 
-                      className="text-2xl md:text-5xl font-extrabold text-white tracking-widest uppercase text-center"
-                      style={{ 
-                        filter: `
-                          drop-shadow(0px 2px 2px rgba(0,0,0,1)) 
-                          drop-shadow(0px 0px 15px rgba(139, 101, 43, 1))
-                          drop-shadow(0px 0px 30px rgba(183, 150, 98, 0.8))
-                        `
-                      }}
-                    >
-                      {slide.title}
-                    </h3>
-                  </div>
+                  <div className="absolute inset-x-0 bottom-12 flex flex-col items-center justify-center px-4 text-center">
+  <h3 
+    className="text-2xl md:text-5xl font-extrabold text-white tracking-widest uppercase mb-2"
+    style={{ 
+      filter: `
+        drop-shadow(0px 2px 2px rgba(0,0,0,1)) 
+        drop-shadow(0px 0px 15px rgba(139, 101, 43, 1))
+      `
+    }}
+  >
+    {slide.title}
+  </h3>
+  <p className="text-white text-lg md:text-xl font-medium max-w-2xl drop-shadow-md">
+    {slide.content}
+  </p>
+</div>
                 </div>
               ))}
             </div>
