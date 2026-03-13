@@ -5,14 +5,14 @@ import { ChevronRight, ChevronLeft } from "lucide-react";
 export default function ImageSlider() {
   // 1. Memoize images so they don't get recreated on every render
   const originalImages = useMemo(() => [
-    { url: "/assets/BPimages/FOB_0149.JPG",    title: "xyz" , content:"asdfghjk"},
-    { url: "/assets/BPimages/DSC_0342.JPG",    title: "xyz" , content:"asdfghjk"},
-    { url: "/assets/BPimages/DSC_0382.JPG",    title: "xyz" , content:"asdfghjk"},
-    { url: "/assets/BPimages/DSC02419.JPG",    title: "xyz" , content:"asdfghjk"},
-    { url: "/assets/BPimages/DSC02249.JPG",    title: "xyz" , content:"asdfghjk"},
-    { url: "/assets/BPimages/DSC02396.JPG",    title: "xyz" , content:"asdfghjk"},
-    { url: "/assets/BPimages/paras (1).jpg",   title: "xyz" , content:"asdfghjk"},
-    { url: "/assets/BPimages/DSC_0421.JPG",    title: "xyz" , content:"asdfghjk"},
+    { url: "/assets/BPimages/FOB_0149.JPG",    title:"Designing Industry Aligned Training Programs." , content:"IREED India"},
+    { url: "/assets/BPimages/DSC_0342.JPG",    title: "Bhaswar Paul Transforming The Skill Ecosystem in India’s Real Estate Sector." , content:"IREED India"},
+    { url: "/assets/BPimages/DSC_0382.JPG",    title: "Media Launch of MBA in Real Estate Management at Lamrin Tech Skills University." , content:"Hosted at The Oberoi, New Delhi"},
+    { url: "/assets/BPimages/DSC02419.JPG",    title: "Delighted to announce association with The Westin Residences Gurugram Developed By" , content:"Whiteland Corporation"},
+    { url: "/assets/BPimages/DSC02249.JPG",    title: "Building Capability. Driving Performance. Creating a Learning Culture." , content:"Trident Realty"},
+    { url: "/assets/BPimages/DSC02396.JPG",    title: "Building a Strong Learning Culture. Strengthening On-Ground Performance." , content:"Trident Realty"},
+    { url: "/assets/BPimages/paras (1).jpg",   title: "Focus on Capability Building & Enabling Long Term Growth." , content:"Paras Buildtech"},
+    { url: "/assets/BPimages/DSC_0421.JPG",    title: "Identifying The Skill Gap Between Industry Needs & Traditional Education." , content:"IREED India"},
   ], []);
 
   const images = useMemo(() => [
@@ -100,9 +100,9 @@ export default function ImageSlider() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                   
-                  <div className="absolute inset-x-0 bottom-12 flex flex-col items-center justify-center px-4 text-center">
+                  <div className="absolute inset-x-0 bottom-12 flex flex-col items-left md:ml-[30px] justify-center px-4 text-left">
   <h3 
-    className="text-2xl md:text-5xl font-extrabold text-white tracking-widest uppercase mb-2"
+    className="text-2xl md:text-4xl font-bold text-white tracking-widest  mb-2"
     style={{ 
       filter: `
         drop-shadow(0px 2px 2px rgba(0,0,0,1)) 

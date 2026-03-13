@@ -282,15 +282,14 @@ In this model, IREED India recruits potential candidates, trains them to be indu
     {
       title: "Project Consultancy",
       image: "/assets/about/WhatsApp Image 2026-03-07 at 5.05.55 PM.jpeg",
-      description: `IREED Project Consultancy refers to end to end strategic and operational services for real estate stakeholders throughout the entire lifecycle of a project — land acquisition to project delivery and sales.
+      description: `IREED Project Consultancy refers to end to end strategic and operational services for real estate stakeholders throughout the entire lifecycle of a project — land acquisition to project delivery.
 
-IREED India supports emerging developers in planning, structuring, executing, and successfully delivering real estate projects. It combines technical expertise, financial planning, market intelligence, legal compliance, and project management to ensure that a project is feasible, profitable, compliant, and efficiently executed. Markets where developers lack structured knowledge and experienced project planning, IREED Project Consultancy becomes a crucial enabler for sustainable development.
+IREED India supports developers in planning, structuring, executing, and successfully delivering real estate projects. It combines technical expertise, financial planning, market intelligence, legal compliance, and project management to ensure that a project is feasible, profitable and efficiently executed.Markets where developers lack structured knowledge and experienced project planning, IREED Project Consultancy becomes a crucial enabler for sustainable development.
 `,
     },
     {
       title: "Strategic Advisory",
-      image:
-        "/assets/images/DSC02421.JPG",
+      image: "/assets/images/DSC02421.JPG",
       description: `IREED’s strategic advisory services help entrepreneurs to design scalable and sustainable business models.
 
 IREED goes beyond conventional consulting. It combines market intelligence, project advisory, business scaling strategies, and workforce capability building.
@@ -827,29 +826,29 @@ His analytical frameworks examine how multiple factors—such as infrastructure 
 
           {/* Video Grid Container */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-  {/* Video 1 */}
-  <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
-    <iframe
-      className="absolute top-0 left-0 w-full h-full"
-      src="https://www.youtube.com/embed/sjrOZIvuV70"
-      title="IREED Academy: Your Partner in Real Estate Growth"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    ></iframe>
-    <div className="absolute inset-0 bg-[#b79662]/10 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300" />
-  </div>
+            {/* Video 1 */}
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/sjrOZIvuV70"
+                title="IREED Academy: Your Partner in Real Estate Growth"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+              <div className="absolute inset-0 bg-[#b79662]/10 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300" />
+            </div>
 
-  {/* Video 2 */}
-  <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg border-4 border-white group">
-    <iframe
-      className="absolute top-0 left-0 w-full h-full"
-      src="https://www.youtube.com/embed/NYbFAiZgvAM"
-      title="REITs in India Explained"
-      allowFullScreen
-    ></iframe>
-    <div className="absolute inset-0 bg-[#b79662]/10 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300" />
-  </div>
-</div>
+            {/* Video 2 */}
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg border-4 border-white group">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/NYbFAiZgvAM"
+                title="REITs in India Explained"
+                allowFullScreen
+              ></iframe>
+              <div className="absolute inset-0 bg-[#b79662]/10 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-300" />
+            </div>
+          </div>
         </div>
       </section>
 

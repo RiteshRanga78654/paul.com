@@ -288,7 +288,7 @@ const MetamorphServicesPage = () => {
             </video>
 
             {/* The Overlay and Blur */}
-            <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
+            <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
           </div>
 
           <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -296,24 +296,24 @@ const MetamorphServicesPage = () => {
             <div className="space-y-8">
               <div className="inline-block px-4 py-1 rounded-full border border-[#b79662] bg-[#b79662]/10">
                 <span className="text-[#b79662] text-sm font-semibold tracking-wider uppercase">
-                  • 27+ Years of Experience in PMC
+                  • 30+ YEARS OF IN SALES, CRM, MARKETING & CUSTOMER HOSPITALITY
                 </span>
               </div>
 
               <h1 className="text-4xl md:text-4xl font-extrabold text-white leading-tight">
-                Professional{" "}
+                {" "}
                 <span className="text-[#b79662]">
-                  Project Management Consultancy
+                  IREED Project Management Consultancy
                 </span>{" "}
-                For Construction Projects
+                For Real Estate Projects
               </h1>
 
               <p className="text-white text-lg md:text-xl max-w-xl leading-relaxed">
-                Managing a construction project is more than coordinating labour
-                or completing interiors; it's about ensuring every stage, from
-                planning to handover, follows a structured, disciplined path.
+                Managing Real Estate Projects For Emerging Developers. Technical
+                Expertise, Financial Planning, Market Intelligence, Legal
+                Compliance & Complete Project Management.
               </p>
-
+{/* 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   "End-to-End Project Management",
@@ -328,9 +328,9 @@ const MetamorphServicesPage = () => {
                     <span className="text-white font-medium">{point}</span>
                   </div>
                 ))}
-              </div>
+              </div> */}
 
-              <div className="flex gap-4 pt-4">
+              {/* <div className="flex gap-4 pt-4">
                 <button
                   style={{
                     padding: "14px 40px",
@@ -456,7 +456,7 @@ const MetamorphServicesPage = () => {
                     <span>+91 9818837873</span>
                   </span>
                 </button>
-              </div>
+              </div> */}
             </div>
 
             {/* Right Form */}
