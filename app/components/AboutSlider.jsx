@@ -1,25 +1,75 @@
 "use client";
-import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  useMemo,
+} from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 
 export default function ImageSlider() {
   // 1. Memoize images so they don't get recreated on every render
-  const originalImages = useMemo(() => [
-    { url: "/assets/BPimages/FOB_0149.JPG",    title:"Designing Industry Aligned Training Programs." , content:"IREED India"},
-    { url: "/assets/BPimages/DSC_0342.JPG",    title: "Bhaswar Paul Transforming The Skill Ecosystem in India’s Real Estate Sector." , content:"IREED India"},
-    { url: "/assets/BPimages/DSC_0382.JPG",    title: "Media Launch of MBA in Real Estate Management at Lamrin Tech Skills University." , content:"Hosted at The Oberoi, New Delhi"},
-    { url: "/assets/BPimages/DSC02419.JPG",    title: "Delighted to announce association with The Westin Residences Gurugram Developed By" , content:"Whiteland Corporation"},
-    { url: "/assets/BPimages/DSC02249.JPG",    title: "Building Capability. Driving Performance. Creating a Learning Culture." , content:"Trident Realty"},
-    { url: "/assets/BPimages/DSC02396.JPG",    title: "Building a Strong Learning Culture. Strengthening On-Ground Performance." , content:"Trident Realty"},
-    { url: "/assets/BPimages/paras (1).jpg",   title: "Focus on Capability Building & Enabling Long Term Growth." , content:"Paras Buildtech"},
-    { url: "/assets/BPimages/DSC_0421.JPG",    title: "Identifying The Skill Gap Between Industry Needs & Traditional Education." , content:"IREED India"},
-  ], []);
+  const originalImages = useMemo(
+    () => [
+      {
+        url: "/assets/BPimages/DSC_0382.JPG",
+        title:
+          "Media Launch of MBA in Real Estate Management at Lamrin Tech Skills University.",
+        content: "Hosted at The Oberoi, New Delhi",
+      },
+      {
+        url: "/assets/BPimages/DSC02249.JPG",
+        title:
+          "Building Capability. Driving Performance. Creating a Learning Culture.",
+        content: "Trident Realty",
+      },
+       {
+        url: "/assets/BPimages/DSC02419.JPG",
+        title:
+          "Delighted to announce association with The Westin Residences Gurugram Developed By",
+        content: "Whiteland Corporation",
+      },
+      {
+        url: "/assets/BPimages/paras (1).jpg",
+        title: "Focus on Capability Building & Enabling Long Term Growth.",
+        content: "Paras Buildtech",
+      },
+         {
+        url: "/assets/BPimages/DSC_0342.JPG",
+        title:
+          "Bhaswar Paul Transforming The Skill Ecosystem in India’s Real Estate Sector.",
+        content: "IREED India",
+      },
+       {
+        url: "/assets/BPimages/DSC02396.JPG",
+        title:
+          "Building a Strong Learning Culture. Strengthening On-Ground Performance.",
+        content: "Trident Realty",
+      },
+      {
+        url: "/assets/BPimages/FOB_0149.JPG",
+        title: "Designing Industry Aligned Training Programs.",
+        content: "IREED India",
+      },
+      {
+        url: "/assets/BPimages/DSC_0421.JPG",
+        title:
+          "Identifying The Skill Gap Between Industry Needs & Traditional Education.",
+        content: "IREED India",
+      },
+    ],
+    [],
+  );
 
-  const images = useMemo(() => [
-    originalImages[originalImages.length - 1],
-    ...originalImages,
-    originalImages[0],
-  ], [originalImages]);
+  const images = useMemo(
+    () => [
+      originalImages[originalImages.length - 1],
+      ...originalImages,
+      originalImages[0],
+    ],
+    [originalImages],
+  );
 
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
@@ -99,32 +149,38 @@ export default function ImageSlider() {
                   style={{ backgroundImage: `url('${slide.url}')` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                  
+
                   <div className="absolute inset-x-0 bottom-12 flex flex-col items-left md:ml-[30px] justify-center px-4 text-left">
-  <h3 
-    className="text-2xl md:text-4xl font-bold text-white tracking-widest  mb-2"
-    style={{ 
-      filter: `
-        drop-shadow(0px 2px 2px rgba(0,0,0,1)) 
-        drop-shadow(0px 0px 15px rgba(139, 101, 43, 1))
-      `
-    }}
-  >
-    {slide.title}
-  </h3>
-  <p className="text-white text-lg md:text-xl font-medium max-w-2xl drop-shadow-md">
-    {slide.content}
-  </p>
-</div>
+                    <h3
+                      className="text-2xl md:text-[30px] font-semiboldX text-white mb-2"
+                      style={{
+                      filter: `
+                              drop-shadow(0px 2px 2px rgba(0,0,0,1)) 
+                              drop-shadow(0px 0px 15px rgba(139, 101, 43, 1))
+                             `,
+                      }}
+                    >
+                      {slide.title}
+                    </h3>
+                    <p className="text-white text-lg md:text-xl font-medium max-w-2xl drop-shadow-md">
+                      {slide.content}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
 
             {/* Controls */}
-            <button onClick={prevSlide} className="absolute top-1/2 left-4 -translate-y-1/2 text-[#b79662] p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all z-20 hover:scale-110">
+            <button
+              onClick={prevSlide}
+              className="absolute top-1/2 left-4 -translate-y-1/2 text-[#b79662] p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all z-20 hover:scale-110"
+            >
               <ChevronLeft size={70} />
             </button>
-            <button onClick={nextSlide} className="absolute top-1/2 right-4 -translate-y-1/2  text-[#b79662] p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all z-20 hover:scale-110">
+            <button
+              onClick={nextSlide}
+              className="absolute top-1/2 right-4 -translate-y-1/2  text-[#b79662] p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all z-20 hover:scale-110"
+            >
               <ChevronRight size={70} />
             </button>
           </div>
@@ -132,7 +188,12 @@ export default function ImageSlider() {
           {/* Dots */}
           <div className="flex justify-center mt-6 gap-3">
             {originalImages.map((_, index) => {
-              const activeIndex = currentIndex === 0 ? originalImages.length - 1 : currentIndex === images.length - 1 ? 0 : currentIndex - 1;
+              const activeIndex =
+                currentIndex === 0
+                  ? originalImages.length - 1
+                  : currentIndex === images.length - 1
+                    ? 0
+                    : currentIndex - 1;
               return (
                 <button
                   key={index}
