@@ -170,22 +170,22 @@ const features = [
 const steps = [
   {
     title: "Planning & Space Optimization",
-    desc: "Smart planning that maximizes every square foot without confusion or wastage",
+    desc: "Planning & Space Optimization is a critical component of efficient Project Management Consultancy, particularly in real estate development",
     icon: 1,
   },
   {
     title: "Cost Efficiency",
-    desc: "Budgets are monitored closely so you know where every rupee goes.",
+    desc: "Systematic planning, and controlled project cost is crucial. It is about optimizing budget to maximize project value and profitability.",
     icon: 2,
   },
   {
     title: "Flexible Execution",
-    desc: "Adapting to design updates and site realities while staying within deadlines.",
+    desc: "Demand patterns can shift during a project lifecycle. Flexible Execution is crucial because projects rarely move exactly as planned",
     icon: 3,
   },
   {
     title: "Handover",
-    desc: "Before handing over, we check every detail finishes, fittings, and quality. You move in with confidence, not stress.",
+    desc: "A well-managed handover is one of the most critical phases in the lifecycle of a project and it reflects a highly quality of execution, and coordination.",
     icon: 4,
   },
 ];
@@ -227,24 +227,24 @@ const MetamorphServicesPage = () => {
 
   const stats = [
     {
-      number: "27+",
-      label: "Years Experience",
-      desc: "Improving homes with expert craftsmanship for years",
+      number: "30+",
+      label: "YEARS EXPERIENCE",
+      desc: "Domestic & international market exposure. Seasoned real estate professional, educator & industry mentor.",
     },
     {
       number: "25+",
-      label: "Projects Completed",
-      desc: "Over 25+ successful projects delivered with quality and care across India.",
+      label: "PROJECT EXPERIENCE",
+      desc: "Hands on experience on branded & luxury residences. Deep experience on projects in Delhi/NCR region.",
     },
     {
       number: "20+",
-      label: "Skilled Experts",
-      desc: "In-House team of professionals, Subject matter Experts and Associates",
+      label: "SKILLED EXPERTS",
+      desc: "Skilled and expert academic professionals work together to build a new generation of real estate professionals.",
     },
     {
       number: "95%",
-      label: "Client Satisfaction",
-      desc: "Our Process for Stress-Free Project Delivery",
+      label: "CLIENT SATISFACTION",
+      desc: "Client satisfaction is a fundamental pillar and is at the heart of IREED India’s philosophy and service delivery.",
     },
   ];
 
@@ -313,7 +313,7 @@ const MetamorphServicesPage = () => {
                 Expertise, Financial Planning, Market Intelligence, Legal
                 Compliance & Complete Project Management.
               </p>
-{/* 
+              {/* 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   "End-to-End Project Management",
@@ -685,30 +685,29 @@ const MetamorphServicesPage = () => {
               </div>
 
               {/* Heading */}
-              <h2 className="text-4xl md:text-4xl font-extrabold leading-tight tracking-tight">
-                Construction And Residential{" "}
-                <span className="text-[#b79662]">Project Management</span>{" "}
-                Services
+              <h2 className="text-4xl md:text-4xl font-extrabold leading-tight text-[#b79662] tracking-tight">
+                Project Management{" "}
+                <span className="text-[#000]">
+                  And Construction Technology Services
+                </span>{" "}
               </h2>
 
               {/* Lead Paragraph */}
               <p className="text-gray-600 text-lg leading-relaxed">
-                Managing a construction project is more than coordinating labour
-                or completing interiors—it's about ensuring every stage, from
-                planning to handover, follows a structured, disciplined path.
-                That's exactly what Project Management Consultancy (PMC)
-                delivers.
+                India’s real estate growth is no longer limited to metropolitan
+                markets. Tier-2 cities are rapidly emerging as important hubs
+                for residential, commercial, and mixed-use developments.
+                However, many developers in these cities face challenges related
+                to project planning, execution, technology adoption, and cost
+                control.
               </p>
 
               {/* Detailed Description */}
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  At Metamorph Enterprise LLP, we provide professional project
-                  management consultancy services that bring clarity, control,
-                  and accountability to your construction project. As a trusted
-                  PMC for your project, we coordinate with architects,
-                  contractors, consultants, and vendors to ensure smooth
-                  execution.
+                  At IREED India, we provide professional project management
+                  consultancy services that bring clarity, control and
+                  accountability to real estate projects.
                 </p>
                 {/* <p>
               Budgets, timelines, materials, and on-site progress are monitored under one system so you never have to chase anyone.
@@ -736,7 +735,7 @@ const MetamorphServicesPage = () => {
         <section className="bg-white pt-16 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-[#000] ">
-              Proudly <span className="text-[#b79662]">Associated with</span>
+              Proudly <span className="text-[#b79662]">Associated With</span>
             </h2>
             <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
           </div>
