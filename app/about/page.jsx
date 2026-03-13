@@ -715,16 +715,70 @@ const MetamorphServicesPage = () => {
             <p className="font-medium italic">
               The result: projects that stay on schedule, within budget, and are delivered exactly as envisioned.
             </p> */}
-              </div>
+              </div>  
 
               {/* CTA Button */}
               <div className="pt-4">
-                <button className="group relative flex items-center gap-3 border-2 border-[#b79662] text-[#b79662] px-8 py-4 rounded-full font-bold transition-all duration-300 hover:bg-[#b79662] hover:text-white">
-                  Book Free PMC Consultation
-                  <div className="bg-[#b79662] rounded-full p-1 text-white transition-all duration-300 group-hover:bg-white group-hover:text-[#b79662]">
-                    <ArrowUpRight size={18} />
-                  </div>
-                </button>
+                 <button
+                    style={{
+                      padding: "14px 40px",
+                      backgroundColor: "#b79662",
+                      borderRadius: "8px",
+                      color: "#fff",
+                      fontSize: "1.1rem",
+                      fontWeight: "700",
+                      cursor: "pointer",
+                      display: "flex",
+                      textAlign: "center",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: "10px",
+                      position: "relative",
+                      overflow: "hidden",
+                      zIndex: 1,
+                      border: "2px solid #b79662",
+                      
+                      letterSpacing: "1px",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "100%";
+                      if (text) text.style.color = "#b79662";
+                    }}
+                    onMouseLeave={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "0%";
+                      if (text) text.style.color = "#fff";
+                    }}
+                  >
+                    <div
+                      className="hover-fill"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "0%",
+                        height: "100%",
+                        background: "#ffffff",
+                        transition: "width 0.4s ease",
+                        zIndex: -1,
+                      }}
+                    />
+                    <span
+                      className="btn-text"
+                      style={{
+                        position: "relative",
+                        zIndex: 1,
+                        color: "#fff",
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                      Book Free PMC Consultation
+                    </span>
+                  </button>
               </div>
             </div>
           </div>
