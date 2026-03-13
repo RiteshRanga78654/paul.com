@@ -91,11 +91,9 @@ const ServiceCardItem = ({
   description,
   image,
   bullets,
-  isExpanded,
-  onToggle,
 }) => {
   return (
-    <div className="group bg-[#4c4949] rounded-2xl flex flex-col items-start text-left shadow-md hover:shadow-xl hover:shadow-[#b79662]/20 transition-all duration-500 border border-gray-700 hover:scale-[1.02] relative overflow-hidden h-full">
+    <div className="group bg-[#4c4949] rounded-2xl cursor-pointer flex flex-col items-start text-left shadow-md hover:shadow-xl hover:shadow-[#b79662]/20 transition-all duration-500 border border-gray-700 hover:scale-[1.02] relative overflow-hidden h-full cursor-default">
       {/* Image */}
       <div className="relative w-full h-64 overflow-hidden">
         <img
@@ -115,20 +113,14 @@ const ServiceCardItem = ({
           {title}
         </h3>
 
-        {/* Description */}
-        <p
-          className={`text-sm text-gray-200 leading-relaxed whitespace-pre-line transition-all duration-300 ${
-            !isExpanded ? "line-clamp-3" : ""
-          }`}
-        >
+        {/* Description - Clamped by default, expands on group-hover */}
+        <p className="text-sm text-gray-200 leading-relaxed whitespace-pre-line transition-all duration-300 line-clamp-3 group-hover:line-clamp-none">
           {description}
         </p>
 
-        {/* Bullets */}
+        {/* Bullets - Revealed on group-hover */}
         <div
-          className={`transition-all duration-500 overflow-hidden ${
-            isExpanded ? "max-h-60 mt-4 opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className="transition-all duration-500 overflow-hidden max-h-0 opacity-0 group-hover:max-h-96 group-hover:mt-4 group-hover:opacity-100"
         >
           {bullets && (
             <ul className="list-disc pl-5 space-y-1 text-sm text-gray-200 marker:text-[#b79662]">
@@ -139,20 +131,16 @@ const ServiceCardItem = ({
           )}
         </div>
 
-        {/* Button */}
-        <button
-          onClick={onToggle}
-          className="mt-4 text-[#b79662] font-black text-xs uppercase tracking-widest hover:text-white transition-colors flex items-center gap-1"
-        >
-          {isExpanded ? "Show Less" : "Read More"}
+        {/* Indicator Label */}
+        <div className="mt-4 text-[#b79662] font-black text-xs uppercase tracking-widest transition-colors flex items-center gap-1">
+          <span className="group-hover:hidden">Read More</span>
+          <span className="hidden group-hover:inline">View Details</span>
 
           <ChevronDown
             size={14}
-            className={`transition-transform duration-300 ${
-              isExpanded ? "rotate-180" : ""
-            }`}
+            className="transition-transform duration-300 group-hover:rotate-180"
           />
-        </button>
+        </div>
       </div>
 
       {/* Bottom Hover Line */}
@@ -160,7 +148,6 @@ const ServiceCardItem = ({
     </div>
   );
 };
-
 const StarIcon = ({ color = "#b79662" }) => (
   <svg
     width="56"
