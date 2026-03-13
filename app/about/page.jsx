@@ -170,7 +170,7 @@ const features = [
 const steps = [
   {
     title: "Planning & Space Optimization",
-    desc: "Planning & Space Optimization is a critical component of efficient Project Management Consultancy, particularly in real estate development",
+    desc: "Planning & Space Optimization is a critical component of efficient Project Management Consultancy, particularly in real estate development.",
     icon: 1,
   },
   {
@@ -180,7 +180,7 @@ const steps = [
   },
   {
     title: "Flexible Execution",
-    desc: "Demand patterns can shift during a project lifecycle. Flexible Execution is crucial because projects rarely move exactly as planned",
+    desc: "Demand patterns can shift during a project lifecycle. Flexible Execution is crucial because projects rarely move exactly as planned.",
     icon: 3,
   },
   {
@@ -271,7 +271,7 @@ const MetamorphServicesPage = () => {
 
         <section className="relative min-h-[90vh] w-full flex items-center pt-10 pb-12 px-6 sm:px-8 md:px-16 overflow-hidden">
           {/* Background with Overlay */}
-          <div className="absolute inset-0 z-0">
+          {/* <div className="absolute inset-0 z-0">
             <video
               autoPlay
               muted
@@ -280,21 +280,32 @@ const MetamorphServicesPage = () => {
               className="w-full h-full object-cover"
             >
               <source src="/assets/video/bg video.mp4" type="video/mp4" />
-              {/* Optional: fall back image if video fails to load */}
+             
               <img
                 src="/assets/about/clubhousehero.png"
                 alt="Modern Architecture"
               />
             </video>
 
-            {/* The Overlay and Blur */}
+          
             <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
-          </div>
+          </div> */}
+          <div className="absolute inset-0 z-0">
+  {/* Replaced video with image */}
+  <img
+    src="/assets/paul-sir-image/ChatGPT Image Mar 13, 2026, 05_54_42 PM.png"
+    alt="Modern Architecture"
+    className="w-full h-full object-cover"
+  />
+
+  {/* The Overlay and Blur remain the same */}
+  <div className="absolute inset-0  "></div>
+</div>
 
           <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-8">
-              <div className="inline-block px-4 py-1 rounded-full border border-[#b79662] bg-[#b79662]/10">
+              {/* <div className="inline-block px-4 py-1 rounded-full border border-[#b79662] bg-[#b79662]/10">
                 <span className="text-[#b79662] text-sm font-semibold tracking-wider uppercase">
                   • 30+ YEARS OF IN SALES, CRM, MARKETING & CUSTOMER HOSPITALITY
                 </span>
@@ -312,7 +323,7 @@ const MetamorphServicesPage = () => {
                 Managing Real Estate Projects For Emerging Developers. Technical
                 Expertise, Financial Planning, Market Intelligence, Legal
                 Compliance & Complete Project Management.
-              </p>
+              </p> */}
               {/* 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
