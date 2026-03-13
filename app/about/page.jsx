@@ -192,24 +192,24 @@ const steps = [
 
 const projects = [
   {
-    title: "Premium Bungalows",
-    desc: "High-end residential projects where attention to detail and finishing quality are top priorities.",
-    img: "/assets/about/Premium-Bungalows.jpg",
+    title: "Township Projects",
+    desc: "Township developments in Tier-2 cities are becoming a major growth driver for the Indian real estate sector.",
+    img: "/assets/image.png",
   }, // Replace with real image path
   {
-    title: "Farmhouses ",
-    desc: "Large-scale lifestyle projects with landscaping, utilities, and multiple service integrations.",
-    img: "/assets/about/Farmhouses-Retreat-Villas.jpg",
+    title: "Farm House Projects",
+    desc: "Farm House Projects in Tier-2 cities, developers and landowners often require structured planning and handholding.",
+    img: "/assets/WhatsApp Image 2026-03-13 at 6.55.48 PM.jpeg",
+  }, // Replace with real image path
+  {
+    title: "High Rise Apartments",
+    desc: "High-rise residential developments in emerging Tier-2 cities present tremendous opportunities for developers. This is where PMC becomes critical.",
+    img: "/assets/WhatsApp Image 2026-03-13 at 6.56.13 PM.jpeg",
   }, // Replace with real image path
   {
     title: "Commercial Projects",
-    desc: "Offices, cafés, showrooms, and retail spaces requiring fast execution and functional planning.",
-    img: "/assets/about/1967.jpg",
-  }, // Replace with real image path
-  {
-    title: "Industrial Spaces",
-    desc: "Warehouses, manufacturing units, and industrial sheds with technical specifications and strict compliance.",
-    img: "/assets/about/Industrial-Space.jpg",
+    desc: "Commercial projects in Tier-2 Indian cities are witnessing rapid growth due to expanding business activity, urbanization, and improved infrastructure.",
+    img: "/assets/commercial.jpeg",
   }, // Replace with real image path
 ];
 
