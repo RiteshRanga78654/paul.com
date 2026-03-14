@@ -154,18 +154,47 @@ const Page = () => {
       <Header />
 
       {/* 1. Hero Image Section */}
-      <section className="relative min-h-[90vh] w-full overflow-hidden bg-[#ffffff]">
-        <div className="absolute inset-0">
-          <div className="relative w-full h-full overflow-hidden">
-            <img
-              src="/assets/eventhero.png"
-              alt="Business Conference"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/30"></div>
-          </div>
+      <section className="relative min-h-[90vh] w-full overflow-hidden bg-white">
+  {/* 1. Background Layer */}
+  <div className="absolute inset-0">
+    <div className="relative w-full h-full">
+      <img
+        src="/assets/eventhero.png"
+        alt="Business Conference"
+        className="w-full h-full object-cover"
+      />
+      {/* Dark overlay to make the white/gold text pop */}
+      <div className="absolute inset-0 bg-black/60"></div>
+    </div>
+  </div>
+
+  {/* 2. Content Layer */}
+  <div className="relative z-10 flex h-full min-h-[90vh] items-center">
+    <div className="container mx-auto px-6 md:px-12">
+      <div className="max-w-2xl">
+        
+        {/* Main Heading */}
+        <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight">
+          <span className="text-white block">Indian Market Opportunities</span>
+          <span className="text-[#b39359] block mt-1">Global Best Practices</span>
+        </h1>
+
+        {/* Description with Vertical Left Border */}
+        <div className="mt-8 flex gap-6">
+          {/* The Gold Vertical Line */}
+          <div className="w-1.5 bg-[#b39359] rounded-full"></div>
+          
+          <p className="text-lg md:text-xl text-gray-200 font-light leading-relaxed max-w-lg">
+            Expert guidance to navigate the complex landscape of global 
+            business operations.
+          </p>
         </div>
-      </section>
+
+        {/* Optional: Add a button here if needed */}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* 2. UPDATED SERVICE BOXES SECTION */}
       <section className="relative z-10 px-6 md:px-16 -mt-32 md:-mt-28 pb-20">
@@ -174,7 +203,7 @@ const Page = () => {
             {serviceBoxes.map((box, index) => (
               <div
                 key={index}
-                className="relative h-[400px] overflow-hidden group rounded-2xl shadow-xl bg-black"
+                className="relative h-[400px] overflow-hidden group rounded-2xl shadow-xl bg-black border-2 border-white p-2"
               >
                 {/* Background Image & Overlay */}
                 <div className="absolute inset-0">
@@ -231,66 +260,66 @@ const Page = () => {
                 requirements. IREED India specializes in corporate events
                 management, BTL activation.
               </p>
-               <button
-                    style={{
-                      padding: "14px 40px",
-                      backgroundColor: "#b79662",
-                      borderRadius: "8px",
-                      color: "#fff",
-                      fontSize: "1.1rem",
-                      fontWeight: "700",
-                      cursor: "pointer",
-                      display: "flex",
-                      textAlign: "center",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      gap: "10px",
-                      position: "relative",
-                      overflow: "hidden",
-                      zIndex: 1,
-                      border: "2px solid #b79662",
-                      
-                      letterSpacing: "1px",
-                      transition: "all 0.3s ease",
-                    }}
-                    onMouseEnter={(e) => {
-                      const fill = e.currentTarget.querySelector(".hover-fill");
-                      const text = e.currentTarget.querySelector(".btn-text");
-                      if (fill) fill.style.width = "100%";
-                      if (text) text.style.color = "#b79662";
-                    }}
-                    onMouseLeave={(e) => {
-                      const fill = e.currentTarget.querySelector(".hover-fill");
-                      const text = e.currentTarget.querySelector(".btn-text");
-                      if (fill) fill.style.width = "0%";
-                      if (text) text.style.color = "#fff";
-                    }}
-                  >
-                    <div
-                      className="hover-fill"
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "0%",
-                        height: "100%",
-                        background: "#ffffff",
-                        transition: "width 0.4s ease",
-                        zIndex: -1,
-                      }}
-                    />
-                    <span
-                      className="btn-text"
-                      style={{
-                        position: "relative",
-                        zIndex: 1,
-                        color: "#fff",
-                        transition: "color 0.3s ease",
-                      }}
-                    >
-                     View More
-                    </span>
-                  </button>
+              <button
+                style={{
+                  padding: "14px 40px",
+                  backgroundColor: "#b79662",
+                  borderRadius: "8px",
+                  color: "#fff",
+                  fontSize: "1.1rem",
+                  fontWeight: "700",
+                  cursor: "pointer",
+                  display: "flex",
+                  textAlign: "center",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "10px",
+                  position: "relative",
+                  overflow: "hidden",
+                  zIndex: 1,
+                  border: "2px solid #b79662",
+
+                  letterSpacing: "1px",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
+                  if (fill) fill.style.width = "100%";
+                  if (text) text.style.color = "#b79662";
+                }}
+                onMouseLeave={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
+                  if (fill) fill.style.width = "0%";
+                  if (text) text.style.color = "#fff";
+                }}
+              >
+                <div
+                  className="hover-fill"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "0%",
+                    height: "100%",
+                    background: "#ffffff",
+                    transition: "width 0.4s ease",
+                    zIndex: -1,
+                  }}
+                />
+                <span
+                  className="btn-text"
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                    color: "#fff",
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  View More
+                </span>
+              </button>
             </div>
 
             <div className="relative">
@@ -302,19 +331,19 @@ const Page = () => {
                     alt="Event"
                   />
                   <img
-                    src="/assets/paras (6).jpg"
+                    src="/assets/Event/ireed22.JPG"
                     className="rounded-2xl w-full h-48 object-cover border border-[#4c4949]/20"
                     alt="Event"
                   />
                 </div>
                 <div className="pt-12 space-y-4">
                   <img
-                    src="/assets/paras (6).jpg"
+                    src="/assets/BPimages/DSC_0342.JPG"
                     className="rounded-2xl w-full h-48 object-cover border border-[#4c4949]/20"
                     alt="Event"
                   />
                   <img
-                    src="/assets/paras (6).jpg"
+                    src="/assets/Event/7.png"
                     className="rounded-2xl w-full h-64 object-cover border border-[#4c4949]/20"
                     alt="Event"
                   />
