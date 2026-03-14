@@ -89,7 +89,7 @@ const Page = () => {
     {
       title: "Event",
       desc: "IREED India is widely recognized as one of the most effective event strategists. It specializes to conceptualize, curate, and execute impactful industry events has helped numerous real estate brands gain exceptional visibility, credibility, and market traction.",
-      img: "/assets/paras (6).jpg",
+      img: "/assets/Event/Gemini_Generated_Image_sfp7fwsfp7fwsfp7.png",
     },
     {
       title: "Brand Activation",
@@ -99,7 +99,7 @@ const Page = () => {
     {
       title: "Exhibition",
       desc: "IREED India offers a specialist platform for organizing investors exhibitions and engage capital market specialists. The platform connects developers, institutional investors, financial institutions, and capital market experts in an environment that encourages funding, partnerships, and large investment opportunities.",
-      img: "/assets/paras (6).jpg",
+      img: "/assets/Event/Gemini_Generated_Image_mihujamihujamihu.png",
     },
   ];
 
@@ -183,7 +183,7 @@ const Page = () => {
                     alt={box.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/60 group-hover:bg-black/80 transition-all duration-500"></div>
+                  <div className="absolute inset-0 bg-black/45 group-hover:bg-black/80 transition-all duration-500"></div>
                 </div>
 
                 {/* Content Container */}
@@ -297,7 +297,7 @@ const Page = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <img
-                    src="/assets/paras (6).jpg"
+                    src="/assets/Event/Gemini_Generated_Image_mihujamihujamihu.png"
                     className="rounded-2xl w-full h-64 object-cover border border-[#4c4949]/20"
                     alt="Event"
                   />
