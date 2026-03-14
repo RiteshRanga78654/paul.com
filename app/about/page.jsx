@@ -919,8 +919,8 @@ const MetamorphServicesPage = () => {
         <section className="pt-16 px-6 sm:px-8 md:px-16 ">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl text-[#000] font-bold text-center ">
-              Why Choose Metamorph As Your{" "}
-              <span className="text-[#b79662]">PMC Partner?</span>
+              Why Choose IREED India As {" "}
+              <span className="text-[#b79662]">Your PMC Partner?</span>
             </h2>
             <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

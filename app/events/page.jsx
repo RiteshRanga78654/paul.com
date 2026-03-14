@@ -3,18 +3,16 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import TestimonialSlider from "../components/TestimonialSlider";
-import Marquee from "../components/Marquee";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // Optional: for icons
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 
-// --- 1. CountUp Animation Logic (The Missing Part) ---
+// --- CountUp Animation Logic ---
 const CountUp = ({ end, duration = 2000 }) => {
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
@@ -34,12 +32,9 @@ const CountUp = ({ end, duration = 2000 }) => {
 
   useEffect(() => {
     if (!hasStarted) return;
-
     let start = 0;
-    // Extract numbers from strings like "27+" or "95%"
     const endValue = parseInt(end.replace(/\D/g, ""));
     const increment = endValue / (duration / 16);
-
     const timer = setInterval(() => {
       start += increment;
       if (start >= endValue) {
@@ -49,7 +44,6 @@ const CountUp = ({ end, duration = 2000 }) => {
         setCount(Math.floor(start));
       }
     }, 16);
-
     return () => clearInterval(timer);
   }, [hasStarted, end, duration]);
 
@@ -61,7 +55,7 @@ const CountUp = ({ end, duration = 2000 }) => {
   );
 };
 
-// --- 2. Infinite Scrolling Row Component ---
+// --- Infinite Scrolling Row Component ---
 const ScrollingRow = ({ images, direction = "left", duration = 30 }) => {
   const duplicatedImages = [...images, ...images];
   const isLeftToRight = direction === "right";
@@ -70,14 +64,8 @@ const ScrollingRow = ({ images, direction = "left", duration = 30 }) => {
     <div className="flex overflow-hidden w-full select-none">
       <motion.div
         className="flex gap-4 md:gap-6 pr-4 md:pr-6"
-        animate={{
-          x: isLeftToRight ? ["-50%", "0%"] : ["0%", "-50%"],
-        }}
-        transition={{
-          duration: duration,
-          ease: "linear",
-          repeat: Infinity,
-        }}
+        animate={{ x: isLeftToRight ? ["-50%", "0%"] : ["0%", "-50%"] }}
+        transition={{ duration: duration, ease: "linear", repeat: Infinity }}
       >
         {duplicatedImages.map((src, idx) => (
           <div
@@ -100,17 +88,17 @@ const Page = () => {
   const serviceBoxes = [
     {
       title: "Event",
-      desc: "We create amazing occasion and entertainment events through the extraordinary event design, planning & production. Rated #1 event management company in Mumbai.",
+      desc: "IREED India is widely recognized as one of the most effective event strategists. It specializes to conceptualize, curate, and execute impactful industry events has helped numerous real estate brands gain exceptional visibility, credibility, and market traction.",
       img: "/assets/paras (6).jpg",
     },
     {
       title: "Brand Activation",
-      desc: "We proudly presents its very own BTL segment ONE ON ONE that involves the use of subtle marketing techniques to get the product right to the consumers.",
+      desc: "IREED India begins with a deep market understanding, especially for developers seeking maximum visibility, credibility, and market traction — it is about strategically positioning a developer or project in front of the right audience with strong experiential engagement.",
       img: "/assets/paras (6).jpg",
     },
     {
       title: "Exhibition",
-      desc: "Exhibitions are major events for any company & we fully understand the need for a return on investment. Every exhibition stall is designed and constructed by experts.",
+      desc: "IREED India offers a specialist platform for organizing investors exhibitions and engage capital market specialists. The platform connects developers, institutional investors, financial institutions, and capital market experts in an environment that encourages funding, partnerships, and large investment opportunities.",
       img: "/assets/paras (6).jpg",
     },
   ];
@@ -136,7 +124,6 @@ const Page = () => {
     "/assets/about/slider/projectimg9.jpg",
     "/assets/about/slider/projectimg17.jpg",
     "/assets/about/slider/projectimg13.jpg",
-   
   ];
 
   const stats = [
@@ -166,54 +153,54 @@ const Page = () => {
     <>
       <Header />
 
-      {/* 1. Hero Video Section */}
+      {/* 1. Hero Image Section */}
       <section className="relative min-h-[90vh] w-full overflow-hidden bg-[#ffffff]">
         <div className="absolute inset-0">
           <div className="relative w-full h-full overflow-hidden">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
+            <img
+              src="/assets/paul-sir-image/image.png"
+              alt="Business Conference"
               className="w-full h-full object-cover"
-            >
-              <source
-                src="/assets/video/0_Business_Conference_2160x3840.mov"
-                type="video/mp4"
-              />
-            </video>
+            />
             <div className="absolute inset-0 bg-black/30"></div>
           </div>
         </div>
       </section>
 
-      {/* 2. Overlapping Service Boxes */}
+      {/* 2. UPDATED SERVICE BOXES SECTION */}
       <section className="relative z-10 px-6 md:px-16 -mt-32 md:-mt-28 pb-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {serviceBoxes.map((box, index) => (
               <div
                 key={index}
-                className="relative h-[400px] overflow-hidden group rounded-2xl shadow-xl"
+                className="relative h-[400px] overflow-hidden group rounded-2xl shadow-xl bg-black"
               >
+                {/* Background Image & Overlay */}
                 <div className="absolute inset-0">
                   <img
                     src={box.img}
                     alt={box.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition-all duration-500"></div>
+                  <div className="absolute inset-0 bg-black/60 group-hover:bg-black/80 transition-all duration-500"></div>
                 </div>
-                <div className="relative h-full p-8 flex flex-col justify-end">
+
+                {/* Content Container */}
+                <div className="relative z-10 h-full p-8 flex flex-col justify-end">
                   <h3 className="text-3xl font-bold text-[#b79662] mb-4 border-b-2 border-[#b79662] w-fit pb-1">
                     {box.title}
                   </h3>
-                  <p className="text-gray-200 text-sm leading-relaxed mb-6">
-                    {box.desc}
-                  </p>
-                  <button className="text-white font-bold text-sm w-fit border-b border-white hover:text-[#b79662] hover:border-[#b79662] transition-all">
-                    Read More
-                  </button>
+
+                  {/* Expandable Wrapper */}
+                  <div className="max-h-0 opacity-0 overflow-hidden group-hover:max-h-[200px] group-hover:opacity-100 transition-all duration-700 ease-in-out">
+                    <p className="text-gray-200 text-sm leading-relaxed mb-6">
+                      {box.desc}
+                    </p>
+                    {/* <button className="text-white font-bold text-sm w-fit border-b border-white hover:text-[#b79662] hover:border-[#b79662] transition-all">
+                      Read More
+                    </button> */}
+                  </div>
                 </div>
               </div>
             ))}
@@ -231,79 +218,79 @@ const Page = () => {
                   Craftworld Events
                 </span>
                 <h1 className="text-4xl md:text-4xl font-bold leading-tight">
-                  Corporate Event Management Company in{" "}
+                  Corporate Event Management Specialist{" "}
                   <span className="text-[#b79662]">
-                    Mumbai – Trusted by Over 200+ Brands
+                    –Trusted By Top Real Estate Brands
                   </span>
                 </h1>
               </div>
               <p className="text-[#4c4949] text-lg leading-relaxed max-w-2xl">
-                We are nationally recognized event planning & organising company
-                based in Mumbai. We started with a purpose to provide one stop
-                solutions for all your Event-related worries. Craftworld Events
-                company specialize in corporate events management, BTL
-                activation.
+                IREED India is a nationally recognized event planning &
+                organizing company based in Gurgaon. IREED started with a
+                purpose to provide one stop solution for all your event-related
+                requirements. IREED India specializes in corporate events
+                management, BTL activation.
               </p>
-              <button
-                style={{
-                  padding: "14px 40px",
-                  backgroundColor: "#b79662",
-                  borderRadius: "8px",
-                  color: "#fff",
-                  fontSize: "1.1rem",
-                  fontWeight: "700",
-                  cursor: "pointer",
-                  display: "flex",
-                  textAlign: "center",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  gap: "10px",
-                  position: "relative",
-                  overflow: "hidden",
-                  zIndex: 1,
-                  border: "2px solid #b79662",
-
-                  letterSpacing: "1px",
-                  transition: "all 0.3s ease",
-                }}
-                onMouseEnter={(e) => {
-                  const fill = e.currentTarget.querySelector(".hover-fill");
-                  const text = e.currentTarget.querySelector(".btn-text");
-                  if (fill) fill.style.width = "100%";
-                  if (text) text.style.color = "#b79662";
-                }}
-                onMouseLeave={(e) => {
-                  const fill = e.currentTarget.querySelector(".hover-fill");
-                  const text = e.currentTarget.querySelector(".btn-text");
-                  if (fill) fill.style.width = "0%";
-                  if (text) text.style.color = "#fff";
-                }}
-              >
-                <div
-                  className="hover-fill"
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "0%",
-                    height: "100%",
-                    background: "#ffffff",
-                    transition: "width 0.4s ease",
-                    zIndex: -1,
-                  }}
-                />
-                <span
-                  className="btn-text"
-                  style={{
-                    position: "relative",
-                    zIndex: 1,
-                    color: "#fff",
-                    transition: "color 0.3s ease",
-                  }}
-                >
-                  View More
-                </span>
-              </button>
+               <button
+                    style={{
+                      padding: "14px 40px",
+                      backgroundColor: "#b79662",
+                      borderRadius: "8px",
+                      color: "#fff",
+                      fontSize: "1.1rem",
+                      fontWeight: "700",
+                      cursor: "pointer",
+                      display: "flex",
+                      textAlign: "center",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      gap: "10px",
+                      position: "relative",
+                      overflow: "hidden",
+                      zIndex: 1,
+                      border: "2px solid #b79662",
+                      
+                      letterSpacing: "1px",
+                      transition: "all 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "100%";
+                      if (text) text.style.color = "#b79662";
+                    }}
+                    onMouseLeave={(e) => {
+                      const fill = e.currentTarget.querySelector(".hover-fill");
+                      const text = e.currentTarget.querySelector(".btn-text");
+                      if (fill) fill.style.width = "0%";
+                      if (text) text.style.color = "#fff";
+                    }}
+                  >
+                    <div
+                      className="hover-fill"
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "0%",
+                        height: "100%",
+                        background: "#ffffff",
+                        transition: "width 0.4s ease",
+                        zIndex: -1,
+                      }}
+                    />
+                    <span
+                      className="btn-text"
+                      style={{
+                        position: "relative",
+                        zIndex: 1,
+                        color: "#fff",
+                        transition: "color 0.3s ease",
+                      }}
+                    >
+                     View More
+                    </span>
+                  </button>
             </div>
 
             <div className="relative">
@@ -347,53 +334,43 @@ const Page = () => {
             </div>
           </div>
 
+          {/* Media Partners Swiper */}
           <div className="border-t border-[#4c4949]/20 pt-12">
-            {/* Header Section */}
-            <div className="flex items-center justify-between mb-10  max-w-7xl mx-auto">
-              <h3 className="text-[#b79660] text-lg font-bold  tracking-wider">
+            <div className="flex items-center justify-between mb-10 max-w-7xl mx-auto">
+              <h3 className="text-[#b79660] text-lg font-bold tracking-wider">
                 Our Media Partners
               </h3>
-
-              {/* Navigation Buttons in Gold */}
               <div className="flex gap-3">
-                <button className="prev-btn p-2 border border-[#b79660]/40 text-[#b79660] rounded-5px hover:bg-[#b79660] hover:text-white transition-all duration-300">
+                <button className="prev-btn p-2 border border-[#b79660]/40 text-[#b79660] rounded hover:bg-[#b79660] hover:text-white transition-all">
                   <ChevronLeft size={30} />
                 </button>
-                <button className="next-btn p-2 border border-[#b79660]/40 text-[#b79660] rounded-5px hover:bg-[#b79660] hover:text-white transition-all duration-300">
+                <button className="next-btn p-2 border border-[#b79660]/40 text-[#b79660] rounded hover:bg-[#b79660] hover:text-white transition-all">
                   <ChevronRight size={30} />
                 </button>
               </div>
             </div>
-
-            <div className="w-full max-w-7xl mx-auto pb-10 ">
-              <Swiper
-                modules={[Navigation]}
-                spaceBetween={20}
-                slidesPerView={2}
-                navigation={{
-                  prevEl: ".prev-btn",
-                  nextEl: ".next-btn",
-                }}
-                breakpoints={{
-                  640: { slidesPerView: 3 },
-                  1024: { slidesPerView: 5 },
-                }}
-                className="partner-swiper"
-              >
-                {partners.map((p, i) => (
-                  <SwiperSlide key={i}>
-                    {/* Logo Card with Gold Border & Glow on Hover */}
-                    <div className="group h-32 flex items-center justify-center border border-[#b79660]/20 rounded-lg p-6 bg-white/5 hover:border-[#b79660] hover:shadow-[0_0_15px_rgba(183,150,96,0.3)] transition-all duration-500 cursor-pointer">
-                      <img
-                        src={p.logo}
-                        alt={p.name}
-                        className="max-h-full w-auto object-contain  transition-all duration-500"
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={20}
+              slidesPerView={2}
+              navigation={{ prevEl: ".prev-btn", nextEl: ".next-btn" }}
+              breakpoints={{
+                640: { slidesPerView: 3 },
+                1024: { slidesPerView: 5 },
+              }}
+            >
+              {partners.map((p, i) => (
+                <SwiperSlide key={i}>
+                  <div className="h-32 flex items-center justify-center border border-[#b79660]/20 rounded-lg p-6 bg-white/5 hover:border-[#b79660] transition-all cursor-pointer">
+                    <img
+                      src={p.logo}
+                      alt={p.name}
+                      className="max-h-full w-auto object-contain"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>
@@ -425,8 +402,6 @@ const Page = () => {
         </div>
       </section>
 
-      {/*  */}
-
       <section className="bg-white py-20 px-6 md:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto  ">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -439,22 +414,25 @@ const Page = () => {
 
               <div className="space-y-6 text-[#4c4949] text-lg leading-relaxed max-w-xl">
                 <p>
-                  At Craftworld Events, the ideal customer experience in
-                  occasion is a comprehensive, yet flexible framework for
-                  achieving customer loyalty.
+                  At IREED India Events, the focus is on creating an ideal
+                  customer experience that becomes the foundation for long-term
+                  brand loyalty. The approach combines a structured framework
+                  with the flexibility required to reflect the unique identity
+                  of each real estate brand.
                 </p>
                 {/* <p>
                 Therefore by learning and understanding your needs, we can tailor the pieces of the framework that are necessary to help you create the bonds of Customer Loyalty with your customers.
               </p> */}
                 <p>
-                  Here, you'll find a platform that will be unique to you and
-                  your brand – a platform that will define your success. Current
-                  success stories at{" "}
-                  <span className="text-[#b79662]">"Craftworld Events"</span>{" "}
-                  include Indian Kids Fashion Week and Chef's Connect.
+                  Every event is designed to deliver a comprehensive yet
+                  adaptable platform where developers, investors, channel
+                  partners, and industry stakeholders can connect meaningfully.
+                  The goal is not merely to organize an event, but to create an
+                  ecosystem where brands communicate their vision, projects, and
+                  value proposition with maximum impact.
                 </p>
               </div>
-{/* 
+              {/* 
               <button className="group flex items-center gap-3 bg-transparent border border-white/20 px-10 py-4 rounded-md text-white font-bold hover:bg-[#b79662] hover:border-[#b79662] transition-all duration-300">
                 View More
                 <ArrowRight
@@ -472,7 +450,7 @@ const Page = () => {
               <div className="relative z-10 aspect-video rounded-xl overflow-hidden shadow-2xl border border-white/10">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/NYbFAiZgvAM"
+                  src="https://www.youtube.com/embed/BdcGsOtOBOw?start=19"
                   title="Craftworld Events Reel"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -485,7 +463,6 @@ const Page = () => {
         </div>
       </section>
 
-      {/* 4. Infinite "Our Work" Slider Section */}
       <section className="bg-[#ffffff] py-5 overflow-hidden ">
         <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[#000] ">
@@ -513,7 +490,6 @@ const Page = () => {
         </div>
       </section>
 
-      {/* <Marquee /> */}
       <TestimonialSlider />
       <Footer />
     </>
