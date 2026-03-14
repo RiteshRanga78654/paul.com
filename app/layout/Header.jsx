@@ -149,7 +149,7 @@ const Header = () => {
               transition: "color 0.3s ease",
             }}
           >
-            let's Talk
+            Let's Talk
           </span>
         </button>
           </div>
