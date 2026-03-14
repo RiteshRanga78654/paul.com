@@ -44,7 +44,7 @@ const HeroSlider = () => {
       desc: "Advanced leadership growth programs that use practical frameworks and insights made just for the changing real estate sector to improve sales performance and strategic thinking.",
       icon: <GraduationCap size={40} className="text-[#b79662]" />,
       image:
-        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
+        "/assets/services/ireed56.png",
     },
     {
       title: "Hiring and Placement",
@@ -60,7 +60,7 @@ const HeroSlider = () => {
       desc: "Our industry-specific real estate certification programs range from foundational to master’s-level training, complemented by digital, technology, and postgraduate business programs that support strategic, data-driven career growth.",
       icon: <Coins size={40} className="text-[#b79662]" />,
       image:
-        "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800",
+        "/assets/services/image.png",
     },
     {
       title: "Project Consultation",
@@ -108,41 +108,15 @@ const HeroSlider = () => {
   ];
 
   const slides = [
-    {
-      id: 1,
-      title: "India's Leading",
-      highlight: "GCC Enabler",
-      desc: "Your definitive partner for end-to-end GCC excellence—empowering global enterprises with future-ready solutions.",
-      bg: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069",
-    },
-    {
-      id: 2,
-      title: "Innovative",
-      highlight: "Tech Solutions",
-      desc: "Scalable infrastructure and digital transformation strategies for modern enterprises.",
-      bg: "/assets/full-stack.jpg",
-    },
+   
     {
       id: 3,
-      title: "Future Ready",
-      highlight: "Consultancy",
+      title: "Future Ready Consultancy",
+      highlight: "With Unmatched Excellence",
       desc: "Expert guidance to navigate the complex landscape of global business operations.",
-      bg: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070",
-    },
-    {
-      id: 4,
-      title: "Global Reach",
-      highlight: "Local Impact",
-      desc: "Bridging the gap between international standards and local execution excellence.",
       bg: "/assets/BPimages/DSC02419.JPG",
     },
-    {
-      id: 5,
-      title: "Unmatched",
-      highlight: "Excellence",
-      desc: "Consistently delivering high-value results through dedicated support and mentorship.",
-      bg: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070",
-    },
+ 
   ];
 
   const steps = [
@@ -240,7 +214,7 @@ const HeroSlider = () => {
 
                 <div className="container mx-auto px-6 md:px-22 relative z-10">
                   <div className="max-w-3xl space-y-6">
-                    <h1 className="text-4xl md:text-7xl font-bold text-[#f4f4f4] leading-tight">
+                    <h1 className="text-3xl md:text-4xl font-bold text-[#f4f4f4] leading-tight">
                       {slide.title} <br />
                       <span className="text-[#b79662]">
                         {slide.highlight}
