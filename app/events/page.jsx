@@ -158,7 +158,7 @@ const Page = () => {
         <div className="absolute inset-0">
           <div className="relative w-full h-full overflow-hidden">
             <img
-              src="/assets/paul-sir-image/image.png"
+              src="/assets/eventhero.png"
               alt="Business Conference"
               className="w-full h-full object-cover"
             />

@@ -31,6 +31,7 @@ import SelectedWork from "./components/SelectedWork";
 import AboutSlider from "./components/AboutSlider";
 import Googlereview from "./components/Googlereview";
 
+
 import Slider from "./components/Slider";
 // import Exp from "./components/Exp";
 
@@ -86,14 +87,23 @@ import Slider from "./components/Slider";
 //     </div>
 //   );
 // };
+
+
 const ServiceCardItem = ({
   title,
   description,
   image,
   bullets,
+  isExpanded, // Received from parent
+  onToggle, // Received from parent
 }) => {
   return (
-    <div className="group bg-[#4c4949] rounded-2xl cursor-pointer flex flex-col items-start text-left shadow-md hover:shadow-xl hover:shadow-[#b79662]/20 transition-all duration-500 border border-gray-700 hover:scale-[1.02] relative overflow-hidden h-full cursor-default">
+    <div
+      onClick={onToggle} // Clicking ANY card triggers the global toggle
+      className={`group bg-[#4c4949] rounded-2xl flex flex-col items-start text-left shadow-md transition-all duration-500 border border-gray-700 hover:scale-[1.02] relative overflow-hidden h-full cursor-pointer ${
+        isExpanded ? "shadow-xl shadow-[#b79662]/20" : "hover:shadow-lg"
+      }`}
+    >
       {/* Image */}
       <div className="relative w-full h-64 overflow-hidden">
         <img
@@ -101,7 +111,7 @@ const ServiceCardItem = ({
             image ||
             "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop"
           }
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className={`w-full h-full object-cover transition-transform duration-700 ${isExpanded ? "scale-110" : ""}`}
           alt={title}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#4c4949] to-transparent opacity-60" />
@@ -109,18 +119,24 @@ const ServiceCardItem = ({
 
       {/* Content */}
       <div className="p-8 pt-6 w-full flex-grow flex flex-col">
-        <h3 className="text-xl font-bold text-white mb-4 leading-snug group-hover:text-[#b79662] transition-colors">
+        <h3
+          className={`text-xl font-bold mb-4 leading-snug transition-colors ${isExpanded ? "text-[#b79662]" : "text-white"}`}
+        >
           {title}
         </h3>
 
-        {/* Description - Clamped by default, expands on group-hover */}
-        <p className="text-sm text-gray-200 leading-relaxed whitespace-pre-line transition-all duration-300 line-clamp-3 group-hover:line-clamp-none">
+        {/* Text Expansion Logic */}
+        <p
+          className={`text-sm text-gray-200 leading-relaxed whitespace-pre-line transition-all duration-300 ${isExpanded ? "line-clamp-none" : "line-clamp-3"}`}
+        >
           {description}
         </p>
 
-        {/* Bullets - Revealed on group-hover */}
+        {/* Bullets Visibility */}
         <div
-          className="transition-all duration-500 overflow-hidden max-h-0 opacity-0 group-hover:max-h-96 group-hover:mt-4 group-hover:opacity-100"
+          className={`transition-all duration-500 overflow-hidden ${
+            isExpanded ? "max-h-96 mt-4 opacity-100" : "max-h-0 opacity-0"
+          }`}
         >
           {bullets && (
             <ul className="list-disc pl-5 space-y-1 text-sm text-gray-200 marker:text-[#b79662]">
@@ -133,21 +149,22 @@ const ServiceCardItem = ({
 
         {/* Indicator Label */}
         <div className="mt-4 text-[#b79662] font-black text-xs uppercase tracking-widest transition-colors flex items-center gap-1">
-          <span className="group-hover:hidden">Read More</span>
-          <span className="hidden group-hover:inline">View Details</span>
-
+          <span>{isExpanded ? "View Less" : "Read More"}</span>
           <ChevronDown
             size={14}
-            className="transition-transform duration-300 group-hover:rotate-180"
+            className={`transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
           />
         </div>
       </div>
 
-      {/* Bottom Hover Line */}
-      <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#b79662] transition-all duration-500 group-hover:w-full" />
+      {/* Bottom Visual Line */}
+      <div
+        className={`absolute bottom-0 left-0 h-1 bg-[#b79662] transition-all duration-500 ${isExpanded ? "w-full" : "w-0"}`}
+      />
     </div>
   );
 };
+
 const StarIcon = ({ color = "#b79662" }) => (
   <svg
     width="56"
@@ -315,6 +332,8 @@ His analytical frameworks examine how multiple factors—such as infrastructure 
     },
   ];
 
+
+  
   const [isExpanded, setIsExpanded] = useState(false);
   const words = content.description?.split(" ") || [];
   const isLongText = words.length > 120;
@@ -733,6 +752,7 @@ His analytical frameworks examine how multiple factors—such as infrastructure 
                   description={service.description}
                   bullets={service.bullets}
                   image={service.image}
+                  // Pass the global state and the toggle function
                   isExpanded={allServicesExpanded}
                   onToggle={toggleAllServices}
                 />
