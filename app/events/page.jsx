@@ -214,9 +214,9 @@ const Page = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start mb-24">
             <div className="space-y-8">
               <div className="space-y-2">
-                <span className="text-[#b79662] text-sm font-bold tracking-[0.2em] uppercase">
+                {/* <span className="text-[#b79662] text-sm font-bold tracking-[0.2em] uppercase">
                   Craftworld Events
-                </span>
+                </span> */}
                 <h1 className="text-4xl md:text-4xl font-bold leading-tight">
                   Corporate Event Management Specialist{" "}
                   <span className="text-[#b79662]">
