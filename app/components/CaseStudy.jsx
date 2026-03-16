@@ -150,7 +150,7 @@ const CASE_STUDIES = [
     id: 1,
     category: "RESIDENTIAL | LUXURY",
     title: "Redefining Urban Sanctuaries:",
-    subtitle: "Architectural Excellence at 1 Central Park",
+    subtitle: "Architectural Excellence at Central Park Resorts",
     description:
       "True luxury isn't just about the view—it's about integrating nature into the heart of the modern metropolitan lifestyle.",
     image: "/assets/blog/download.jpg",
