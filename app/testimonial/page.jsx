@@ -2,47 +2,60 @@
 import React from "react";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
+import Youtube from "../components/Youtube";
+import LinkedIn from "../components/LinkedIn"
 
 const TestimonialsPage = () => {
   const goldTheme = "#b79662";
-  const navyTheme = "#1a2b4b";
+  const navyTheme = "#000";
 
   const testimonials = [
     {
-      quote: `Prowess Consulting played a crucial role in helping us refine and deliver compelling marketing assets for Wind River’s eLxr Pro offering. Their expertise and strategic content development ensured our messaging resonated with enterprise edge audiences, clearly articulating the value that our portfolio provides. Their collaboration and attention to detail made a measurable impact on our campaign’s success.`,
-      author: "Jeff Reser",
-      title:
-        "Sr. Product Marketing Line Manager, Product Marketing, Wind River",
+      quote: `Proud to have initiated this partnership with IREED India as we shape a strong performance culture at Whiteland Corporation for Westin Residences Gurugram. The REACT Corporate Training by IREED India provided our team with powerful insights into modern real estate sales strategies. The program was practical, engaging, and extremely relevant for premium branded residences like The Westin Residences Gurugram. It has helped our team enhance client engagement and project presentation.`,
+      author: "Suneet Singh",
+      title: "Chief Marketing Officer (CMO)",
+      company: "Whiteland Corporation LLC",
     },
     {
       quote:
-        "Prowess Consulting has been a valuable partner to C2FO's marketing organization for the past four years. Their analytics team is highly skilled and consistently delivers high-quality reports and visualizations.",
-      author: "Vishnu Sundaram",
-      title: "SVP, Growth Marketing, C2FO",
+        "IREED India played a crucial role in helping us refine our customer hospitality team at our newly launched ultra luxury project, The Kingstown Heights. Their expertise and strategic content development ensured our team resonated with target audience, clearly articulating the value that our project provides. Their collaboration and attention to detail made a measurable impact on our sales team’s success.",
+      author: "Nipun Panwar",
+      title: "Sr. Vice President, Sales & Marketing ",
+      company: "Navraj Infratech (P) Limited",
+    },
+    {
+      quote: `IREED India’s collaborative approach, attention to detail, and practical insights created a measurable impact on our sales performance and overall client engagement. Working with IREED India has been a valuable step toward enhancing our team’s effectiveness and project positioning.
+
+IREED India helped in strengthening and refining our customer experience. Their deep real estate industry expertise helped our team connect effectively with the target audience while clearly articulating the unique value proposition of our project.`,
+      author: "Jagdish Singh",
+      title: "Vice President, Sales & Marketing",
+      company: "Paras Buildtech India (P) Limited",
+    },
+    {
+      quote: `Excellent experience at IREED India! The faculties were knowledgeable and supportive, and the curriculum was well-structured and industry-relevant. I highly recommend IREED India to anyone looking to advance their skills and knowledge in real estate.
+
+The overall experience was truly invaluable with very useful insights for improved skill development. The training delivery methodology was impressive and his ability to connect with audience is exceptional.`,
+      author: "Sudhansu Sekhar Nayak",
+      title: "Senior Executive - Channel Sales",
+      company: "Trident Realty (P) Limited",
     },
     {
       quote:
-        "Prowess Consulting has been a valuable partner to C2FO's marketing organization for the past four years. Their analytics team is highly skilled and consistently delivers high-quality reports and visualizations.",
-      author: "Vishnu Sundaram",
-      title: "SVP, Growth Marketing, C2FO",
+        `IREED Academy’s real estate course in India is well-structured and practical. The trainer explained each concept clearly, and the assignments were helpful.
+
+After taking IREED real estate skill development programs, I have experienced an immediate change in my sales approach which was more knowledge based. My client engagement has improved and my ability to meaningfully engage with customers dramatically improved.`,
+      author: "Rajat Miglani",
+      title: "Channel Sales Specialist",
+      company:"Trident Realty (P) limited"
     },
     {
       quote:
-        "Prowess Consulting has been a valuable partner to C2FO's marketing organization for the past four years. Their analytics team is highly skilled and consistently delivers high-quality reports and visualizations.",
-      author: "Vishnu Sundaram",
-      title: "SVP, Growth Marketing, C2FO",
-    },
-    {
-      quote:
-        "Prowess Consulting has been a valuable partner to C2FO's marketing organization for the past four years. Their analytics team is highly skilled and consistently delivers high-quality reports and visualizations.",
-      author: "Vishnu Sundaram",
-      title: "SVP, Growth Marketing, C2FO",
-    },
-    {
-      quote:
-        "Prowess Consulting has been a valuable partner to C2FO's marketing organization for the past four years. Their analytics team is highly skilled and consistently delivers high-quality reports and visualizations.",
-      author: "Vishnu Sundaram",
-      title: "SVP, Growth Marketing, C2FO",
+        `IREED India's corporate training programs transformed our team's approach to real estate investments and market strategies. The sessions on REITs, InvITs, and sustainable development were packed with actionable insights from industry experts, delivered through interactive workshops and real-world case studies. 
+
+Our sales performance improved by 25% within months, thanks to the advanced analytics and leadership tools we gained. Highly recommend IREED for any organization aiming to upskill in India's dynamic real estate sector!`,
+      author: "Tammana Thakur",
+      title: "Channel Sales Specialist",
+      company:"Paras Buildtech India (P) Limited"
     },
   ];
 
@@ -65,74 +78,75 @@ const TestimonialsPage = () => {
           <div className="container mx-auto px-6 md:px-30 relative z-10">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-6xl font-bold text-[#1a2b4b] mb-6 leading-tight">
-                Client <span style={{ color: goldTheme }}>testimonials</span>
+                IREED Client{" "}
+                <span style={{ color: goldTheme }}>Testimonials</span>
               </h1>
               <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-8">
-                Discover why leading companies across industries trust Prowess
-                Consulting. We are proud to be modernizing businesses through
-                innovative technology, excellent program management, and
-                successful client outcomes.
+                IREED India has earned strong appreciation from real estate
+                developers, corporate teams, and young professionals for
+                delivering industry-focused, practical, and career-oriented real
+                estate training programs.
               </p>
               <button
-                    style={{
-                      padding: "14px 40px",
-                      backgroundColor: "#b79662",
-                      borderRadius: "8px",
-                      color: "#fff",
-                      fontSize: "1.1rem",
-                      fontWeight: "700",
-                      cursor: "pointer",
-                      display: "flex",
-                      textAlign: "center",
-                      justifyContent: "left",
-                      alignItems: "center",
-                      gap: "10px",
-                      position: "relative",
-                      overflow: "hidden",
-                      zIndex: 1,
-                      border: "2px solid #b79662",
-                      
-                      letterSpacing: "1px",
-                      transition: "all 0.3s ease",
-                    }}
-                    onMouseEnter={(e) => {
-                      const fill = e.currentTarget.querySelector(".hover-fill");
-                      const text = e.currentTarget.querySelector(".btn-text");
-                      if (fill) fill.style.width = "100%";
-                      if (text) text.style.color = "#b79662";
-                    }}
-                    onMouseLeave={(e) => {
-                      const fill = e.currentTarget.querySelector(".hover-fill");
-                      const text = e.currentTarget.querySelector(".btn-text");
-                      if (fill) fill.style.width = "0%";
-                      if (text) text.style.color = "#fff";
-                    }}
-                  >
-                    <div
-                      className="hover-fill"
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "0%",
-                        height: "100%",
-                        background: "#ffffff",
-                        transition: "width 0.4s ease",
-                        zIndex: -1,
-                      }}
-                    />
-                    <span
-                      className="btn-text"
-                      style={{
-                        position: "relative",
-                        zIndex: 1,
-                        color: "#fff",
-                        transition: "color 0.3s ease",
-                      }}
-                    >
-                     Start Your Journey
-                    </span>
-                  </button>  
+                style={{
+                  padding: "14px 40px",
+                  backgroundColor: "#b79662",
+                  borderRadius: "8px",
+                  color: "#fff",
+                  fontSize: "1.1rem",
+                  fontWeight: "700",
+                  cursor: "pointer",
+                  display: "flex",
+                  textAlign: "center",
+                  justifyContent: "left",
+                  alignItems: "center",
+                  gap: "10px",
+                  position: "relative",
+                  overflow: "hidden",
+                  zIndex: 1,
+                  border: "2px solid #b79662",
+
+                  letterSpacing: "1px",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
+                  if (fill) fill.style.width = "100%";
+                  if (text) text.style.color = "#b79662";
+                }}
+                onMouseLeave={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
+                  if (fill) fill.style.width = "0%";
+                  if (text) text.style.color = "#fff";
+                }}
+              >
+                <div
+                  className="hover-fill"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "0%",
+                    height: "100%",
+                    background: "#ffffff",
+                    transition: "width 0.4s ease",
+                    zIndex: -1,
+                  }}
+                />
+                <span
+                  className="btn-text"
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                    color: "#fff",
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  Start Your Journey
+                </span>
+              </button>
             </div>
           </div>
         </section>
@@ -171,7 +185,8 @@ const TestimonialsPage = () => {
                 <h4 className="font-bold text-xl" style={{ color: goldTheme }}>
                   — {testimonials[0].author}
                 </h4>
-                <p className="text-gray-600 italic">{testimonials[0].title}</p>
+                <p className="text-gray-600">{testimonials[0].title}</p>
+                <p className="text-gray-600">{testimonials[0].company}</p>
               </div>
             </div>
           </div>
@@ -192,84 +207,93 @@ const TestimonialsPage = () => {
 
             <div className="w-full md:w-1/2">
               <h2 className="text-4xl md:text-5xl font-bold text-[#1a2b4b] mb-6">
-                What our <span style={{ color: goldTheme }}>clients say</span>
+                What Our <span style={{ color: goldTheme }}>Clients Say</span>
               </h2>
-              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
-                <p>
-                  At Prowess Consulting, we’re more than a service
-                  provider—we’re a strategic partner trusted by enterprises in
-                  tech, finance, and beyond. Our clients rely on us to deliver
-                  measurable results through AI, automation, engineering, and
-                  content expertise. From streamlining operations to
-                  accelerating innovation, each testimonial reflects our 20+
-                  year commitment to excellence, clear communication, and
-                  data-driven impact
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed whitespace-pre-line">
+                <p className=" leading-relaxed">
+                  At IREED India, we are more than just a training service
+                  provider—we are a strategic partner trusted by leading
+                  enterprises in real estate development and allied industries.
+                  <br />
+                  <br />
+                  Our clients rely on us to deliver measurable business outcomes
+                  through advanced sales training, luxury real estate training,
+                  and project management consultancy. From streamlining
+                  operational processes to accelerating project sales, our
+                  programs are designed to create tangible impact on business
+                  performance.
                 </p>
                 <p>
-                  Each testimonial reflects our 20+ year commitment to
-                  excellence and data-driven impact.
+                  Each testimonial we receive reflects the strength of our 250+
+                  man-years of collective industry experience, our commitment to
+                  excellence, and our ability to translate knowledge into
+                  actionable strategies. Through clear communication, industry
+                  insights, and result-oriented training frameworks, IREED India
+                  continues to empower real estate organizations to achieve
+                  higher efficiency, stronger client engagement, and sustained
+                  sales growth.
                 </p>
               </div>
               <button
-                    style={{
-                      padding: "14px 40px",
-                      backgroundColor: "#b79662",
-                      borderRadius: "8px",
-                      color: "#fff",
-                      fontSize: "1.1rem",
-                      fontWeight: "700",
-                      cursor: "pointer",
-                      display: "flex",
-                      textAlign: "center",
-                      justifyContent: "left",
-                      alignItems: "center",
-                      gap: "10px",
-                      position: "relative",
-                      overflow: "hidden",
-                      zIndex: 1,
-                      border: "2px solid #b79662",
-                      marginTop: "20px",
-                      letterSpacing: "1px",
-                      transition: "all 0.3s ease",
-                    }}
-                    onMouseEnter={(e) => {
-                      const fill = e.currentTarget.querySelector(".hover-fill");
-                      const text = e.currentTarget.querySelector(".btn-text");
-                      if (fill) fill.style.width = "100%";
-                      if (text) text.style.color = "#b79662";
-                    }}
-                    onMouseLeave={(e) => {
-                      const fill = e.currentTarget.querySelector(".hover-fill");
-                      const text = e.currentTarget.querySelector(".btn-text");
-                      if (fill) fill.style.width = "0%";
-                      if (text) text.style.color = "#fff";
-                    }}
-                  >
-                    <div
-                      className="hover-fill"
-                      style={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "0%",
-                        height: "100%",
-                        background: "#ffffff",
-                        transition: "width 0.4s ease",
-                        zIndex: -1,
-                      }}
-                    />
-                    <span
-                      className="btn-text"
-                      style={{
-                        position: "relative",
-                        zIndex: 1,
-                        color: "#fff",
-                        transition: "color 0.3s ease",
-                      }}
-                    >
-                      About Us {" "}
-                    </span>
-                  </button>  
+                style={{
+                  padding: "14px 40px",
+                  backgroundColor: "#b79662",
+                  borderRadius: "8px",
+                  color: "#fff",
+                  fontSize: "1.1rem",
+                  fontWeight: "700",
+                  cursor: "pointer",
+                  display: "flex",
+                  textAlign: "center",
+                  justifyContent: "left",
+                  alignItems: "center",
+                  gap: "10px",
+                  position: "relative",
+                  overflow: "hidden",
+                  zIndex: 1,
+                  border: "2px solid #b79662",
+                  marginTop: "20px",
+                  letterSpacing: "1px",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
+                  if (fill) fill.style.width = "100%";
+                  if (text) text.style.color = "#b79662";
+                }}
+                onMouseLeave={(e) => {
+                  const fill = e.currentTarget.querySelector(".hover-fill");
+                  const text = e.currentTarget.querySelector(".btn-text");
+                  if (fill) fill.style.width = "0%";
+                  if (text) text.style.color = "#fff";
+                }}
+              >
+                <div
+                  className="hover-fill"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "0%",
+                    height: "100%",
+                    background: "#ffffff",
+                    transition: "width 0.4s ease",
+                    zIndex: -1,
+                  }}
+                />
+                <span
+                  className="btn-text"
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                    color: "#fff",
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  About Us{" "}
+                </span>
+              </button>
             </div>
           </div>
         </section>
@@ -281,7 +305,7 @@ const TestimonialsPage = () => {
               Partnerships that deliver
             </h2>
             <p className="text-gray-500 mb-16 max-w-3xl">
-              Hear from industry leaders as they share what sets Prowess
+              Hear from industry leaders as they share what sets IREED India
               apart—and how our partnership has helped them achieve critical
               business outcomes.
             </p>
@@ -297,6 +321,7 @@ const TestimonialsPage = () => {
                   </p>
                   <h4 className="font-bold text-[#1a2b4b]">{item.author}</h4>
                   <p className="text-sm text-gray-500">{item.title}</p>
+                  <p className="text-sm text-gray-500">{item.company}</p>
                 </div>
               ))}
             </div>
@@ -313,114 +338,9 @@ const TestimonialsPage = () => {
             />
           </div>
 
-          <div className="container mx-auto px-6 py-16 max-w-7xl text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Are you ready to{" "}
-              <span style={{ color: goldTheme }}>expand your reach?</span>
-            </h2>
-            <p className="text-gray-600 mb-12 text-lg">
-              Let's modernize your enterprise together. Get in touch to learn
-              more.
-            </p>
-
-            <form className="text-left grid grid-cols-1 md:grid-cols-3 gap-6">
-              {["First name", "Last name", "Business email"].map((label) => (
-                <div key={label} className="flex flex-col">
-                  <label className="text-sm font-bold text-gray-700 mb-2">
-                    {label}*
-                  </label>
-                  <input
-                    type="text"
-                    className="bg-gray-50 border border-gray-200 p-3 rounded-sm focus:outline-none focus:ring-2 transition-all"
-                    style={{ focusRingColor: goldTheme }}
-                  />
-                </div>
-              ))}
-
-              <div className="md:col-span-3 mt-4 text-gray-600 text-sm">
-                <p className="mb-4">
-                  By clicking submit, you consent to allow Prowess Consulting to
-                  process your information.
-                </p>
-                <div className="flex items-center gap-3">
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4"
-                    style={{ accentColor: goldTheme }}
-                    id="consent"
-                  />
-                  <label htmlFor="consent" className="cursor-pointer">
-                    I agree to receive communications.*
-                  </label>
-                </div>
-              </div>
-
-              <div className="md:col-span-3 flex justify-center mt-6">
-                <button
-                  type="submit"
-                  style={{
-                    padding: "14px 40px",
-                    backgroundColor: "#b79662",
-                    borderRadius: "8px",
-                    color: "#fff",
-                    fontSize: "1.1rem",
-                    fontWeight: "700",
-                    cursor: "pointer",
-                    display: "flex",
-                    textAlign: "center",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    gap: "10px",
-                    position: "relative",
-                    overflow: "hidden",
-                    zIndex: 1,
-                    border: "2px solid #b79662",
-                    margin: "0 auto",
-                    letterSpacing: "1px",
-                    transition: "all 0.3s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    const fill = e.currentTarget.querySelector(".hover-fill");
-                    const text = e.currentTarget.querySelector(".btn-text");
-                    if (fill) fill.style.width = "100%";
-                    if (text) text.style.color = "#b79662";
-                  }}
-                  onMouseLeave={(e) => {
-                    const fill = e.currentTarget.querySelector(".hover-fill");
-                    const text = e.currentTarget.querySelector(".btn-text");
-                    if (fill) fill.style.width = "0%";
-                    if (text) text.style.color = "#fff";
-                  }}
-                >
-                  <div
-                    className="hover-fill"
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "0%",
-                      height: "100%",
-                      background: "#ffffff",
-                      transition: "width 0.4s ease",
-                      zIndex: -1,
-                    }}
-                  />
-                  <span
-                    className="btn-text"
-                    style={{
-                      position: "relative",
-                      zIndex: 1,
-                      color: "#fff",
-                      transition: "color 0.3s ease",
-                    }}
-                  >
-                    Submit
-                  </span>
-                </button>
-              </div>
-            </form>
-          </div>
+        <Youtube />
         </section>
+        <LinkedIn />
       </div>
       <Footer />
     </>

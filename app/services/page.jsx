@@ -11,23 +11,16 @@ import {
   Coins,
   LineChart,
 } from "lucide-react";
-import { 
-  Lightbulb, 
-  FileText, 
-  MapPin, 
-  Settings, 
-  TrendingUp, 
-  Users 
-} from 'lucide-react';
-
-import { 
-
-  Search, 
-  Microscope, 
-  Database, 
-  
-  Headphones 
+import {
+  Lightbulb,
+  FileText,
+  MapPin,
+  Settings,
+  TrendingUp,
+  Users,
 } from "lucide-react";
+
+import { Search, Microscope, Database, Headphones } from "lucide-react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -43,8 +36,7 @@ const HeroSlider = () => {
       subtitle: "Strategic Leadership Development",
       desc: "Advanced leadership growth programs that use practical frameworks and insights made just for the changing real estate sector to improve sales performance and strategic thinking.",
       icon: <GraduationCap size={40} className="text-[#b79662]" />,
-      image:
-        "/assets/services/ireed56.png",
+      image: "/assets/services/ireed56.png",
     },
     {
       title: "Hiring and Placement",
@@ -59,8 +51,7 @@ const HeroSlider = () => {
       subtitle: "Capital infusion & Investor relations",
       desc: "Our industry-specific real estate certification programs range from foundational to master’s-level training, complemented by digital, technology, and postgraduate business programs that support strategic, data-driven career growth.",
       icon: <Coins size={40} className="text-[#b79662]" />,
-      image:
-        "/assets/services/image.png",
+      image: "/assets/services/image.png",
     },
     {
       title: "Project Consultation",
@@ -75,40 +66,65 @@ const HeroSlider = () => {
   const challenges = [
     {
       id: "01",
-      title: "Sales Growth Stagnation",
-      subtitle: "Performance Assessment",
-      desc: "Identifying the bottlenecks in your growth and turnaround strategies to reignite continued advancement and sustainable profitability.",
+      title: "Macro Economic Diagnostics",
+      bullets: [
+        "GDP growth and economic expansion",
+        "Urbanization rate",
+        "Disposable income growth",
+        "Inflation and interest rates",
+        "Employment generation in cities",
+      ],
+      desc: "This evaluates the economic environment affecting real estate demand. The key indicators are:",
       image:
         "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "02",
-      title: "Debt Pressure",
-      subtitle: "Financial Restructuring",
-      desc: "Rebalancing obligations and improving the debt structure to regain financial flexibility and enhance long-term business resilience.",
+      title: "Demand Diagnostics",
+      bullets :[
+        "Housing sales volume",
+        "Office leasing demand",
+        "Rental growth",
+        "Absorption rate",
+        "Buyer profile (end-user vs investor)",
+
+      ],
+      desc: "This measures buyer demand across residential, commercial, and mixed-use real estate. The key indicators:",
       image:
         "https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "03",
-      title: "Cash Flow Constraints",
-      subtitle: "Financial Diagnostics",
-      desc: "Strengthening liquidity and capital efficiency through structured financial planning and rigorous cash-flow management.",
+      title: "Supply Diagnostics",
+      bullets :[
+        "New project launches",
+        "Inventory levels",
+        "Construction pipeline",
+        "Land availability",
+        "Redevelopment activity",
+
+      ],
+      desc: "This evaluates current and future supply in the market. The key indicators are:",
       image:
         "https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?auto=format&fit=crop&q=80&w=800",
     },
     {
       id: "04",
-      title: "Marketing Inefficiency",
-      subtitle: "Market Approach Review",
-      desc: "Sales and marketing alignment to improve conversion rates and generate measurable returns on investment.",
+      title: "Price Diagnostics",
+      bullets :[
+        "Price per square foot",
+        "Price growth trends",
+        "Rental yields",
+        "Price-to-income ratio",
+
+      ],
+      desc: "Analyzes capital values and rental trends. The key indicators are:",
       image:
         "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
     },
   ];
 
   const slides = [
-   
     {
       id: 3,
       title: "Future Ready Consultancy",
@@ -116,71 +132,77 @@ const HeroSlider = () => {
       desc: "Expert guidance to navigate the complex landscape of global business operations.",
       bg: "/assets/BPimages/DSC02419.JPG",
     },
- 
   ];
 
   const steps = [
     {
-      title: "Define Your Vision",
-      desc: "Ensure your GCC aligns with the parent company's vision and strategy. Over time, maintain cultural consistency across both entities.",
-      icon: <Lightbulb size={32} />
+      title: "Vision",
+      goldtitle: "IREED",
+      desc: "To build a future-ready Indian real estate ecosystem by empowering developers, professionals, and investors through knowledge, skill development, innovation, and strategic collaboration.",
+      icon: <Lightbulb size={32} />,
     },
     {
-      title: "Complete the Paperwork",
-      desc: "Handle formalities like the MoA, Articles of Association, and Directors ID to establish a solid legal foundation.",
-      icon: <FileText size={32} />
+      title: "Of Training",
+      goldtitle: "Purpose",
+      desc: "The purpose is to create a skilled, professional, and industry-ready workforce for the rapidly growing Indian real estate sector to bridge the gap between academia and the Indian real estate sector. ",
+      icon: <FileText size={32} />,
     },
     {
-      title: "Choose the Right Location",
-      desc: "Select a city and neighborhood that aligns with your business strategy and offers easy access to employees and materials.",
-      icon: <MapPin size={32} />
+      title: "Geographic Spread",
+      goldtitle: "IREED's",
+      desc: "The primary institutional base of IREED India is located in Gurugram, which serves as the national hub for research, curriculum development, and corporate training and positioned itself as a pan-India academic platform.",
+      icon: <MapPin size={32} />,
     },
     {
-      title: "Standardize SOPs",
-      desc: "Streamline operations by standardizing processes for hiring, procurement, and payments to foster transparency.",
-      icon: <Settings size={32} />
+      title: "India SOP",
+      goldtitle: "IREED",
+      desc: "IREED India SOP refers to a structured operational framework used to maintain quality, consistency, and efficiency in all its activities—such as education, PMC, corporate training, and event management.",
+      icon: <Settings size={32} />,
     },
     {
       title: "Plan for Growth",
-      desc: "Initially a process hub, your GCC can evolve into a center for innovation, spotting trends, and developing new business practices.",
-      icon: <TrendingUp size={32} />
+      goldtitle: "IREED",
+      desc: "IREED India plan of growth is designed around building a national ecosystem for real estate education, industry training, and developer support. The  growth strategy focuses on expanding skill development across India.",
+      icon: <TrendingUp size={32} />,
     },
     {
-      title: "Hire Flexibly",
-      desc: "Leverage India's talent pool by fostering an inclusive work culture. Offer perks like remote working to retain top talent.",
-      icon: <Users size={32} />
-    }
+      title: "Hire Flexibility",
+      goldtitle: "IREED India",
+      desc: "Hire Flexibility refers to a strategic workforce approach where real estate companies can hire trained professionals from IREED India in flexible formats based on their project needs, duration, and specialization.",
+      icon: <Users size={32} />,
+    },
   ];
 
   const types = [
     {
       id: "01",
-      title: "Shared Service Centers",
-      desc: "Centralize and standardize key functions like finance, HR, and IT to improve efficiency and reduce costs across the parent organization.",
+      title: `MBA in Business Analytics & Marketing Specialization in Real Estate (24 Months)`,
+      desc: "This MBA program focuses on developing future leaders in the real estate industry through business analytics, marketing strategies, and property market understanding.",
       icon: <Search size={24} />,
     },
     {
       id: "02",
-      title: "R & D Centers",
-      desc: "Innovation hubs dedicated to creating new products and technologies, keeping the parent organization at the competitive edge.",
+      title: "PGDREM – PG Diploma in Real Estate Management (12 Months)",
+      desc: "This program is designed specifically for graduates who want guaranteed career entry into the real estate industry with practical training and placement assistance.",
       icon: <Microscope size={24} />,
     },
     {
       id: "03",
-      title: "Knowledge Centers",
-      desc: "Designed to facilitate remote information sharing, gathering, and disseminating expertise across global teams and geographies.",
+      title: `REAP – Real Estate Advanced Program
+(8 Weeks)`,
+      desc: "REAP is a practical program that teaches advanced knowledge of residential and commercial real estate markets along with project development and marketing strategies.",
       icon: <Database size={24} />,
     },
     {
       id: "04",
-      title: "Innovation Centers",
-      desc: "Dedicated to fostering creativity and collaboration, serving as incubators for new ideas and groundbreaking solutions.",
+      title: "REMAP – Real Estate Management Advancement Program (12 Weeks)",
+      desc: "REMAP is designed for those who want to become entrepreneurs or senior managers in real estate development and management.",
       icon: <Lightbulb size={24} />,
     },
     {
       id: "05",
-      title: "Customer Service Centers",
-      desc: "Provide comprehensive support to clients, ensuring high satisfaction and maintaining strong long-term customer relationships.",
+      title: "REACT – Real Estate Advanced Corporate Training",
+      desc: "REACT is a structured corporate training module created by IREED India to help real estate companies strengthen their sales, marketing, strategy, and operational efficiency.",
       icon: <Headphones size={24} />,
     },
   ];
@@ -216,18 +238,14 @@ const HeroSlider = () => {
                   <div className="max-w-3xl space-y-6">
                     <h1 className="text-3xl md:text-4xl font-bold text-[#f4f4f4] leading-tight">
                       {slide.title} <br />
-                      <span className="text-[#b79662]">
-                        {slide.highlight}
-                      </span>
+                      <span className="text-[#b79662]">{slide.highlight}</span>
                     </h1>
 
                     <p className="text-[#b3b3b3] text-lg md:text-xl max-w-xl leading-relaxed border-l-4 border-[#b79662] pl-6">
                       {slide.desc}
                     </p>
 
-                    <div className="pt-4">
-                    
-                    </div>
+                    <div className="pt-4"></div>
                   </div>
                 </div>
               </div>
@@ -266,147 +284,167 @@ const HeroSlider = () => {
       </section>
 
       <section className="bg-[#111111] py-20 px-6 font-sans">
-      <div className="max-w-7xl mx-auto">
-        
-        {/* TOP SECTION: Advantage India */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white not-[]:  leading-tight">
-              Global Capability Centers (GCC): <br />
-              <span className="text-[#b79662]">Advantage India</span>
-            </h2>
-            <div className="w-20 h-1 bg-[#b79662]"></div>
-            <p className="text-[#b3b3b3] leading-relaxed text-lg">
-              India has solidified its position as a global hub for GCCs, with over 1,800 established centers contributing to a market size exceeding $46 billion. Hosting more than 50% of the world's GCCs, India offers unmatched advantages, including a vast talent pool and world-class infrastructure.
-            </p>
-            <p className="text-[#b3b3b3] leading-relaxed">
-              Strategic R&D and business innovation are driving global firms to India as they seek to tap into this dynamic ecosystem for their next phase of growth.
-            </p>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="relative h-[400px] rounded-2xl overflow-hidden border border-[#b79662]/20"
-          >
-            <img 
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" 
-              alt="Modern Office" 
-              className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          </motion.div>
-        </div>
-
-        {/* MIDDLE SECTION: Types of GCC Header */}
-        <div className="mb-12">
-          <h3 className="text-3xl font-bold text-white  mb-4">
-            Types of <span className="text-[#b79662]">Global Capability Center</span>
-          </h3>
-           <div className="w-20 h-1 bg-[#b79662] mb-6"></div>
-          <p className="text-[#b3b3b3] max-w-2xl">
-            India offers a diverse range of GCCs designed to enhance efficiency, drive innovation, and optimize operations:
-          </p>
-        </div>
-
-        {/* BOTTOM SECTION: Types Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {types.map((type, idx) => (
+        <div className="max-w-7xl mx-auto">
+          {/* TOP SECTION: Advantage India */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
             <motion.div
-              key={idx}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white not-[]:  leading-tight">
+                IREED India’s Centre of Excellence for MBA in
+                <span className="text-[#b79662]">
+                  {" "}
+                  Business Analytics & Real Estate Management
+                </span>
+              </h2>
+              <div className="w-20 h-1 bg-[#b79662]"></div>
+              <p className="text-[#b3b3b3] leading-relaxed text-lg">
+                IREED India’s Centre of Excellence for MBA in Real Estate is a
+                forward-looking initiative designed to transform and empower a
+                skilled workforce for the rapidly expanding Indian real estate
+                sector. With the real estate industry evolving across metro
+                cities as well as emerging Tier-2 and Tier-3 markets, the need
+                for professionally trained and industry-ready talent has never
+                been greater.
+              </p>
+              <p className="text-[#b3b3b3] leading-relaxed">
+                This Centre of Excellence aims to bridge the gap between
+                academic knowledge and real-world industry practice by
+                integrating structured management education with practical
+                exposure.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative h-[400px] rounded-2xl overflow-hidden border border-[#b79662]/20"
+            >
+              <img
+                src="/assets/services/OIP.webp"
+                alt="Modern Office"
+                className="w-full h-full object-cover  brightness-100 hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            </motion.div>
+          </div>
+
+          {/* MIDDLE SECTION: Types of GCC Header */}
+          <div className="mb-12">
+            <h3 className="text-3xl font-bold text-[#b79660]  mb-4">
+              IREED India Offers Several Career Oriented Courses
+            </h3>
+            <div className="w-20 h-1 bg-[#b79662] mb-6"></div>
+            <p className="text-[#b3b3b3] max-w-2xl">
+              IREED India courses are specially designed for graduate students
+              who want to build a professional career in the real estate
+              industry.
+            </p>
+          </div>
+
+          {/* BOTTOM SECTION: Types Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {types.map((type, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="p-8 bg-[#111111] border-l-2 border-white/5 hover:border-[#b79662] cursor-pointer transition-all duration-500 group"
+              >
+                <div className="flex justify-between items-start mb-6">
+                  <span className="text-sm font-bold text-[#b79662]/40 group-hover:text-[#b79662] transition-colors">
+                    {type.id}
+                  </span>
+                  {/* <div className="text-[#b79662]">{type.icon}</div> */}
+                </div>
+                <h4 className="text-xl font-bold text-white mb-4 group-hover:text-[#b79662] transition-colors  tracking-wide">
+                  {type.title}
+                </h4>
+                <p className="text-sm text-[#b3b3b3] leading-relaxed group-hover:text-white/80 transition-colors">
+                  {type.desc}
+                </p>
+              </motion.div>
+            ))}
+
+            {/* Call to Action Card (Mirroring your quote box) */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="p-8 bg-[#111111] border-l-2 border-white/5 hover:border-[#b79662] cursor-pointer transition-all duration-500 group"
+              className="p-8 bg-[#b79662] text-black rounded-tr-[40px] flex flex-col justify-between cursor-pointer"
             >
-              <div className="flex justify-between items-start mb-6">
-                <span className="text-sm font-bold text-[#b79662]/40 group-hover:text-[#b79662] transition-colors">
-                  {type.id}
-                </span>
-                <div className="text-[#b79662]">{type.icon}</div>
-              </div>
-              <h4 className="text-xl font-bold text-white mb-4 group-hover:text-[#b79662] transition-colors  tracking-wide">
-                {type.title}
-              </h4>
-              <p className="text-sm text-[#b3b3b3] leading-relaxed group-hover:text-white/80 transition-colors">
-                {type.desc}
+              <p className="text-xl font-bold  leading-tight">
+                REDMI – Real Estate Digital Marketing Intelligence (Upto 9
+                Months)
+              </p>
+              <p>
+                This program focuses on digital marketing for the real estate
+                sector, helping graduates learn how developers generate leads
+                and promote projects online.
               </p>
             </motion.div>
-          ))}
-
-          {/* Call to Action Card (Mirroring your quote box) */}
-          <motion.div 
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             className="p-8 bg-[#b79662] text-black rounded-tr-[40px] flex flex-col justify-between cursor-pointer"
-          >
-            <p className="text-xl font-bold italic leading-tight">
-              "You need extraordinary resources to deliver an exceptional solution. That's where India comes to the fore."
-            </p>
-            <button className="mt-8 flex items-center gap-2 font-bold  text-sm border-b-2 border-black w-fit pb-1 hover:gap-4 transition-all">
-              Inquire Now <ArrowUpRight size={18} />
-            </button>
-          </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <section className="bg-[#ffffff] pt-16 px-6 font-sans">
-      <div className="max-w-7xl mx-auto">
-        {/* Heading Section */}
-        <div className=" mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#000]  tracking-tight">
-            Steps in setting up  
-            <span className="text-[#b79662]"> Global Capability Center (GCC)</span>
-          </h2>
-           <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
-        </div>
+        <div className="max-w-7xl mx-auto">
+          {/* Heading Section */}
+          <div className=" mx-auto max-w-4xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#000]  tracking-tight">
+              Steps in setting up
+              <span className="text-[#b79662]">
+                {" "}
+                 IREED Center of Excellence (COE)
+              </span>
+            </h2>
+            <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>
+          </div>
 
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {steps.map((step, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ 
-                duration: 0.6, 
-                delay: idx * 0.1,
-                ease: "easeOut" 
-              }}
-              className="group p-8 bg-[#141414] border border-white/5 rounded-br-[40px] hover:border-[#b79662]/40 transition-all duration-500 hover:scale-102 shadow-xl"
-            >
-              {/* Icon Container */}
-              <div className="mb-6 inline-flex p-4 bg-white/5 rounded-2xl text-[#b79662] group-hover:bg-[#b79662] group-hover:text-black transition-all duration-300">
-                {step.icon}
-              </div>
-              
-              <h3 className="text-xl font-bold text-[#f4f4f4] mb-4 group-hover:text-[#b79662] transition-colors">
-                {step.title}
-              </h3>
-              
-              <p className="text-[#b3b3b3] leading-relaxed text-sm group-hover:text-[#f4f4f4] transition-colors">
-                {step.desc}
-              </p>
-              
-              {/* Decorative Animated Line */}
-              <div className="mt-8 relative h-[1px] w-full bg-white/10 overflow-hidden">
-                <div className="absolute top-0 left-0 h-full w-0 bg-[#b79662] group-hover:w-full transition-all duration-700 ease-in-out"></div>
-              </div>
-            </motion.div>
-          ))}
+          {/* Steps Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {steps.map((step, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: idx * 0.1,
+                  ease: "easeOut",
+                }}
+                className="group p-8 bg-[#141414] border border-white/5 rounded-br-[40px] hover:border-[#b79662]/40 transition-all duration-500 hover:scale-102 shadow-xl"
+              >
+                {/* Icon Container */}
+                <div className="mb-6 inline-flex p-4 bg-white/5 rounded-2xl text-[#b79662] group-hover:bg-[#b79662] group-hover:text-black transition-all duration-300">
+                  {step.icon}
+                </div>
+
+                <h3 className="text-xl font-bold text-[#f4f4f4] mb-4  transition-colors">
+                  <span className="text-[#b79660]">{step.goldtitle}</span>{" "}
+                  {step.title}
+                </h3>
+
+                <p className="text-[#b3b3b3] leading-relaxed text-sm group-hover:text-[#f4f4f4] transition-colors">
+                  {step.desc}
+                </p>
+
+                {/* Decorative Animated Line */}
+                <div className="mt-8 relative h-[1px] w-full bg-white/10 overflow-hidden">
+                  <div className="absolute top-0 left-0 h-full w-0 bg-[#b79662] group-hover:w-full transition-all duration-700 ease-in-out"></div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <main className="bg-white font-sans selection:bg-[#b79662] selection:text-white pb-8 overflow-x-hidden">
         {/* SERVICES GRID */}
@@ -483,7 +521,8 @@ const HeroSlider = () => {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white">
-                Our Winning <span className="text-[#b79662]">Strategy</span>
+                IREED India’s{" "}
+                <span className="text-[#b79662]">Winning Strategy</span>
               </h2>
               <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-4 rounded-full"></div>
             </div>
@@ -491,29 +530,44 @@ const HeroSlider = () => {
               {[
                 {
                   step: "01",
-                  title: "Discover Insights",
-                  desc: "We analyze market trends and internal performance metrics to discover opportunities which enable businesses to achieve sustainable growth and develop scalable business operations.",
+                  title: "Skill Development",
+                  desc: "IREED focuses on developing a professional workforce for India’s fast-growing real estate sector. Its training programs aim to prepare graduates and professionals with industry-relevant knowledge and practical skills.",
                   image:
                     "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600",
                 },
                 {
                   step: "02",
-                  title: "Map Strategy",
-                  desc: "Concise, data-based strategies are developed to ensure business objectives align with market plans and competitive advantage.",
+                  title: "Industry Aligned Education Model",
+                  desc: `Unlike conventional academic programs, IREED offers industry-aligned courses such as:`,
+                  bullets: [
+                    "MBA in Real Estate Management",
+                    "PG Diploma in Real Estate Management",
+                    "Corporate training programs (REACT)",
+                    "Real Estate Advance Program (REAP)",
+                    "Real Estate Digital Marketing Intelligence (REDMI)",
+                  ],
                   image:
                     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600",
                 },
                 {
                   step: "03",
-                  title: "Execute Efficiently",
-                  desc: "Disciplined execution converts strategy into real results through targeted action, accountability, and performance-driven implementation.",
+                  title: "Practical Learning & Industry Exposure",
+                  desc: `IREED emphasizes experiential learning, including:`,
+                  bullets: [
+                    "Real estate project site visits",
+                    "Industry case studies",
+                    "Mentorship by real estate professionals",
+                    "Practical assignments and workshops",
+                    "Graduates become job-ready from day one",
+                    "Professionals gain real-world decision-making capability",
+                  ],
                   image:
                     "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=600",
                 },
                 {
                   step: "04",
-                  title: "Lead the Market",
-                  desc: "Businesses achieve category leadership by sustaining momentum and consistently delivering measurable value.",
+                  title: "Discover IREED India Market Insights",
+                  desc: "We analyze market trends and internal performance metrics to discover opportunities which enable businesses to achieve sustainable growth and develop scalable business operations.",
                   image:
                     "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=600",
                 },
@@ -541,9 +595,18 @@ const HeroSlider = () => {
                     <h3 className="text-xl font-bold text-[#b79662] mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line mb-3">
                       {item.desc}
                     </p>
+
+                    {/* The Fix: Check if bullets exist before mapping */}
+                    {item.bullets && (
+                      <ul className="list-disc pl-5 space-y-1 text-sm text-gray-600 marker:text-[#b79662]">
+                        {item.bullets.map((bullet, index) => (
+                          <li key={index}>{bullet}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </motion.div>
               ))}
@@ -553,7 +616,7 @@ const HeroSlider = () => {
 
         {/* CHALLENGES SECTION */}
         <h2 className="text-3xl text-center md:text-4xl mt-10 font-bold text-[#000]">
-          Market <span className="text-[#b79662]">Diagnostics</span>
+          IREED India’s <span className="text-[#b79662]">Market Diagnostics</span>
         </h2>
         <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-4 rounded-full"></div>
 
@@ -594,21 +657,20 @@ const HeroSlider = () => {
                   <h3 className="text-2xl font-bold mb-2 text-[#b79662]">
                     {item.title}
                   </h3>
-                  <p className="text-[#b79662] text-xs font-bold tracking-widest mb-4 ">
-                    {item.subtitle}
-                  </p>
+
                   <p className="text-gray-600 leading-relaxed text-sm mb-8">
                     {item.desc}
                   </p>
-                  <div className="mt-auto">
-                    <button className="flex items-center gap-2 text-[#b79662] font-bold text-sm group/btn">
-                      View Resolution Strategy
-                      <ArrowUpRight
-                        size={18}
-                        className="transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1"
-                      />
-                    </button>
-                  </div>
+
+                  {item.bullets && (
+                    <ul className="list-disc pl-5 space-y-1 text-sm text-gray-600 marker:text-[#b79662]">
+                      {item.bullets.map((bullet, index) => (
+                        <li key={index}>{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <div className="mt-auto"></div>
                 </div>
               </motion.div>
             ))}

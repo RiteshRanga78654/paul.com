@@ -7,6 +7,7 @@ import Footer from "../layout/Footer";
 import Header from "../layout/Header";
 import { Loader2 } from "lucide-react";
 import CaseStudy from "../components/CaseStudy";
+import WeHelp from "../components/WeHelp";
 
 // --- CONFIGURATION ---
 const API_URL =
@@ -51,14 +52,15 @@ const MediaSection = () => {
       </div>
       <div className="relative z-10 text-center text-[#b79662] px-4 max-w-5xl">
         <h1 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight ">
-          A New Way Forward
+          IREED India A New Way Forward
         </h1>
         <p className="text-xl md:text-2xl text-white font-semibold mb-6 max-w-3xl mx-auto leading-relaxed">
-          At the Persimmon Group, We Help Leaders, Teams, and Organizations
-          Execute With Speed and Discipline.
+          A forward thinking, unique initiative in real estate education and
+          entrepreneurship development.
         </p>
         <p className="text-lg md:text-xl italic text-white font-light opacity-90">
-          Why? Because if You Aren't Moving Forward, You're Falling Behind.
+          Standing still is losing ground to those who are continuously
+          improving.
         </p>
       </div>
     </section>
@@ -308,13 +310,12 @@ const MediaSection = () => {
         <section className="py-16 px-4 md:px-8 lg:px-20 bg-white">
           <div className="max-w-7xl mx-auto text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-[#000] mb-4">
-              How <span className="text-[#b79662]">We Help</span> 
+              Leadership
+              <span className="text-[#b79662]"> Insights</span>
             </h2>
             <p className="text-m text-[#b79662] font-medium leading-relaxed max-w-4xl mx-auto">
-              The Persimmon Group is a business consulting firm that guides
-              organizations to build competitive strategy, execute strategic
-              projects with purpose and precision, and develop the top talent
-              needed to support growth.
+              IREED India is an EdTech business consulting firm that guides organizations to build competitive strategy, execute strategic projects with purpose and precision, and develop the top talent needed to support growth. Its core mission centers on upskilling professionals for India's dynamic real estate sector through specialized programs.
+
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
               {services.map((s, i) => (
@@ -328,7 +329,7 @@ const MediaSection = () => {
         <section className="py-24 px-4 md:px-8 lg:px-20 bg-[#f8f9fa]">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#000] mb-4 tracking-tight ">
-              What We're<span className="text-[#b79662]">Thinking About</span> 
+              What We're<span className="text-[#b79662]">Thinking About</span>
             </h2>
             <p className="text-m text-[#b79662] font-semibold ">
               Featured Insights From Our Team
@@ -415,7 +416,8 @@ const MediaSection = () => {
             </div>
           </div>
         </section>
-        <CaseStudy/>
+        <CaseStudy />
+        <WeHelp />
         <NewsletterSection />
       </div>
       <Footer />
