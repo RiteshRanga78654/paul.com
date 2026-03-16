@@ -22,7 +22,7 @@ export default function EmbeddedShorts() {
           {videoIds.map((id, index) => (
             <div 
               key={index} 
-              className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-black group"
+              className="relative w-full aspect-[2/3] rounded-[5px] overflow-hidden shadow-lg border border-gray-100 bg-black group"
             >
               <iframe
                 className="w-full h-full"
