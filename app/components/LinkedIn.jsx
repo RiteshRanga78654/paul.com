@@ -59,7 +59,7 @@ export default function ImageSwiper() {
                 <img
                   src={img.src}
                   alt="Testimonial screenshot"
-                  className="w-full h-full object-contain p-1"
+                  className="w-full h-full object-fill"
                 />
                 <div className="absolute bottom-0 left-0 h-1.5 w-0 bg-[#b79662] group-hover:w-full transition-all duration-500" />
               </div>
