@@ -77,7 +77,7 @@ Our sales performance improved by 25% within months, thanks to the advanced anal
 
           <div className="container mx-auto px-6 md:px-30 relative z-10">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-6xl font-bold text-[#1a2b4b] mb-6 leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold text-[#000] mb-6 leading-tight">
                 IREED Client{" "}
                 <span style={{ color: goldTheme }}>Testimonials</span>
               </h1>
@@ -178,7 +178,7 @@ Our sales performance improved by 25% within months, thanks to the advanced anal
                 backgroundImage: `url('/assets/Navigating_Compliance_Challenges_-_Hero_2.jpg')`,
               }}
             >
-              <p className="text-[#1a2b4b] text-xl md:text-2xl font-bold  mb-8 italic max-w-6xl mx-auto">
+              <p className="text-[#000] text-xl md:text-2xl font-bold  mb-8 italic max-w-6xl mx-auto">
                 "{testimonials[0].quote}"
               </p>
               <div className="space-y-1">
@@ -206,7 +206,7 @@ Our sales performance improved by 25% within months, thanks to the advanced anal
             </div>
 
             <div className="w-full md:w-1/2">
-              <h2 className="text-4xl md:text-5xl font-bold text-[#1a2b4b] mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#000] mb-6">
                 What Our <span style={{ color: goldTheme }}>Clients Say</span>
               </h2>
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed whitespace-pre-line">
@@ -301,7 +301,7 @@ Our sales performance improved by 25% within months, thanks to the advanced anal
         {/* 4. Grid Testimonials - Balanced Spacing */}
         <section className="pb-20 bg-white">
           <div className="container mx-auto px-6 max-w-6xl">
-            <h2 className="text-3xl font-bold text-[#1a2b4b] mb-2">
+            <h2 className="text-3xl font-bold text-[#000] mb-2">
               Partnerships that deliver
             </h2>
             <p className="text-gray-500 mb-16 max-w-3xl">
@@ -319,7 +319,7 @@ Our sales performance improved by 25% within months, thanks to the advanced anal
                   <p className="text-gray-700 leading-relaxed mb-6 italic pt-4">
                     "{item.quote}"
                   </p>
-                  <h4 className="font-bold text-[#1a2b4b]">{item.author}</h4>
+                  <h4 className="font-bold text-[#000]">{item.author}</h4>
                   <p className="text-sm text-gray-500">{item.title}</p>
                   <p className="text-sm text-gray-500">{item.company}</p>
                 </div>
@@ -332,9 +332,9 @@ Our sales performance improved by 25% within months, thanks to the advanced anal
         <section className="bg-white">
           <div className="w-full h-64 md:h-70 overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070"
+              src="/assets/testimonial/123.JPG"
               alt="Team"
-              className="w-full h-full object-cover grayscale opacity-80 hover:scale-130 transition-transform duration-2000"
+              className="w-full h-full object-cover grayscale hover:grayscale-0  hover:scale-130 transition-transform duration-2000"
             />
           </div>
 
