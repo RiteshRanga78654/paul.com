@@ -164,7 +164,7 @@ const Page = () => {
         className="w-full h-full object-cover"
       />
       {/* Dark overlay to make the white/gold text pop */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/50"></div>
     </div>
   </div>
 

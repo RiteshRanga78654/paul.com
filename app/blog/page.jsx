@@ -171,7 +171,7 @@ const MediaSection = () => {
             <div className="absolute bottom-0 left-0 w-full h-1 bg-[#b79662]"></div>
           </div>
           <div className="p-10 flex flex-col flex-grow text-center">
-            <span className="text-[#b79662] font-bold  tracking-[0.2em] text-[10px] mb-4">
+            <span className="text-[#b79662] font-bold  tracking-[0.2em] text-[14px] mb-4">
               {article.websites?.[0] || "LEADERSHIP"}
             </span>
             <h3 className="text-[22px] font-bold text-slate-900 mb-4 leading-snug line-clamp-3">
@@ -418,7 +418,7 @@ const MediaSection = () => {
         </section>
         <CaseStudy />
         <WeHelp />
-        <NewsletterSection />
+        {/* <NewsletterSection /> */}
       </div>
       <Footer />
     </>

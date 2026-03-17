@@ -325,11 +325,11 @@ const HeroSlider = () => {
               className="relative h-[400px] rounded-2xl overflow-hidden border border-[#b79662]/20"
             >
               <img
-                src="/assets/services/OIP.webp"
+                src="assets/services/dpg-degree-college-gurgaon-gurgaon-colleges-4VafomieZo.avif"
                 alt="Modern Office"
                 className="w-full h-full object-cover  brightness-100 hover:grayscale-0 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t  via-transparent to-transparent"></div>
             </motion.div>
           </div>
 
