@@ -326,7 +326,7 @@ const Page = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <img
-                    src="/assets/Event/Gemini_Generated_Image_mihujamihujamihu.png"
+                    src="/assets/Event/Untitled design (4).png"
                     className="rounded-2xl w-full h-64 object-cover border border-[#4c4949]/20"
                     alt="Event"
                   />
@@ -343,7 +343,7 @@ const Page = () => {
                     alt="Event"
                   />
                   <img
-                    src="/assets/Event/7.png"
+                    src="/assets/Event/Untitled design (3).png"
                     className="rounded-2xl w-full h-64 object-cover border border-[#4c4949]/20"
                     alt="Event"
                   />
