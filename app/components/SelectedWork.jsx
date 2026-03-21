@@ -9,11 +9,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const projects = [
-  { id: "01", title: "", category: "Gurugram", image: "/assets/images/gurugram.jpg.jpeg" },
-  { id: "02", title: "", category: "Hyderabad", image: "/assets/images/hyderabad.webp" },
-  { id: "03", title: "", category: "Vizag", image: "/assets/images/vizag.jpg.jpeg" },
-  { id: "04", title: "", category: "Bangalore", image: "/assets/images/bangalore.jfif.jpeg" },
-  { id: "05", title: "", category: "Ranchi", image: "/assets/images/ranchi.jfif" },
+  { id: "G", title: "", category: "Gurugram", image: "/assets/images/gurugram.jpg.jpeg" },
+  { id: "H", title: "", category: "Hyderabad", image: "/assets/images/hyderabad.webp" },
+  { id: "V", title: "", category: "Vizag", image: "/assets/images/vizag.jpg.jpeg" },
+  { id: "B", title: "", category: "Bangalore", image: "/assets/images/bangalore.jfif.jpeg" },
+  { id: "R", title: "", category: "Ranchi", image: "/assets/images/ranchi.jfif" },
 ];
 
 const ProjectCard = ({ project }) => {
@@ -45,7 +45,7 @@ const ProjectCard = ({ project }) => {
       >
         <div className="relative w-full h-full">
           <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isHovered ? "opacity-0" : "opacity-100"}`}>
-            <span className="text-white text-2xl md:text-3xl font-light font-mono tracking-tighter">{project.id}</span>
+            <span className="text-white text-2xl md:text-5xl font-blod font-mono tracking-tighter">{project.id}</span>
           </div>
           <div className={`absolute inset-0 p-5 flex flex-col justify-between transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`}>
             <h3 className="text-white text-xs font-bold opacity-90">{project.title}</h3>

@@ -104,15 +104,15 @@ const Page = () => {
   ];
 
   const partners = [
-    { name: "Maruti Suzuki", logo: "/assets/Event/media-partner/4.png" },
-    { name: "Lupin", logo: "/assets/Event/media-partner/10.png" },
-    { name: "Kanakia", logo: "/assets/Event/media-partner/12.png" },
-    { name: "IvyCap", logo: "/assets/Event/media-partner/13.png" },
-    { name: "IndianOil", logo: "/assets/Event/media-partner/15.png" },
-    { name: "Hyundai", logo: "/assets/Event/media-partner/21.png" },
-    { name: "Aditya Birla", logo: "/assets/Event/media-partner/22.png" },
-    { name: "Hyundai", logo: "/assets/Event/media-partner/23.png" },
-    { name: "Aditya Birla", logo: "/assets/Event/media-partner/24.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/4.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/10.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/12.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/13.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/15.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/21.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/22.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/23.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/24.png" },
   ];
 
   const workImages = [
@@ -326,7 +326,7 @@ const Page = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <img
-                    src="/assets/Event/Gemini_Generated_Image_mihujamihujamihu.png"
+                    src="/assets/Event/Untitled design (4).png"
                     className="rounded-2xl w-full h-64 object-cover border border-[#4c4949]/20"
                     alt="Event"
                   />
@@ -343,7 +343,7 @@ const Page = () => {
                     alt="Event"
                   />
                   <img
-                    src="/assets/Event/7.png"
+                    src="/assets/Event/Untitled design (3).png"
                     className="rounded-2xl w-full h-64 object-cover border border-[#4c4949]/20"
                     alt="Event"
                   />
