@@ -150,6 +150,11 @@ const MediaSection = () => {
   );
 
   const NewsCard = ({ article }) => {
+    const stripHtml = (html) => {
+      if (!html) return "";
+      return html.replace(/<[^>]*>?/gm, ""); // Removes all HTML tags
+    };
+
     const imageUrl = article.image
       ? article.image.startsWith("http")
         ? article.image
@@ -170,24 +175,68 @@ const MediaSection = () => {
             />
             <div className="absolute bottom-0 left-0 w-full h-1 bg-[#b79662]"></div>
           </div>
-          <div className="p-10 flex flex-col flex-grow text-center">
-            <span className="text-[#b79662] font-bold  tracking-[0.2em] text-[14px] mb-4">
+          <div className="p-5 flex flex-col flex-grow text-left">
+            {/* <span className="text-[#b79662] font-bold  tracking-[0.2em] text-[14px] mb-4">
               {article.websites?.[0] || "LEADERSHIP"}
-            </span>
-            <h3 className="text-[22px] font-bold text-slate-900 mb-4 leading-snug line-clamp-3">
+            </span> */}
+            <h3 className="text-[22px] text-left font-bold text-slate-900 mb-4 leading-snug line-clamp-3">
               {article.title}
             </h3>
-            <div className="mt-auto pt-4 flex flex-col items-center">
-              <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border border-gray-100">
-                <img
-                  src="/assets/BPimages/DSC_0421.JPG"
-                  alt="Author"
-                  className="w-full h-full object-cover"
-                />
+            <p className="text-slate-600 leading-relaxed text-[15px] font-light text-left line-clamp-3 mb-2">
+              {stripHtml(article.description)}
+            </p>
+            <div className="mt-auto pt-6 flex flex-col items-start w-full border-t border-gray-100">
+              {/* Author and Date Row */}
+              <div className="flex items-center justify-between w-full mb-6">
+                <div className="flex items-center gap-3">
+                  {/* Dynamic Two-Initial Avatar */}
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#b79660] text-white font-bold text-m tracking-tighter uppercase">
+                    {(article.researchAssociate || "Staff Writer")
+                      .split(" ")
+                      .slice(0, 2)
+                      .map((word) => word[0])
+                      .join("")}
+                  </div>
+
+                  <div className="flex flex-col items-start">
+                    <span className="text-[15px] font-bold text-slate-900 tracking-tight">
+                      {article.researchAssociate || "Staff Writer"}
+                    </span>
+                    {/* <div className="h-1.5 w-1.5 rounded-full bg-[#b79662]" > */}
+                    <span className="text-[12px] text-slate-400 font-medium uppercase tracking-wider flex items-center gap-2">
+                      {new Date(article.createdAt).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </span>
+                  
+                  </div>
+                </div>
+
+                
               </div>
-              <span className="text-gray-400 font-bold  tracking-[0.2em] text-[11px]">
-                SARA GALLAGHER
-              </span>
+
+              {/* Button Section */}
+              <button className="group relative w-full py-3.5 px-6 border-2 border-[#b79662] bg-[#b79662] rounded-lg overflow-hidden transition-all duration-300 active:scale-[0.98]">
+                <div className="absolute inset-0 w-0 bg-white transition-all duration-500 ease-out group-hover:w-full" />
+                <span className="relative z-10 flex items-center justify-center gap-2 text-white font-bold text-sm uppercase tracking-[1px] transition-colors duration-300 group-hover:text-[#b79662]">
+                  Read Full Article
+                  <svg
+                    className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </span>
+              </button>
             </div>
           </div>
         </div>
@@ -314,8 +363,12 @@ const MediaSection = () => {
               <span className="text-[#b79662]"> Insights</span>
             </h2>
             <p className="text-m text-[#b79662] font-medium leading-relaxed max-w-4xl mx-auto">
-              IREED India is an EdTech business consulting firm that guides organizations to build competitive strategy, execute strategic projects with purpose and precision, and develop the top talent needed to support growth. Its core mission centers on upskilling professionals for India's dynamic real estate sector through specialized programs.
-
+              IREED India is an EdTech business consulting firm that guides
+              organizations to build competitive strategy, execute strategic
+              projects with purpose and precision, and develop the top talent
+              needed to support growth. Its core mission centers on upskilling
+              professionals for India's dynamic real estate sector through
+              specialized programs.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
               {services.map((s, i) => (

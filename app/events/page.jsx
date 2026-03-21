@@ -104,15 +104,15 @@ const Page = () => {
   ];
 
   const partners = [
-    { name: "Maruti Suzuki", logo: "/assets/Event/media-partner/4.png" },
-    { name: "Lupin", logo: "/assets/Event/media-partner/10.png" },
-    { name: "Kanakia", logo: "/assets/Event/media-partner/12.png" },
-    { name: "IvyCap", logo: "/assets/Event/media-partner/13.png" },
-    { name: "IndianOil", logo: "/assets/Event/media-partner/15.png" },
-    { name: "Hyundai", logo: "/assets/Event/media-partner/21.png" },
-    { name: "Aditya Birla", logo: "/assets/Event/media-partner/22.png" },
-    { name: "Hyundai", logo: "/assets/Event/media-partner/23.png" },
-    { name: "Aditya Birla", logo: "/assets/Event/media-partner/24.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/4.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/10.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/12.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/13.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/15.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/21.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/22.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/23.png" },
+    { name: "Media Partner", logo: "/assets/Event/media-partner/24.png" },
   ];
 
   const workImages = [

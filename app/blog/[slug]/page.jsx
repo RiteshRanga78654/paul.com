@@ -37,13 +37,23 @@ const SingleBlogPage = () => {
 
         const response = await axios.get(`${API_BASE}?slug=${params.slug}&website=bhaswarpaul&published=true`);
         
-        let data = response.data;
-        if (data.data && Array.isArray(data.data)) data = data.data[0];
-        else if (data.blogs && Array.isArray(data.blogs)) data = data.blogs[0];
-        else if (Array.isArray(data)) data = data[0];
+        const raw = response.data;
 
-        if (data) {
-          setBlog(data);
+        // Extract the array from whatever shape the response is
+        let list = [];
+        if (raw.data && Array.isArray(raw.data)) list = raw.data;
+        else if (raw.blogs && Array.isArray(raw.blogs)) list = raw.blogs;
+        else if (Array.isArray(raw)) list = raw;
+
+        // ✅ FIX: Find the correct blog by slug (or _id as fallback)
+        // Never blindly pick index [0] — always match against the current slug
+        const matched =
+          list.find((b) => b.slug === params.slug) ||
+          list.find((b) => b._id === params.slug) ||
+          (list.length === 1 ? list[0] : null); // only trust a single result if API returns exactly 1
+
+        if (matched) {
+          setBlog(matched);
           // FIX: Force scroll to top when slug changes
           window.scrollTo(0, 0);
         } else {
