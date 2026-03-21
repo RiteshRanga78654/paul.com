@@ -235,7 +235,7 @@ export default function CaseStudySlider() {
   };
 
   return (
-    <section className="bg-white py-20 px-4">
+    <section className="bg-white pt-20 px-4">
       <div className="max-w-7xl mx-auto text-center mb-16">
         <p className="text-[#b79660] font-bold tracking-[0.3em] text-xs mb-4">
           CLIENT SUCCESS STORIES
