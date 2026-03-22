@@ -218,7 +218,7 @@ const CASE_STUDIES = [
     subtitle: "Strategic Development by Tata Steel",
     description:
       "Integrating smart logistics with sustainable architecture to redefine the modern industrial landscape.",
-    image: "/assets/blog/Tata-Steel-India-F1-768x514-1.webp",
+    image: "/assets/blog/jamshedpur.jpg",
     pdfUrl: "/assets/pdf/DOC-20260320-WA0013_260321_190749.pdf",
   },
 ];

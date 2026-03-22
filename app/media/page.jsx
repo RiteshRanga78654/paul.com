@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../layout/Footer";
 import Header from "../layout/Header";
+import MediaLogo from "../components/MediaLogo";
 
 const IMAGE_BASE_URL = "https://uat-service.ireedindia.com/image/";
 
@@ -110,7 +111,7 @@ const MediaSection = () => {
             alt="Hero Background"
           />
           <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
-           <div className="relative z-10 px-4 text-center -mt-3`0">
+          <div className="relative z-10 px-4 text-center -mt-3`0">
             <span className="mb-4 block text-xs font-bold tracking-[0.4em] text-[#b79662] uppercase">
               Media & Press
             </span>
@@ -155,86 +156,8 @@ const MediaSection = () => {
           </div>
         </section>
 
-        {/* 3. YOUTUBE VIDEOS SECTION */}
-        <section className="py-24 px-4">
-          <div className="mx-auto max-w-5xl">
-            {/* <div className="mb-12 text-center">
-              <span className="text-[#b79662] font-bold tracking-widest uppercase text-xs">Featured Content</span>
-              <h2 className="mt-2 text-3xl font-bold text-white md:text-4xl">Video <span className="text-[#b79662]">Gallery</span></h2>
-              <div className="mx-auto mt-4 h-1 w-20 bg-[#b79662]" />
-            </div> */}
-            <div className="aspect-video overflow-hidden rounded-2xl bg-black shadow-lg transition-transform hover:scale-[1.01]">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube.com/embed/NYbFAiZgvAM"
-                title="Leadership Insight"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-        </section>
-
-        {/* 4. NEW: ICON NAVIGATION SECTION (From Image 2) */}
-        <section className="relative bg-[#0d0d0d]   border-[#b79662] border-b">
-          <div
-            className="relative py-16 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: "url('/assets/unnamed.jpg')",
-            }}
-          >
-            {/* Overlay */}
-            <div className="absolute inset-0  bg-black/60"></div>
-
-            <div className="relative grid grid-cols-2 gap-8 md:grid-cols-4">
-              {[
-                { name: "TIMELINE", icon: "📅" },
-                { name: "CATEGORIES", icon: "📁" },
-                { name: "FAQS", icon: "💬" },
-                { name: "GUIDANCE", icon: "📂" },
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="group flex flex-col items-center cursor-pointer"
-                >
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#1a1a1a] text-3xl transition-all duration-300 group-hover:bg-[#b79662]">
-                    {item.icon}
-                  </div>
-                  <span className="text-xs font-bold tracking-widest text-white group-hover:text-[#b79662]">
-                    {item.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 5. NEW: CONTACT SECTION (From Image 2) */}
-        <section className="bg-[#0d0d0d] pb-24 px-4">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-10 inline-block h-px w-full bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
-            <p className="mb-6 text-gray-400">
-              For queries please contact{" "}
-              <span className="font-bold text-white">Bhaswar Paul</span>.
-            </p>
-            <a
-              href="mailto:bhaswar.paul@mca.org.uk"
-              className="block text-xl font-medium text-[#b79662] hover:underline"
-            >
-              info@bhaswarpaul.com
-            </a>
-            <p className="mt-2 text-gray-400">Ph. +91 981-883-7873</p>
-
-            <div className="mt-12 flex justify-center">
-              <div className="h-32 w-32 overflow-hidden rounded-full border-4 border-[#b79662] p-1 shadow-xl">
-                <img
-                  src="/assets/BPimages/DSC_0421.JPG"
-                  alt="Natalie Mendez"
-                  className="h-full w-full rounded-full object-cover transition-all duration-500 hover:grayscale-0"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Media Logo */}
+        <MediaLogo />
 
         {/* 6. NEWS GRID SECTION */}
         <section className="bg-white py-24 px-4 md:px-8">
