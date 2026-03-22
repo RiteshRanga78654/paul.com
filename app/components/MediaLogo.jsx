@@ -3,6 +3,102 @@ import { useState } from "react";
 
 const logos = [
   {
+    src: "/assets/Event/media-partner/23.png",
+    alt: "tribune",
+    href: "https://www.tribuneindia.com/news/business/ireed-dcoil-officially-launched-mba-in-real-estate",
+  },
+  {
+    src: "/assets/media/logo/business-standard.png",
+    alt: "business-standard",
+    href: "https://www.business-standard.com/content/press-releases-ani/ireed-dcoil-officially-launched-mba-in-real-estate-125032100480_1.html",
+  },
+   {
+    src: "/assets/Event/media-partner/12.png",
+    alt: "france",
+    href: "https://www.francenetworktimes.com/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/media/logo/UAE_Times_QCh5soU.png",
+    alt: "UAE",
+    href: "https://www.uaetimes.news/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/media/logo/england-news-portal.png",
+    alt: "englandnewsportal",
+    href: "https://www.englandnewsportal.com/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/media/logo/brand_logo.jpg",
+    alt: "worldnewsnetwork",
+    href: "https://www.worldnewsnetwork.net/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+   {
+    src: "/assets/media/logo/INN_rVm3TwN.png",
+    alt: "indiannewsnetwork",
+    href: "https://www.indiannewsnetwork.net/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/media/logo/east_coast_american_news.png",
+    alt: "eastcoastamericannews",
+    href: "https://www.eastcoastamericannews.com/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/media/logo/US_World_Today.png",
+    alt: "usworldtoday",
+    href: "https://www.usworldtoday.com/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/media/logo/european_sun_star.png",
+    alt: "europeansuntimes",
+    href: "https://www.europeansuntimes.com/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/media/logo/WB_samachar.png",
+    alt: "westbengalkhabar",
+    href: "https://www.westbengalkhabar.in/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/media/logo/punjab-live.png",
+    alt: "punjablive",
+    href: "https://www.punjablive.news/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/media/logo/Haryana_Today.png",
+    alt: "haryanatoday",
+    href: "https://www.haryanatoday.in/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/media/logo/Bihar_Times.png",
+    alt: "bihartimes",
+    href: "https://www.bihartimes.news/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/media/logo/Kashmir_Breaking_News.png",
+    alt: "kashmirbreakingnews",
+    href: "https://www.kashmirbreakingnews.com/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/media/logo/UP-today.png",
+    alt: "uptoday",
+    href: "https://www.uptoday.news/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  
+  {
+    src: "/assets/media/logo/Himanchal-Patrika.png",
+    alt: "himachalpatrika",
+    href:"https://www.himachalpatrika.com/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/"
+  },
+  {
+    src: "/assets/blog/Bihar-24x7.png",
+    alt: "bihar24x7",
+    href: "https://www.bihar24x7.com/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
+  },
+  {
+    src: "/assets/blog/Business-Connect-Magazine-Logo-2-1-1.png",
+    alt: "businessconnectindia",
+    href: "https://businessconnectindia.in/global-business-achievers-awards-2026-2/",
+  },
+  {
     src: "/assets/media/logo/47529300.avif",
     alt: "TOI",
     href: "https://timesofindia.indiatimes.com/punjab-based-lamrin-tech-skills-university-brings-new-course-to-train-property-brokers/articleshow/97555948.cms",
@@ -81,11 +177,6 @@ const logos = [
     src: "/assets/media/logo/topicseveryday_logo.png",
     alt: "topicseveryday",
     href: "https://topicseveryday.com/agency-news/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
-  },
-  {
-    src: "/assets/media/logo/ani.png",
-    alt: "ANI",
-    href: "https://www.aninews.in/news/business/sunrise-of-certified-real-estate-professionals-lamrin-tech-skills-university-awards-certification-to-the-first-batch-of-reseed20241111183700/",
   },
 ];
 
