@@ -377,9 +377,9 @@ const HeroSlider = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 bg-[#b79662] text-black rounded-tr-[40px] flex flex-col justify-between cursor-pointer"
+              className="p-8 bg-[#b79662] text-black rounded-tr-[40px] flex flex-col justify-between cursor-pointer hover:text-white "
             >
-              <p className="text-xl font-bold  leading-tight">
+              <p className="text-xl font-bold  leading-tight hover:text-white">
                 REDMI – Real Estate Digital Marketing Intelligence (Upto 9
                 Months)
               </p>
