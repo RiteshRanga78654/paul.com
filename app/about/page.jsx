@@ -67,17 +67,17 @@ const CountUp = ({ end, duration = 2000 }) => {
 };
 
 const imagesRow1 = [
-  "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.12.54 AM.jpeg",
-  "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.12.57 AM.jpeg",
-  "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.13.02 AM (3).jpeg",
-  "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.13.00 AM (2).jpeg",
+  "/assets/about/slider/Navraj-Training-1.jpeg",
+  "/assets/about/slider/Navraj-Training-2.jpeg",
+  "/assets/about/slider/Navraj-Training-3.jpeg",
+  "/assets/about/slider/Navraj-Training-4.jpeg",
 ];
 
 const imagesRow2 = [
-  "/assets/about/slider/projectimg4.jpg",
-  "/assets/about/slider/projectimg9.jpg",
-  "/assets/about/slider/projectimg17.jpg",
-  "/assets/about/slider/projectimg13.jpg",
+  "/assets/about/slider/Navraj-Training-5.jpeg",
+  "/assets/about/slider/Navraj-Training-6.jpeg",
+  "/assets/about/slider/Paras-Training-7.jpeg",
+  "/assets/about/slider/projectimg13.jpg", 
 ];
 
 const logos = [
@@ -87,8 +87,16 @@ const logos = [
   { id: 4, src: "/assets/about/logo/whiteland2.png", alt: "whiteland" },
   { id: 5, src: "/assets/about/logo/tridentlogo.png", alt: "trident" },
   { id: 6, src: "/assets/about/logo/paras.jpg", alt: "paras" },
-  { id: 7, src: "/assets/about/logo/WhatsApp Image 2026-03-21 at 7.21.42 PM.jpeg", alt: "nature-city" },
-  { id: 8, src: "/assets/about/logo/Logo Mangal realty Black.jpg (1).jpeg", alt: "mangal" },
+  {
+    id: 7,
+    src: "/assets/about/logo/WhatsApp Image 2026-03-21 at 7.21.42 PM.jpeg",
+    alt: "nature-city",
+  },
+  {
+    id: 8,
+    src: "/assets/about/logo/Logo Mangal realty Black.jpg (1).jpeg",
+    alt: "mangal",
+  },
   { id: 3, src: "/assets/about/logo/logooooo.webp", alt: "svs" },
 ];
 
@@ -292,16 +300,16 @@ const MetamorphServicesPage = () => {
             <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
           </div> */}
           <div className="absolute inset-0 z-0">
-  {/* The Background Image */}
-  <img
-    src="/assets/paul-sir-image/ChatGPT Image Mar 13, 2026, 05_54_42 PM.png"
-    alt="Modern Architecture"
-    className="w-full h-full object-cover"
-  />
+            {/* The Background Image */}
+            <img
+              src="/assets/paul-sir-image/ChatGPT Image Mar 13, 2026, 05_54_42 PM.png"
+              alt="Modern Architecture"
+              className="w-full h-full object-cover"
+            />
 
-  {/* The Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
-</div>
+            {/* The Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
+          </div>
 
           <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -920,7 +928,7 @@ const MetamorphServicesPage = () => {
         <section className="pt-16 px-6 sm:px-8 md:px-16 ">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl text-[#000] font-bold text-center ">
-              Why Choose IREED India As {" "}
+              Why Choose IREED India As{" "}
               <span className="text-[#b79662]">Your PMC Partner?</span>
             </h2>
             <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-10 rounded-full"></div>

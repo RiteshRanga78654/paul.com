@@ -437,7 +437,8 @@ const DesignComponent = () => {
           <div className="max-w-7xl mx-auto px-6">
             {/* Heading */}
             <h2 className="text-center text-3xl md:text-4xl font-semibold mb-5 text-black">
-              IREED India <span className="text-[#b79662]">Service Delivery Model</span>
+              IREED India{" "}
+              <span className="text-[#b79662]">Service Delivery Model</span>
             </h2>
             <div className="w-24 h-1.5 bg-[#b79662] mx-auto mt-4  mb-10 rounded-full"></div>
 
@@ -449,9 +450,17 @@ const DesignComponent = () => {
                 return (
                   <div
                     key={index}
-                    className="relative p-8 rounded-2xl border border-white/10 
-                bg-gradient-to-r from-[#05080d] to-[#0b1320]
-                hover:border-[#b79660]/40 transition-all duration-500 hover:scale-105 group"
+                    className="
+                    relative p-8 rounded-2xl 
+                    bg-[#0b1220] 
+                    border border-white/10 
+                    overflow-hidden
+                    transition-all duration-500 
+                    hover:scale-[1.04] 
+                    hover:border-[#c9a96e]/60
+                    hover:shadow-[0_20px_60px_rgba(0,0,0,0.6)]
+                    group
+                    "
                   >
                     {/* Large Number */}
                     <span className="absolute right-6 top-6 text-6xl font-bold text-white/5">
