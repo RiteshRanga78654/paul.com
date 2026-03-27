@@ -274,7 +274,7 @@ export default function Home() {
                   transition: "color 0.3s ease",
                 }}
               >
-                Load MOre
+                Load More
               </span>
             </button>
           </div>
