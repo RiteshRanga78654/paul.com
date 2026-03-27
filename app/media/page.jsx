@@ -138,7 +138,7 @@ const MediaSection = () => {
             </div>
             <div className="flex-[1.5] p-10 md:p-16">
               <h2 className="mb-4 text-2xl font-bold text-white md:text-3xl">
-                The MCA Awards 2026
+               Media & Communications Lounge
               </h2>
               <p className="text-gray-400 leading-relaxed whitespace-pre-line">
   {`Bhaswar Paul has established a strong presence in national media, emerging as a recognized voice in India’s evolving real estate ecosystem. Through his leadership at IREED India, he has been instrumental in introducing innovative, industry-aligned initiatives that bridge the gap between academic learning and real-world application. 
