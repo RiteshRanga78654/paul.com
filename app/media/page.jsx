@@ -145,9 +145,9 @@ const MediaSection = () => {
 
   IREED India is widely acknowledged for its pioneering approach to real estate education and skill development, with a clear focus on creating industry-ready professionals. The organization’s distinctive offerings include:
   
-  Hire–Train–Deploy (HTD) Model: 
-  Sales Assessment Solutions: 
-  Project Management Consultancy:`}
+  • Hire–Train–Deploy (HTD) Model
+  • Sales Assessment Solutions
+  • Project Management Consultancy`}
 </p>
             </div>
           </div>
