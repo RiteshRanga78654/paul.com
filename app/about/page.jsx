@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import PopUp from "../components/PopUp";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Plus,
@@ -19,6 +20,7 @@ import Header from "../layout/Header";
 
 // --- Animated Counter Logic Component ---
 const CountUp = ({ end, duration = 2000 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
   const elementRef = useRef(null);
@@ -83,6 +85,20 @@ const imagesRow2 = [
 const logos = [
   { id: 1, src: "/assets/images/Ireed-Logo (1).png", alt: "Essentia" },
   { id: 2, src: "/assets/images/ireo.png", alt: "ZDS" },
+  { id: 3, src: "/assets/about/logo/whiteland2.png", alt: "whiteland" },
+  { id: 4, src: "/assets/about/logo/tridentlogo.png", alt: "trident" },
+  { id: 5, src: "/assets/about/logo/paras.jpg", alt: "paras" },
+  {
+    id: 6,
+    src: "/assets/about/logo/mangal-realty-logo_black.png",
+    alt: "nature-city",
+  },
+  {
+    id: 7,
+    src: "/assets/about/logo/Logo Mangal realty Black.jpg (1).jpeg",
+    alt: "mangal",
+  },
+  { id: 8, src: "/assets/about/logo/logooooo.webp", alt: "svs" },
 
   { id: 4, src: "/assets/about/logo/whiteland2.png", alt: "whiteland" },
   { id: 5, src: "/assets/about/logo/tridentlogo.png", alt: "trident" },
