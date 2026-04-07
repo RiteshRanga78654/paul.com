@@ -106,6 +106,7 @@ const logos = [
   { id: 12, src: "/assets/about/logo/trident-hills-use.jpg", alt: "trident-hills" },
   { id: 13, src: "/assets/about/logo/ficci-logo.png", alt: "paras" },
   
+  
 ];
 
 const faqs = [
