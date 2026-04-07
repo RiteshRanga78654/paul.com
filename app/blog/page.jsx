@@ -204,7 +204,7 @@ const MediaSection = () => {
                     </span>
                     {/* <div className="h-1.5 w-1.5 rounded-full bg-[#b79662]" > */}
                     <span className="text-[12px] text-slate-400 font-medium uppercase tracking-wider flex items-center gap-2">
-                      {new Date(article.createdAt).toLocaleDateString("en-US", {
+                      {new Date(article.date).toLocaleDateString("en-US", {
                         month: "short",
                         day: "numeric",
                         year: "numeric",

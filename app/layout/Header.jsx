@@ -1,20 +1,22 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import PopUp from "../components/PopUp";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Configuration for links
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Events', href: '/events',  hasDropdown: false },
-    { name: 'Services', href: '/services ', hasDropdown: false },
-    { name: 'Testimonials', href: '/testimonial' },
-    { name: 'Network', href: '/network' },
-    { name: 'Blogs', href: '/blog' },
-    { name: 'Media', href: '/media' },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Events", href: "/events", hasDropdown: false },
+    { name: "Services", href: "/services ", hasDropdown: false },
+    { name: "Testimonials", href: "/testimonial" },
+    { name: "Network", href: "/network" },
+    { name: "Blogs", href: "/blog" },
+    { name: "Media", href: "/media" },
   ];
 
   return (
@@ -22,17 +24,16 @@ const Header = () => {
     <nav className="sticky top-0 z-50 w-full font-sans bg-[#1e1e1e] border-b border-white/10 shadow-lg">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          
           {/* 1. LOGO SECTION */}
           <div className="flex-shrink-0 flex items-center cursor-pointer">
-            <img 
-              src="/assets/images/logo.png" 
-              alt="SMR Logo" 
+            <img
+              src="/assets/images/logo.png"
+              alt="SMR Logo"
               className="h-15 w-auto object-contain"
               // Added error handler: shows text if image is missing
               onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'block';
+                e.target.style.display = "none";
+                e.target.nextSibling.style.display = "block";
               }}
             />
             {/* Fallback Text (Hidden unless image fails) */}
@@ -44,7 +45,10 @@ const Header = () => {
           {/* 2. DESKTOP MENU */}
           <div className="hidden xl:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <div key={link.name} className="relative group h-full flex items-center">
+              <div
+                key={link.name}
+                className="relative group h-full flex items-center"
+              >
                 <a
                   href={link.href}
                   className="flex items-center text-gray-300 hover:text-[#b79662] text-[15px] font-medium transition-colors duration-300 tracking-wide"
@@ -52,8 +56,18 @@ const Header = () => {
                   {link.name}
                   {/* Inline SVG Chevron Down */}
                   {link.hasDropdown && (
-                    <svg className="ml-1 w-4 h-4 text-[#b79662] group-hover:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <svg
+                      className="ml-1 w-4 h-4 text-[#b79662] group-hover:rotate-180 transition-transform duration-300"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
                     </svg>
                   )}
                 </a>
@@ -62,13 +76,22 @@ const Header = () => {
                 {link.hasDropdown && (
                   <div className="absolute left-0 top-full pt-4 w-56 hidden group-hover:block z-50">
                     <div className="bg-[#4c4949] rounded-lg shadow-2xl py-2 border border-gray-600">
-                      <a href="#" className="block px-4 py-3 text-sm text-gray-200 hover:bg-[#b79662] hover:text-white transition-colors duration-200">
+                      <a
+                        href="#"
+                        className="block px-4 py-3 text-sm text-gray-200 hover:bg-[#b79662] hover:text-white transition-colors duration-200"
+                      >
                         Corporate Events
                       </a>
-                      <a href="#" className="block px-4 py-3 text-sm text-gray-200 hover:bg-[#b79662] hover:text-white transition-colors duration-200">
+                      <a
+                        href="#"
+                        className="block px-4 py-3 text-sm text-gray-200 hover:bg-[#b79662] hover:text-white transition-colors duration-200"
+                      >
                         Workshops
                       </a>
-                      <a href="#" className="block px-4 py-3 text-sm text-gray-200 hover:bg-[#b79662] hover:text-white transition-colors duration-200">
+                      <a
+                        href="#"
+                        className="block px-4 py-3 text-sm text-gray-200 hover:bg-[#b79662] hover:text-white transition-colors duration-200"
+                      >
                         Seminars
                       </a>
                     </div>
@@ -80,78 +103,77 @@ const Header = () => {
 
           {/* 3. CTA BUTTON */}
           <div className="hidden xl:flex items-center">
-            {/* <button className="bg-[#b79662] hover:bg-[#967d51] text-white px-8 py-2.5 rounded shadow-[0_4px_14px_0_rgba(183,150,98,0.39)] hover:shadow-[0_6px_20px_rgba(183,150,98,0.23)] hover:-translate-y-0.5 transition-all duration-300 font-medium tracking-wide text-sm uppercase">
-              Let's Talk
-            </button> */}
-               <button
-          style={{
-            padding: "8px 20px",
-            backgroundColor: "#b79662", // Default Gold Background
-            borderRadius: "8px",
-            color: "#fff", // Default White Text
-            fontSize: "16px",
-            fontWeight: "700",
-            cursor: "pointer",
-            display: "flex",
+            <button
+              onClick={() => setIsModalOpen(true)}
+              style={{
+                padding: "8px 20px",
+                backgroundColor: "#b79662", // Default Gold Background
+                borderRadius: "8px",
+                color: "#fff", // Default White Text
+                fontSize: "16px",
+                fontWeight: "700",
+                cursor: "pointer",
+                display: "flex",
+                cursor: "pointer",
+                gap: "10px",
+                position: "relative",
+                overflow: "hidden",
+                zIndex: 1,
+                border: "2px solid #b79662", // Border keeps the button size stable
 
-            gap: "10px",
-            position: "relative",
-            overflow: "hidden",
-            zIndex: 1,
-            border: "2px solid #b79662", // Border keeps the button size stable
+                letterSpacing: "1px",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                const fill = e.currentTarget.querySelector(".hover-fill");
+                const text = e.currentTarget.querySelector(".btn-text");
 
-            letterSpacing: "1px",
-            transition: "all 0.3s ease",
-          }}
-          onMouseEnter={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
+                // Slide in the white background
+                if (fill) fill.style.width = "100%";
 
-            // Slide in the white background
-            if (fill) fill.style.width = "100%";
+                // Change text color to Gold
+                if (text) text.style.color = "#b79662";
+              }}
+              onMouseLeave={(e) => {
+                const fill = e.currentTarget.querySelector(".hover-fill");
+                const text = e.currentTarget.querySelector(".btn-text");
 
-            // Change text color to Gold
-            if (text) text.style.color = "#b79662";
-          }}
-          onMouseLeave={(e) => {
-            const fill = e.currentTarget.querySelector(".hover-fill");
-            const text = e.currentTarget.querySelector(".btn-text");
+                // Slide out the white background
+                if (fill) fill.style.width = "0%";
 
-            // Slide out the white background
-            if (fill) fill.style.width = "0%";
+                // Reset text color to White
+                if (text) text.style.color = "#fff";
+              }}
+            >
+              {/* Hover Fill Layer: White */}
+              <div
+                className="hover-fill"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "0%",
+                  height: "100%",
+                  background: "#ffffff", // White background on hover
+                  transition: "width 0.4s ease",
+                  zIndex: -1,
+                }}
+              />
 
-            // Reset text color to White
-            if (text) text.style.color = "#fff";
-          }}
-        >
-          {/* Hover Fill Layer: White */}
-          <div
-            className="hover-fill"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "0%",
-              height: "100%",
-              background: "#ffffff", // White background on hover
-              transition: "width 0.4s ease",
-              zIndex: -1,
-            }}
-          />
-
-          {/* Text Span with Transition */}
-          <span
-            className="btn-text"
-            style={{
-              position: "relative",
-              zIndex: 1,
-              color: "#fff", // Initial color
-              transition: "color 0.3s ease",
-            }}
-          >
-            Let's Talk
-          </span>
-        </button>
+              {/* Text Span with Transition */}
+              <span
+                className="btn-text"
+                style={{
+                  position: "relative",
+                  zIndex: 1,
+                  color: "#fff", // Initial color
+                  transition: "color 0.3s ease",
+                }}
+              >
+                Let's Talk
+              </span>
+            </button>
+            {isModalOpen && <PopUp onClose={() => setIsModalOpen(false)} />}
           </div>
 
           {/* MOBILE MENU BUTTON */}
@@ -162,9 +184,33 @@ const Header = () => {
             >
               {/* Hamburger / Close Icons (Inline SVG) */}
               {!isOpen ? (
-                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
               ) : (
-                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
               )}
             </button>
           </div>
@@ -173,9 +219,9 @@ const Header = () => {
 
       {/* MOBILE MENU DROPDOWN */}
       {/* Background set to Dark #1e1e1e */}
-      <div 
+      <div
         className={`xl:hidden absolute w-full left-0 bg-[#1e1e1e] border-t border-gray-800 shadow-xl transition-all duration-300 ease-in-out overflow-hidden ${
-          isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-6 pt-4 pb-8 space-y-2">
@@ -188,7 +234,19 @@ const Header = () => {
               <div className="flex justify-between items-center">
                 {link.name}
                 {link.hasDropdown && (
-                   <svg className="w-4 h-4 text-[#b79662]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  <svg
+                    className="w-4 h-4 text-[#b79662]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
                 )}
               </div>
             </a>

@@ -224,7 +224,7 @@ const SingleBlogPage = () => {
                                 }}
                             >
                                 <div className="hover-fill" style={{ position: "absolute", top: 0, left: 0, width: "0%", height: "100%", background: "#ffffff", transition: "width 0.4s ease", zIndex: -1 }} />
-                                <span className="btn-text" style={{ position: "relative", zIndex: 1, color: "#fff", transition: "color 0.3s ease" }}>Join Community</span>
+                               <a href="https://www.linkedin.com/groups/18690049/" target="_blank" rel="noopener noreferrer"><span className="btn-text" style={{ position: "relative", zIndex: 1, color: "#fff", transition: "color 0.3s ease" }}>Join Community</span></a> 
                             </button>
                         </div>
                     </div>
