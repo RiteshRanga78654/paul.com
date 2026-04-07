@@ -7,27 +7,27 @@ const services = [
     title: "Business Transformation",
     description:
       "IREED India can drive business transformation for real estate stakeholders by leveraging its expertise in education, technology platforms, and industry networking. This aligns with its mission to upskill professionals and bridge gaps in the Indian real estate sector.",
-    image: "/assets/blog/1.webp",
+    image: "/assets/blog/Business.png",
     alt: "Head icon",
   },
   {
     title: "Organizational Change",
     description:
       "IREED India offers tailored corporate training programs focusing on leadership skills, change management, and communication to equip executives and teams for evolving market demands.",
-    image: "/assets/blog/2.webp",
+    image: "/assets/blog/Organizational.png",
     alt: "Gear icon",
   },
   {
     title: "Culture Development",
     description:
       "IREED India offers specialized programs such as the MBA in Real Estate with Business Analytics, which equips professionals with practical skills and strategic thinking to shift mindsets from traditional models to data-driven, compliant practices.",
-    image: "/assets/blog/3.webp",
+    image: "/assets/blog/Culture.png",
     alt: "Smile icon",
   },
   {
     title: "Innovation & Disruption",
     description: `IREED India offers specialized and pioneering programs in Real Estate, which equips professionals with practical skills in analytics, marketing, and sector-specific strategies. This addresses skill gaps in a rapidly growing industry, fostering a workforce ready for PropTech disruptions such as AI, IoT, and blockchain. `,
-    image: "/assets/blog/4.webp",
+    image: "/assets/blog/Innovation.png",
     alt: "Chart icon",
   },
 ];
@@ -46,10 +46,10 @@ export default function ServiceGrid() {
           <div
             key={index}
             onClick={() => setIsExpanded(!isExpanded)}
-            className="group flex flex-col border border-gray-200 rounded-lg p-8 transition-all duration-300 hover:shadow-xl h-full bg-white cursor-pointer"
+            className="group flex flex-col items-center border border-gray-200 rounded-lg p-8 transition-all duration-300 hover:shadow-xl h-full bg-white cursor-pointer"
           >
             {/* 1. Icon Image */}
-            <div className="relative w-24 h-24 mb-8">
+            <div className="relative w-24 h-24 mb-8 ">
               <Image
                 src={service.image}
                 alt={service.title}

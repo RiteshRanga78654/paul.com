@@ -12,7 +12,7 @@ const logos = [
     alt: "business-standard",
     href: "https://www.business-standard.com/content/press-releases-ani/ireed-dcoil-officially-launched-mba-in-real-estate-125032100480_1.html",
   },
-   {
+  {
     src: "/assets/Event/media-partner/12.png",
     alt: "france",
     href: "https://www.francenetworktimes.com/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
@@ -32,7 +32,7 @@ const logos = [
     alt: "worldnewsnetwork",
     href: "https://www.worldnewsnetwork.net/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
   },
-   {
+  {
     src: "/assets/media/logo/INN_rVm3TwN.png",
     alt: "indiannewsnetwork",
     href: "https://www.indiannewsnetwork.net/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
@@ -82,11 +82,11 @@ const logos = [
     alt: "uptoday",
     href: "https://www.uptoday.news/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
   },
-  
+
   {
     src: "/assets/media/logo/Himanchal-Patrika.png",
     alt: "himachalpatrika",
-    href:"https://www.himachalpatrika.com/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/"
+    href: "https://www.himachalpatrika.com/news/ireed-dcoil-officially-launched-mba-in-real-estate20250321123418/",
   },
   {
     src: "/assets/blog/Bihar-24x7.png",
@@ -177,6 +177,86 @@ const logos = [
     src: "/assets/media/logo/topicseveryday_logo.png",
     alt: "topicseveryday",
     href: "https://topicseveryday.com/agency-news/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/The-Week-Logo-Big.png",
+    alt: "TheWeek",
+    href: "https://www.theweek.in/wire-updates/business/2025/03/22/dcm18-mba.html",
+  },
+  {
+    src: "/assets/media/logo/123menlife_logo.png",
+    alt: "123menlife",
+    href: "https://123menlife.com/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/cropped-DGO-logo-final.png",
+    alt: "DGO",
+    href: "https://dailygossiponline.com/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/Popular-Reads_Logo_Design-300.png",
+    alt: "PopularReads",
+    href: "https://popularreads.co/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/knowthatsall_logo.png",
+    alt: "KnowThatsAll",
+    href: "https://knowthatsall.com/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/goreaditright_logo.png",
+    alt: "goreaditright",
+    href: "https://goreaditright.com/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/buzzcenter.png",
+    alt: "buzzcenter",
+    href: "https://buzzcenter.co/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/DicoverWeekly_Logo.png",
+    alt: "DicoverWeekly",
+    href: "https://discoverweekly.co/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/topicsdaily_logo.png",
+    alt: "topicsdaily",
+    href: "https://topicsdaily.com/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/dailytopic.jpg",
+    alt: "dailytopic",
+    href: "https://buzzinginfo.com/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/financegoahead_logo.png",
+    alt: "financegoahead",
+    href: "https://financegoahead.com/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/Expertarenas_Final_Logo.png",
+    alt: "Expertarenas",
+    href: "https://expertarenas.com/agency-news/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/DailyStreetJournal_Logo..png",
+    alt: "DailyStreetJournal",
+    href: "https://dailystreetjournal.com/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/Enrich-Daily_Logo_Design-300.png",
+    alt: "Enrich-Daily",
+    href: "https://enrichdaily.com/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/consumertrue_logo.png",
+    alt: "Enrich-consumertrue",
+    href: "https://consumetrue.com/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
+  },
+  {
+    src: "/assets/media/logo/commontopics_logo.png",
+    alt: "commontopics",
+    href: "https://commontopics.co/agency-news/mba-in-real-estate-officially-launched-by-ireed-academy-and-dcoil/",
   },
 ];
 

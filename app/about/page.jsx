@@ -69,17 +69,17 @@ const CountUp = ({ end, duration = 2000 }) => {
 };
 
 const imagesRow1 = [
-  "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.12.54 AM.jpeg",
-  "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.12.57 AM.jpeg",
-  "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.13.02 AM (3).jpeg",
-  "/assets/about/slider/WhatsApp Image 2026-01-29 at 11.13.00 AM (2).jpeg",
+  "/assets/about/slider/Navraj-Training-1.jpeg",
+  "/assets/about/slider/Navraj-Training-2.jpeg",
+  "/assets/about/slider/Navraj-Training-3.jpeg",
+  "/assets/about/slider/Navraj-Training-4.jpeg",
 ];
 
 const imagesRow2 = [
-  "/assets/about/slider/projectimg4.jpg",
-  "/assets/about/slider/projectimg9.jpg",
-  "/assets/about/slider/projectimg17.jpg",
-  "/assets/about/slider/projectimg13.jpg",
+  "/assets/about/slider/Navraj-Training-5.jpeg",
+  "/assets/about/slider/Navraj-Training-6.jpeg",
+  "/assets/about/slider/Paras-Training-7.jpeg",
+  "/assets/about/slider/projectimg13.jpg", 
 ];
 
 const logos = [
