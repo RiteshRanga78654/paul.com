@@ -81,13 +81,12 @@ const HeroSlider = () => {
     {
       id: "02",
       title: "Demand Diagnostics",
-      bullets :[
+      bullets: [
         "Housing sales volume",
         "Office leasing demand",
         "Rental growth",
         "Absorption rate",
         "Buyer profile (end-user vs investor)",
-
       ],
       desc: "This measures buyer demand across residential, commercial, and mixed-use real estate. The key indicators:",
       image:
@@ -96,13 +95,12 @@ const HeroSlider = () => {
     {
       id: "03",
       title: "Supply Diagnostics",
-      bullets :[
+      bullets: [
         "New project launches",
         "Inventory levels",
         "Construction pipeline",
         "Land availability",
         "Redevelopment activity",
-
       ],
       desc: "This evaluates current and future supply in the market. The key indicators are:",
       image:
@@ -111,12 +109,11 @@ const HeroSlider = () => {
     {
       id: "04",
       title: "Price Diagnostics",
-      bullets :[
+      bullets: [
         "Price per square foot",
         "Price growth trends",
         "Rental yields",
         "Price-to-income ratio",
-
       ],
       desc: "Analyzes capital values and rental trends. The key indicators are:",
       image:
@@ -377,13 +374,24 @@ const HeroSlider = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 bg-[#b79662] text-black rounded-tr-[40px] flex flex-col justify-between cursor-pointer hover:text-white "
+              className="
+              group
+              p-8 
+              bg-[#b79662] 
+              text-black 
+              rounded-tr-[40px] 
+              flex flex-col justify-between 
+              cursor-pointer 
+              transition duration-300
+              hover:bg-[#a68555]
+              "
             >
-              <p className="text-xl font-bold  leading-tight hover:text-white">
+              <p className="text-xl font-bold leading-tight transition group-hover:text-white">
                 REDMI – Real Estate Digital Marketing Intelligence (Upto 9
                 Months)
               </p>
-              <p>
+
+              <p className="transition group-hover:text-black">
                 This program focuses on digital marketing for the real estate
                 sector, helping graduates learn how developers generate leads
                 and promote projects online.
@@ -616,7 +624,8 @@ const HeroSlider = () => {
 
         {/* CHALLENGES SECTION */}
         <h2 className="text-3xl text-center md:text-4xl mt-10 font-bold text-[#000]">
-          IREED India’s <span className="text-[#b79662]">Market Diagnostics</span>
+          IREED India’s{" "}
+          <span className="text-[#b79662]">Market Diagnostics</span>
         </h2>
         <div className="w-24 h-1 bg-[#b79662] mx-auto mt-4 mb-4 rounded-full"></div>
 
