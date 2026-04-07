@@ -100,20 +100,13 @@ const logos = [
   },
   { id: 8, src: "/assets/about/logo/logooooo.webp", alt: "svs" },
 
-  { id: 4, src: "/assets/about/logo/whiteland2.png", alt: "whiteland" },
-  { id: 5, src: "/assets/about/logo/tridentlogo.png", alt: "trident" },
-  { id: 6, src: "/assets/about/logo/paras.jpg", alt: "paras" },
-  {
-    id: 7,
-    src: "/assets/about/logo/WhatsApp Image 2026-03-21 at 7.21.42 PM.jpeg",
-    alt: "nature-city",
-  },
-  {
-    id: 8,
-    src: "/assets/about/logo/Logo Mangal realty Black.jpg (1).jpeg",
-    alt: "mangal",
-  },
-  { id: 3, src: "/assets/about/logo/logooooo.webp", alt: "svs" },
+  { id: 9, src: "/assets/about/logo/mdu-logo.png" , alt: "mdu" },
+  { id: 10, src: "/assets/about/logo/dpgstm-logo2.png", alt: "dpgstm" },
+  { id: 11, src: "/assets/about/logo/trident-parktown-panipat.jpg", alt: "trident-parktown-panipat" },
+  { id: 12, src: "/assets/about/logo/trident-hills-use.jpg", alt: "trident-hills" },
+  { id: 13, src: "/assets/about/logo/ficci-logo.png", alt: "paras" },
+  
+  
 ];
 
 const faqs = [
