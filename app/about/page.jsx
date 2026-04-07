@@ -105,6 +105,7 @@ const logos = [
   { id: 11, src: "/assets/about/logo/trident-parktown-panipat.jpg", alt: "trident-parktown-panipat" },
   { id: 12, src: "/assets/about/logo/trident-hills-use.jpg", alt: "trident-hills" },
   { id: 13, src: "/assets/about/logo/ficci-logo.png", alt: "paras" },
+  
 ];
 
 const faqs = [
